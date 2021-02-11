@@ -339,4 +339,4 @@ html_static_path = ['_static']
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'KageSenshisLogsdoc'
 
-ablog_website = '../public_html'
+ablog_website = '../docs'
