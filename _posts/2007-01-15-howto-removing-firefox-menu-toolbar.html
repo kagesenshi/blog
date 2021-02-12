@@ -1,0 +1,17 @@
+---
+layout: post
+title: 'HOWTO: Removing Firefox Menu Toolbar'
+date: '2007-01-15T20:29:00.000+08:00'
+author: izhar firdaus
+tags:
+- Open Source
+- Hacks
+- HOWTO
+modified_time: '2008-01-11T11:26:05.248+08:00'
+blogger_id: tag:blogger.com,1999:blog-28371165.post-8592108602652806949
+blogger_orig_url: https://blog.kagesenshi.org/2007/01/howto-removing-firefox-menu-toolbar.html
+---
+
+Yet-another-shrinking-your-UI guide lol~..<br /><br />Lets go straight to the point. First, to those you a newbie in editing userChrome.css, locate the file using <a href="http://www.mozilla.org/support/firefox/edit#profile">this guide</a>.<br /><br />Then, just add these lines in userChrome.css.<br /><br /><pre>toolbar#toolbar-menubar {display : none !important}<br /><br />.toolbarbutton-menubutton-button > .toolbarbutton-box,<br />.toolbarbutton-1 > .toolbarbutton-box<br />{<br />    max-width: 16px !important;<br />    text-align: center !important;<br />}</pre> Done. <br /><br />(I'm in lazy mode)<br /><br /><span style="font-weight:bold;">Edit:</span> For the Menu button, use the <a href='http://extensions.geckozone.org/CompactMenu'>Compact Menu</a> extension.<div class="blogger-post-footer"><br/>
+<br/>
+- Izhar Firdaus -</div>

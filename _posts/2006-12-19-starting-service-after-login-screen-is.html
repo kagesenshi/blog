@@ -1,0 +1,16 @@
+---
+layout: post
+title: Starting service after the login screen is loaded
+date: '2006-12-19T14:10:00.000+08:00'
+author: izhar firdaus
+tags:
+- Linux
+- PlanetFedora
+modified_time: '2011-10-07T12:36:51.050+08:00'
+blogger_id: tag:blogger.com,1999:blog-28371165.post-6711882926869282804
+blogger_orig_url: https://blog.kagesenshi.org/2006/12/starting-service-after-login-screen-is.html
+---
+
+GDM early login have been mising from Fedora for quite a while now .. I kindof missed it because it makes Fedora "appears" booting up faster ..<br /><br />Being impatient, (and bored), an idea came out to my mind to do a script that might give similar function to GDM early login .. but with a little bit twist -> instead of we make the GDM start earlier, why dont we make the services start later? ... and so, postinit script was born ... Its juz a simple shell script that allow users to define what services they want to start later after GDM is loaded ..<br /><br />These are the script , I packaged it for Fedora Core 6, other distros may use it , but it might require some tweaking in the code.<br /><br /><a href="http://kagesenshi.87.googlepages.com/postinit-1.0-1.src.rpm">postinit-1.0-1.src.rpm</a><br /><a href="http://kagesenshi.87.googlepages.com/postinit-1.0-1.noarch.rpm">postinit-1.0-1.noarch.rpm</a><br /><br />Usage:<br /> postinit add [servicename]<br />                  - This adds a service into the postinit list<br /> postinit del [servicename]<br />              - This removes a service from the postinit list<br /> postinit list<br />              - This shows what services is set to be run using postinit<br /><br />Note: postinit doesnt remove a service from the chkconfig, you'll need to remove it yourself using chkconfig or system-config-services.<br /><br />configuration -> /etc/postinit.conf ... its just the entry for the sleep duration before starting the services and the entry to deny any services from being started using postinit.<div class="blogger-post-footer"><br/>
+<br/>
+- Izhar Firdaus -</div>

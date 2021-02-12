@@ -1,0 +1,18 @@
+---
+layout: post
+title: A little hack to get a working Skype RPM with less painful PulseAudio support
+date: '2008-04-24T02:36:00.006+08:00'
+author: izhar firdaus
+tags:
+- PlanetFedora
+- Geek Log
+- Fedora
+- Hacks
+modified_time: '2011-10-07T12:36:50.846+08:00'
+blogger_id: tag:blogger.com,1999:blog-28371165.post-4001495839871168884
+blogger_orig_url: https://blog.kagesenshi.org/2008/04/little-hack-to-get-working-skype-rpm.html
+---
+
+This is almost a very old news I presume, nonetheless, I just noticed it today while wasting my time jumping to random Open Source project sites. <br /><br />It is well known that skype and pulseaudio doesn't play well together. Skype's ALSA implementation doesn't really implement all of the standard ALSA API which caused alsa-plugins-pulse to not work with skype. Fortunately, as stated in <a href="http://pulseaudio.org/wiki/PerfectSetup#Skype">PulseAudio Perfect Setup</a> page, the skype static OSS (<a href="http://en.wikipedia.org/wiki/Open_Sound_System">Open Sound System</a> - another sound standard, different than <a href="http://en.wikipedia.org/wiki/Advanced_Linux_Sound_Architecture">ALSA</a>) package can be used to work around this issue through padsp.<br /><br />However, the skype_static-oss package come in a tarball, of which, is ugly/inconvenient to certain people (like me). So, I've hacked together a spec to repackage that binary blob and make Skype almost JustWorks for Fedora. I don't know what Skype's regulation for redistribution of their binaries, so, to be safe, I can only provide you the RPM spec file.<br /><br />Here is the spec file : <a href="http://izhar.fedorapeople.org/misc/skype_static-oss.spec">skype_static-oss.spec</a>.<br /><br />Just put the skype_static-oss tarball in your rpmbuild SOURCES directory, and invoke rpmbuild -bb with the spec file. Install the generated rpm and use it as you would normally.<br /><br />For those who are not familiar with rpmbuild, heres a little script to get you going<br /><br /><code><br /># as root<br />yum install rpmdevtools<br /><br /># as user<br />rpmdev-setuptree<br />cd ~/rpmbuild/SPEC<br />wget http://izhar.fedorapeople.org/misc/skype_static-oss.spec<br />spectool -R -g -A skype_static-oss.spec<br />rpmbuild -bb skype_static-oss.spec<br /><br /># ... wait ...  wait ...  wait<br /># grab the generated RPM<br /># rpm -ivh (the generated rpm)<br /># enjoy~<br /><br /></code><br /><br />Oh btw, the spec is under <a href="http://sam.zoy.org/wtfpl/">WTFPL</a>. Just do wtf you want with it.<div class="blogger-post-footer"><br/>
+<br/>
+- Izhar Firdaus -</div>

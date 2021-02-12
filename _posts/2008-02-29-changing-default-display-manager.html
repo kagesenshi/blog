@@ -1,0 +1,16 @@
+---
+layout: post
+title: Changing the default Display Manager
+date: '2008-02-29T10:48:00.002+08:00'
+author: izhar firdaus
+tags:
+- PlanetFedora
+- Fedora
+modified_time: '2011-10-07T12:36:51.074+08:00'
+blogger_id: tag:blogger.com,1999:blog-28371165.post-6924641765841265103
+blogger_orig_url: https://blog.kagesenshi.org/2008/02/changing-default-display-manager.html
+---
+
+I little discovery I found out a few days ago through /etc/X11/prefdm, but forgot to blog it. The default display manager in Fedora GNOME is GDM. But sometimes, you might want to switch to a different display manager such as KDM or XDM. One way of doing it is through removing the other DMs and only leave one DM intact. But thats ugly!. <br /><br />Theres an easy way to do it, which is through /etc/sysconfig/desktop. Create it if its not yet exist and add this line.<br /><br /><code>DISPLAYMANAGER=KDE</code><br /><br />Valid values are:<br /><br /><code>DISPLAYMANAGER=GNOME<br />DISPLAYMANAGER=KDE<br />DISPLAYMANAGER=WDM<br />DISPLAYMANAGER=XDM</code><div class="blogger-post-footer"><br/>
+<br/>
+- Izhar Firdaus -</div>

@@ -1,0 +1,17 @@
+---
+layout: post
+title: Tracking email conversation in OpenERP Issue tracker.
+date: '2011-09-25T18:55:00.004+08:00'
+author: izhar firdaus
+tags:
+- Python
+- Hacks
+- OpenERP
+modified_time: '2011-09-25T19:46:54.048+08:00'
+blogger_id: tag:blogger.com,1999:blog-28371165.post-6256800590926810165
+blogger_orig_url: https://blog.kagesenshi.org/2011/09/tracking-email-conversation-in-openerp.html
+---
+
+So in Inigo we're trying to see whether we can use OpenERP for our support system. However, the email integration sucks, to the point that I had to hack it.<br /><br /><b>Hooking up email fetching to the issue module</b><br /><br />This one is easy but not easily noticeable how to configure it. Take note that you need to use the extended UI.<br /><ol><li>open : Sales &gt; Configuration &gt; Email &gt; Email Servers</li><li>Create an account to fetch from the support email account and hook the Model field to project.issue</li></ol><br /><br /><b>Hooking up email sending for 'from' email</b><br /><br />You'll to setup this before email sending from OpenERP will work. <br /><ol><li>open: Tools &gt; Configuration &gt; Email Templates &gt; Email Account</li><li>Configure one smtp account with the support email address</li></ol><br /><br /><b>Notifying a user when an issue is created</b><br /><br /><ol><li>open: Sales &gt; Configuration &gt; Automated Actions</li><li>Create an automated action</li><li>Set trigger date to creation date</li><li>In actions tab, set responsible to the user who will receive the notification email</li><li>In email action tab, set source address to the support email address, and tick "Send to responsible"</li></ol><br /><br /><b>Patching so that tracking email works nicely</b><br /><br />Open <code>addons/project_issue/project_issue.py</code> and patch <code>message_update</code> function by adding this before <code>return res</code> line.<br /> <br /><pre><br />        for record in self.browse(cr, uid, ids, context=context):<br />            obj = record<br />            to_addr = record.email_from<br />            if obj.user_id:<br />               user_email = obj.user_id.address_id and obj.user_id.address_id.email or ''<br />            if to_addr == msg['from']:<br />               to_addr = user_email<br />            if to_addr:<br />               email_cc = (obj.email_cc or '').split(',')<br />               email_cc = filter(None, email_cc)<br />               if msg['from'] in email_cc:<br />                  email_cc.append(to_addr)<br />                  to_addr = user_email<br />               email_cc = filter(lambda x: x != msg['from'], email_cc)<br />               body = 'By %s: \n%s' % (msg['from'], msg['body'])<br />               tools.email_send('support@inigo-tech.com',<br />                             [to_addr],<br />                             'Re: [%d] %s' % (obj.id, tools.ustr(obj.name)),<br />                             tools.ustr(body),<br />                             openobject_id=str(obj.id),<br />                             email_cc=email_cc)<br /></pre><br /><br />Now your support team and client can converse directly in email and it'll be tracked in the support system. Not a neat implementation, but good enough for my use i think.<br /><br />That also should get around the frustration with the totally-not-nice-bug-thread-UI which OpenERP uses.<div class="blogger-post-footer"><br/>
+<br/>
+- Izhar Firdaus -</div>

@@ -1,0 +1,14 @@
+---
+layout: post
+title: PortForwarding (again?) ... but this time .. through SOCKS Proxy!!!
+date: '2006-02-06T23:15:00.000+08:00'
+author: izhar firdaus
+tags:
+modified_time: '2006-10-11T06:49:42.781+08:00'
+blogger_id: tag:blogger.com,1999:blog-28371165.post-114996755703126206
+blogger_orig_url: https://blog.kagesenshi.org/2006/02/portforwarding-again-but-this-time.html
+---
+
+<p>i've juz discovered this yesterday ... by combining socksify ( <a href="http://www.inet.no/dante/">http://www.inet.no/dante/</a> ) and portfwd ( <a href="http://portfwd.sourceforge.net/">http://portfwd.sourceforge.net/</a> ) you can get a local port on your system to be forwarded to another system through SOCKS proxy ...</p>    <p>the concept is simple .... 1st install dante socksify and edit its configuration in /etc/socks.conf ... then ...install portfwd ... create a config file according to your requirement that maps to a remote system ... then ... run this command</p>    <table bg style="color:#ebebeb;">  <tbody><tr> <td><span style="font-family:monospace;font-size:78%;color:black;"><code><br />   #socksify portfwd -c [yourportfwdconfig]</code><br /></span> </td> </tr> </tbody> </table>    <p>after a successfull execution .. you'll get a port on your local system forwarded to the remote system through a SOCKS proxy ... <img src="http://kagesenshi.mychost.com/img/smilies/icon_biggrin.gif" alt=":D" class="middle" /></p>    <p>Enjoy~ </p>    <p>TIPS: you can also use Tsocks, Proxify, Proxychains as the TCP wrapper to replace socksify ... if you use Proxychains .. you can also forward ports through a chain of proxies </p><div class="blogger-post-footer"><br/>
+<br/>
+- Izhar Firdaus -</div>

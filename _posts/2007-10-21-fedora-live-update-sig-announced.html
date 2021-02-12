@@ -1,0 +1,16 @@
+---
+layout: post
+title: Fedora Live Update SIG Announced
+date: '2007-10-21T02:03:00.000+08:00'
+author: izhar firdaus
+tags:
+- PlanetFedora
+- Fedora
+modified_time: '2011-10-07T12:36:50.643+08:00'
+blogger_id: tag:blogger.com,1999:blog-28371165.post-170511502360059180
+blogger_orig_url: https://blog.kagesenshi.org/2007/10/fedora-live-update-sig-announced.html
+---
+
+At last, a SIG that will be working on supporting Live upgrades on Fedora.<br /><br /><a href="http://fedoraproject.org/wiki/SIGs/LiveUpgrade">http://fedoraproject.org/wiki/SIGs/LiveUpgrade</a><br /><br /><a href="https://www.redhat.com/archives/fedora-devel-list/2007-October/msg01540.html">Announcement @ Fedora-Devel-List</a><br /><br /><span style="font-weight:bold;">A toolbox suggestion for testers</span><br /><br />- a qemu image with a fully updated Fedora release N<br />- a local mirror of rawhide of Fedora N + 1<br /><br /><pre><br />while is_testing_period:<br />      make_a_copy_of_the_qemu_image()<br />      yum_liveupgrade_to_Fedora_N_+_1()<br />      report_or_fix_bugs()<br />      sleep(1day)<br />      resync_rawhide_mirror()<br /><br /></pre><br /><br />:P<br /><br />looking forward for this in F9<div class="blogger-post-footer"><br/>
+<br/>
+- Izhar Firdaus -</div>

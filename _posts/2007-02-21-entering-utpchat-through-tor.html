@@ -1,0 +1,16 @@
+---
+layout: post
+title: Entering UTPchat Through Tor
+date: '2007-02-21T00:31:00.000+08:00'
+author: izhar firdaus
+tags:
+- Geek Log
+- UTPchat
+modified_time: '2007-02-21T00:59:46.022+08:00'
+blogger_id: tag:blogger.com,1999:blog-28371165.post-4256570774675059257
+blogger_orig_url: https://blog.kagesenshi.org/2007/02/entering-utpchat-through-tor.html
+---
+
+Since tunnel.utpchat.net's box have broken, there has been lots of ppl who pm'ed me asking on how to enter UTPchat from outside the LAN .. I have tried to find volunteers to host a replacement servers but none of them willing sacrifice their home pc .. So, I decided to create a tor hidden service for Togakure server<br /><br /><blockquote><br />===============================<br /><br />The current Tor hidden service address for UTPchat is wubkdspcbpabqjmb.onion<br /><br />If your IRC client can handle socks5 with remote dns, you can just connect to the .onion address directly. Otherwise, use Tor's "mapaddress" feature to fake it. (We do not recommend that you use Privoxy with irssi. It's unnecessary. Just use the 'mapaddress' approach and torify irssi to start it up.) Add a line to your torrc, as in this example:<br /><br />    mapaddress  10.40.40.40 wubkdspcbpabqjmb.onion<br /><br />Be sure to HUP (reload) Tor if you change your torrc. After you've made the change, just connect your torified IRC client to the IP you specified in your mapaddress statement for the freenode  service. Tor will do the conversion for you internally and you'll connect to UTPchat (dont forget to set your proxy to tor socks proxy)<br /><br />    /server 10.40.40.40<br /><br />(btw .. this guide is an almost exact copy from <a href="http://freenode.net/irc_servers.shtml">freenode's similar guide</a> to enter their network)<br />===============================<br /></blockquote><br /><br />I havent tested the hidden service yet .. please tell me if it work / doesnt work .. and btw, connections from tor are slow, so bear with it if you want to use it ..<div class="blogger-post-footer"><br/>
+<br/>
+- Izhar Firdaus -</div>

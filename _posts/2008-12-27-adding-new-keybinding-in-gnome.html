@@ -1,0 +1,19 @@
+---
+layout: post
+title: Adding new Keybinding in gnome-keybinding-properties
+date: '2008-12-27T15:28:00.003+08:00'
+author: izhar firdaus
+tags:
+- Compiz
+- Fedora
+- Hacks
+- GNOME
+modified_time: '2008-12-27T16:17:18.259+08:00'
+thumbnail: http://1.bp.blogspot.com/_0DENAyCRujw/SVXkPaoA4uI/AAAAAAAAAYs/wEwFTPPzzcc/s72-c/20081227-01.png
+blogger_id: tag:blogger.com,1999:blog-28371165.post-6086338358704415583
+blogger_orig_url: https://blog.kagesenshi.org/2008/12/adding-new-keybinding-in-gnome.html
+---
+
+So I was playing with compiz after quite some time not using it due to frequent i855gm driver failures (yep I'm using an old box with old card). While enhancing simple-ccsm a bit here and there to add some more config widget to my liking, I discovered that new gconf keybinding can be added into the configuration tool pretty easily.<br /><br />Just create an XML file in <code>/usr/share/gnome-control-center/keybindings/</code> with the keys. Done.<br /><br />Here's an example of a little mapping I did for Compiz's Scale and Expo plugin.<br /><br /><pre><br />&lt;?xml version="1.0" encoding="UTF-8"?&gt;<br />&lt;KeyListEntries wm_name="compiz" package="compiz" name="Extra"&gt;<br /><br />  &lt;KeyListEntry <br />    name="/apps/compiz/plugins/scale/allscreens/options/initiate_key"/&gt;<br /><br />  &lt;KeyListEntry <br />    name="/apps/compiz/plugins/expo/allscreens/options/expo_key"/&gt;<br /><br />&lt;/KeyListEntries&gt;<br /></pre><br /><br />The result?<br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://1.bp.blogspot.com/_0DENAyCRujw/SVXkPaoA4uI/AAAAAAAAAYs/wEwFTPPzzcc/s1600-h/20081227-01.png"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 320px; height: 286px;" src="http://1.bp.blogspot.com/_0DENAyCRujw/SVXkPaoA4uI/AAAAAAAAAYs/wEwFTPPzzcc/s320/20081227-01.png" border="0" alt=""id="BLOGGER_PHOTO_ID_5284380691285467874" /></a><div class="blogger-post-footer"><br/>
+<br/>
+- Izhar Firdaus -</div>

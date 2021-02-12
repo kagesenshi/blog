@@ -1,0 +1,14 @@
+---
+layout: post
+title: Capset module makes me in a little bit confusing problem
+date: '2006-07-15T10:44:00.000+08:00'
+author: izhar firdaus
+tags:
+modified_time: '2006-10-11T06:49:44.668+08:00'
+blogger_id: tag:blogger.com,1999:blog-28371165.post-115293145126759898
+blogger_orig_url: https://blog.kagesenshi.org/2006/07/capset-module-makes-me-in-little-bit.html
+---
+
+the NetworkManager daemon requires BIND/named to start along. but i keep getting errors from named saying the capset module is not loaded. 'modprobe capset' says module not found.<br /><br />assuming that i might missed out the option in the kernel config, i go back to the livecd kernel sourcetree. and spend half and hour trying to search for that capset option. guess what?. didnt found it. ~duh~<br /><br />googling for 'capset module kernel config' brings me to nowhere. gladly from the manpages of capset.h i found a reference to 'capability module' . and 'modprobe capability' solved the problem<br /><br />i think they should say 'capability module' in the error instead of 'capset module' because capset() is a function. :( .. anyway .. at least i found my way around .. <br /><div class="blogger-post-footer"><br/>
+<br/>
+- Izhar Firdaus -</div>

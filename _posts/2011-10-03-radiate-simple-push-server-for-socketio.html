@@ -1,0 +1,19 @@
+---
+layout: post
+title: 'Radiate: A simple push server for SocketIO (alpha)'
+date: '2011-10-03T11:45:00.001+08:00'
+author: izhar firdaus
+tags:
+- Python
+- Open Source
+- Hacks
+- Javascript
+- HTML5
+modified_time: '2011-10-03T11:48:10.092+08:00'
+blogger_id: tag:blogger.com,1999:blog-28371165.post-5607457449277804586
+blogger_orig_url: https://blog.kagesenshi.org/2011/10/radiate-simple-push-server-for-socketio.html
+---
+
+Based on my <a href="http://blog.kagesenshi.org/2011/10/simple-websocket-push-server-using.html">previous post on WebSocket server using Tornado</a>, I've hacked the code more to be a SocketIO server instead of just WebSocket, so that it can be used on many browsers until everyone support WebSocket. The SocketIO connection is handled by <a href="http://pypi.python.org/pypi/TornadIO/">TornadIO</a>, a neat SocketIO library for Tornado.<br /><br />I've uploaded the code here in github: <a href="https://github.com/kagesenshi/radiate">https://github.com/kagesenshi/radiate</a><br /><br />I've packaged Radiate together with a buildout.cfg, so you can deploy it easily by just using these few lines of commands<br /><pre>git clone https://kagesenshi@github.com/kagesenshi/radiate.git radiate<br />cd radiate<br />python bootstrap.py<br />./bin/buildout</pre>To start the daemon, just execute:<br /><pre>./bin/radiate-admin fg</pre>The readme file on how to deploy and use Radiate is here: <a href="https://github.com/kagesenshi/radiate/blob/master/README.txt">https://github.com/kagesenshi/radiate/blob/master/README.txt</a>.<div class="blogger-post-footer"><br/>
+<br/>
+- Izhar Firdaus -</div>

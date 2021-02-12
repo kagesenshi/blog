@@ -1,0 +1,18 @@
+---
+layout: post
+title: Keep Fedora "less-moving" using yum-security plugin
+date: '2008-03-02T01:13:00.010+08:00'
+author: izhar firdaus
+tags:
+- Reviews
+- PlanetFedora
+- Fedora
+- Tips
+modified_time: '2011-10-07T12:36:50.705+08:00'
+blogger_id: tag:blogger.com,1999:blog-28371165.post-2505406354333585339
+blogger_orig_url: https://blog.kagesenshi.org/2008/03/keep-fedora-less-moving-using-yum.html
+---
+
+Fedora updates repository moves very fast. A few months after the release of F8, hundreds of MBs of packages have been updated. Some people, especially those who came from the less-moving world of Debian and Ubuntu, might found this ridiculous. They are used to receiving only important updates during the stable lifecycle of a release and are not used to Fedora ways of going-forward and adding new enhancement and features to the stable release. <br /><br />Sometimes, from that many updates, regression problem happened, which is fun to some, but annoying to the others. (I know someone who kept complaining about that - /me glares at a certain person @ #myoss )<br /><br />I personally does not keep my stable Fedora installations up-to-date to the latest updates, and I hand-pick those packages which I think might have fixed some bugs which I'm encountering. Yes, some people find that tedious :).<br /><br />For those weak-hearted who are not used to Fedora update release speed, you can opt to only update for security fixes using the yum-security plugin. For the other packages, "If its not broken, why update?". I have known this plugin exist since F7, but didn't really bother to try it, but yesterday I tried it and its awesome!. Yum-security plugin will automatically filter the updates to only security related updates for you.<br /><br />Using it to update your system is easy, just 'yum install yum-security' and update using 'yum --security update'. More tricks in <a href="http://www.redhatmagazine.com/2008/01/16/tips-and-tricks-yum-security/">this Red Hat Magazine post</a>.<br /><br />This way, you can keep your Fedora installation with less moving parts for your production desktop/server use while keeping it secure. <br /><br />Btw, looking @ yum-security code, and the updateinfo.xml.gz, it looks to me like its possible to also create a yum plugin to only pull packages which are bugfixes for reported bugs. Is such plugin already exist? I'm planning to look into the possibility, but I don't want to do a duplicate effort - furthermore, I am still not that confident with my ability to work with existing codes. IMO, this can be a good approach or airbag for users who are having trouble of too many updates from Fedora which randomly breaks their system. Users who only want bugfixes and security updates can reduce their updates through this type of filter, and (hopefully) reduce their risk of facing regression of enhancement updates. On the same time, new enhancements can still be continually added into the stable Fedora updates.<br /><br /><b>edit:</b> fixed RH Mag link<div class="blogger-post-footer"><br/>
+<br/>
+- Izhar Firdaus -</div>

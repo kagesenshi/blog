@@ -1,0 +1,15 @@
+---
+layout: post
+title: Network FileSystem using SSHfs
+date: '2006-01-30T02:02:00.000+08:00'
+author: izhar firdaus
+tags:
+- PlanetFedora
+modified_time: '2011-10-07T12:36:50.538+08:00'
+blogger_id: tag:blogger.com,1999:blog-28371165.post-114996737002340449
+blogger_orig_url: https://blog.kagesenshi.org/2006/01/network-filesystem-using-sshfs.html
+---
+
+<p>isnt it neat having one PC with its mounts are scattered among multiple PCs's harddisks in the network?? ... lots of stuff can be done using it coz all of the files work virtually as if it is in the same pc ...(i leave this for y'all to think what u can do with it coz i'm not good in giving ideas <img src="http://kagesenshi.mychost.com/img/smilies/graybigrazz.gif" alt=":P" class="middle" /> ) ....</p>    <p>traditional method of mounting a network filesystem is by using the famous NFS exports .... however ... configuring NFS to work might be quite hard for newbies ... and it became harder if you want to ensure the security of ur system ....</p>    <p>a few weeks ago .. i discovered that there is a program that can make the SFTP capability of SSH to be mounted as a local filesystem .... it gives the flexibility if NFS ... ease of use -- as easy as logging into SSH ... and the transactions are encrypted ... neato ..... the program is developed under FUSE ... so .. u'll need to have a FUSE capable kernel for it .... AFAIK ... kernel 2.6.14 above have FUSE included in it .... FC4 users juz need to update the kernel to the latest ... its compiled together in the RPM of the latest kernels ....</p>    <p>then u'll need to get the FUSE-SSHfs package from <a href="http://fuse.sourceforge.net/sshfs.html">http://fuse.sourceforge.net/sshfs.html</a> ... compile and install it ... good news to FC4 users ... FUSE-SSHfs RPM package is available in Fedora Extras ... hehe...</p>    <p>after a successfull installation .... u'll need to be root in order to mount the filesystem ...</p>    <p>mounting :</p>    <table bg style="color:#ebebeb;">  <tbody><tr> <td><span style="font-family:monospace;font-size:78%;color:black;"><br /># sshfs user@mysshserver.net:/path/to/target /mountpoint/path<br />// then enter ur login passwd</span> </td> </tr> </tbody> </table>    <p>umounting:</p>    <table bg style="color:#ebebeb;">  <tbody><tr> <td> <span style="font-family:monospace;font-size:78%;color:black;"><br /># fusermount -u /mountpoint/path</span> </td> </tr> </tbody> </table>    <p>by default ... only root can read/write to the mounted path ... if u need to have other users to use it ... use this command</p>    <table bg style="color:#ebebeb;">  <tbody><tr> <td>  <div align="left"><span style="font-family:monospace;font-size:78%;color:black;"># sshfs -o default_permissions,allow_other user@mysshserver.net:/path/to/target /mountpoint/path<br />// then enter ur login passwd</span></div>  </td> </tr> </tbody> </table>    <p>now u got a folder on another pc on the network mounted on /mountpoint/path of ur local filesystem .... enjoy!!</p><div class="blogger-post-footer"><br/>
+<br/>
+- Izhar Firdaus -</div>
