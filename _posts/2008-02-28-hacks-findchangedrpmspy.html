@@ -1,0 +1,18 @@
+---
+layout: post
+title: 'Hacks: find_changed_rpms.py'
+date: '2008-02-28T12:53:00.003+08:00'
+author: izhar firdaus
+tags:
+- PlanetFedora
+- Python
+- Fedora
+- Hacks
+modified_time: '2011-10-07T12:36:50.987+08:00'
+blogger_id: tag:blogger.com,1999:blog-28371165.post-5984864181065610827
+blogger_orig_url: https://blog.kagesenshi.org/2008/02/hacks-findchangedrpmspy.html
+---
+
+Sometimes, we might be facing certain problems which we could not find what might have caused it. One of the annoying cause is a broken file somewhere in the filesystem due to some reason. <br /><br />My practise, is that I regularly run rpm -Va to verify and list out broken or changed files. Then I would reinstall any rpm which I think have broken files. Now that I'm working, and being on rawhide, its rather tedious and time consuming to do this regularly. So I just wrote a python script for helping out with the extracting changed files list and querying which rpm the file belongs to.<br /><br />Those who interested to use it, you can grab it here: <a href="http://kagesenshi-private.googlecode.com/svn/trunk/fedora/find_changed_rpms.py">find_changed_rpms.py</a><br /><br /><code><pre><br /> Usage: ./find_changed_rpms.py [OPTIONS]<br /><br /> This script will automatically find for packages which <br /> one or more of its files does not match the information<br /> stored in the RPMdb. <br /><br /> -h : show this menu<br /> -v : be verbose<br /><br /> This script excludes packages which only have its config files<br /> changed and packages which its files only does not match the<br /> stored mtime.<br /></pre></code><br /><br />NOTE: Its not bugproof!.<br /><br />If anybody out there have some cool hacks related to Fedora. How about start sharing them now and help Greg build his <a href="http://gregdek.livejournal.com/23714.html">Fedora weekend hacks</a> catalog.<div class="blogger-post-footer"><br/>
+<br/>
+- Izhar Firdaus -</div>

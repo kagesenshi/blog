@@ -1,0 +1,18 @@
+---
+layout: post
+title: Using NetworkManager and a WiFi enabled phone as your laptop's remote
+date: '2009-06-13T23:23:00.005+08:00'
+author: izhar firdaus
+tags:
+- PlanetFedora
+- Geek Log
+- Fedora
+- HOWTO
+modified_time: '2011-10-07T12:39:10.109+08:00'
+blogger_id: tag:blogger.com,1999:blog-28371165.post-1598068298495097467
+blogger_orig_url: https://blog.kagesenshi.org/2009/06/using-networkmanager-and-wifi-enabled.html
+---
+
+Ok, I need a presentation clicker. But too lazy to find cheap ones out there. I have a Thinkpad R51 with Intel IPW2100 wireless card with no bluetooth, a Sony Ericsson P990i, and a <a href="http://fedoraproject.org">Fedora</a> installation. So, what I can do with them to get a presentation clicker?.<br /><br />A little googling led me to this nice little tool : <a href="http://anyremote.sourceforge.net/">AnyRemote</a>. It provides a Java client and a server tool which allows the user to control of various Linux apps using a phone with bluetooth or WiFi support (theres also infrared support, but i dont think it worth it due to the limitation of IR and requires more setup).<br /><br />AnyRemote is in Fedora repository , so, Fedora users can just install it by <code>yum install anyremote anyremote-data</code>.<br /><br />Now, I don't have a bluetooth dongle, neither internal bluetooth support, so my only option is through WiFi. Good thing in Fedora, the NetworkManager can create an <a href="http://press.redhat.com/2008/10/16/connection-sharing-in-networkmanager/">AdHoc Internet Connection Sharing</a>. Which basically gives me a quick way to make my phone to connect to my laptop (and the internet - with cheaper rate). <br /><br />Creating an AP using NM is easy, <a href="http://magazine.redhat.com/2008/10/16/video-fedora-10-connection-sharing/">watch the demo here</a>.<br /><br />After the AdHoc network is up and running, I hook my phone to the network and grab the AnyRemote Java client from the <a href="http://anyremote.sourceforge.net/dload.html">download site</a>, install and launch it.<br /><br />Now I have AnyRemote server installed in my machine, AnyRemote client installed in my phone, and the phone is connected to the WiFi network, time to test my 'brand new' remote. <br /><br />I want to control an <a href="http://openoffice.org">OpenOffice.org</a> Impress presentation, therefore, I launch AnyRemote with the ooimpress.cfg configuration, listening at port 5050.<br /><br /><pre>anyremote -s socket:5050 \<br />      -f /usr/share/anyremote/cfg-data/Server-mode/ooimpress.cfg</pre><br /><br />Then, using ifconfig, I took the IP of my laptop in the AdHoc network, and from the AnyRemote client (in my phone), I add the IP and port in, and connect to it (sorry, no pics, no idea how to take the picture of the phone, considering my only camera is the phone itself :P ), and PROFIT!!.<br /><br />AnyRemote can also control other stuff such as Mplayer, Rhythmbox, xmms, amarok, evince, and lots more. You can also write your own config to control your own apps!.<br /><br />Perhaps some of you might find this little guide useful, so, enjoy yourself :D<div class="blogger-post-footer"><br/>
+<br/>
+- Izhar Firdaus -</div>

@@ -1,0 +1,20 @@
+---
+layout: post
+title: CompizFusion DesktopEffects Dialog
+date: '2008-12-26T15:07:00.004+08:00'
+author: izhar firdaus
+tags:
+- Compiz
+- PlanetFedora
+- Python
+- Fedora
+- Hacks
+modified_time: '2011-10-07T12:39:10.156+08:00'
+thumbnail: http://1.bp.blogspot.com/_0DENAyCRujw/SVSB_WdxStI/AAAAAAAAAYk/3IP0CTlQNDI/s72-c/20081226-01.png
+blogger_id: tag:blogger.com,1999:blog-28371165.post-3029807860195194201
+blogger_orig_url: https://blog.kagesenshi.org/2008/12/compizfusion-desktopeffects-dialog.html
+---
+
+A little something I wrote last night.<br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://1.bp.blogspot.com/_0DENAyCRujw/SVSB_WdxStI/AAAAAAAAAYk/3IP0CTlQNDI/s1600-h/20081226-01.png"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 311px; height: 236px;" src="http://1.bp.blogspot.com/_0DENAyCRujw/SVSB_WdxStI/AAAAAAAAAYk/3IP0CTlQNDI/s320/20081226-01.png" border="0" alt=""id="BLOGGER_PHOTO_ID_5283991188174621394" /></a><br /><br />So, what it do?. Simply a little workaround of the problem Fedora users had for quite a long time - getting Compiz Fusion to run on login properly using ccp (libcompizconfig) plugin. The "Advanced" button will launch Simple-CCSM, and the "Expert" button will launch CCSM ( the buttons are disabled if the command doesn't exist).<br /><br />Why not I create this long ago??. The infrastructure to drop in a window manager without patching gnome-wm was not available before. The recent change in GNOME to use a .desktop file to launch the window manager and "/desktop/gnome/session/required_components/windowmanager" gconf key to store window manager selection made this now possible - bit more elegantly.<br /><br /><a href="http://fedorapeople.org/gitweb?p=izhar/public_git/fusion-desktop-effects.git;a=summary">Git Repository</a><br /><a href="http://izhar.fedorapeople.org/fusion-desktop-effects">RPM Packages</a><br /><br />I wonder if this can be accepted in the repo.<div class="blogger-post-footer"><br/>
+<br/>
+- Izhar Firdaus -</div>

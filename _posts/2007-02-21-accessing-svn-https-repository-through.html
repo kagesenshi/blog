@@ -1,0 +1,18 @@
+---
+layout: post
+title: Accessing SVN https repository through proxy
+date: '2007-02-21T14:08:00.000+08:00'
+author: izhar firdaus
+tags:
+- Linux
+- UTP-OSS
+- Geek Log
+- Open Source
+modified_time: '2007-02-21T18:23:39.921+08:00'
+blogger_id: tag:blogger.com,1999:blog-28371165.post-1886511228576948013
+blogger_orig_url: https://blog.kagesenshi.org/2007/02/accessing-svn-https-repository-through.html
+---
+
+the title says it all .. I was trying to enter an SVN repository from within UTP .. but that requires proxy ... exporting http_proxy and https_proxy doesnt give any results ... so I googled for a while .. however, it seems like not many people having the same problem as me and trying to find a quick guide took some time .. and then I found this page from apache's website <br /><a href='http://incubator.apache.org/agila/svn.html'>http://incubator.apache.org/agila/svn.html</a><br /><br />Problem solved .. yay~!<br /><br /><blockquote><br />    The Subversion client can go through a proxy, if you configure it to do so. First, edit your "servers" configuration file to indicate which proxy to use. The files location depends on your operating system. On Linux or Unix it is located in the directory "~/.subversion". On Windows it is in "%APPDATA%\Subversion". (Try "echo %APPDATA%", note this is a hidden directory.)<br /><br />    There are comments in the file explaining what to do. If you don't have that file, get the latest Subversion client and run any command; this will cause the configuration directory and template files to be created.<br /><br />    Example : Edit the 'servers' file and add something like :<br /><br />    [global]<br />    http-proxy-host = your.proxy.name<br />    http-proxy-port = 3128<br /></blockquote><div class="blogger-post-footer"><br/>
+<br/>
+- Izhar Firdaus -</div>

@@ -1,0 +1,19 @@
+---
+layout: post
+title: Using OpenShift with a project on SVN repository
+date: '2012-08-27T09:47:00.000+08:00'
+author: izhar firdaus
+tags:
+- OpenShift
+- PlanetFedora
+- Hacks
+- HOWTO
+- PlanetPlone
+modified_time: '2012-08-27T10:28:13.200+08:00'
+blogger_id: tag:blogger.com,1999:blog-28371165.post-5023114295924799637
+blogger_orig_url: https://blog.kagesenshi.org/2012/08/using-openshift-with-project-on-svn.html
+---
+
+<div dir="ltr" style="text-align: left;" trbidi="on">OpenShift uses GIT for the internal repo, however, you might have existing projects which are on SVN which you want to deploy into OpenShift but yet to have chance to migrate it to GIT (or for some reason, couldn't). So how do you approach this?.<br /><br />The simplest trick around is, to have a GIT+SVN combined directory to work on. Here's the quick steps:<br /><br /><ol style="text-align: left;"><li>Checkout/clone both the project SVN and OpenShift GIT repository into 2 separate directories. </li><li>Copy .git directory from OpenShift GIT clone into the SVN checkout directory.</li><li>Done.</li></ol>This will setup a&nbsp; directory which can be committed to both GIT and SVN. Whenever you want to deploy the code to OpenShift, git commit and git push it. Whenever you want to save the code into the code repository, svn commit it. <br /><br /><br /></div><div class="blogger-post-footer"><br/>
+<br/>
+- Izhar Firdaus -</div>

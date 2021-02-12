@@ -1,0 +1,15 @@
+---
+layout: post
+title: UTP Free / Open Source Lab installation done
+date: '2006-07-31T23:06:00.000+08:00'
+author: izhar firdaus
+tags:
+- Geek Log
+modified_time: '2006-10-11T07:04:48.701+08:00'
+blogger_id: tag:blogger.com,1999:blog-28371165.post-115439194893572070
+blogger_orig_url: https://blog.kagesenshi.org/2006/07/utp-free-open-source-lab-installation.html
+---
+
+Today i woke up early to go to the lab. My other subject's lab classes wont be starting until next week, so i have some time in the morning to play around with the FOSS lab.<br /><br />My first priority there is to recover the GRUB for solaris 10 which was broken after GHOST. Last week we havent succeed in recovering it. So i want to continue it today.<br /><br />At first we are having a big problem trying to reinstall the Solaris' GRUB because of the different FS that it is installed on. Googling with many combination of keywords brought us to sites that doesnt fulfill our needs. Then we found a site which have the required info. However, i missread it, and used<br /><br /><blockquote># installgrub /boot/grub/stage1 /boot/grub/stage2 /dev/dsk/c0d0s0</blockquote><br /><br />I'm not familiar with Solaris, and got confused between <span style="font-style: italic;">/dev/rdsk</span> and <span style="font-style: italic;">/dev/dsk</span> . I though rdisk means Remote-Disk or sumthing like that. So i got some errors that gave me no clue whats wrong and failed to install grub.<br /><br />Then i continue googling for other ways to install it. Then i come upon an idea of creating a boot floppy, so, i fire up <span style="font-style: italic;">man installgrub</span> on a working Solaris box to find a way to create a boot floppy. On the man page, it also uses <span style="font-style: italic;">/dev/rdsk </span>which makes me wonder why.<br /><br />Feeling curious, i restarted the GHOST'ed machine with the solaris CD1 again, and tried using the command<br /><br /><blockquote>installgrub /boot/grub/stage1 /boot/grub/stage2 /dev/rdsk/c0d0s0</blockquote><br /><br />And walla, it succeeds!. Damn, all that hassles doesnt worth it. Well, at least we got the Solaris running.<div class="blogger-post-footer"><br/>
+<br/>
+- Izhar Firdaus -</div>

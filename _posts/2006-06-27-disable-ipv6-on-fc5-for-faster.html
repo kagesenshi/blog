@@ -1,0 +1,15 @@
+---
+layout: post
+title: 'Disable IPv6 on FC5 for faster internet browsing performance '
+date: '2006-06-27T14:33:00.000+08:00'
+author: izhar firdaus
+tags:
+- PlanetFedora
+modified_time: '2011-10-07T12:36:50.555+08:00'
+blogger_id: tag:blogger.com,1999:blog-28371165.post-115139034719743349
+blogger_orig_url: https://blog.kagesenshi.org/2006/06/disable-ipv6-on-fc5-for-faster.html
+---
+
+<a href="http://www.linuxquestions.org/questions/showthread.php?p=2216752#post2216752">http://www.linuxquestions.org/questions/showthread.php?p=2216752#post2216752</a><br /><br /><strong>zzeepphhoo</strong> wrote:<br /><br /><blockquote>New distros like fedora 2-5 have Ipv6 turned on by default. IpV6 is a new DNS lookup that few servers use. This means that if the site you are trying to access in not listed on Ipv6, a 30 second timeout immeditately happens. It should be disabled. Also, Some other DNS servers miss the first few requests from linux machines. The default timeout is 5 seconds, so this could cause up to another 15 second delay. Step by step  fix is as follows:<br />1. Log out of Fedora<br />2. Log in as root<br />3. enter your root password (the root password you entered when you installed fedora)<br />4. Click on "Home" or "My Computer"<br />5, Click on "Filesystem" or use up arrow to navigate to etc folder.<br />6. go to resolv.conf file. (not a folder, but a file located at the end of the files in your etc folder)<br />7. Insert this line at the bottom of the file: option timeout:1<br />8. Save the file<br />9. Go to etc/modprobe.conf file. Insert these lines at the bottom of the file:<br />alias ipv6 off<br />alias net-pf-10 off<br />10. Save the file.<br />11. Reboot your machine<br />12. Enjoy the SPEED!<br /></blockquote><div class="blogger-post-footer"><br/>
+<br/>
+- Izhar Firdaus -</div>

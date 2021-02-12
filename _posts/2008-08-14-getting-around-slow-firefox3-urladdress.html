@@ -1,0 +1,19 @@
+---
+layout: post
+title: Getting around slow Firefox3 URL/Address Bar
+date: '2008-08-14T21:30:00.003+08:00'
+author: izhar firdaus
+tags:
+- Firefox
+- Open Source
+- Hacks
+- HOWTO
+- Tips
+modified_time: '2008-08-14T21:47:10.580+08:00'
+blogger_id: tag:blogger.com,1999:blog-28371165.post-7574020426945750421
+blogger_orig_url: https://blog.kagesenshi.org/2008/08/getting-around-slow-firefox3-urladdress.html
+---
+
+Firefox3 introduced a cool address bar improvement. However, its running way too slow on my machine, and sometimes locks down firefox. <br /><br />Here's a little workaround for it:<br /><br />In <a href="about:config">about:config</a> page, change these keys:<br /><br /><blockquote><code>browser.urlbar.matchOnlyTyped = True<br />browser.urlbar.matchBehaviour = 2<br />browser.urlbar.maxRichResults = (max results, put between 2-5)<br />browser.urlbar.search.timeout = (search timeout, put something lower than 100, depending on ur needs)</code></blockquote><br /><br />This little tweak did the job just-right for me.<br /><br />Recommended reading: A little bit googling for "Firefox 3 addressbar tweak" lead me to this one nice article: <a href="http://cybernetnews.com/2008/07/23/cybernotes-understanding-tweaking-the-firefox-3-address-bar/">CyberNotes: Understanding & Tweaking the Firefox 3 Address Bar</a>.<div class="blogger-post-footer"><br/>
+<br/>
+- Izhar Firdaus -</div>

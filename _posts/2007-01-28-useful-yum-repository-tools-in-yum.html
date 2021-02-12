@@ -1,0 +1,16 @@
+---
+layout: post
+title: Useful Yum repository tools in yum-utils
+date: '2007-01-28T09:22:00.000+08:00'
+author: izhar firdaus
+tags:
+- Linux
+- Fedora
+modified_time: '2007-01-29T02:49:42.613+08:00'
+blogger_id: tag:blogger.com,1999:blog-28371165.post-4448086809959444525
+blogger_orig_url: https://blog.kagesenshi.org/2007/01/useful-yum-repository-tools-in-yum.html
+---
+
+Yum-utils package have some useful tools for sysadmins who wanted to create and manage their own RPM metadata repository. <br /><br /><span style="font-weight:bold;">Contents of yum-utils package</span><br /><pre># rpm -ql yum-utils<br />/usr/bin/package-cleanup<br />/usr/bin/repo-graph<br />/usr/bin/repo-rss<br />/usr/bin/repoclosure<br />/usr/bin/repomanage<br />/usr/bin/repoquery<br />/usr/bin/reposync<br />/usr/bin/repotrack<br />/usr/bin/yum-builddep<br />/usr/bin/yumdownloader<br />/usr/share/doc/yum-utils-1.0<br />/usr/share/doc/yum-utils-1.0/COPYING<br />/usr/share/doc/yum-utils-1.0/README<br />/usr/share/man/man1/package-cleanup.1.gz<br />/usr/share/man/man1/repo-rss.1.gz<br />/usr/share/man/man1/repoquery.1.gz<br />/usr/share/man/man1/yum-builddep.1.gz<br />/usr/share/man/man1/yumdownloader.1.gz</pre><br /><br /><span style="font-weight:bold;">Some notable tools</span><br />repomanage - helps you manage a repository by listing out old and/or new packages filenames<br />reposync - helps synchronizing local repository with an online Yum repository<br />repotrack - helps downloading dependencies of packages - <a href='https://lists.dulug.duke.edu/pipermail/yum-devel/2006-January/001796.html'>https://lists.dulug.duke.edu/pipermail/yum-devel/2006-January/001796.html</a><br /><br />I'll be posting a howto for creating a yum repository using these tools when I got some time to spare and my mind not filled with something else.<div class="blogger-post-footer"><br/>
+<br/>
+- Izhar Firdaus -</div>

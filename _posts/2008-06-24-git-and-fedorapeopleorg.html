@@ -1,0 +1,18 @@
+---
+layout: post
+title: Git and FedoraPeople.org
+date: '2008-06-24T10:31:00.009+08:00'
+author: izhar firdaus
+tags:
+- PlanetFedora
+- Geek Log
+- Fedora
+- Hacks
+modified_time: '2011-10-07T12:36:50.740+08:00'
+blogger_id: tag:blogger.com,1999:blog-28371165.post-3031824321394202692
+blogger_orig_url: https://blog.kagesenshi.org/2008/06/git-and-fedorapeopleorg.html
+---
+
+I just started learning to use git a few days ago. Mainly because of the convenient of being able to host a git repository on a dumb http server, and ability to local commit. <br /><br />However, I had a minor problem pushing a git repository to my fedorapeople.org account through ssh push. "Permission denied when executing post-update hook". Asking at #fedora-admin got me this answer - "home folders are mounted noexec", now, thats explains. Nonetheless, a minor hack by replacing the post-update script with a symlink to git-update-server-info seems to get around it.<br /><br />Surprisingly, when I woke up today, I saw <a href="http://katzj.livejournal.com/430978.html">Jeremy Katz's post : More git support for fedorapeople</a>. FedoraPeople now have a functional GitWeb and gitserve! - eventhough its beta and might go away, still, thanks a lot Jeremy!!.<br /><br />P/S: OneClickInstall is a misleading name, renamed my python parser for OneClickInstall metadata from yum-oneclickinstall to Chitin (Dead insects trapped in Amber might leave some trace of Chitin after its organic structure disappeared - <a href="http://en.wikipedia.org/wiki/Amber">source</a>). With this new git support in fedorapeople, I moved the code from my play-around-googlecode-svn to <a href="http://fedorapeople.org/gitweb?p=izhar/public_git/chitin.git;a=summary">this shiny new home at fedorapeople gitweb</a>. Checkout using : <br /><br /><pre>git clone git://fedorapeople.org/~izhar/chitin.git<br /># or<br />git clone http://izhar.fedorapeople.org/git/chitin.git</pre>.<div class="blogger-post-footer"><br/>
+<br/>
+- Izhar Firdaus -</div>

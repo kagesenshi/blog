@@ -1,0 +1,18 @@
+---
+layout: post
+title: "[HOWTO] Using Diazo as a standalone server."
+date: '2011-11-28T11:37:00.001+08:00'
+author: izhar firdaus
+tags:
+- PlanetFedora
+- Diazo
+- PlanetPlone
+- Plone
+modified_time: '2011-11-29T07:29:08.984+08:00'
+blogger_id: tag:blogger.com,1999:blog-28371165.post-5213673955177817036
+blogger_orig_url: https://blog.kagesenshi.org/2011/11/howto-using-diazo-as-standalone-server.html
+---
+
+<div dir="ltr" style="text-align: left;" trbidi="on">Just a little quick note.<br /><br /><a href="http://diazo.org/">Diazo</a>, the super cool theming system used by Plone, have 2 WSGI middlewares which will turn it into some sort of theming proxy for any existing sites. <strike>However, that feature and the steps to use it is not quite documented anywhere.</strike><br /><br />Then I saw <a href="http://pypi.python.org/pypi/dv.xdvserver">dv.xdvserver</a> in PyPi. Using the sample paster config file from there, here is a little guide on how to use it.<br /><br /><b>Deploying</b><br /><br />I have uploaded my buildout to github <a href="https://github.com/kagesenshi/diazoserver">kagesenshi/diazoserver</a>. To deploy, just follow these steps:<br /><br /><pre>got clone git://github.com/kagesenshi/diazoserver.git<br />cd diazoserver<br />python2.6 bootstrap.py<br />./bin/buildout -vv </pre><br />The steps above will pull and install diazo and its dependencies into the buildout. <br /><br /><b>Configuring</b><br /><br />Copy <code>diazo.ini-sample</code> as <code>diazo.ini</code>. Change the address <code>http://www.example.com/</code> to address of your app. Take note that the Paster proxy might not work if the backend site is compressed.<br /><br />Edit the <code>static/rules.xml</code> file and <code>static/index.html</code> file as you wish. For full documentation on how to utilize them, visit the <a href="http://diazo.org/basic.html">diazo documentation</a><br /><br /><b>Starting up the server</b><br /><br />Just run this command to start the server:<br /><br /><pre>./bin/paster server diazo.ini</pre><br />Thats it, Happy hacking~!<br /><br /></div><div class="blogger-post-footer"><br/>
+<br/>
+- Izhar Firdaus -</div>

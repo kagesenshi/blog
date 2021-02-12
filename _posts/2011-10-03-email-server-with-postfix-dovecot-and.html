@@ -1,0 +1,19 @@
+---
+layout: post
+title: Email server with Postfix, Dovecot, and LDAP
+date: '2011-10-03T20:44:00.002+08:00'
+author: izhar firdaus
+tags:
+- Dovecot
+- Hacks
+- HOWTO
+- Postfix
+- LDAP
+modified_time: '2011-10-03T20:48:36.824+08:00'
+blogger_id: tag:blogger.com,1999:blog-28371165.post-6076648727568299446
+blogger_orig_url: https://blog.kagesenshi.org/2011/10/email-server-with-postfix-dovecot-and.html
+---
+
+I think I'll skip the introduction as this is mainly a note for myself<br /><br /><b>The LDAP Setup</b><br /><br />I'm not going to cover how to setup LDAP. The setup that I'm using for this system is organized where all users are under an Organizational Unit called 'people' (ou=people,dc=organization,dc=org) with this schema:<br /><br /><pre>dn: uid=user,ou=people,dc=organization,dc=org<br />objectClass: posixAccount<br />objectClass: inetOrgPerson<br />uid: user<br />homeDirectory: /home/user<br />userPassword: &lt;passwordhash&gt;</pre><br /><br /><b>Configuring Dovecot</b><br /><br />Add these into dovecot.conf <br /><br /><pre>mail_uid = 5000<br />mail_gid = 5000<br /><br />auth default {<br />  mechanisms = plain<br />  passdb ldap {<br />          args = /etc/dovecot-ldap.pass<br />  }<br />  userdb ldap {<br />          args = /etc/dovecot-ldap.user<br />  }<br /><br />  # for postfix to authenticate against<br />  socket listen {<br />        client {<br />          # Assuming the default Postfix $queue_directory setting<br />          path = /var/spool/postfix/private/auth<br />          mode = 0660<br />          # Assuming the default Postfix user and group<br />          user = postfix<br />          group = postfix<br />  }<br />}</pre><br />dovecot-ldap.pass<br /><br /><pre>hosts = host.of.ldap.server:389<br />sasl_bind = no<br />auth_bind = yes<br />ldap_version = 3<br />deref = never<br />base = uid=%n,ou=people,dc=organization,dc=org<br />scope = base<br />dn = uid=manager,dc=organization,dc=org<br />dnpass = password</pre><br />dovecot-ldap.user<br /><br /><pre>hosts = host.of.ldap.server:389<br />sasl_bind = no<br />auth_bind = yes<br />ldap_version = 3<br />deref = never<br />base = uid=%n,ou=people,dc=organization,dc=org<br />scope = base<br />user_attrs = homeDirectory=home<br />dn = uid=manager,dc=organization,dc=org<br />dnpass = password</pre><br /><br /><b>Configuring Postfix</b><br /><br />Add these into your main.cf<br /><br /><pre>accounts_server_host = host.of.ldap.server<br />accounts_search_base = ou=people,dc=organization,dc=org<br />accounts_query_filter = (&amp;(objectClass=inetOrgPerson)(mail=%s))<br />accounts_result_attribute = homeDirectory<br />accounts_result_format  =  %s/Mailbox<br />accounts_scope = sub<br />accounts_cache = yes<br />accounts_bind = yes<br />accounts_bind_dn = uid=manager,dc=organization,dc=org<br />accounts_bind_pw = password<br />accounts_version = 3<br /><br />virtual_transport = virtual<br />virtual_uid_maps = static:5000<br />virtual_gid_maps = static:5000<br />virtual_mailbox_base = /<br />virtual_mailbox_maps = ldap:accounts<br />virtual_mailbox_domains = organization.org<br /><br />smtpd_sasl_type = dovecot<br />smtpd_sasl_auth_enable = yes<br />smtpd_sasl_authenticated_header = no<br />smtpd_sasl_local_domain =<br />smtpd_sasl_security_options = noanonymous<br />broken_sasl_auth_clients = yes<br />smtpd_sasl_path = private/auth</pre><br />Make sure domains under virtual_mailbox_domains is not listed under mydestinations.<br /><br />Thats it I think, not sure if I missed anyting.<div class="blogger-post-footer"><br/>
+<br/>
+- Izhar Firdaus -</div>

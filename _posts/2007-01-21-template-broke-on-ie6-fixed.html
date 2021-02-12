@@ -1,0 +1,17 @@
+---
+layout: post
+title: Template broke on IE6 - Fixed
+date: '2007-01-21T01:03:00.000+08:00'
+author: izhar firdaus
+tags:
+- Geek Log
+- Hacks
+- Web
+modified_time: '2007-01-21T01:13:23.184+08:00'
+blogger_id: tag:blogger.com,1999:blog-28371165.post-2543762249520557673
+blogger_orig_url: https://blog.kagesenshi.org/2007/01/template-broke-on-ie6-fixed.html
+---
+
+I just noticed that my current template broke on IE6 at the &lt;pre&gt; tag.  CSS overflow:auto doesnt work and made the layout haywire on posts that have some long codes I pasted. I found it out when I was using my father's laptop to enter the blog, and that laptop uses IE6.<br /><br />After some investigation, I got found out that IE6 does not support CSS max-height and overflow:auto does not work with dynamically sized div/pre. Damn IE6<br /><br />After googling around, I found a hack on how to make it at least wont break the template <a href='http://www.dustindiaz.com/min-height-fast-hack'> here</a>. Now my template happily work with IE6 and W3C compliant browsers. Yay~!<br /><br />btw, this problem doesn't exist on IE7<div class="blogger-post-footer"><br/>
+<br/>
+- Izhar Firdaus -</div>

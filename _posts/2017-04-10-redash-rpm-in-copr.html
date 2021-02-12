@@ -1,0 +1,21 @@
+---
+layout: post
+title: Redash RPM in COPR
+date: '2017-04-10T00:26:00.001+08:00'
+author: izhar firdaus
+tags:
+- MyOSS
+- PlanetFedora
+- Python
+- Fedora
+- Copr
+- Redash
+modified_time: '2017-04-10T00:26:20.568+08:00'
+thumbnail: https://3.bp.blogspot.com/-LLMV53VgLdU/WOpggDEUl_I/AAAAAAAAL4M/A5YggCFSHrEafC5PXrEZgk10z0LtNG3gwCLcB/s72-c/redash.png
+blogger_id: tag:blogger.com,1999:blog-28371165.post-6991081067386992489
+blogger_orig_url: https://blog.kagesenshi.org/2017/04/redash-rpm-in-copr.html
+---
+
+<div dir="ltr" style="text-align: left;" trbidi="on">Just a quick announcement post.&nbsp; <br /><br />I've added a <a href="http://redash.io/">redash</a> build in COPR.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-LLMV53VgLdU/WOpggDEUl_I/AAAAAAAAL4M/A5YggCFSHrEafC5PXrEZgk10z0LtNG3gwCLcB/s1600/redash.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="266" src="https://3.bp.blogspot.com/-LLMV53VgLdU/WOpggDEUl_I/AAAAAAAAL4M/A5YggCFSHrEafC5PXrEZgk10z0LtNG3gwCLcB/s400/redash.png" width="400" /></a></div><br /><br />To install:<br /><br /><pre>dnf copr enable izhar/redash<br />dnf install redash</pre><br />Configure your database at <code>/etc/redash.cfg</code><br /><br />Service is managed by supervisord, so start supervisord to start the service.<br /><br /><pre>service redis start<br />service supervisord start</pre><br />(I probably should figure out how to write systemd service)<br /><br />Load redash on <a href="http://localhost:5000/">http://localhost:5000</a> <br /><br /></div><div class="blogger-post-footer"><br/>
+<br/>
+- Izhar Firdaus -</div>

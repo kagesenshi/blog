@@ -1,0 +1,22 @@
+---
+layout: post
+title: Disk snapshot backup in Linux
+date: '2009-02-11T15:10:00.006+08:00'
+author: izhar firdaus
+tags:
+- Linux
+- Tools
+- PlanetFedora
+- Inigo
+- CentOS
+- Fedora
+- HOWTO
+- Tips
+modified_time: '2011-10-07T12:39:10.270+08:00'
+blogger_id: tag:blogger.com,1999:blog-28371165.post-9198925167111886764
+blogger_orig_url: https://blog.kagesenshi.org/2009/02/disk-snapshot-backup-in-linux.html
+---
+
+<blockquote><br />From #myoss @ freenode.net<br />&lt;kaeru&gt; what do linux people do for full backups?<br />&lt;kaeru&gt; freebsd there is dump/restore<br />&lt;kaeru&gt; do people use that for ext3 still or is there a better way?<br />&lt;sweemeng&gt; kaeru rsync?<br />&lt;kaeru&gt; I mean disk level snapshots<br /></blockquote><br /><br />FreeBSD ufs2, as what we use in Inigo's Gambit, can easily create snapshots of a live filesystem using dump. However, ext2/ext3 used widely in Linux does not have such feature (as far as I know). But for those who want such feature, fear not, there is a feature in LVM called snapshots which more or less provide a similar thing. <br /><br />Fedora/RHEL/CentOS users might be familiar with the term LVM as the 3 distros uses LVM by default in their default installation partitioning scheme. Some people think LVM by default is a painful thing, but to me, its the opposite (until you need to get it to work with dualboot windows+linux env). <br /><br />Back to the topic, here's a little guide for those who want to do a full disk image backup using LVM on a live system.<br /><br /><span style="font-weight:bold;">Requirements</span><br /><br />- A system that uses LVM as its partitioning scheme (obviously). <br />- The filesystem must be a LVM managed partition<br />- Some free unallocated space in the LVM VolumeGroup<br /><br />This guide will take the assumption the partition you want to backup is `/dev/VolGroup/MyVolume`. <br /><br /><span style="font-weight:bold;">Creating a Snapshot</span><br /><br />Creating a snapshot is pretty straightforward. <br /><code>/usr/sbin/lvcreate -s -L512M -p r -n SnapshotVolume /dev/VolGroup/MyVolume</code><br /><br />This will create a readonly snapshot of MyVolume as /dev/VolGroup/SnapshotVolume with 512MB extension.<br /><br /><span style="font-weight:bold;">Backing Up</span><br /><br />Once a snapshot is created, you may do anything you wish with `/dev/VolGroup/SnapshotVolume`. eg: use dump or dd the snapshot, or simply mount the snapshot and tar its contents.<br /><br /><span style="font-weight:bold;">Cleaning Up</span><br /><br />Once you've done doing your backup, you may remove the snapshot easily using.<br /><code>/usr/sbin/lvremove /dev/VolGroup/SnapshotVolume</code><br /><br /><br />Ok thats it. Have fun.<br /><br />For more reading, I recommend the <a href="http://tldp.org/HOWTO/LVM-HOWTO/">LVM-HOWTO at tldp.org</a><div class="blogger-post-footer"><br/>
+<br/>
+- Izhar Firdaus -</div>

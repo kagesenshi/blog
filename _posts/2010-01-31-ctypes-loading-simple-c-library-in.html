@@ -1,0 +1,20 @@
+---
+layout: post
+title: 'ctypes : Loading simple C library in Python 2.5+'
+date: '2010-01-31T10:10:00.012+08:00'
+author: izhar firdaus
+tags:
+- Programming
+- Linux
+- Python
+- Fedora
+- Hacks
+- HOWTO
+modified_time: '2010-01-31T10:41:04.024+08:00'
+blogger_id: tag:blogger.com,1999:blog-28371165.post-1492873653679017089
+blogger_orig_url: https://blog.kagesenshi.org/2010/01/ctypes-loading-simple-c-library-in.html
+---
+
+Just discovered this when I was glancing through the <a href="http://code.google.com/p/pystream/">pystream</a> (a CUDA library for Python) source codes. <br /><br />In Python2.5+, it is possible to directly load simple C shared libraries from Python without the need for writing C wrappers for it. (<a href="http://www.swig.org">SWIG</a> or <a href="http://www.developer.com/tech/article.php/2191421/Extending-Python-with-C.htm">manually writing one</a>). This can be achieved using the Python <a href="http://docs.python.org/library/ctypes.html">ctypes</a> module.<br /><br />Lets take a simple example:<br /><br /><pre><br />/* test.c */<br />int multiply(int a,int b){<br />    return a * b;<br />}<br /></pre><br /><br />Compile it as a SO library (ref: <a href="http://www.informit.com/articles/article.aspx?p=22424">Writing and using shared libraries</a>):<br /><br /><pre><br />gcc -c -fPIC test.c<br />gcc -shared -fPIC -o libtest.so test.o<br /></pre><br /><br />Now we got an SO file with a test function, lets load it in Python<br /><br /><pre><br />In [1]: import ctypes<br /><br />In [2]: libtest = ctypes.cdll.LoadLibrary('/path/to/libtest.so')<br /><br />In [3]: libtest.multiply(30,99)<br />Out[3]: 2970<br /></pre><br /><br />Hope this would be useful to someone.<br /><br />More details : <a href="http://docs.python.org/library/ctypes.html">http://docs.python.org/library/ctypes.html</a><br /><br />Happy Hacking :D<div class="blogger-post-footer"><br/>
+<br/>
+- Izhar Firdaus -</div>

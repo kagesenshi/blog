@@ -1,0 +1,16 @@
+---
+layout: post
+title: Using Tsocks to tranparently use SOCKS proxies in applications
+date: '2006-12-30T19:15:00.000+08:00'
+author: izhar firdaus
+tags:
+- Linux
+- HOWTO
+modified_time: '2008-01-11T11:26:05.252+08:00'
+blogger_id: tag:blogger.com,1999:blog-28371165.post-5966485301709427431
+blogger_orig_url: https://blog.kagesenshi.org/2006/12/using-tsocks-to-tranparently-use-socks.html
+---
+
+There are not many applications out there supports SOCKS proxy for traffics. Usually people will try to find similar application that have SOCKS support if they need it. To Linux/BSD users, there is a dirty trick to do make virtually any console and some X applications to use SOCKS proxy transparently by preloading certain libraries before executing the application. One of those libraries is <a href="http://tsocks.sourceforge.net/">Tsocks</a>.<br /><br /><span style="font-weight:bold;">Step 1 : Installing</span><br />Simply extract the tarball, then, use the magic spell everyone familiar with to install it.<pre> ./configure<br />make<br />sudo make install</pre><br />Afterwards, create a config file named tsocks.conf in /etc/ . Refer the examples given together with the source tarball for guidance on how to write the config. For those who just want a quick and basic config and lazy to open the examples, I've provided it below.<br /><pre><br /># This is the configuration for libtsocks (transparent socks)<br /># Lines beginning with # and blank lines are ignored<br />#<br /># This sample configuration shows the simplest (and most common) use of<br /># tsocks. This is a basic LAN, this machine can access anything on the <br /># local ethernet (192.168.0.*) but anything else has to use the SOCKS version<br /># 4 server on the firewall. Further details can be found in the man pages,<br /># tsocks(8) and tsocks.conf(5) and a more complex example is presented in <br /># tsocks.conf.complex.example<br /><br /># We can access 192.168.0.* directly<br />local = 192.168.0.0/255.255.255.0<br /><br /># Otherwise we use the server<br />server = 192.168.0.1<br /></pre><br /><br /><span style="font-weight:bold;">Step 2 :　Using the library</span><br />To make an application to use tsocks, using a terminal, simply do this<br /><pre>export LD_PRELOAD=/lib/libtsocks.so</pre> before executing the application from the terminal. Note that environment variable export only works on the terminal which you export the value.<br /><br /><span style="font-weight:bold;">Alternatives of Tsocks</span><br /><a href="http://transconnect.sourceforge.net/">Transconnect</a> - A HTTP Proxying library similar to Tsocks.<br /><a href="http://proxychains.sourceforge.net/">Proxychains</a> - A similar library which supports both HTTP and SOCKS. Also, its able to chain multiple proxies at once.<div class="blogger-post-footer"><br/>
+<br/>
+- Izhar Firdaus -</div>

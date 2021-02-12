@@ -1,0 +1,16 @@
+---
+layout: post
+title: 'HOWTO: Enabling Bridging for Libvirtd QEMU'
+date: '2008-02-15T17:24:00.004+08:00'
+author: izhar firdaus
+tags:
+- Fedora
+- HOWTO
+modified_time: '2008-02-15T17:59:49.322+08:00'
+blogger_id: tag:blogger.com,1999:blog-28371165.post-2501682824811294458
+blogger_orig_url: https://blog.kagesenshi.org/2008/02/howto-enabling-bridging-for-libvirtd.html
+---
+
+I need to implement an SNMP setup for Inigo, and I need a number of virtual machines for understanding SNMP and for testing and exploring possible solutions. Before this, I used Xen through virt-manager for my virtualization needs, but recently it feels like its more pain in the ass when I need to install various distro and OSes on the VM to test. Plus, Xen caused some weird problems which I don't really understand (one of it are the Xen bridging, on random, refused to work after reboot). So, I switched to use the normal kernel with Qemu instead to avoid the headache.<br /><br />Thanks to <a href="http://damaestro.us/">Jonathan (daMaestro)</a>, I got the Qemu bridge working. The <a href="http://www.watzmann.net/blog/index.php/2007/04/27/networking_with_kvm_and_libvirt">howto I followed from watzmann.net</a> does not work for me because of what I believe some missing details for me understand the setup and set it properly.<br /><br /><b>Creating a Bridge</b><br /><br />Lets assume we want to create a bridge called br0, which will be bridged to eth0. The host will be using a static IP 192.168.0.20 on a /24 network, with a gateway 192.168.0.1.<br /><br />Edit /etc/sysconfig/network-scripts/ifcfg-br0. Change it to be similar to this.<br /><br /><code><br />DEVICE=br0<br />BOOTPROTO=static<br />IPADDR=192.168.0.20<br />NETMASK=255.255.255.0<br />GATEWAY=192.168.0.1<br />ONBOOT=yes<br />TYPE=Bridge<br /></code><br /><br />Then, edit /etc/sysconfig/network-scripts/ifcfg-eth0 to this.<br /><br /><code><br />DEVICE=eth0<br />HWADDR=$MACADDRESS<br />ONBOOT=yes<br />BRIDGE=br0<br /></code><br /><br />(Replace $MACADDRESS with the MAC address of your network card.)<br /><br />Afterward, restart the network `/sbin/service network restart`<br /><br />From this point, you should be able to select the bridge when you are creating a new VM through virt-manager.<br /><br /><b>Firewall</b><br /><br />You will need to set br0 as a trusted interface through system-config-firewall before you'll be able to use the network.<br /><br />Yay, now I feel much more comfortable on Qemu.<div class="blogger-post-footer"><br/>
+<br/>
+- Izhar Firdaus -</div>

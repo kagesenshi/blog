@@ -1,0 +1,17 @@
+---
+layout: post
+title: 'Viewing Xorg memory consumption : xrestop'
+date: '2009-01-03T22:59:00.005+08:00'
+author: izhar firdaus
+tags:
+- PlanetFedora
+- Fedora
+- Tips
+modified_time: '2011-10-07T12:39:10.209+08:00'
+blogger_id: tag:blogger.com,1999:blog-28371165.post-5076413455358797718
+blogger_orig_url: https://blog.kagesenshi.org/2009/01/viewing-xorg-memory-consumption-xrestop.html
+---
+
+For some reason Xorg on my desktop was using around 1400MB virt memory after 14 days uptime. (really, it filled up all my RAM and swap).<br /><br />Asked at #fedora, and <a href="http://ivazquez.livejournal.com/">ivazquez</a> mentioned <code>xrestop</code>. And so I installed it, ran it, and walla, the culprit was gnome-screensaver with 999MB RAM consumption (wtf!?!). <br /><br />Killed it, and the RAM/Swap usage drop from 99%/99% to 44%/0%. Yay!.<div class="blogger-post-footer"><br/>
+<br/>
+- Izhar Firdaus -</div>

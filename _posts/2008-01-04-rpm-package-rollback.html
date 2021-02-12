@@ -1,0 +1,19 @@
+---
+layout: post
+title: RPM Package Rollback
+date: '2008-01-04T22:06:00.000+08:00'
+author: izhar firdaus
+tags:
+- Linux
+- PlanetFedora
+- Open Source
+- Fedora
+- HOWTO
+modified_time: '2011-10-07T12:36:50.667+08:00'
+blogger_id: tag:blogger.com,1999:blog-28371165.post-1800471330967706931
+blogger_orig_url: https://blog.kagesenshi.org/2008/01/rpm-package-rollback.html
+---
+
+One of the least known feature in RPM is that it has a rollback feature. This allows you to rollback any updates you have done to your installed packages. Quite useful if a recent update broke your system.<br /><br />From <a href="http://www.oreillynet.com/onlamp/blog/2006/01/rpm_rollback_in_fedora_core_45.html">http://www.oreillynet.com/onlamp/blog/2006/01/rpm_rollback_in_fedora_core_45.html</a><br /><br /><blockquote><br /><ol><li>To configure yum to save rollback information, add the line tsflags=repackage to /etc/yum.conf.</li><br /><li>To configure command-line rpm to do the same thing, add the line %_repackage_all_erasures 1 to /etc/rpm/macros.</li><br /><li>Install, erase, and update packages to your heart’s content, using pup, pirut, yumex, yum, rpm, and the yum automatic update service.</li></ol><br /><br />If/when you want to rollback to a previous state, perform an rpm update with the –rollback option followed by a date/time specification. Some examples: rpm -Uhv –rollback ‘9:00 am’, rpm -Uhv –rollback ‘4 hours ago’, rpm -Uhv –rollback ‘december 25′.<br /></blockquote><br /><br />But remember that rollback takes up quiet a lot of space on /var . I won't do this Fedora as Fedora have quite frequent updates. But if you are running an important server on CentOS or RHEL, you might want to turn this feature on. It would be nice if somebody implements deltarpms support for rpm rollback. I believe it gonna save a lot of space.<div class="blogger-post-footer"><br/>
+<br/>
+- Izhar Firdaus -</div>
