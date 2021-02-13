@@ -4,23 +4,23 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Redash RPM in COPR | KageSenshi's Log</title>
+    <title>Migrate to Github Pages | KageSenshi's Log</title>
 
     <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Redash RPM in COPR | KageSenshi’s Log</title>
+<title>Migrate to Github Pages | KageSenshi’s Log</title>
 <meta name="generator" content="Jekyll v4.2.0" />
-<meta property="og:title" content="Redash RPM in COPR" />
+<meta property="og:title" content="Migrate to Github Pages" />
 <meta name="author" content="kagesenshi" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Just a quick announcement post.&nbsp; I&#39;ve added a redash build in COPR.To install:dnf copr enable izhar/redashdnf install redashConfigure your database at /etc/redash.cfgService is managed by supervisord, so start supervisord to start the service.service redis startservice supervisord start(I probably should figure out how to write systemd service)Load redash on http://localhost:5000 - Izhar Firdaus -" />
-<meta property="og:description" content="Just a quick announcement post.&nbsp; I&#39;ve added a redash build in COPR.To install:dnf copr enable izhar/redashdnf install redashConfigure your database at /etc/redash.cfgService is managed by supervisord, so start supervisord to start the service.service redis startservice supervisord start(I probably should figure out how to write systemd service)Load redash on http://localhost:5000 - Izhar Firdaus -" />
+<meta name="description" content="This blog, originally created circa 2005, was originally hosted on top of Google’s Blogger. At the time, Blogger was a decent free platform, which works fine for my needs. This blog was originally created as a platform for me to share my thoughts, which, is pretty much taken over by social platforms such as Facebook nowadays." />
+<meta property="og:description" content="This blog, originally created circa 2005, was originally hosted on top of Google’s Blogger. At the time, Blogger was a decent free platform, which works fine for my needs. This blog was originally created as a platform for me to share my thoughts, which, is pretty much taken over by social platforms such as Facebook nowadays." />
 <meta property="og:site_name" content="KageSenshi’s Log" />
-<meta property="og:image" content="https://3.bp.blogspot.com/-LLMV53VgLdU/WOpggDEUl_I/AAAAAAAAL4M/A5YggCFSHrEafC5PXrEZgk10z0LtNG3gwCLcB/s1600/redash.png" />
+<meta property="og:image" content="/assets/images/2021/github-pages.jpg" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-04-10T00:26:00+08:00" />
+<meta property="article:published_time" content="2021-02-13T19:39:00+08:00" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="https://3.bp.blogspot.com/-LLMV53VgLdU/WOpggDEUl_I/AAAAAAAAL4M/A5YggCFSHrEafC5PXrEZgk10z0LtNG3gwCLcB/s1600/redash.png" />
-<meta property="twitter:title" content="Redash RPM in COPR" />
+<meta property="twitter:image" content="/assets/images/2021/github-pages.jpg" />
+<meta property="twitter:title" content="Migrate to Github Pages" />
 <!-- End Jekyll SEO tag -->
 
 
@@ -102,7 +102,7 @@
                         
                         </span>
 					</p>
-					<h1 class="display-4 mb-4 article-headline">Redash RPM in COPR</h1>
+					<h1 class="display-4 mb-4 article-headline">Migrate to Github Pages</h1>
 					<div class="d-flex align-items-center">
                   
 
@@ -113,10 +113,10 @@
                         <small class="ml-3"> 
                               Izhar Firdaus
                            <span><a target="_blank" href="" class="btn btn-outline-success btn-sm btn-round ml-1">Follow</a></span>
-                            <span class="text-muted d-block mt-1">Apr 10, 2017 · <span class="reading-time">
+                            <span class="text-muted d-block mt-1">Feb 13, 2021 · <span class="reading-time">
   
   
-    1 min read
+    2 mins read
   
 </span>
     </span>
@@ -125,7 +125,7 @@
 				</div>
                 
 				<div class="col-md-6 pr-0 align-self-center">
-					<img class="rounded" src="https://3.bp.blogspot.com/-LLMV53VgLdU/WOpggDEUl_I/AAAAAAAAL4M/A5YggCFSHrEafC5PXrEZgk10z0LtNG3gwCLcB/s1600/redash.png" alt="Redash RPM in COPR">
+					<img class="rounded" src="/assets/images/2021/github-pages.jpg" alt="Migrate to Github Pages">
 				</div>
                 
 			</div>
@@ -165,27 +165,49 @@
             
             <!-- Article -->
 			<article class="article-post">                
-			<div dir="ltr" style="text-align: left;" trbidi="on">Just a quick announcement post.&nbsp; <br /><br />I've added a <a href="http://redash.io/">redash</a> build in COPR.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-LLMV53VgLdU/WOpggDEUl_I/AAAAAAAAL4M/A5YggCFSHrEafC5PXrEZgk10z0LtNG3gwCLcB/s1600/redash.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="266" src="https://3.bp.blogspot.com/-LLMV53VgLdU/WOpggDEUl_I/AAAAAAAAL4M/A5YggCFSHrEafC5PXrEZgk10z0LtNG3gwCLcB/s400/redash.png" width="400" /></a></div><br /><br />To install:<br /><br /><pre>dnf copr enable izhar/redash<br />dnf install redash</pre><br />Configure your database at <code>/etc/redash.cfg</code><br /><br />Service is managed by supervisord, so start supervisord to start the service.<br /><br /><pre>service redis start<br />service supervisord start</pre><br />(I probably should figure out how to write systemd service)<br /><br />Load redash on <a href="http://localhost:5000/">http://localhost:5000</a> <br /><br /></div><div class="blogger-post-footer"><br/>
-<br/>
-- Izhar Firdaus -</div>
+			<p>This blog, originally created circa 2005, was originally hosted 
+on top of <a href="http://blogger.com">Google’s Blogger</a>. At the time, Blogger
+was a decent free platform, which works fine for my needs. This blog was
+originally created as a platform for me to share my thoughts, which,
+is pretty much taken over by social platforms such as <a href="http://facebook.com">Facebook</a>
+nowadays.</p>
+
+<p>The move to social feed platforms have pretty much made me wonder what to
+put on this blog, and one conclusion that I’ve reached was to use it
+mostly to post tech tutorials and howtos. However, due to the limited
+features of Blogger, I regularly faced frustrations when writing on its
+editor, primarily with the lack of tools for handling code snippets.</p>
+
+<p>I’ve reviewed <a href="http://wordpress.com">Wordpress</a> and <a href="http://medium.com">Medium</a>
+but Wordpress seems kinda overkill for my needs, while Medium have similar 
+limitations as Blogger. Having regularly used <a href="http://www.sphinx-doc.org">Sphinx</a>
+and <a href="https://docutils.sourceforge.io/rst.html">RestructuredText</a> for my documentation 
+needs, which I found pleasant for writing, made me wish for a blog platform out there
+that works with RST. When I discovered Github Pages can be used to host static sites
+for free, I decided that I would want to migrate this blog to it, and use some form
+of static site generator to generate things from RST.</p>
+
+<p>Years of procrastination later, I stumbled upon <a href="https://ablog.readthedocs.io/">Ablog</a> 
+which is basically Jekyll-like extension for Sphinx, which I finally get around 
+to try it out, however, its lack of Blogger migration tool, a not-that-straightforward
+way to customize how things are rendered, and also the fact that it is a project
+that is now stuck in maintenance mode, made it not that attractive to use.</p>
+
+<p>Finally I decided to try out <a href="https://ablog.readthedocs.io/">Jekyll</a>, and after a day of
+of hacking and tweaking, finally, this blog is migrated to GitHub. It is still not RST,
+but at least it is not as bad as the editor at Blogger, and I can customize and automate
+quite a bit of things. Jekyll still have some quirks that annoys me, primarily the part
+where it list down all posts from beginning of time in its category/tag pages, but with
+some tweaks I managed to made it a bit bearable.</p>
+
+<p>Hopefully now that this blog is on markdown+git, I can be a bit more motivated
+to write again.</p>
                 
 			</article>
 			
 			<!-- Tags -->
 			<div class="mb-4">
 				<span class="taglist">
-				
-				  <a class="sscroll btn btn-light btn-sm font-weight-bold" href="/tag/myoss.html">MyOSS</a>
-				
-				  <a class="sscroll btn btn-light btn-sm font-weight-bold" href="/tag/planetfedora.html">PlanetFedora</a>
-				
-				  <a class="sscroll btn btn-light btn-sm font-weight-bold" href="/tag/python.html">Python</a>
-				
-				  <a class="sscroll btn btn-light btn-sm font-weight-bold" href="/tag/fedora.html">Fedora</a>
-				
-				  <a class="sscroll btn btn-light btn-sm font-weight-bold" href="/tag/copr.html">Copr</a>
-				
-				  <a class="sscroll btn btn-light btn-sm font-weight-bold" href="/tag/redash.html">Redash</a>
 				
 				</span>
 			</div>
@@ -246,13 +268,9 @@
         <div class="row prevnextlinks small font-weight-bold">
           
             <div class="col-md-6 rightborder pl-0">
-                <a class="text-dark" href="/2014/08/announcing-platocdp-plone-distribution.html"> Announcing PlatoCDP, a Plone distribution for enterprises.</a>
+                <a class="text-dark" href="/2021/02/abyres-data-visualization-powered-by.html"> <img height="30px" class="mr-1" src="https://1.bp.blogspot.com/-v-dUySg5dF4/YB9m3KWqkaI/AAAAAAAAXog/tOhAu4Ks85Yghm7iwxZ7ipXWXJ7pfLEWQCLcBGAsYHQ/s1317/Screenshot%2Bfrom%2B2021-02-04%2B22-52-10.png">  Abyres Data Visualization, powered by Apache Superset is now on COPR</a>
             </div>
           
-          
-            <div class="col-md-6 text-right pr-0">
-                <a class="text-dark" href="/2021/02/abyres-data-visualization-powered-by.html"> Abyres Data Visualization, powered by Apache Superset is now on COPR  <img height="30px" class="ml-1" src="https://1.bp.blogspot.com/-v-dUySg5dF4/YB9m3KWqkaI/AAAAAAAAXog/tOhAu4Ks85Yghm7iwxZ7ipXWXJ7pfLEWQCLcBGAsYHQ/s1317/Screenshot%2Bfrom%2B2021-02-04%2B22-52-10.png"> </a>
-            </div>
           
         </div>
     </div>
