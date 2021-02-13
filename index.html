@@ -195,6 +195,8 @@ description: "A great Jekyll theme developed by Sal @wowthemesnet."
                 <li class="page-item disabled"><span class="prev page-link">&laquo;</span></li>
               {% endif %}
 
+              <li class="page-item disabled"><span class="webjeda page-link">{{ paginator.page }}</span></li>
+
               {% if paginator.next_page %}
                 <li class="page-item"><a class="page-link" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a></li>
               {% else %}
