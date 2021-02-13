@@ -9,9 +9,9 @@
     <link type="application/atom+xml" rel="alternate" href="https://blog.kagesenshi.org/feed.xml" title="KageSenshi's Log" />
 
     <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Zenoss on Fedora 8 | KageSenshi’s Log</title>
+<title>Zenoss on Fedora 8 | KageSenshi’s Log| KageSenshi's Log</title>
 <meta name="generator" content="Jekyll v4.2.0" />
-<meta property="og:title" content="Zenoss on Fedora 8" />
+<meta property="og:title" content="Zenoss on Fedora 8| KageSenshi's Log" />
 <meta name="author" content="kagesenshi" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="I’ve wasted 1.5 day trying to get zenoss from their RPM to run on my F8 laptop using compat-python24 from livna. I’ve tried lots of ways like recompiling, export PYTHON and PYTHONPATH env variables etc but without much luck. I solved it just now after looking into the python files and noticed that they are all hardcoded with /usr/bin/python instead of /usr/bin/env python. There are even some that uses /opt/zenoss/bin/python. Here’s my little hackfix to make zenoss starts cleanly.Before running this, I recommend existing zenoss install to be removed, rm -rf /opt/zenoss, and reinstall it clean.#!/bin/shZENOSS_DIR=&quot;/opt/zenoss&quot;PYTHON=&quot;/usr/bin/python2.4&quot;cd $ZENOSS_DIRfind . -type f -exec sed -i &quot;s|/usr/bin/python|${ZENOSS_DIR}/bin/python|g&quot; &#39;{}&#39; &#39;;&#39;cd $ZENOSS_DIR/binrm pythonln -s $PYTHON pythonA little description about the above script. It simply change all /usr/bin/python to /opt/zenoss/bin/python and replace the symlink /opt/zenoss/bin/python to point to /usr/bin/python2.4Now Zenoss can be started using /sbin/service zenoss start. Happy that I have a test instance now, time to figure out how to install it on freebsd qemu. &gt;.«div class=”blogger-post-footer”&gt; Izhar Firdaus -&lt;/div&gt;" />

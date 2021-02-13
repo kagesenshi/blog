@@ -9,9 +9,9 @@
     <link type="application/atom+xml" rel="alternate" href="https://blog.kagesenshi.org/feed.xml" title="KageSenshi's Log" />
 
     <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Prism 0.9.0 Static RPM SPEC | KageSenshi’s Log</title>
+<title>Prism 0.9.0 Static RPM SPEC | KageSenshi’s Log| KageSenshi's Log</title>
 <meta name="generator" content="Jekyll v4.2.0" />
-<meta property="og:title" content="Prism 0.9.0 Static RPM SPEC" />
+<meta property="og:title" content="Prism 0.9.0 Static RPM SPEC| KageSenshi's Log" />
 <meta name="author" content="kagesenshi" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Call me impatient of whatever. I’ve been wanting to use Mozilla Prism. It is not yet packaged in Fedora so I tried my luck to package it properly for Fedora. However, I totally have no idea how Mozilla buildsystem work and how to compile Prism’s trunk on Fedora. Trying to follow the Creating XULRunner Apps with the Mozilla Build System lead me nowhere. I got stuck trying to find what package provide the buildsystem and the “client.mk” file, but I given up due to I totally have no clue. In the end, I ended up packaging the official binary tarball released by upstream and make it installed in /opt. Here is the specfile for those interested to use prism on Fedora: http://izhar.fedorapeople.org/static-specs/prism_static.specLike the Static OSS Skype SPEC I made before, just download the corresponding source and invoke rpmbuild with the spec. For those who are not familiar with rpmbuild, the shell commands below will help you# as rootyum install rpmdevtools# as userrpmdev-setuptreecd ~/rpmbuild/SPECwget http://izhar.fedorapeople.org/static-specs/prism_static.specspectool -R -g -A prism_static.specrpmbuild -bb prism_static.spec# ... wait ... wait ... wait# grab the generated RPM# rpm -ivh (the generated rpm)# enjoy~&lt;div class=&quot;blogger-post-footer&quot;&gt; Izhar Firdaus -&lt;/div&gt;" />

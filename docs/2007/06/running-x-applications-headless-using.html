@@ -9,9 +9,9 @@
     <link type="application/atom+xml" rel="alternate" href="https://blog.kagesenshi.org/feed.xml" title="KageSenshi's Log" />
 
     <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Running X applications headless using Xvfb | KageSenshi’s Log</title>
+<title>Running X applications headless using Xvfb | KageSenshi’s Log| KageSenshi's Log</title>
 <meta name="generator" content="Jekyll v4.2.0" />
-<meta property="og:title" content="Running X applications headless using Xvfb" />
+<meta property="og:title" content="Running X applications headless using Xvfb| KageSenshi's Log" />
 <meta name="author" content="kagesenshi" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Sometimes, you might want to run certain X applications as a daemon in the background. For example, in my case, I want to make Ktorrent run in the background on startup while I control the torrents using its WebUI. However, to run Ktorrent , I must have X running and logged in to the desktop. So, how can I do this? , the answer is by using X Virtual Framebuffer Server.How it works?Xvfb emulates an X server without outputing it to monitor. Applications connect to it and run under the impression the GUI is there. Its as simple as that!. No modification needed on the applications that going to be run on it.Read more : http://en.wikipedia.org/wiki/XvfbHow to do it?First, make sure you have Xvfb installed. If you dont, install it using your package manager. In Fedora, use&lt;pre&gt;yum install xorg-x11-server-Xvfb&lt;/pre&gt;Then, run Xvfb in any unique/unused display number, in this example, I put 100. Disable access control to the display so that you dont have to go through the hassle of setting access control for it.&lt;pre&gt;Xvfb :100 -ac&lt;/pre&gt;Now that you got Xvfb up and running, time to start the app.Before starting the app, export the DISPLAY environment variable to point to display number 100&lt;pre&gt;export DISPLAY=:100.0&lt;/pre&gt;execute the command for the app, and ure good to go :D&lt;pre&gt;ktorrent&lt;/pre&gt;Enjoy~&lt;div class=&quot;blogger-post-footer&quot;&gt; Izhar Firdaus -&lt;/div&gt;" />

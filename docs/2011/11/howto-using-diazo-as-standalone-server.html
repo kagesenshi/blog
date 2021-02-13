@@ -9,9 +9,9 @@
     <link type="application/atom+xml" rel="alternate" href="https://blog.kagesenshi.org/feed.xml" title="KageSenshi's Log" />
 
     <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>[HOWTO] Using Diazo as a standalone server. | KageSenshi’s Log</title>
+<title>[HOWTO] Using Diazo as a standalone server. | KageSenshi’s Log| KageSenshi's Log</title>
 <meta name="generator" content="Jekyll v4.2.0" />
-<meta property="og:title" content="[HOWTO] Using Diazo as a standalone server." />
+<meta property="og:title" content="[HOWTO] Using Diazo as a standalone server.| KageSenshi's Log" />
 <meta name="author" content="kagesenshi" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Just a little quick note.Diazo, the super cool theming system used by Plone, have 2 WSGI middlewares which will turn it into some sort of theming proxy for any existing sites. However, that feature and the steps to use it is not quite documented anywhere.Then I saw dv.xdvserver in PyPi. Using the sample paster config file from there, here is a little guide on how to use it.DeployingI have uploaded my buildout to github kagesenshi/diazoserver. To deploy, just follow these steps:got clone git://github.com/kagesenshi/diazoserver.gitcd diazoserverpython2.6 bootstrap.py./bin/buildout -vv The steps above will pull and install diazo and its dependencies into the buildout. ConfiguringCopy diazo.ini-sample as diazo.ini. Change the address http://www.example.com/ to address of your app. Take note that the Paster proxy might not work if the backend site is compressed.Edit the static/rules.xml file and static/index.html file as you wish. For full documentation on how to utilize them, visit the diazo documentationStarting up the serverJust run this command to start the server:./bin/paster server diazo.iniThats it, Happy hacking~! - Izhar Firdaus -" />

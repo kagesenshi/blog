@@ -9,9 +9,9 @@
     <link type="application/atom+xml" rel="alternate" href="https://blog.kagesenshi.org/feed.xml" title="KageSenshi's Log" />
 
     <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>UTP Free / Open Source Lab installation done | KageSenshi’s Log</title>
+<title>UTP Free / Open Source Lab installation done | KageSenshi’s Log| KageSenshi's Log</title>
 <meta name="generator" content="Jekyll v4.2.0" />
-<meta property="og:title" content="UTP Free / Open Source Lab installation done" />
+<meta property="og:title" content="UTP Free / Open Source Lab installation done| KageSenshi's Log" />
 <meta name="author" content="kagesenshi" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Today i woke up early to go to the lab. My other subject’s lab classes wont be starting until next week, so i have some time in the morning to play around with the FOSS lab.My first priority there is to recover the GRUB for solaris 10 which was broken after GHOST. Last week we havent succeed in recovering it. So i want to continue it today.At first we are having a big problem trying to reinstall the Solaris’ GRUB because of the different FS that it is installed on. Googling with many combination of keywords brought us to sites that doesnt fulfill our needs. Then we found a site which have the required info. However, i missread it, and used&lt;blockquote&gt;# installgrub /boot/grub/stage1 /boot/grub/stage2 /dev/dsk/c0d0s0&lt;/blockquote&gt;I’m not familiar with Solaris, and got confused between /dev/rdsk and /dev/dsk . I though rdisk means Remote-Disk or sumthing like that. So i got some errors that gave me no clue whats wrong and failed to install grub.Then i continue googling for other ways to install it. Then i come upon an idea of creating a boot floppy, so, i fire up man installgrub on a working Solaris box to find a way to create a boot floppy. On the man page, it also uses /dev/rdsk which makes me wonder why.Feeling curious, i restarted the GHOST’ed machine with the solaris CD1 again, and tried using the command&lt;blockquote&gt;installgrub /boot/grub/stage1 /boot/grub/stage2 /dev/rdsk/c0d0s0&lt;/blockquote&gt;And walla, it succeeds!. Damn, all that hassles doesnt worth it. Well, at least we got the Solaris running.&lt;div class=&quot;blogger-post-footer&quot;&gt; Izhar Firdaus -&lt;/div&gt;" />

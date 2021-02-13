@@ -9,9 +9,9 @@
     <link type="application/atom+xml" rel="alternate" href="https://blog.kagesenshi.org/feed.xml" title="KageSenshi's Log" />
 
     <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Using OpenShift with a project on SVN repository | KageSenshi’s Log</title>
+<title>Using OpenShift with a project on SVN repository | KageSenshi’s Log| KageSenshi's Log</title>
 <meta name="generator" content="Jekyll v4.2.0" />
-<meta property="og:title" content="Using OpenShift with a project on SVN repository" />
+<meta property="og:title" content="Using OpenShift with a project on SVN repository| KageSenshi's Log" />
 <meta name="author" content="kagesenshi" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="OpenShift uses GIT for the internal repo, however, you might have existing projects which are on SVN which you want to deploy into OpenShift but yet to have chance to migrate it to GIT (or for some reason, couldn&#39;t). So how do you approach this?.The simplest trick around is, to have a GIT+SVN combined directory to work on. Here&#39;s the quick steps:Checkout/clone both the project SVN and OpenShift GIT repository into 2 separate directories. Copy .git directory from OpenShift GIT clone into the SVN checkout directory.Done.This will setup a&nbsp; directory which can be committed to both GIT and SVN. Whenever you want to deploy the code to OpenShift, git commit and git push it. Whenever you want to save the code into the code repository, svn commit it. - Izhar Firdaus -" />

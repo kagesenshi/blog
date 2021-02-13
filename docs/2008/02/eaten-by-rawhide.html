@@ -9,9 +9,9 @@
     <link type="application/atom+xml" rel="alternate" href="https://blog.kagesenshi.org/feed.xml" title="KageSenshi's Log" />
 
     <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Eaten by Rawhide | KageSenshi’s Log</title>
+<title>Eaten by Rawhide | KageSenshi’s Log| KageSenshi's Log</title>
 <meta name="generator" content="Jekyll v4.2.0" />
-<meta property="og:title" content="Eaten by Rawhide" />
+<meta property="og:title" content="Eaten by Rawhide| KageSenshi's Log" />
 <meta name="author" content="kagesenshi" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Got eaten by Rawhide after today update. Lots of GTK/GNOME app crashes while starting with this error (yeah, that includes ‘gnome-session’). GDM not affected.This probably reflects a bug in the program.The error was &#39;BadWindow (invalid Window parameter)&#39;. (Details: serial 22 error_code 3 request_code 2 minor_code 0) (Note to programmers: normally, X errors are reported asynchronously; that is, you will receive the error a while after causing it. To debug your program, run it with the --sync command line option to change this behavior. You can then get a meaningful backtrace from your debugger if you break on the gdk_x_error() function.)glad the basic KDE4 installed can run.Running ‘rpm -Va’ right now before assuming something wrong with any packages.Update:After reinstalling all packages that fails ‘rpm -V’, and downgraded some packages to the packages below, I managed to back login into GNOME. Some services like Gstreamer and gnome-settings-daemon still crashes/could not start, but at least I can get back to work. Still not sure which was the culprit.Downgraded:gnome-panel-2.21.91-8.fc9.i386gnome-panel-libs-2.21.91-8.fc9.i386gstreamer-plugins-good-0.10.6-8.fc9.i386libXmu-1.0.3-5.fc9.i386libgnome-2.21.90-2.fc9.i386xorg-x11-drivers-7.3-1.fc9.i386xorg-x11-server-Xorg-1.4.99.1-0.22.20080221.fc9.i386xorg-x11-server-common-1.4.99.1-0.22.20080221.fc9.i386xorg-x11-server-devel-1.4.99.1-0.22.20080221.fc9.i386&lt;div class=&quot;blogger-post-footer&quot;&gt; Izhar Firdaus -&lt;/div&gt;" />

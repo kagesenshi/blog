@@ -9,9 +9,9 @@
     <link type="application/atom+xml" rel="alternate" href="https://blog.kagesenshi.org/feed.xml" title="KageSenshi's Log" />
 
     <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Qemu slow disk throughput | KageSenshi’s Log</title>
+<title>Qemu slow disk throughput | KageSenshi’s Log| KageSenshi's Log</title>
 <meta name="generator" content="Jekyll v4.2.0" />
-<meta property="og:title" content="Qemu slow disk throughput" />
+<meta property="og:title" content="Qemu slow disk throughput| KageSenshi's Log" />
 <meta name="author" content="kagesenshi" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="I am doing some development for a UN community site, using Zope/Plone. I uses Qemu for hosting the guest OS for my development environment.For 2 days, I keep wondering why Zope/Plone loads damn slow on the qemu machine eventhough I have allocated both cores of the processor, and 512RAM for it. 15 minutes simply to start up is really not desirable. I kept on investigating and guess what:[root@unapcict ~]# /sbin/hdparm -t /dev/hda/dev/hda: Timing buffered disk reads: 18 MB in 3.03 seconds = 5.95 MB/secJust for a comparison, the host hdd’s speed:[root@Nobuyuki ~]# /sbin/hdparm -t /dev/sdc/dev/sdc: Timing buffered disk reads: 174 MB in 3.01 seconds = 57.71 MB/secDarn.. So, thats what the reason. Dear lazywebs, anybody know how to improve the speed??.&lt;div class=&quot;blogger-post-footer&quot;&gt; Izhar Firdaus -&lt;/div&gt;" />

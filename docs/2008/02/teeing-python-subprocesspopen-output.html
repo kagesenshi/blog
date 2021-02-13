@@ -9,9 +9,9 @@
     <link type="application/atom+xml" rel="alternate" href="https://blog.kagesenshi.org/feed.xml" title="KageSenshi's Log" />
 
     <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Tee’ing Python subprocess.Popen output | KageSenshi’s Log</title>
+<title>Tee’ing Python subprocess.Popen output | KageSenshi’s Log| KageSenshi's Log</title>
 <meta name="generator" content="Jekyll v4.2.0" />
-<meta property="og:title" content="Tee’ing Python subprocess.Popen output" />
+<meta property="og:title" content="Tee’ing Python subprocess.Popen output| KageSenshi's Log" />
 <meta name="author" content="kagesenshi" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="A little hack for python coders out there who wanted to have a functionality similar to the unix’s tee command for redirecting output to multiple places.&lt;pre&gt;import sysfrom subprocess import Popen,PIPEp = Popen([&#39;put&#39;,&#39;command&#39;,&#39;and&#39;,&#39;arguments&#39;,&#39;here&#39;],stdout=PIPE)while True: o = p.stdout.readline() if o == &#39;&#39; and p.poll() != None: break # the &#39;o&#39; variable stores a line from the command&#39;s stdout # do anything u wish with the &#39;o&#39; variable here # this loop will break once theres a blank output # from stdout and the subprocess have ended&lt;/pre&gt;&lt;div class=&quot;blogger-post-footer&quot;&gt; Izhar Firdaus -&lt;/div&gt;" />
