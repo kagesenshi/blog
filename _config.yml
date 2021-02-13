@@ -17,6 +17,10 @@ plugins:
   - jekyll-paginate
   - jekyll-seo-tag
 
+feed:
+  tags: 
+    only:
+      - Fedora
 
 timezone: Asia/Kuala_Lumpur
 authors:
