@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Migrate to Github Pages
+title: Migrated to Github Pages
 date: "2021-02-13 19:39 +0800"
 image: assets/images/2021/github-pages.jpg
 ---
