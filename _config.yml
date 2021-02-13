@@ -4,6 +4,7 @@ description: 'Mundana is a free Jekyll theme for awesome people like you, Medium
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/favicon.ico'
 baseurl: ''
+url: 'https://blog.kagesenshi.org'
 disqus: 'kagesenshi'
 email: 'kagesenshi.87@gmail.com'
 destination: ./docs/
