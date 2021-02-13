@@ -16,7 +16,9 @@ plugins:
   - jekyll-sitemap
   - jekyll-paginate
   - jekyll-seo-tag
-  
+
+
+timezone: Asia/Kuala_Lumpur
 authors:
     kagesenshi:
       id:             kagesenshi
