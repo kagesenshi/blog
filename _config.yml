@@ -6,9 +6,8 @@ favicon: 'assets/images/favicon.ico'
 baseurl: ''
 disqus: 'kagesenshi'
 email: 'kagesenshi.87@gmail.com'
-mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
-
-include: ["_pages"]
+destination: ./docs/
+include: ["_pages", ".nojekyll"]
 permalink: /:year/:month/:title:output_ext
 
 # Plugins
@@ -22,10 +21,10 @@ authors:
     kagesenshi:
       name:           Izhar Firdaus
       site:           https://blog.kagesenshi.org
-      avatar:         /assets/images/avatar1.jpg
-      bio:            "Hi, I am Sal, the author of Mundana, the theme you're currently previewing. I hope you like it!"
+      avatar:         /assets/images/kagesenshi.jpg
+      bio:            ""
       email:          kagesenshi.87@gmail.com
-      twitter:        https://twitter.com/kagesenshi
+      linkedin:        https://linkedin.com/in/kagesenshi
  
 # Defaults
 defaults:
@@ -36,7 +35,8 @@ defaults:
     values:
       layout: post
       author: kagesenshi
-      avatar: /assets/images/avatar1.jpg
+      categories: [blog]
+      avatar: /assets/images/anonavatar.png
       
   # all pages
   - scope:
