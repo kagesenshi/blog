@@ -21,7 +21,7 @@ authors:
     kagesenshi:
       name:           Izhar Firdaus
       site:           https://blog.kagesenshi.org
-      avatar:         /assets/images/kagesenshi.jpg
+      avatar:         assets/images/kagesenshi.jpg
       bio:            ""
       email:          kagesenshi.87@gmail.com
       linkedin:        https://linkedin.com/in/kagesenshi
@@ -36,7 +36,7 @@ defaults:
       layout: post
       author: kagesenshi
       categories: [blog]
-      avatar: /assets/images/anonavatar.png
+      avatar: assets/images/anonavatar.png
       
   # all pages
   - scope:
