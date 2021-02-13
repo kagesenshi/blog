@@ -15,7 +15,10 @@
                     </span>
                 </span>
             </span>
-            </li>                
+            </li> 
+            {% if forloop.index0 >= 5 %}
+                {% break %}
+            {% endif %}
         {% endfor %}   
     </ol>
 </div> 
