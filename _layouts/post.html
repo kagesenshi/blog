@@ -21,10 +21,17 @@ layout: default
                            <a href="{{ site.baseurl }}/author/{{ author.id }}">
                               <img class="rounded-circle" src="{{site.baseurl}}/{{author.avatar}}" alt="{{author.name}}" width="70"/>
                            </a>
-                        {% endif %}
-                        <small class="ml-3"> 
+                           {% endif %}
+                           <small class="ml-3"> 
                               {{ author.name }}
-                           <span><a target="_blank" href="{{ author.linkedin }}" class="btn btn-outline-success btn-sm btn-round ml-1">Follow</a></span>
+                              <span><a target="_blank" href="{{ author.linkedin }}" class="btn btn-outline-success btn-sm btn-round ml-1">Follow</a></span>
+                              {% if author.donate %}
+                              <a class="btn btn-sm btn-outline-success btn-round" 
+                                 href="{{ author.donate }}">Buy Me A Coffee
+                                 <i class="fa fa-heart text-danger"></i>
+                              </a>
+                              {% endif %}
+
                             <span class="text-muted d-block mt-1">{{ page.date | date: '%b %d, %Y' }} · {% include meta-read-time.html %}</span>
 						</small>
 					</div>
@@ -119,12 +126,21 @@ layout: default
                      <img class="rounded-circle" src="{{site.baseurl}}/{{author.avatar}}" alt="{{author.name}}" width="90"/>
                   </a>
                         {% endif %} 
-					</div>
-					<div class="col-md-10">		
-                        <h5 class="font-weight-bold">Written by {{ author.name }} {% if author.linkedin %}<span><a target="_blank" href="{{ author.linkedin }}" class="btn btn-outline-success btn-sm btn-round ml-2">Follow</a></span>{% endif %}</h5>
-						{{ author.bio }}					
-					</div>
-				</div>				
+                     </div>
+                     <div class="col-md-10">		
+                        <h5 class="font-weight-bold">Written by {{ author.name }} {% if author.linkedin %}<span>
+                              <a target="_blank" href="{{ author.linkedin }}" class="btn btn-outline-success btn-sm btn-round ml-2">Follow</a></span>
+                           {% if author.donate %}
+                           <a class="btn btn-sm btn-outline-success btn-round" 
+                              href="{{ author.donate }}">Buy Me A Coffee
+                              <i class="fa fa-heart text-danger"></i>
+                           </a>
+                           {% endif %}
+
+                           {% endif %}</h5>
+                        {{ author.bio }}					
+                     </div>
+                  </div>				
                 {% endif %}
             
             <!-- Comments -->
