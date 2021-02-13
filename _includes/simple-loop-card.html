@@ -1,0 +1,18 @@
+<div class="d-flex justify-content-between main-loop-card">
+   <div class="pr-3">
+	<small class="text-muted">
+		{{ post.date | date: '%b %d, %Y' }}
+	</small> - 
+	<span class="mb-1 font-weight-bold">
+	<a class="post-title" href="{{site.baseurl}}{{post.url}}">{{ post.title }}</a>
+	</span> - 
+	<small class="text-muted">
+		In <span class="catlist">
+		{% for category in post.categories %}
+		<a class="badge badge-light text-capitalize text-muted smoothscroll" href="{{site.baseurl}}/category/{{ category | slugify }}.html">{{ category }}</a><span class="sep">, </span>
+		{% endfor %}
+		</span>
+	</small>
+
+</div>
+</div>

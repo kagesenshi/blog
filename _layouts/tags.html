@@ -6,10 +6,10 @@ layout: default
    <div class="row justify-content-center">
       <div class="col-md-8">
          <h1 class="font-weight-bold title h6 text-uppercase mb-4">
-            Topic:&nbsp;{{ page.category-name }}/
+            Tag:&nbsp;{{ page.tag-name }}/
          </h1>
          <div class="posts">
-            {% for post in site.categories[page.category-name] %}
+            {% for post in site.tags[page.tag-name] %}
             {% include simple-loop-card.html %}
             {% endfor %}
          </div>

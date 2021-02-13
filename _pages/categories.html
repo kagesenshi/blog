@@ -11,8 +11,8 @@ permalink: "/categories.html"
 
     {% assign sortedCategories = site.categories | sort %}
     {% for category in sortedCategories %}
-     {% assign cat4url = category[0] | remove:' ' | downcase %}
-     <a class="sidebar-nav-item" href="{{site.baseurl}}/category/{{cat4url}}">
+     {% assign cat4url = category[0] | slugify %}
+     <a class="sscroll btn btn-light btn-sm text-capitalize font-weight-bold" href="{{site.baseurl}}/category/{{cat4url}}.html">
         {{category[0]}}
      </a>
      {% endfor %}

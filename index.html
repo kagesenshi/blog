@@ -35,7 +35,7 @@ description: "A great Jekyll theme developed by Sal @wowthemesnet."
           {% if latest_post.categories != empty %}
             In <span class="catlist">
                 {% for category in latest_post.categories %}
-                <a class="text-capitalize text-muted smoothscroll" href="{{site.baseurl}}/categories.html#{{ category | downcase }}">{{ category }}</a><span class="sep">, </span>
+                <a class="sscroll badge badge-light text-capitalize smoothscroll" href="{{site.baseurl}}/category/{{ category | slugify }}.html">{{ category }}</a><span class="sep">, </span>
                 {% endfor %}
              </span>                  
            {% endif %} 
@@ -68,7 +68,7 @@ description: "A great Jekyll theme developed by Sal @wowthemesnet."
                        {% if second_post.categories != empty %}
                         In <span class="catlist">
                         {% for category in second_post.categories %}
-                        <a class="text-capitalize text-muted smoothscroll" href="{{site.baseurl}}/categories.html#{{ category | downcase }}">{{ category }}</a><span class="sep">, </span>
+                        <a class="sscroll badge badge-light text-capitalize smoothscroll" href="{{site.baseurl}}/category/{{ category | slugify }}.html">{{ category }}</a><span class="sep">, </span>
                         {% endfor %}
                      </span>                   
                      {% endif %}
@@ -97,7 +97,7 @@ description: "A great Jekyll theme developed by Sal @wowthemesnet."
                        {% if third_post.categories != empty %}
                         In <span class="catlist">
                         {% for category in third_post.categories %}
-                        <a class="text-capitalize text-muted smoothscroll" href="{{site.baseurl}}/categories.html#{{ category | downcase }}">{{ category }}</a><span class="sep">, </span>
+                        <a class="sscroll badge badge-light text-capitalize smoothscroll" href="{{site.baseurl}}/category/{{ category | slugify }}.html">{{ category }}</a><span class="sep">, </span>
                         {% endfor %}
                      </span>                   
                      {% endif %}
@@ -126,7 +126,7 @@ description: "A great Jekyll theme developed by Sal @wowthemesnet."
                        {% if fourth_post.categories != empty %}
                         In <span class="catlist">
                         {% for category in fourth_post.categories %}
-                        <a class="text-capitalize text-muted smoothscroll" href="{{site.baseurl}}/categories.html#{{ category | downcase }}">{{ category }}</a><span class="sep">, </span>
+                        <a class="sscroll badge badge-light text-capitalize smoothscroll" href="{{site.baseurl}}/category/{{ category | slugify }}.html">{{ category }}</a><span class="sep">, </span>
                         {% endfor %}
                      </span>                   
                      {% endif %}
