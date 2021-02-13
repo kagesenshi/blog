@@ -1,0 +1,27 @@
+---
+title: "Categories"
+layout: default
+permalink: "/categories.html"
+---
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+        <h1 class="font-weight-bold title h6 text-uppercase mb-4">Categories</h1>
+
+    {% assign sortedCategories = site.categories | sort %}
+    {% for category in sortedCategories %}
+     {% assign cat4url = category[0] | remove:' ' | downcase %}
+     <a class="sidebar-nav-item" href="{{site.baseurl}}/category/{{cat4url}}">
+        {{category[0]}}
+     </a>
+     {% endfor %}
+
+        </div>
+        
+            <div class="col-md-4">
+        {% include sidebar-featured.html %}    
+    </div>
+        
+    </div>
+</div>
