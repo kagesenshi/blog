@@ -8,7 +8,7 @@ layout: default
        <div class="row align-items-center mb-5">
           <div class="col-md-9">
              <h2 class="font-weight-bold">{{ site.authors[page.author-name].name }} <span class="small btn btn-outline-success btn-sm btn-round"><a href="{{ site.authors[page.author-name].linkedin }}">Follow</a></span>
-                {% if author.donate %}
+                {% if site.authors[page.author-name].donate %}
                 <a class="btn btn-sm btn-outline-success btn-round" 
                    href="{{ author.donate }}">Buy Me A Coffee
                    <i class="fa fa-heart text-danger"></i>
