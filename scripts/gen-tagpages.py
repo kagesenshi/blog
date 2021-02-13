@@ -35,6 +35,9 @@ def extract(input_file):
    
     return tags
 
+def capitalize(s):
+    return s[0].upper() + s[1:]
+
 def write(output_dir, tags, type_, layout):
     for tag in tags:
         slug = slugify(tag['name'])
@@ -44,6 +47,8 @@ def write(output_dir, tags, type_, layout):
             lines.append('---')
             lines.append('layout: %s' % layout)
             lines.append('%s-name: %s' % (type_, tag['name']))
+            lines.append('title: %s - %s' % (capitalize(type_),
+                capitalize(tag['name'])))
             lines.append('permalink: "%s"' % tag['permalink'])
             lines.append('---')
             of.write('\n'.join(lines))
