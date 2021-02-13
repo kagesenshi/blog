@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Using OpenShift with a project on SVN repository | KageSenshi's Log</title>
 
-    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="KageSenshi's Log" />
+    <link type="application/atom+xml" rel="alternate" href="https://blog.kagesenshi.org/feed.xml" title="KageSenshi's Log" />
 
     <!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>Using OpenShift with a project on SVN repository | KageSenshi’s Log</title>
@@ -16,6 +16,8 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="OpenShift uses GIT for the internal repo, however, you might have existing projects which are on SVN which you want to deploy into OpenShift but yet to have chance to migrate it to GIT (or for some reason, couldn&#39;t). So how do you approach this?.The simplest trick around is, to have a GIT+SVN combined directory to work on. Here&#39;s the quick steps:Checkout/clone both the project SVN and OpenShift GIT repository into 2 separate directories. Copy .git directory from OpenShift GIT clone into the SVN checkout directory.Done.This will setup a&nbsp; directory which can be committed to both GIT and SVN. Whenever you want to deploy the code to OpenShift, git commit and git push it. Whenever you want to save the code into the code repository, svn commit it. - Izhar Firdaus -" />
 <meta property="og:description" content="OpenShift uses GIT for the internal repo, however, you might have existing projects which are on SVN which you want to deploy into OpenShift but yet to have chance to migrate it to GIT (or for some reason, couldn&#39;t). So how do you approach this?.The simplest trick around is, to have a GIT+SVN combined directory to work on. Here&#39;s the quick steps:Checkout/clone both the project SVN and OpenShift GIT repository into 2 separate directories. Copy .git directory from OpenShift GIT clone into the SVN checkout directory.Done.This will setup a&nbsp; directory which can be committed to both GIT and SVN. Whenever you want to deploy the code to OpenShift, git commit and git push it. Whenever you want to save the code into the code repository, svn commit it. - Izhar Firdaus -" />
+<link rel="canonical" href="https://blog.kagesenshi.org/2012/08/using-openshift-with-project-on-svn.html" />
+<meta property="og:url" content="https://blog.kagesenshi.org/2012/08/using-openshift-with-project-on-svn.html" />
 <meta property="og:site_name" content="KageSenshi’s Log" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2012-08-27T09:47:00+08:00" />

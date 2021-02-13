@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Automated tar and dump incremental backup script for FBSD | KageSenshi's Log</title>
 
-    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="KageSenshi's Log" />
+    <link type="application/atom+xml" rel="alternate" href="https://blog.kagesenshi.org/feed.xml" title="KageSenshi's Log" />
 
     <!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>Automated tar and dump incremental backup script for FBSD | KageSenshi’s Log</title>
@@ -16,6 +16,8 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="The recent gmirror failure on Gambit caused us to switch to automated dump and tar instead.Our requirement was like this: Full backup on Mondays (around 3-5am) with daily incremental backups relative to the Monday backup. Whenever a full backup is being performed, the previous backups must not be overwritten until the full backup is done.And the results::&lt;blockquote&gt;inigo-tarball-backups.sh - an incremental tar backup script using FreeBSD’s Tarinigo-disk-dumps.sh - an incremental live dump script using FreeBSD’s Dump - now, I wish Linux’s Dump have live dump support.gnu-tar-incremental-backup.sh - an incremental tar backup script using GNU’s Tar - I wrote this before the FreeBSD’s Tar script on my Fedora laptop, but was surprised that FreeBSD’s Tar doesn’t have –listed-incremental option (-_-)”. &lt;/blockquote&gt;For the scheduling, I just use cron. Do inform me if you have suggestions to improve the scripts or if you found any risky bug it in.update: Anybody knows how to properly tar a live directory? (eg: /var/log/).&lt;div class=&quot;blogger-post-footer&quot;&gt; Izhar Firdaus -&lt;/div&gt;" />
 <meta property="og:description" content="The recent gmirror failure on Gambit caused us to switch to automated dump and tar instead.Our requirement was like this: Full backup on Mondays (around 3-5am) with daily incremental backups relative to the Monday backup. Whenever a full backup is being performed, the previous backups must not be overwritten until the full backup is done.And the results::&lt;blockquote&gt;inigo-tarball-backups.sh - an incremental tar backup script using FreeBSD’s Tarinigo-disk-dumps.sh - an incremental live dump script using FreeBSD’s Dump - now, I wish Linux’s Dump have live dump support.gnu-tar-incremental-backup.sh - an incremental tar backup script using GNU’s Tar - I wrote this before the FreeBSD’s Tar script on my Fedora laptop, but was surprised that FreeBSD’s Tar doesn’t have –listed-incremental option (-_-)”. &lt;/blockquote&gt;For the scheduling, I just use cron. Do inform me if you have suggestions to improve the scripts or if you found any risky bug it in.update: Anybody knows how to properly tar a live directory? (eg: /var/log/).&lt;div class=&quot;blogger-post-footer&quot;&gt; Izhar Firdaus -&lt;/div&gt;" />
+<link rel="canonical" href="https://blog.kagesenshi.org/2008/01/automated-tar-and-dump-incremental.html" />
+<meta property="og:url" content="https://blog.kagesenshi.org/2008/01/automated-tar-and-dump-incremental.html" />
 <meta property="og:site_name" content="KageSenshi’s Log" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2008-01-18T16:24:00+08:00" />

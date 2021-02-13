@@ -1,1 +1,1 @@
-Sitemap: /sitemap.xml
+Sitemap: https://blog.kagesenshi.org/sitemap.xml

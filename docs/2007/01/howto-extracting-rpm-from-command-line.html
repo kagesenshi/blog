@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HOWTO: Extracting RPM from command line | KageSenshi's Log</title>
 
-    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="KageSenshi's Log" />
+    <link type="application/atom+xml" rel="alternate" href="https://blog.kagesenshi.org/feed.xml" title="KageSenshi's Log" />
 
     <!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>HOWTO: Extracting RPM from command line | KageSenshi’s Log</title>
@@ -16,6 +16,8 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Sometimes, admins might want to extract some files from a RPM file for some purposes. If on a system with GUI, this can be easily done using file-roller or some other GUI based archive manager that supports RPM/CPIO archives. RPMs are basically modified CPIO archives, so we use rpm2cpio and cpio command to extract files from it in a CLI environment.List out contained files&lt;pre&gt;rpm2cpio &lt;rpmpackage.rpm&gt; |cpio -t&lt;/pre&gt;Extract all files&lt;pre&gt;rpm2cpio &lt;rpmpackage.rpm&gt; |cpio -id&lt;/pre&gt; Extract specific file&lt;pre&gt;rpm2cpio &lt;rpmpackage.rpm&gt; |cpio -id &lt;file&gt;&lt;/pre&gt; Note: extracting specific files requires you to put the full path of the file in the archive which you get from the cpio -t output.You can read more about using cpio from the manpages and from this site&lt;div class=&quot;blogger-post-footer&quot;&gt; Izhar Firdaus -&lt;/div&gt;" />
 <meta property="og:description" content="Sometimes, admins might want to extract some files from a RPM file for some purposes. If on a system with GUI, this can be easily done using file-roller or some other GUI based archive manager that supports RPM/CPIO archives. RPMs are basically modified CPIO archives, so we use rpm2cpio and cpio command to extract files from it in a CLI environment.List out contained files&lt;pre&gt;rpm2cpio &lt;rpmpackage.rpm&gt; |cpio -t&lt;/pre&gt;Extract all files&lt;pre&gt;rpm2cpio &lt;rpmpackage.rpm&gt; |cpio -id&lt;/pre&gt; Extract specific file&lt;pre&gt;rpm2cpio &lt;rpmpackage.rpm&gt; |cpio -id &lt;file&gt;&lt;/pre&gt; Note: extracting specific files requires you to put the full path of the file in the archive which you get from the cpio -t output.You can read more about using cpio from the manpages and from this site&lt;div class=&quot;blogger-post-footer&quot;&gt; Izhar Firdaus -&lt;/div&gt;" />
+<link rel="canonical" href="https://blog.kagesenshi.org/2007/01/howto-extracting-rpm-from-command-line.html" />
+<meta property="og:url" content="https://blog.kagesenshi.org/2007/01/howto-extracting-rpm-from-command-line.html" />
 <meta property="og:site_name" content="KageSenshi’s Log" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2007-01-17T10:44:00+08:00" />

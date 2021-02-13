@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Is this why APT depsolve/search is fast? | KageSenshi's Log</title>
 
-    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="KageSenshi's Log" />
+    <link type="application/atom+xml" rel="alternate" href="https://blog.kagesenshi.org/feed.xml" title="KageSenshi's Log" />
 
     <!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>Is this why APT depsolve/search is fast? | KageSenshi’s Log</title>
@@ -16,6 +16,8 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="On a blog post about libBCD dependency resolution algorithm test (which Yum/APT fails, and zypper scores): http://duncan.mac-vicar.com/blog/archives/310&lt;blockquote&gt;Debian’s apt-get won’t succeed here, because AFAIK Debian only has dependencies across packages, not on libraries. Actually I still wonder how smart could succeed here using a debian backend. I ignore if apt-rpm does support library dependencies.&lt;/blockquote&gt;While I can’t verify this (not that familiar with the deb packaging), but if that is really true, it more or less explains why apt is faster than yum - they dont have much stuff to consider and process in the metadata. Yum+RPM can do dep check by libraries, files, executables, perl modules, and some other modules, which makes the metadata large, and depsolve requires more stuff to consider. So, APT-deb users, stop complaining YUM is slow (/me stares at ubuntu zombies) :P Do tell me if that is wrong :)On another note, Yaakov M. Nemoy wrote a very good post about why its not good to standardize to only 1 packaging system and package format across distributions.&lt;div class=&quot;blogger-post-footer&quot;&gt; Izhar Firdaus -&lt;/div&gt;" />
 <meta property="og:description" content="On a blog post about libBCD dependency resolution algorithm test (which Yum/APT fails, and zypper scores): http://duncan.mac-vicar.com/blog/archives/310&lt;blockquote&gt;Debian’s apt-get won’t succeed here, because AFAIK Debian only has dependencies across packages, not on libraries. Actually I still wonder how smart could succeed here using a debian backend. I ignore if apt-rpm does support library dependencies.&lt;/blockquote&gt;While I can’t verify this (not that familiar with the deb packaging), but if that is really true, it more or less explains why apt is faster than yum - they dont have much stuff to consider and process in the metadata. Yum+RPM can do dep check by libraries, files, executables, perl modules, and some other modules, which makes the metadata large, and depsolve requires more stuff to consider. So, APT-deb users, stop complaining YUM is slow (/me stares at ubuntu zombies) :P Do tell me if that is wrong :)On another note, Yaakov M. Nemoy wrote a very good post about why its not good to standardize to only 1 packaging system and package format across distributions.&lt;div class=&quot;blogger-post-footer&quot;&gt; Izhar Firdaus -&lt;/div&gt;" />
+<link rel="canonical" href="https://blog.kagesenshi.org/2008/06/is-this-why-apt-depsolvesearch-is-fast.html" />
+<meta property="og:url" content="https://blog.kagesenshi.org/2008/06/is-this-why-apt-depsolvesearch-is-fast.html" />
 <meta property="og:site_name" content="KageSenshi’s Log" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2008-06-26T00:19:00+08:00" />

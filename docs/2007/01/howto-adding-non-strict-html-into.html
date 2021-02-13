@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HOWTO: Adding Non-Strict HTML into Blogger Widget Template XML | KageSenshi's Log</title>
 
-    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="KageSenshi's Log" />
+    <link type="application/atom+xml" rel="alternate" href="https://blog.kagesenshi.org/feed.xml" title="KageSenshi's Log" />
 
     <!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>HOWTO: Adding Non-Strict HTML into Blogger Widget Template XML | KageSenshi’s Log</title>
@@ -16,6 +16,8 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="I have been trying to insert some javascript buttons into the Posts widget of the new Blogger engine. There are no predefined widgets provided by Blogger for this purpose, so, I opened the template’s HTML to insert it. However, the task that I thought gonna be easy became a frustrating task because the engine requires strict XHTML coding in the template thus making everything a nightmare to pass the syntax checker.Struggling to insert the code, I discovered that the engine will parse any &amp;lt; and &amp;gt; entries into &lt; and &gt; of the generated code. So , I fire up gedit, paste the code, and do a search and replace for &amp; &lt; and &gt;, replacing them with &amp;amp; &amp;lt; &amp;gt; and pasted the new code into the template. The result is -&gt; Success!! -&gt; look at the stumbleupon button below :)Linux and BSD users can do this quickly on a text file by using sed.&lt;pre&gt;cat file|sed s/’\&amp;’/’\&amp;amp;’/g|sed s/’&lt;’/’\&amp;lt;’/g|sed s/’&gt;’/’\&amp;gt;’/g&lt;/pre&gt;&lt;div class=&quot;blogger-post-footer&quot;&gt; Izhar Firdaus -&lt;/div&gt;" />
 <meta property="og:description" content="I have been trying to insert some javascript buttons into the Posts widget of the new Blogger engine. There are no predefined widgets provided by Blogger for this purpose, so, I opened the template’s HTML to insert it. However, the task that I thought gonna be easy became a frustrating task because the engine requires strict XHTML coding in the template thus making everything a nightmare to pass the syntax checker.Struggling to insert the code, I discovered that the engine will parse any &amp;lt; and &amp;gt; entries into &lt; and &gt; of the generated code. So , I fire up gedit, paste the code, and do a search and replace for &amp; &lt; and &gt;, replacing them with &amp;amp; &amp;lt; &amp;gt; and pasted the new code into the template. The result is -&gt; Success!! -&gt; look at the stumbleupon button below :)Linux and BSD users can do this quickly on a text file by using sed.&lt;pre&gt;cat file|sed s/’\&amp;’/’\&amp;amp;’/g|sed s/’&lt;’/’\&amp;lt;’/g|sed s/’&gt;’/’\&amp;gt;’/g&lt;/pre&gt;&lt;div class=&quot;blogger-post-footer&quot;&gt; Izhar Firdaus -&lt;/div&gt;" />
+<link rel="canonical" href="https://blog.kagesenshi.org/2007/01/howto-adding-non-strict-html-into.html" />
+<meta property="og:url" content="https://blog.kagesenshi.org/2007/01/howto-adding-non-strict-html-into.html" />
 <meta property="og:site_name" content="KageSenshi’s Log" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2007-01-01T16:36:00+08:00" />

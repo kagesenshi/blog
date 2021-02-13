@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Update on Compiz Fusion repository | KageSenshi's Log</title>
 
-    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="KageSenshi's Log" />
+    <link type="application/atom+xml" rel="alternate" href="https://blog.kagesenshi.org/feed.xml" title="KageSenshi's Log" />
 
     <!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>Update on Compiz Fusion repository | KageSenshi’s Log</title>
@@ -16,6 +16,8 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="I have updated the repository just now. A few noticable changes are:&lt;blockquote&gt;package updated to 20070625 morning’s git (I’m @ GMT +8 if that matters)compiz package is slow splitted into compiz-gnome and compiz-kderelease numbering is changed to follow Fedora Packaging: Naming Guidelinea few bug fixes at the specfiles&lt;/blockquote&gt;IMPORTANT NOTE:To those who are using 20070622git packages, you will need to remove them manually before upgrading through yum, or it wont work. This is because the change in the release numbering which make yum thinks the the older packages are newer.To erase them&lt;pre&gt;yum erase *compiz*yum erase *emerald*&lt;/pre&gt;Installing the new packages&lt;pre&gt;# Install the repository (if you havent)cd /etc/yum.repos.d/wget http://repo.kagesenshi.org/pub/kagesenshi.repo# all compiz fusion packages (GNOME and KDE)yum install compiz# compiz fusion and emerald (for GNOME)yum install compiz-gnome# compiz fusion and KDE window decorator (for KDE)yum install compiz-kde&lt;/pre&gt;Enjoy~Original Post : Compiz Fusion Repository for Fedora 7&lt;div class=&quot;blogger-post-footer&quot;&gt; Izhar Firdaus -&lt;/div&gt;" />
 <meta property="og:description" content="I have updated the repository just now. A few noticable changes are:&lt;blockquote&gt;package updated to 20070625 morning’s git (I’m @ GMT +8 if that matters)compiz package is slow splitted into compiz-gnome and compiz-kderelease numbering is changed to follow Fedora Packaging: Naming Guidelinea few bug fixes at the specfiles&lt;/blockquote&gt;IMPORTANT NOTE:To those who are using 20070622git packages, you will need to remove them manually before upgrading through yum, or it wont work. This is because the change in the release numbering which make yum thinks the the older packages are newer.To erase them&lt;pre&gt;yum erase *compiz*yum erase *emerald*&lt;/pre&gt;Installing the new packages&lt;pre&gt;# Install the repository (if you havent)cd /etc/yum.repos.d/wget http://repo.kagesenshi.org/pub/kagesenshi.repo# all compiz fusion packages (GNOME and KDE)yum install compiz# compiz fusion and emerald (for GNOME)yum install compiz-gnome# compiz fusion and KDE window decorator (for KDE)yum install compiz-kde&lt;/pre&gt;Enjoy~Original Post : Compiz Fusion Repository for Fedora 7&lt;div class=&quot;blogger-post-footer&quot;&gt; Izhar Firdaus -&lt;/div&gt;" />
+<link rel="canonical" href="https://blog.kagesenshi.org/2007/06/update-on-compiz-fusion-repository.html" />
+<meta property="og:url" content="https://blog.kagesenshi.org/2007/06/update-on-compiz-fusion-repository.html" />
 <meta property="og:site_name" content="KageSenshi’s Log" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2007-06-26T14:23:00+08:00" />
