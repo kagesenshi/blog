@@ -32,8 +32,9 @@ authors:
       avatar:         assets/images/kagesenshi.jpg
       bio:            "I'm a system architect, data engineer and developer advocate with passion in Free / Open Source software, entrepreneurship, community building, education and martial art. I take enjoyment in bridging and bringing together different FOSS technologies to help businesses and organizations utilize IT infrastructure to aid and optimize their business and organizational process."
       email:          kagesenshi.87@gmail.com
-      linkedin:        https://linkedin.com/in/kagesenshi
-      donate:         https://paypal.me/kagesenshi
+      linkedin:       https://linkedin.com/in/kagesenshi
+      donate:         https://www.buymeacoffee.com/kagesenshi
+      bymeacoffee:    kagesenshi
  
 # Defaults
 defaults:

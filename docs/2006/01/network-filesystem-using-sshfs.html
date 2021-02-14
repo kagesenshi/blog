@@ -123,7 +123,7 @@
                               <span><a target="_blank" href="https://linkedin.com/in/kagesenshi" class="btn btn-outline-success btn-sm btn-round ml-1">Follow</a></span>
                               
                               <a class="btn btn-sm btn-outline-success btn-round" 
-                                 href="https://paypal.me/kagesenshi">Buy Me A Coffee
+                                 href="https://www.buymeacoffee.com/kagesenshi">Buy Me A Coffee
                                  <i class="fa fa-heart text-danger"></i>
                               </a>
                               
@@ -176,11 +176,28 @@
             
             <!-- Article -->
 			<article class="article-post">                
-			<p>isnt it neat having one PC with its mounts are scattered among multiple PCs's harddisks in the network?? ... lots of stuff can be done using it coz all of the files work virtually as if it is in the same pc ...(i leave this for y'all to think what u can do with it coz i'm not good in giving ideas <img src="http://kagesenshi.mychost.com/img/smilies/graybigrazz.gif" alt=":P" class="middle" /> ) ....</p>    <p>traditional method of mounting a network filesystem is by using the famous NFS exports .... however ... configuring NFS to work might be quite hard for newbies ... and it became harder if you want to ensure the security of ur system ....</p>    <p>a few weeks ago .. i discovered that there is a program that can make the SFTP capability of SSH to be mounted as a local filesystem .... it gives the flexibility if NFS ... ease of use -- as easy as logging into SSH ... and the transactions are encrypted ... neato ..... the program is developed under FUSE ... so .. u'll need to have a FUSE capable kernel for it .... AFAIK ... kernel 2.6.14 above have FUSE included in it .... FC4 users juz need to update the kernel to the latest ... its compiled together in the RPM of the latest kernels ....</p>    <p>then u'll need to get the FUSE-SSHfs package from <a href="http://fuse.sourceforge.net/sshfs.html">http://fuse.sourceforge.net/sshfs.html</a> ... compile and install it ... good news to FC4 users ... FUSE-SSHfs RPM package is available in Fedora Extras ... hehe...</p>    <p>after a successfull installation .... u'll need to be root in order to mount the filesystem ...</p>    <p>mounting :</p>    <table bg style="color:#ebebeb;">  <tbody><tr> <td><span style="font-family:monospace;font-size:78%;color:black;"><br /># sshfs user@mysshserver.net:/path/to/target /mountpoint/path<br />// then enter ur login passwd</span> </td> </tr> </tbody> </table>    <p>umounting:</p>    <table bg style="color:#ebebeb;">  <tbody><tr> <td> <span style="font-family:monospace;font-size:78%;color:black;"><br /># fusermount -u /mountpoint/path</span> </td> </tr> </tbody> </table>    <p>by default ... only root can read/write to the mounted path ... if u need to have other users to use it ... use this command</p>    <table bg style="color:#ebebeb;">  <tbody><tr> <td>  <div align="left"><span style="font-family:monospace;font-size:78%;color:black;"># sshfs -o default_permissions,allow_other user@mysshserver.net:/path/to/target /mountpoint/path<br />// then enter ur login passwd</span></div>  </td> </tr> </tbody> </table>    <p>now u got a folder on another pc on the network mounted on /mountpoint/path of ur local filesystem .... enjoy!!</p><div class="blogger-post-footer"><br/>
+            <p>isnt it neat having one PC with its mounts are scattered among multiple PCs's harddisks in the network?? ... lots of stuff can be done using it coz all of the files work virtually as if it is in the same pc ...(i leave this for y'all to think what u can do with it coz i'm not good in giving ideas <img src="http://kagesenshi.mychost.com/img/smilies/graybigrazz.gif" alt=":P" class="middle" /> ) ....</p>    <p>traditional method of mounting a network filesystem is by using the famous NFS exports .... however ... configuring NFS to work might be quite hard for newbies ... and it became harder if you want to ensure the security of ur system ....</p>    <p>a few weeks ago .. i discovered that there is a program that can make the SFTP capability of SSH to be mounted as a local filesystem .... it gives the flexibility if NFS ... ease of use -- as easy as logging into SSH ... and the transactions are encrypted ... neato ..... the program is developed under FUSE ... so .. u'll need to have a FUSE capable kernel for it .... AFAIK ... kernel 2.6.14 above have FUSE included in it .... FC4 users juz need to update the kernel to the latest ... its compiled together in the RPM of the latest kernels ....</p>    <p>then u'll need to get the FUSE-SSHfs package from <a href="http://fuse.sourceforge.net/sshfs.html">http://fuse.sourceforge.net/sshfs.html</a> ... compile and install it ... good news to FC4 users ... FUSE-SSHfs RPM package is available in Fedora Extras ... hehe...</p>    <p>after a successfull installation .... u'll need to be root in order to mount the filesystem ...</p>    <p>mounting :</p>    <table bg style="color:#ebebeb;">  <tbody><tr> <td><span style="font-family:monospace;font-size:78%;color:black;"><br /># sshfs user@mysshserver.net:/path/to/target /mountpoint/path<br />// then enter ur login passwd</span> </td> </tr> </tbody> </table>    <p>umounting:</p>    <table bg style="color:#ebebeb;">  <tbody><tr> <td> <span style="font-family:monospace;font-size:78%;color:black;"><br /># fusermount -u /mountpoint/path</span> </td> </tr> </tbody> </table>    <p>by default ... only root can read/write to the mounted path ... if u need to have other users to use it ... use this command</p>    <table bg style="color:#ebebeb;">  <tbody><tr> <td>  <div align="left"><span style="font-family:monospace;font-size:78%;color:black;"># sshfs -o default_permissions,allow_other user@mysshserver.net:/path/to/target /mountpoint/path<br />// then enter ur login passwd</span></div>  </td> </tr> </tbody> </table>    <p>now u got a folder on another pc on the network mounted on /mountpoint/path of ur local filesystem .... enjoy!!</p><div class="blogger-post-footer"><br/>
 <br/>
 - Izhar Firdaus -</div>                
-			</article>
-			
+         </article>
+
+<div class="post-nextprev">
+    <div class="container">
+        <div class="row prevnextlinks small font-weight-bold">
+          
+            <div class="col-md-6 rightborder pl-0">
+                <a class="text-dark" href="/2006/01/console-based-linux-boxes-made-easy.html">&laquo;  Console Based Linux Boxes Made Easy using Webmin</a>
+            </div>
+          
+          
+            <div class="col-md-6 text-right pr-0">
+                <a class="text-dark" href="/2006/01/portforwarding-on-linux-easy-way-not.html"> PortForwarding on Linux .. the easy way - (not through SSH)  &raquo;</a>
+            </div>
+          
+        </div>
+    </div>
+</div>
+
 			<!-- Tags -->
 			<div class="mb-4">
 				<span class="taglist">
@@ -193,7 +210,7 @@
             <!-- Mailchimp Subscribe Form -->
             
             
-            
+
              <!-- Author Box -->
                 				
 				<div class="row mt-5">
@@ -209,7 +226,7 @@
                               <a target="_blank" href="https://linkedin.com/in/kagesenshi" class="btn btn-outline-success btn-sm btn-round ml-2">Follow</a></span>
                            
                            <a class="btn btn-sm btn-outline-success btn-round" 
-                              href="https://paypal.me/kagesenshi">Buy Me A Coffee
+                              href="https://www.buymeacoffee.com/kagesenshi">Buy Me A Coffee
                               <i class="fa fa-heart text-danger"></i>
                            </a>
                            

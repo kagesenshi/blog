@@ -123,7 +123,7 @@
                               <span><a target="_blank" href="https://linkedin.com/in/kagesenshi" class="btn btn-outline-success btn-sm btn-round ml-1">Follow</a></span>
                               
                               <a class="btn btn-sm btn-outline-success btn-round" 
-                                 href="https://paypal.me/kagesenshi">Buy Me A Coffee
+                                 href="https://www.buymeacoffee.com/kagesenshi">Buy Me A Coffee
                                  <i class="fa fa-heart text-danger"></i>
                               </a>
                               
@@ -176,11 +176,28 @@
             
             <!-- Article -->
 			<article class="article-post">                
-			Sometimes, you might want to run certain X applications as a daemon in the background. For example, in my case, I want to make Ktorrent run in the background on startup while I control the torrents using its WebUI. However, to run Ktorrent , I <span style="font-style:italic">must</span> have X running and logged in to the desktop. So, how can I do this? , the answer is by using X Virtual Framebuffer Server.<br /><br /><span style="font-weight:bold">How it works?</span><br /><br />Xvfb emulates an X server without outputing it to monitor. Applications connect to it and run under the impression the GUI is there. Its as simple as that!. No modification needed on the applications that going to be run on it.<br /><br />Read more : <a href="http://en.wikipedia.org/wiki/Xvfb">http://en.wikipedia.org/wiki/Xvfb</a><br /><br /><span style="font-weight:bold">How to do it?</span><br /><br />First, make sure you have Xvfb installed. If you dont, install it using your package manager. <br />In Fedora, use<br /><pre>yum install xorg-x11-server-Xvfb</pre><br /><br />Then, run Xvfb in any unique/unused display number, in this example, I put 100. Disable access control to the display so that you dont have to go through the hassle of setting access control for it.<br /><pre>Xvfb :100 -ac</pre><br /><br />Now that you got Xvfb up and running, time to start the app.<br /><br />Before starting the app, export the DISPLAY environment variable to point to display number 100<br /><pre>export DISPLAY=:100.0</pre><br /><br />execute the command for the app, and ure good to go :D<br /><pre>ktorrent</pre><br /><br />Enjoy~<div class="blogger-post-footer"><br/>
+            Sometimes, you might want to run certain X applications as a daemon in the background. For example, in my case, I want to make Ktorrent run in the background on startup while I control the torrents using its WebUI. However, to run Ktorrent , I <span style="font-style:italic">must</span> have X running and logged in to the desktop. So, how can I do this? , the answer is by using X Virtual Framebuffer Server.<br /><br /><span style="font-weight:bold">How it works?</span><br /><br />Xvfb emulates an X server without outputing it to monitor. Applications connect to it and run under the impression the GUI is there. Its as simple as that!. No modification needed on the applications that going to be run on it.<br /><br />Read more : <a href="http://en.wikipedia.org/wiki/Xvfb">http://en.wikipedia.org/wiki/Xvfb</a><br /><br /><span style="font-weight:bold">How to do it?</span><br /><br />First, make sure you have Xvfb installed. If you dont, install it using your package manager. <br />In Fedora, use<br /><pre>yum install xorg-x11-server-Xvfb</pre><br /><br />Then, run Xvfb in any unique/unused display number, in this example, I put 100. Disable access control to the display so that you dont have to go through the hassle of setting access control for it.<br /><pre>Xvfb :100 -ac</pre><br /><br />Now that you got Xvfb up and running, time to start the app.<br /><br />Before starting the app, export the DISPLAY environment variable to point to display number 100<br /><pre>export DISPLAY=:100.0</pre><br /><br />execute the command for the app, and ure good to go :D<br /><pre>ktorrent</pre><br /><br />Enjoy~<div class="blogger-post-footer"><br/>
 <br/>
 - Izhar Firdaus -</div>                
-			</article>
-			
+         </article>
+
+<div class="post-nextprev">
+    <div class="container">
+        <div class="row prevnextlinks small font-weight-bold">
+          
+            <div class="col-md-6 rightborder pl-0">
+                <a class="text-dark" href="/2007/06/fedora-repository-mirroring-script.html">&laquo;  Fedora repository mirroring script using reposync</a>
+            </div>
+          
+          
+            <div class="col-md-6 text-right pr-0">
+                <a class="text-dark" href="/2007/06/setting-up-adsl-connection-fedora-way.html"> Setting up ADSL connection, the Fedora way  &raquo;</a>
+            </div>
+          
+        </div>
+    </div>
+</div>
+
 			<!-- Tags -->
 			<div class="mb-4">
 				<span class="taglist">
@@ -199,7 +216,7 @@
             <!-- Mailchimp Subscribe Form -->
             
             
-            
+
              <!-- Author Box -->
                 				
 				<div class="row mt-5">
@@ -215,7 +232,7 @@
                               <a target="_blank" href="https://linkedin.com/in/kagesenshi" class="btn btn-outline-success btn-sm btn-round ml-2">Follow</a></span>
                            
                            <a class="btn btn-sm btn-outline-success btn-round" 
-                              href="https://paypal.me/kagesenshi">Buy Me A Coffee
+                              href="https://www.buymeacoffee.com/kagesenshi">Buy Me A Coffee
                               <i class="fa fa-heart text-danger"></i>
                            </a>
                            

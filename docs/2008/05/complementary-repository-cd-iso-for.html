@@ -123,7 +123,7 @@
                               <span><a target="_blank" href="https://linkedin.com/in/kagesenshi" class="btn btn-outline-success btn-sm btn-round ml-1">Follow</a></span>
                               
                               <a class="btn btn-sm btn-outline-success btn-round" 
-                                 href="https://paypal.me/kagesenshi">Buy Me A Coffee
+                                 href="https://www.buymeacoffee.com/kagesenshi">Buy Me A Coffee
                                  <i class="fa fa-heart text-danger"></i>
                               </a>
                               
@@ -176,11 +176,28 @@
             
             <!-- Article -->
 			<article class="article-post">                
-			I've been wanting to do this, several times since F7 but kept forgetting due to occupied with stuff. I have put together a complementary ISO containing a repository containing some Livna packages, OpenOffice, and a bunch of stuff which I guess might be useful to users. It is generated using the i686 LiveCD as the root for dependency checks, so, its dependency compatible with the official i686  LiveCD. I'm not sure how beneficial this ISO will be. But I guess it can help our users who does not have big bandwidth to grab certain stuff. Also helps for people who want a kindof-complete desktop environment without being online to grab from stuff from the repos.<br /><br />Here's the torrent<br />- <a href="http://devel.foss.org.my/~kagesenshi/pub/SulphurComplementary-i386-20080515.iso.torrent">SulphurComplementary-i386-20080515.iso.torrent</a>. <br />I'm the only one seeding it, so, seeding help is really appreciated.<br /><br /><code><br />===================================<br />"Sulphur" LiveCD Complementary ISO<br />===================================<br /><br />Introduction<br />-----------------<br /><br />''What is this CD?''<br /><br />Nothing much than just a complementary repository for <br />the Fedora 9 "Sulphur" LiveCD. It contains several<br />additional packages which complements the LiveCD <br />packages, which includes stuff from Livna/RPMFusion.<br />Therefore, this is _NOT_ US Legal safe. <br /><br />Using it<br />---------<br /><br />It was best to use this with system-cdinstall-helper. <br />However, the replace of Pirut with PackageKit removed<br />that tool altogether. <br /><br />Theres several ways to use this:<br /><br />0) mount this ISO somewhere. eg: /mnt/sulphur-complementary<br /><br />1) Use yum-tmprepo. (prefered)<br />  - Theres an rpm called yum-tmprepo in the packages folder<br />  - Install it using:<br /><br />  rpm -ivh yum-tmprepo\*<br /><br />  - Use yum with --tmprepo parameter to yum from this CD<br /><br />  yum --tmprepo=/mnt/sulphur-complementary/ install <whateverpackage><br /><br />2) Add as a repository (works with GUI tools)<br />  - create a config in /etc/yum.repos.d/sulphur-complementary.repo<br />    with this content:<br /><br />[sulphur-complementary]<br />name=Sulphur complementary CD<br />baseurl=file:///mnt/sulphur-complementary/<br />gpgcheck=0<br />enabled=0<br /><br />  - use as usual like you would with normal repositories<br /><br />3) Just install everything in one blow<br /><br />  - If you are lazy and want everything:<br /><br />  cd /mnt/sulphur-complementary/packages<br />  rpm -ivh *.rpm<br /><br /><br />====================<br />Have Fun ~ (^-^)<br />====================<br /></code><br /><br />If you want to generate something similar like this ISO on your own, here's the trick:<br /><br />-&gt; Grab a fedora installation<br />-&gt; copy our its /var/lib/rpm directory <br />-&gt; put it in a computer which have internet <br />-&gt; create an temporary dir <br />-&gt; paste /var/lib/rpm dir to tmpdir/var/lib/rom <br />-&gt; yumdownloader --installroot=/full/path/to/tmpdir/ --resolve packageA packageB packageC ...<br />-&gt; createrepo -d .<br /><br />and u basically get this a dir with a bunch of rpms for a repo. Maybe case some of you might have noticed, I　got this trick from Debarashi's OPYUM's prototype. Have been playing with this trick quite some time as I found it useful to help gather new users in the restrictive/bad service network of my university.<br /><br /><br />P/S: One of the stuff that I wish F10 will have is the revival of the Add-on CD section on Anaconda/Firstboot. So that more of this produced in the future ^-^.<br /><br /><b>Update</b>: Urgh .. this is what happen when I do stuff on 2AM .. Those who downloaded the torrent before, please redownload the torrent .. I put a wrong tracker URL .. Or, you can also change it yourself to http://tracker.prq.to/announce ..<div class="blogger-post-footer"><br/>
+            I've been wanting to do this, several times since F7 but kept forgetting due to occupied with stuff. I have put together a complementary ISO containing a repository containing some Livna packages, OpenOffice, and a bunch of stuff which I guess might be useful to users. It is generated using the i686 LiveCD as the root for dependency checks, so, its dependency compatible with the official i686  LiveCD. I'm not sure how beneficial this ISO will be. But I guess it can help our users who does not have big bandwidth to grab certain stuff. Also helps for people who want a kindof-complete desktop environment without being online to grab from stuff from the repos.<br /><br />Here's the torrent<br />- <a href="http://devel.foss.org.my/~kagesenshi/pub/SulphurComplementary-i386-20080515.iso.torrent">SulphurComplementary-i386-20080515.iso.torrent</a>. <br />I'm the only one seeding it, so, seeding help is really appreciated.<br /><br /><code><br />===================================<br />"Sulphur" LiveCD Complementary ISO<br />===================================<br /><br />Introduction<br />-----------------<br /><br />''What is this CD?''<br /><br />Nothing much than just a complementary repository for <br />the Fedora 9 "Sulphur" LiveCD. It contains several<br />additional packages which complements the LiveCD <br />packages, which includes stuff from Livna/RPMFusion.<br />Therefore, this is _NOT_ US Legal safe. <br /><br />Using it<br />---------<br /><br />It was best to use this with system-cdinstall-helper. <br />However, the replace of Pirut with PackageKit removed<br />that tool altogether. <br /><br />Theres several ways to use this:<br /><br />0) mount this ISO somewhere. eg: /mnt/sulphur-complementary<br /><br />1) Use yum-tmprepo. (prefered)<br />  - Theres an rpm called yum-tmprepo in the packages folder<br />  - Install it using:<br /><br />  rpm -ivh yum-tmprepo\*<br /><br />  - Use yum with --tmprepo parameter to yum from this CD<br /><br />  yum --tmprepo=/mnt/sulphur-complementary/ install <whateverpackage><br /><br />2) Add as a repository (works with GUI tools)<br />  - create a config in /etc/yum.repos.d/sulphur-complementary.repo<br />    with this content:<br /><br />[sulphur-complementary]<br />name=Sulphur complementary CD<br />baseurl=file:///mnt/sulphur-complementary/<br />gpgcheck=0<br />enabled=0<br /><br />  - use as usual like you would with normal repositories<br /><br />3) Just install everything in one blow<br /><br />  - If you are lazy and want everything:<br /><br />  cd /mnt/sulphur-complementary/packages<br />  rpm -ivh *.rpm<br /><br /><br />====================<br />Have Fun ~ (^-^)<br />====================<br /></code><br /><br />If you want to generate something similar like this ISO on your own, here's the trick:<br /><br />-&gt; Grab a fedora installation<br />-&gt; copy our its /var/lib/rpm directory <br />-&gt; put it in a computer which have internet <br />-&gt; create an temporary dir <br />-&gt; paste /var/lib/rpm dir to tmpdir/var/lib/rom <br />-&gt; yumdownloader --installroot=/full/path/to/tmpdir/ --resolve packageA packageB packageC ...<br />-&gt; createrepo -d .<br /><br />and u basically get this a dir with a bunch of rpms for a repo. Maybe case some of you might have noticed, I　got this trick from Debarashi's OPYUM's prototype. Have been playing with this trick quite some time as I found it useful to help gather new users in the restrictive/bad service network of my university.<br /><br /><br />P/S: One of the stuff that I wish F10 will have is the revival of the Add-on CD section on Anaconda/Firstboot. So that more of this produced in the future ^-^.<br /><br /><b>Update</b>: Urgh .. this is what happen when I do stuff on 2AM .. Those who downloaded the torrent before, please redownload the torrent .. I put a wrong tracker URL .. Or, you can also change it yourself to http://tracker.prq.to/announce ..<div class="blogger-post-footer"><br/>
 <br/>
 - Izhar Firdaus -</div>                
-			</article>
-			
+         </article>
+
+<div class="post-nextprev">
+    <div class="container">
+        <div class="row prevnextlinks small font-weight-bold">
+          
+            <div class="col-md-6 rightborder pl-0">
+                <a class="text-dark" href="/2008/05/its-out-its-out-fedora-9-sulphur-is-out.html">&laquo;  Its out!! Its out!!!! Fedora 9 "Sulphur" Is OUT!!!!!!!!!!</a>
+            </div>
+          
+          
+            <div class="col-md-6 text-right pr-0">
+                <a class="text-dark" href="/2008/05/instant-noodles-miso-some-stuff-from.html"> Instant noodles + Miso + some stuff from freezer = yum3  &raquo;</a>
+            </div>
+          
+        </div>
+    </div>
+</div>
+
 			<!-- Tags -->
 			<div class="mb-4">
 				<span class="taglist">
@@ -197,7 +214,7 @@
             <!-- Mailchimp Subscribe Form -->
             
             
-            
+
              <!-- Author Box -->
                 				
 				<div class="row mt-5">
@@ -213,7 +230,7 @@
                               <a target="_blank" href="https://linkedin.com/in/kagesenshi" class="btn btn-outline-success btn-sm btn-round ml-2">Follow</a></span>
                            
                            <a class="btn btn-sm btn-outline-success btn-round" 
-                              href="https://paypal.me/kagesenshi">Buy Me A Coffee
+                              href="https://www.buymeacoffee.com/kagesenshi">Buy Me A Coffee
                               <i class="fa fa-heart text-danger"></i>
                            </a>
                            

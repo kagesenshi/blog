@@ -125,7 +125,7 @@
                               <span><a target="_blank" href="https://linkedin.com/in/kagesenshi" class="btn btn-outline-success btn-sm btn-round ml-1">Follow</a></span>
                               
                               <a class="btn btn-sm btn-outline-success btn-round" 
-                                 href="https://paypal.me/kagesenshi">Buy Me A Coffee
+                                 href="https://www.buymeacoffee.com/kagesenshi">Buy Me A Coffee
                                  <i class="fa fa-heart text-danger"></i>
                               </a>
                               
@@ -182,12 +182,29 @@
             
             <!-- Article -->
 			<article class="article-post">                
-			<div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-v-dUySg5dF4/YB9m3KWqkaI/AAAAAAAAXog/tOhAu4Ks85Yghm7iwxZ7ipXWXJ7pfLEWQCLcBGAsYHQ/s1317/Screenshot%2Bfrom%2B2021-02-04%2B22-52-10.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="597" data-original-width="1317" src="https://1.bp.blogspot.com/-v-dUySg5dF4/YB9m3KWqkaI/AAAAAAAAXog/tOhAu4Ks85Yghm7iwxZ7ipXWXJ7pfLEWQCLcBGAsYHQ/s320/Screenshot%2Bfrom%2B2021-02-04%2B22-52-10.png" width="320" /></a></div><br /><div><br /></div><div><br /></div>In Abyres, we use Apache Superset for many of our data visualization needs. Traditionally, we utilize Superset primarily from what distributed by Hortonworks (now Cloudera)As we are investing more into Superset, and that we are increasingly seeing Superset requirements in situation where Hadoop is not really required, we decided to further our commitment in Superset by creating our own distribution package of it.<br /><br />So, we created Abyres Enterprise Data Visualization, .. a Superset distribution that have been packaged and tested for use with CentOS, RHEL and Fedora. As we are well versed in the RPM packaging world, we ensured this package to integrate seamlessly with traditional management tools available for CentOS/RHEL/Fedora.<br /><br />Alongside with the distribution, we also providing commercial support &amp; consulting for the tooling for enterprises who wishes to leverage the capabilities of Superset in their organization.<br /><br /><div>If you want to try out `ae_datavisualization`, we have made it available in COPR for CentOS Stream, Fedora 33 and EPEL-8.&nbsp;<br /><br /></div><div>To install::</div><div><br /></div><div><div><span style="font-family: courier;"><br class="Apple-interchange-newline" /># dnf copr enable izhar/ae_datavisualization</span></div><div><span style="font-family: courier;"># dnf install ae_datavisualization</span></div></div><div><br /><br /></div><div>To configure, the config file is in `/etc/ae_datavisualization/superset_config.py`. You'll need 2 postgresql databases (`ae_datavisualization`, `ae_datavisualization_cache`) and a rabbitmq server running.&nbsp;<br /><br /></div><div>To initialize database and admin user::<br /><br /></div><div><div><span style="font-family: courier;"># ae_datavisualization db upgrade</span></div><div><span style="font-family: courier;"># ae_datavisualization init</span></div><div><span style="font-family: courier;"># ae_datavisualization fab create-admin</span></div></div><div><br /></div><div><br /></div><div>To start service::</div><div><br /></div><div><div><span style="font-family: courier;"># systemctl start ae_datavisualization-web</span></div><div><span style="font-family: courier;"># systemctl start ae_datavisualization-scheduler</span></div><div><span style="font-family: courier;"># systemctl start ae_datavisualization-worker</span></div></div><div><span style="font-family: courier;"><br /></span></div><div>If nothing went wrong, you should be able to access Superset at port 8999. If you wish to change the listen port, you can edit at `/etc/sysconfig/ae_datavisualization`.</div><br />Interested to know more?.. Contact us at <a href="mailto:contactus@abyres.net">contactus@abyres.net</a> / +603 2724 2535<div class="blogger-post-footer"><br/>
+            <div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-v-dUySg5dF4/YB9m3KWqkaI/AAAAAAAAXog/tOhAu4Ks85Yghm7iwxZ7ipXWXJ7pfLEWQCLcBGAsYHQ/s1317/Screenshot%2Bfrom%2B2021-02-04%2B22-52-10.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="597" data-original-width="1317" src="https://1.bp.blogspot.com/-v-dUySg5dF4/YB9m3KWqkaI/AAAAAAAAXog/tOhAu4Ks85Yghm7iwxZ7ipXWXJ7pfLEWQCLcBGAsYHQ/s320/Screenshot%2Bfrom%2B2021-02-04%2B22-52-10.png" width="320" /></a></div><br /><div><br /></div><div><br /></div>In Abyres, we use Apache Superset for many of our data visualization needs. Traditionally, we utilize Superset primarily from what distributed by Hortonworks (now Cloudera)As we are investing more into Superset, and that we are increasingly seeing Superset requirements in situation where Hadoop is not really required, we decided to further our commitment in Superset by creating our own distribution package of it.<br /><br />So, we created Abyres Enterprise Data Visualization, .. a Superset distribution that have been packaged and tested for use with CentOS, RHEL and Fedora. As we are well versed in the RPM packaging world, we ensured this package to integrate seamlessly with traditional management tools available for CentOS/RHEL/Fedora.<br /><br />Alongside with the distribution, we also providing commercial support &amp; consulting for the tooling for enterprises who wishes to leverage the capabilities of Superset in their organization.<br /><br /><div>If you want to try out `ae_datavisualization`, we have made it available in COPR for CentOS Stream, Fedora 33 and EPEL-8.&nbsp;<br /><br /></div><div>To install::</div><div><br /></div><div><div><span style="font-family: courier;"><br class="Apple-interchange-newline" /># dnf copr enable izhar/ae_datavisualization</span></div><div><span style="font-family: courier;"># dnf install ae_datavisualization</span></div></div><div><br /><br /></div><div>To configure, the config file is in `/etc/ae_datavisualization/superset_config.py`. You'll need 2 postgresql databases (`ae_datavisualization`, `ae_datavisualization_cache`) and a rabbitmq server running.&nbsp;<br /><br /></div><div>To initialize database and admin user::<br /><br /></div><div><div><span style="font-family: courier;"># ae_datavisualization db upgrade</span></div><div><span style="font-family: courier;"># ae_datavisualization init</span></div><div><span style="font-family: courier;"># ae_datavisualization fab create-admin</span></div></div><div><br /></div><div><br /></div><div>To start service::</div><div><br /></div><div><div><span style="font-family: courier;"># systemctl start ae_datavisualization-web</span></div><div><span style="font-family: courier;"># systemctl start ae_datavisualization-scheduler</span></div><div><span style="font-family: courier;"># systemctl start ae_datavisualization-worker</span></div></div><div><span style="font-family: courier;"><br /></span></div><div>If nothing went wrong, you should be able to access Superset at port 8999. If you wish to change the listen port, you can edit at `/etc/sysconfig/ae_datavisualization`.</div><br />Interested to know more?.. Contact us at <a href="mailto:contactus@abyres.net">contactus@abyres.net</a> / +603 2724 2535<div class="blogger-post-footer"><br/>
 <br/>
 - Izhar Firdaus -</div>
                 
-			</article>
-			
+         </article>
+
+<div class="post-nextprev">
+    <div class="container">
+        <div class="row prevnextlinks small font-weight-bold">
+          
+            <div class="col-md-6 rightborder pl-0">
+                <a class="text-dark" href="/2017/04/redash-rpm-in-copr.html">&laquo;  <img height="30px" class="mr-1" src="https://3.bp.blogspot.com/-LLMV53VgLdU/WOpggDEUl_I/AAAAAAAAL4M/A5YggCFSHrEafC5PXrEZgk10z0LtNG3gwCLcB/s1600/redash.png">  Redash RPM in COPR</a>
+            </div>
+          
+          
+            <div class="col-md-6 text-right pr-0">
+                <a class="text-dark" href="/2021/02/migrate-to-github.html"> Migrated to Github Pages  <img height="30px" class="ml-1" src="/assets/images/2021/github-pages.jpg">  &raquo;</a>
+            </div>
+          
+        </div>
+    </div>
+</div>
+
 			<!-- Tags -->
 			<div class="mb-4">
 				<span class="taglist">
@@ -200,7 +217,7 @@
             <!-- Mailchimp Subscribe Form -->
             
             
-            
+
              <!-- Author Box -->
                 				
 				<div class="row mt-5">
@@ -216,7 +233,7 @@
                               <a target="_blank" href="https://linkedin.com/in/kagesenshi" class="btn btn-outline-success btn-sm btn-round ml-2">Follow</a></span>
                            
                            <a class="btn btn-sm btn-outline-success btn-round" 
-                              href="https://paypal.me/kagesenshi">Buy Me A Coffee
+                              href="https://www.buymeacoffee.com/kagesenshi">Buy Me A Coffee
                               <i class="fa fa-heart text-danger"></i>
                            </a>
                            

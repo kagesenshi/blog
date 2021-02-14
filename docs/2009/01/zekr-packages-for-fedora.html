@@ -123,7 +123,7 @@
                               <span><a target="_blank" href="https://linkedin.com/in/kagesenshi" class="btn btn-outline-success btn-sm btn-round ml-1">Follow</a></span>
                               
                               <a class="btn btn-sm btn-outline-success btn-round" 
-                                 href="https://paypal.me/kagesenshi">Buy Me A Coffee
+                                 href="https://www.buymeacoffee.com/kagesenshi">Buy Me A Coffee
                                  <i class="fa fa-heart text-danger"></i>
                               </a>
                               
@@ -176,11 +176,28 @@
             
             <!-- Article -->
 			<article class="article-post">                
-			A little introduction about Zekr:<br /><br /><blockquote>Zekr is an Open Source Quran study tool. This project is planned to be a universal, Open Source, and cross-platform application to perform most of the usual refers to the holy Quran. The main idea is to build an as generic as possible platform to accept different Quranic resources. Site: <a href="http://zekr.org/">http://zekr.org/</a></blockquote><br /><br />Interested? .. the packages are here : <a href="http://izhar.fedorapeople.org/zekr/">http://izhar.fedorapeople.org/zekr/</a><br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://1.bp.blogspot.com/_0DENAyCRujw/SWiYqf9tfAI/AAAAAAAAAZk/SiFwvPRS21k/s1600-h/20090110-01.jpeg"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 320px; height: 240px;" src="http://1.bp.blogspot.com/_0DENAyCRujw/SWiYqf9tfAI/AAAAAAAAAZk/SiFwvPRS21k/s320/20090110-01.jpeg" border="0" alt=""id="BLOGGER_PHOTO_ID_5289645618248907778" /></a><br /><br />After version 0.6, there are no more RPM packages provided by upstream. So, I've packaged the latest Zekr to fill in this gap. The ideal goal would be to make it in Fedora main repositories, but the licenses might be some problem.<br /><br />Zekr itself is licensed under GPLv2+, however, the Quran text files are licensed under CC-ND, a swf based player (used by zekr to play recitation) is CC-NC-ND, and Quran Roots/Stems List are licensed under a redistributable, no-derivative, with additional restrictions license. <br /><br />I am not 100% sure whether those data can be included in Fedora with such licenses. So, I've patched the code so that the data can be installed in home directory and separated those stuff in a tarball which will be later automatically grabbed by AutoDownloader (similar to how GnomeSword / Sword Bible Research Tool in the Fedora repositories handle their data files). Also separated into the data tarball are metadata that links to external sites to stream Quran recitation mainly because the external sites are generally using MP3 audio (yep, its a taboo). <br /><br />Included together in the data tarball is the now public domain Yusof Ali's interpretation/translation of the Quran. For additional Quran interpretation files in various of other languages, grab them from <a href="http://zekr.org/quran/translations">zekr extensions page</a>.<br /><br /><span style="font-weight:bold;">Additional Note:</span><br /><br /><ul><li>To enable the audio player, you will need a flash plugin that supports MP3 decoding.</li><li>The RPM contains a bundled together jakarta-commons-configuration JAR because it does not exists in Fedora repositories yet. The SpaceWalk guys seems like working on this, (ref : <a href="https://fedorahosted.org/spacewalk/wiki/GettingPackagesIntoFedora">https://fedorahosted.org/spacewalk/wiki/GettingPackagesIntoFedora</a> ), looks like they have some issue they want to fix first, but I'm not sure the progress</li><li>If theres a bug with the homedir patch, the launcher, or the autodl configuration, do inform me</ul><div class="blogger-post-footer"><br/>
+            A little introduction about Zekr:<br /><br /><blockquote>Zekr is an Open Source Quran study tool. This project is planned to be a universal, Open Source, and cross-platform application to perform most of the usual refers to the holy Quran. The main idea is to build an as generic as possible platform to accept different Quranic resources. Site: <a href="http://zekr.org/">http://zekr.org/</a></blockquote><br /><br />Interested? .. the packages are here : <a href="http://izhar.fedorapeople.org/zekr/">http://izhar.fedorapeople.org/zekr/</a><br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://1.bp.blogspot.com/_0DENAyCRujw/SWiYqf9tfAI/AAAAAAAAAZk/SiFwvPRS21k/s1600-h/20090110-01.jpeg"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 320px; height: 240px;" src="http://1.bp.blogspot.com/_0DENAyCRujw/SWiYqf9tfAI/AAAAAAAAAZk/SiFwvPRS21k/s320/20090110-01.jpeg" border="0" alt=""id="BLOGGER_PHOTO_ID_5289645618248907778" /></a><br /><br />After version 0.6, there are no more RPM packages provided by upstream. So, I've packaged the latest Zekr to fill in this gap. The ideal goal would be to make it in Fedora main repositories, but the licenses might be some problem.<br /><br />Zekr itself is licensed under GPLv2+, however, the Quran text files are licensed under CC-ND, a swf based player (used by zekr to play recitation) is CC-NC-ND, and Quran Roots/Stems List are licensed under a redistributable, no-derivative, with additional restrictions license. <br /><br />I am not 100% sure whether those data can be included in Fedora with such licenses. So, I've patched the code so that the data can be installed in home directory and separated those stuff in a tarball which will be later automatically grabbed by AutoDownloader (similar to how GnomeSword / Sword Bible Research Tool in the Fedora repositories handle their data files). Also separated into the data tarball are metadata that links to external sites to stream Quran recitation mainly because the external sites are generally using MP3 audio (yep, its a taboo). <br /><br />Included together in the data tarball is the now public domain Yusof Ali's interpretation/translation of the Quran. For additional Quran interpretation files in various of other languages, grab them from <a href="http://zekr.org/quran/translations">zekr extensions page</a>.<br /><br /><span style="font-weight:bold;">Additional Note:</span><br /><br /><ul><li>To enable the audio player, you will need a flash plugin that supports MP3 decoding.</li><li>The RPM contains a bundled together jakarta-commons-configuration JAR because it does not exists in Fedora repositories yet. The SpaceWalk guys seems like working on this, (ref : <a href="https://fedorahosted.org/spacewalk/wiki/GettingPackagesIntoFedora">https://fedorahosted.org/spacewalk/wiki/GettingPackagesIntoFedora</a> ), looks like they have some issue they want to fix first, but I'm not sure the progress</li><li>If theres a bug with the homedir patch, the launcher, or the autodl configuration, do inform me</ul><div class="blogger-post-footer"><br/>
 <br/>
 - Izhar Firdaus -</div>                
-			</article>
-			
+         </article>
+
+<div class="post-nextprev">
+    <div class="container">
+        <div class="row prevnextlinks small font-weight-bold">
+          
+            <div class="col-md-6 rightborder pl-0">
+                <a class="text-dark" href="/2009/01/google-gadgets-on-fedora.html">&laquo;  Google Gadgets on Fedora</a>
+            </div>
+          
+          
+            <div class="col-md-6 text-right pr-0">
+                <a class="text-dark" href="/2009/01/fedora-11-leonidas-webcomic_11.html"> Fedora 11 : Leonidas + Webcomic!!!!!!!  &raquo;</a>
+            </div>
+          
+        </div>
+    </div>
+</div>
+
 			<!-- Tags -->
 			<div class="mb-4">
 				<span class="taglist">
@@ -195,7 +212,7 @@
             <!-- Mailchimp Subscribe Form -->
             
             
-            
+
              <!-- Author Box -->
                 				
 				<div class="row mt-5">
@@ -211,7 +228,7 @@
                               <a target="_blank" href="https://linkedin.com/in/kagesenshi" class="btn btn-outline-success btn-sm btn-round ml-2">Follow</a></span>
                            
                            <a class="btn btn-sm btn-outline-success btn-round" 
-                              href="https://paypal.me/kagesenshi">Buy Me A Coffee
+                              href="https://www.buymeacoffee.com/kagesenshi">Buy Me A Coffee
                               <i class="fa fa-heart text-danger"></i>
                            </a>
                            

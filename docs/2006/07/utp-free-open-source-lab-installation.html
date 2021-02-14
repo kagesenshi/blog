@@ -123,7 +123,7 @@
                               <span><a target="_blank" href="https://linkedin.com/in/kagesenshi" class="btn btn-outline-success btn-sm btn-round ml-1">Follow</a></span>
                               
                               <a class="btn btn-sm btn-outline-success btn-round" 
-                                 href="https://paypal.me/kagesenshi">Buy Me A Coffee
+                                 href="https://www.buymeacoffee.com/kagesenshi">Buy Me A Coffee
                                  <i class="fa fa-heart text-danger"></i>
                               </a>
                               
@@ -176,11 +176,28 @@
             
             <!-- Article -->
 			<article class="article-post">                
-			Today i woke up early to go to the lab. My other subject's lab classes wont be starting until next week, so i have some time in the morning to play around with the FOSS lab.<br /><br />My first priority there is to recover the GRUB for solaris 10 which was broken after GHOST. Last week we havent succeed in recovering it. So i want to continue it today.<br /><br />At first we are having a big problem trying to reinstall the Solaris' GRUB because of the different FS that it is installed on. Googling with many combination of keywords brought us to sites that doesnt fulfill our needs. Then we found a site which have the required info. However, i missread it, and used<br /><br /><blockquote># installgrub /boot/grub/stage1 /boot/grub/stage2 /dev/dsk/c0d0s0</blockquote><br /><br />I'm not familiar with Solaris, and got confused between <span style="font-style: italic;">/dev/rdsk</span> and <span style="font-style: italic;">/dev/dsk</span> . I though rdisk means Remote-Disk or sumthing like that. So i got some errors that gave me no clue whats wrong and failed to install grub.<br /><br />Then i continue googling for other ways to install it. Then i come upon an idea of creating a boot floppy, so, i fire up <span style="font-style: italic;">man installgrub</span> on a working Solaris box to find a way to create a boot floppy. On the man page, it also uses <span style="font-style: italic;">/dev/rdsk </span>which makes me wonder why.<br /><br />Feeling curious, i restarted the GHOST'ed machine with the solaris CD1 again, and tried using the command<br /><br /><blockquote>installgrub /boot/grub/stage1 /boot/grub/stage2 /dev/rdsk/c0d0s0</blockquote><br /><br />And walla, it succeeds!. Damn, all that hassles doesnt worth it. Well, at least we got the Solaris running.<div class="blogger-post-footer"><br/>
+            Today i woke up early to go to the lab. My other subject's lab classes wont be starting until next week, so i have some time in the morning to play around with the FOSS lab.<br /><br />My first priority there is to recover the GRUB for solaris 10 which was broken after GHOST. Last week we havent succeed in recovering it. So i want to continue it today.<br /><br />At first we are having a big problem trying to reinstall the Solaris' GRUB because of the different FS that it is installed on. Googling with many combination of keywords brought us to sites that doesnt fulfill our needs. Then we found a site which have the required info. However, i missread it, and used<br /><br /><blockquote># installgrub /boot/grub/stage1 /boot/grub/stage2 /dev/dsk/c0d0s0</blockquote><br /><br />I'm not familiar with Solaris, and got confused between <span style="font-style: italic;">/dev/rdsk</span> and <span style="font-style: italic;">/dev/dsk</span> . I though rdisk means Remote-Disk or sumthing like that. So i got some errors that gave me no clue whats wrong and failed to install grub.<br /><br />Then i continue googling for other ways to install it. Then i come upon an idea of creating a boot floppy, so, i fire up <span style="font-style: italic;">man installgrub</span> on a working Solaris box to find a way to create a boot floppy. On the man page, it also uses <span style="font-style: italic;">/dev/rdsk </span>which makes me wonder why.<br /><br />Feeling curious, i restarted the GHOST'ed machine with the solaris CD1 again, and tried using the command<br /><br /><blockquote>installgrub /boot/grub/stage1 /boot/grub/stage2 /dev/rdsk/c0d0s0</blockquote><br /><br />And walla, it succeeds!. Damn, all that hassles doesnt worth it. Well, at least we got the Solaris running.<div class="blogger-post-footer"><br/>
 <br/>
 - Izhar Firdaus -</div>                
-			</article>
-			
+         </article>
+
+<div class="post-nextprev">
+    <div class="container">
+        <div class="row prevnextlinks small font-weight-bold">
+          
+            <div class="col-md-6 rightborder pl-0">
+                <a class="text-dark" href="/2006/07/missing-in-fedoras-menu-hal-device.html">&laquo;  Missing in Fedora's Menu: hal-device-manager</a>
+            </div>
+          
+          
+            <div class="col-md-6 text-right pr-0">
+                <a class="text-dark" href="/2006/08/utp-oss-founded.html"> UTP-OSS :- Founded  &raquo;</a>
+            </div>
+          
+        </div>
+    </div>
+</div>
+
 			<!-- Tags -->
 			<div class="mb-4">
 				<span class="taglist">
@@ -193,7 +210,7 @@
             <!-- Mailchimp Subscribe Form -->
             
             
-            
+
              <!-- Author Box -->
                 				
 				<div class="row mt-5">
@@ -209,7 +226,7 @@
                               <a target="_blank" href="https://linkedin.com/in/kagesenshi" class="btn btn-outline-success btn-sm btn-round ml-2">Follow</a></span>
                            
                            <a class="btn btn-sm btn-outline-success btn-round" 
-                              href="https://paypal.me/kagesenshi">Buy Me A Coffee
+                              href="https://www.buymeacoffee.com/kagesenshi">Buy Me A Coffee
                               <i class="fa fa-heart text-danger"></i>
                            </a>
                            

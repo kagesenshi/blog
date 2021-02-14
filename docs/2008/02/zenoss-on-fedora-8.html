@@ -123,7 +123,7 @@
                               <span><a target="_blank" href="https://linkedin.com/in/kagesenshi" class="btn btn-outline-success btn-sm btn-round ml-1">Follow</a></span>
                               
                               <a class="btn btn-sm btn-outline-success btn-round" 
-                                 href="https://paypal.me/kagesenshi">Buy Me A Coffee
+                                 href="https://www.buymeacoffee.com/kagesenshi">Buy Me A Coffee
                                  <i class="fa fa-heart text-danger"></i>
                               </a>
                               
@@ -176,11 +176,28 @@
             
             <!-- Article -->
 			<article class="article-post">                
-			I've wasted 1.5 day trying to get <a href="http://zenoss.com">zenoss</a> from their RPM to run on my F8 laptop using compat-python24 from livna. I've tried lots of ways like recompiling, export PYTHON and PYTHONPATH env variables etc but without much luck. I solved it just now after looking into the python files and noticed that they are all hardcoded with /usr/bin/python instead of /usr/bin/env python. There are even some that uses /opt/zenoss/bin/python. Here's my little hackfix to make zenoss starts cleanly.<br /><br />Before running this, I recommend existing zenoss install to be removed, rm -rf /opt/zenoss, and reinstall it clean.<br /><br /><code><br />#!/bin/sh<br /><br />ZENOSS_DIR="/opt/zenoss"<br />PYTHON="/usr/bin/python2.4"<br />cd $ZENOSS_DIR<br /><br />find . -type f -exec sed -i "s|/usr/bin/python|${ZENOSS_DIR}/bin/python|g" '{}' ';'<br /><br />cd $ZENOSS_DIR/bin<br />rm python<br />ln -s $PYTHON python<br /></code><br /><br />A little description about the above script. It simply change all /usr/bin/python to /opt/zenoss/bin/python and replace the symlink /opt/zenoss/bin/python to point to /usr/bin/python2.4<br /><br />Now Zenoss can be started using /sbin/service zenoss start.  <br /><br />Happy that I have a test instance now, time to figure out how to install it on freebsd qemu. >.<<div class="blogger-post-footer"><br/>
+            I've wasted 1.5 day trying to get <a href="http://zenoss.com">zenoss</a> from their RPM to run on my F8 laptop using compat-python24 from livna. I've tried lots of ways like recompiling, export PYTHON and PYTHONPATH env variables etc but without much luck. I solved it just now after looking into the python files and noticed that they are all hardcoded with /usr/bin/python instead of /usr/bin/env python. There are even some that uses /opt/zenoss/bin/python. Here's my little hackfix to make zenoss starts cleanly.<br /><br />Before running this, I recommend existing zenoss install to be removed, rm -rf /opt/zenoss, and reinstall it clean.<br /><br /><code><br />#!/bin/sh<br /><br />ZENOSS_DIR="/opt/zenoss"<br />PYTHON="/usr/bin/python2.4"<br />cd $ZENOSS_DIR<br /><br />find . -type f -exec sed -i "s|/usr/bin/python|${ZENOSS_DIR}/bin/python|g" '{}' ';'<br /><br />cd $ZENOSS_DIR/bin<br />rm python<br />ln -s $PYTHON python<br /></code><br /><br />A little description about the above script. It simply change all /usr/bin/python to /opt/zenoss/bin/python and replace the symlink /opt/zenoss/bin/python to point to /usr/bin/python2.4<br /><br />Now Zenoss can be started using /sbin/service zenoss start.  <br /><br />Happy that I have a test instance now, time to figure out how to install it on freebsd qemu. >.<<div class="blogger-post-footer"><br/>
 <br/>
 - Izhar Firdaus -</div>                
-			</article>
-			
+         </article>
+
+<div class="post-nextprev">
+    <div class="container">
+        <div class="row prevnextlinks small font-weight-bold">
+          
+            <div class="col-md-6 rightborder pl-0">
+                <a class="text-dark" href="/2008/02/fedora-will-be-having-win32-livecd-iso.html">&laquo;  Fedora will be having a win32 livecd-iso-to-usb tool</a>
+            </div>
+          
+          
+            <div class="col-md-6 text-right pr-0">
+                <a class="text-dark" href="/2008/02/fedora-9-alpha.html"> Fedora 9 (Sulphur) Alpha  &raquo;</a>
+            </div>
+          
+        </div>
+    </div>
+</div>
+
 			<!-- Tags -->
 			<div class="mb-4">
 				<span class="taglist">
@@ -203,7 +220,7 @@
             <!-- Mailchimp Subscribe Form -->
             
             
-            
+
              <!-- Author Box -->
                 				
 				<div class="row mt-5">
@@ -219,7 +236,7 @@
                               <a target="_blank" href="https://linkedin.com/in/kagesenshi" class="btn btn-outline-success btn-sm btn-round ml-2">Follow</a></span>
                            
                            <a class="btn btn-sm btn-outline-success btn-round" 
-                              href="https://paypal.me/kagesenshi">Buy Me A Coffee
+                              href="https://www.buymeacoffee.com/kagesenshi">Buy Me A Coffee
                               <i class="fa fa-heart text-danger"></i>
                            </a>
                            

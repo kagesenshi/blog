@@ -123,7 +123,7 @@
                               <span><a target="_blank" href="https://linkedin.com/in/kagesenshi" class="btn btn-outline-success btn-sm btn-round ml-1">Follow</a></span>
                               
                               <a class="btn btn-sm btn-outline-success btn-round" 
-                                 href="https://paypal.me/kagesenshi">Buy Me A Coffee
+                                 href="https://www.buymeacoffee.com/kagesenshi">Buy Me A Coffee
                                  <i class="fa fa-heart text-danger"></i>
                               </a>
                               
@@ -176,11 +176,28 @@
             
             <!-- Article -->
 			<article class="article-post">                
-			Something I came up in during <a href="https://fedoraproject.org/wiki/Ambassadors/MalaysianTeam/Events/Meetup_KL_Dec2010">the small FAD we had in .MY</a> last week.<br /><br />Yum's fastestmirror plugin is kindof broken by design, because the plugin's definition of 'fastest' means shortest handshake time, rather than shortest download time (highest bandwidth).<br /><br />If a particular country had nearby mirrors which have a really low bandwidth, fastestmirror actually made the download speed slower for users who are using it. (in my case, the nearby mirrors are extremely slow, its faster to simply force yum to grab from Taiwan mirrors, and I believe lots of local users here are also affected by this)<br /><br />This plugin is a hack which complements fastestmirror by timing the metadata download time of repositories, sort them and set fastestmirror.conf to only include the top 3 mirrors with shortest metadata download time for each repository. <br /><br />Source: <a href="http://fedorapeople.org/gitweb?p=izhar/public_git/hack-patches.git;a=blob_plain;f=yum-plugin-timemirrorbandwidth/timemirrorbandwidth.py">timemirrorbandwidth.py</a><br /><br />To install, simply copy the file into <code>/usr/lib/yum-plugins/</code> and create a <code>/etc/yum/pluginconf.d/timemirrorbandwidth.conf</code> with this contents:<br /><br /><code>[main]<br />enabled=1</code><br /><br />(I should put this in RPM i guess)<br /><br />To use, simply execute:<br /><br /><code>yum time-mirrors --disableplugin=fastestmirror</code><br /><br />the plugin will start scoring the available mirrors and add the fastest 3 mirrors for each repository into fastestmirror.conf's include_only list. I wont make this plugin to run the timing each time yum is executed, because that will mean extreme slowdown.<br /><br />Feel free to improve it .. (probably i should move this into github or something).. Have fun!<div class="blogger-post-footer"><br/>
+            Something I came up in during <a href="https://fedoraproject.org/wiki/Ambassadors/MalaysianTeam/Events/Meetup_KL_Dec2010">the small FAD we had in .MY</a> last week.<br /><br />Yum's fastestmirror plugin is kindof broken by design, because the plugin's definition of 'fastest' means shortest handshake time, rather than shortest download time (highest bandwidth).<br /><br />If a particular country had nearby mirrors which have a really low bandwidth, fastestmirror actually made the download speed slower for users who are using it. (in my case, the nearby mirrors are extremely slow, its faster to simply force yum to grab from Taiwan mirrors, and I believe lots of local users here are also affected by this)<br /><br />This plugin is a hack which complements fastestmirror by timing the metadata download time of repositories, sort them and set fastestmirror.conf to only include the top 3 mirrors with shortest metadata download time for each repository. <br /><br />Source: <a href="http://fedorapeople.org/gitweb?p=izhar/public_git/hack-patches.git;a=blob_plain;f=yum-plugin-timemirrorbandwidth/timemirrorbandwidth.py">timemirrorbandwidth.py</a><br /><br />To install, simply copy the file into <code>/usr/lib/yum-plugins/</code> and create a <code>/etc/yum/pluginconf.d/timemirrorbandwidth.conf</code> with this contents:<br /><br /><code>[main]<br />enabled=1</code><br /><br />(I should put this in RPM i guess)<br /><br />To use, simply execute:<br /><br /><code>yum time-mirrors --disableplugin=fastestmirror</code><br /><br />the plugin will start scoring the available mirrors and add the fastest 3 mirrors for each repository into fastestmirror.conf's include_only list. I wont make this plugin to run the timing each time yum is executed, because that will mean extreme slowdown.<br /><br />Feel free to improve it .. (probably i should move this into github or something).. Have fun!<div class="blogger-post-footer"><br/>
 <br/>
 - Izhar Firdaus -</div>                
-			</article>
-			
+         </article>
+
+<div class="post-nextprev">
+    <div class="container">
+        <div class="row prevnextlinks small font-weight-bold">
+          
+            <div class="col-md-6 rightborder pl-0">
+                <a class="text-dark" href="/2010/11/fedora-14-released.html">&laquo;  Fedora 14 Released!!!!!</a>
+            </div>
+          
+          
+            <div class="col-md-6 text-right pr-0">
+                <a class="text-dark" href="/2011/03/problem-with-time-and-age-of-universe.html"> The problem with time and age of universe (or age of anything celestial)  &raquo;</a>
+            </div>
+          
+        </div>
+    </div>
+</div>
+
 			<!-- Tags -->
 			<div class="mb-4">
 				<span class="taglist">
@@ -197,7 +214,7 @@
             <!-- Mailchimp Subscribe Form -->
             
             
-            
+
              <!-- Author Box -->
                 				
 				<div class="row mt-5">
@@ -213,7 +230,7 @@
                               <a target="_blank" href="https://linkedin.com/in/kagesenshi" class="btn btn-outline-success btn-sm btn-round ml-2">Follow</a></span>
                            
                            <a class="btn btn-sm btn-outline-success btn-round" 
-                              href="https://paypal.me/kagesenshi">Buy Me A Coffee
+                              href="https://www.buymeacoffee.com/kagesenshi">Buy Me A Coffee
                               <i class="fa fa-heart text-danger"></i>
                            </a>
                            

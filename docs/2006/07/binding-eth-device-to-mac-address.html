@@ -123,7 +123,7 @@
                               <span><a target="_blank" href="https://linkedin.com/in/kagesenshi" class="btn btn-outline-success btn-sm btn-round ml-1">Follow</a></span>
                               
                               <a class="btn btn-sm btn-outline-success btn-round" 
-                                 href="https://paypal.me/kagesenshi">Buy Me A Coffee
+                                 href="https://www.buymeacoffee.com/kagesenshi">Buy Me A Coffee
                                  <i class="fa fa-heart text-danger"></i>
                               </a>
                               
@@ -176,11 +176,28 @@
             
             <!-- Article -->
 			<article class="article-post">                
-			Having multiple network cards can be a little confusing. The device associated with an eth device might got mixed up when you change your kernel. Here is a little guide to overcome this.<br /><br /><b>1st : Getting the MAC address</b><br /><br />run /sbin/ifconfig , copy HWaddr value and figure out which network card it belongs to. <br /><br /><blockquote>eth0      Link encap:Ethernet  HWaddr <b>00:E0:4C:43:D8:80</b><br /></blockquote><br /><b>2nd : Edit the conf<br /><br /></b>as root, open /etc/sysconfig/networking/devices/ifcfg-eth<i>N</i> (<i>N</i> is the number of your eth device) using your favourite text editor. Add this key into the configuration:<br /><br /><blockquote>HWADDR=<i><b>device-MAC-address</b></i></blockquote><b>3rd : Restart computer</b><br /><br />restart the computer to apply the bind. (if you are very good in kernel modules, you can try to apply the setting without restarting)<br /><br /><br /><hr><b>Reference</b><br /><br />http://www.redhat.com/archives/redhat-list/2003-August/msg00817.html<div class="blogger-post-footer"><br/>
+            Having multiple network cards can be a little confusing. The device associated with an eth device might got mixed up when you change your kernel. Here is a little guide to overcome this.<br /><br /><b>1st : Getting the MAC address</b><br /><br />run /sbin/ifconfig , copy HWaddr value and figure out which network card it belongs to. <br /><br /><blockquote>eth0      Link encap:Ethernet  HWaddr <b>00:E0:4C:43:D8:80</b><br /></blockquote><br /><b>2nd : Edit the conf<br /><br /></b>as root, open /etc/sysconfig/networking/devices/ifcfg-eth<i>N</i> (<i>N</i> is the number of your eth device) using your favourite text editor. Add this key into the configuration:<br /><br /><blockquote>HWADDR=<i><b>device-MAC-address</b></i></blockquote><b>3rd : Restart computer</b><br /><br />restart the computer to apply the bind. (if you are very good in kernel modules, you can try to apply the setting without restarting)<br /><br /><br /><hr><b>Reference</b><br /><br />http://www.redhat.com/archives/redhat-list/2003-August/msg00817.html<div class="blogger-post-footer"><br/>
 <br/>
 - Izhar Firdaus -</div>                
-			</article>
-			
+         </article>
+
+<div class="post-nextprev">
+    <div class="container">
+        <div class="row prevnextlinks small font-weight-bold">
+          
+            <div class="col-md-6 rightborder pl-0">
+                <a class="text-dark" href="/2006/07/myoss-july-meetup.html">&laquo;  MyOSS July Meetup</a>
+            </div>
+          
+          
+            <div class="col-md-6 text-right pr-0">
+                <a class="text-dark" href="/2006/07/ks-x-livecd-build-start_14.html"> Ks-X LiveCD - Build Start  &raquo;</a>
+            </div>
+          
+        </div>
+    </div>
+</div>
+
 			<!-- Tags -->
 			<div class="mb-4">
 				<span class="taglist">
@@ -191,7 +208,7 @@
             <!-- Mailchimp Subscribe Form -->
             
             
-            
+
              <!-- Author Box -->
                 				
 				<div class="row mt-5">
@@ -207,7 +224,7 @@
                               <a target="_blank" href="https://linkedin.com/in/kagesenshi" class="btn btn-outline-success btn-sm btn-round ml-2">Follow</a></span>
                            
                            <a class="btn btn-sm btn-outline-success btn-round" 
-                              href="https://paypal.me/kagesenshi">Buy Me A Coffee
+                              href="https://www.buymeacoffee.com/kagesenshi">Buy Me A Coffee
                               <i class="fa fa-heart text-danger"></i>
                            </a>
                            

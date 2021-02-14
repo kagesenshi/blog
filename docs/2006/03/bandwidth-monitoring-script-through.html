@@ -123,7 +123,7 @@
                               <span><a target="_blank" href="https://linkedin.com/in/kagesenshi" class="btn btn-outline-success btn-sm btn-round ml-1">Follow</a></span>
                               
                               <a class="btn btn-sm btn-outline-success btn-round" 
-                                 href="https://paypal.me/kagesenshi">Buy Me A Coffee
+                                 href="https://www.buymeacoffee.com/kagesenshi">Buy Me A Coffee
                                  <i class="fa fa-heart text-danger"></i>
                               </a>
                               
@@ -176,11 +176,28 @@
             
             <!-- Article -->
 			<article class="article-post">                
-			<p>Some ppl might need sumthing to monitor their bwidth … i think this script would b enough for some of us … i wrote it by myself by manipulating the output of ifconfig …</p>      <span style="font-family:monospace;font-size:78%;color:black;"><br /><code><br />#!/bin/bash</code></span> <span style="font-family:monospace;font-size:78%;color:black;"> </span> <p><span style="font-family:monospace;font-size:78%;color:black;">IFCONFIG="/sbin/ifconfig”<br />IFACE=$1<br />if [ “${1}” != “” ]; then<br />   IFOUTPUT=`${IFCONFIG} ${IFACE} |grep bytes`<br />   DOWNOLD=`echo ${IFOUTPUT}|awk ‘{print $2}’|sed s/"bytes:"//`<br />   UPOLD=`echo ${IFOUTPUT}|grep bytes|awk ‘{print $6}’|sed s/"bytes:"//`<br />sleep 0.8<br />   IFOUTPUT=`${IFCONFIG} ${IFACE} |grep bytes`<br />   DOWNNOW=`echo ${IFOUTPUT}|awk ‘{print $2}’|sed s/"bytes:"//`<br />   UPNOW=`echo ${IFOUTPUT}|awk ‘{print $6}’|sed s/"bytes:"//`</span></p>  <span style="font-family:monospace;font-size:78%;color:black;"> </span> <p><span style="font-family:monospace;font-size:78%;color:black;">   let “UP= $UPNOW - $UPOLD”<br />   let “DOWN= $DOWNNOW - $DOWNOLD”<br />   let “TOTAL = UP + DOWN”<br />   echo “—-KBps Bandwitdh Monitor—-”<br />   echo “”<br />   echo ”        by KageSenshi”<br />   echo “”<br />   echo “”<br />   echo “——————————”<br />   echo “Bandwidth for Interface ${IFACE}”<br />   echo “——————————”<br />   echo “”<br />   echo ”               KBps    MBps”<br />   echo “Upload Speed   $(($UP / 1024)) $(($UP / 1024 / 1024))”<br />   echo “Download Speed $(($DOWN / 1024))       $(($DOWN / 1024 / 1024))”<br />   echo ”         Total $(($TOTAL / 1024))      $(($TOTAL / 1024 /1024))”<br />   echo “”</span></p>  <span style="font-family:monospace;font-size:78%;color:black;"> </span> <p><span style="font-family:monospace;font-size:78%;color:black;">#   uncomment this if u want the output to be stored in ur hdd<br />#   echo “${UP} ${DOWN} ${TOTAL}” >> $HOME/bwidth.txt</span></p>  <span style="font-family:monospace;font-size:78%;color:black;"> </span> <p><span style="font-family:monospace;font-size:78%;color:black;">   echo “”<br />   echo “*Tips : View this in realtime”<br />   echo ”    watch -d=c bwmon ${IFACE}  “<br />else<br />   echo “Bandwitdh Monitor “<br />   echo “By: KageSenshi “<br />   echo ” “<br />   echo “Usage:”<br />   echo ”           bwmon <eth>”<br />   echo ”           watch -d=n bwmon <eth>”<br />fi</span></p><div class="blogger-post-footer"><br/>
+            <p>Some ppl might need sumthing to monitor their bwidth … i think this script would b enough for some of us … i wrote it by myself by manipulating the output of ifconfig …</p>      <span style="font-family:monospace;font-size:78%;color:black;"><br /><code><br />#!/bin/bash</code></span> <span style="font-family:monospace;font-size:78%;color:black;"> </span> <p><span style="font-family:monospace;font-size:78%;color:black;">IFCONFIG="/sbin/ifconfig”<br />IFACE=$1<br />if [ “${1}” != “” ]; then<br />   IFOUTPUT=`${IFCONFIG} ${IFACE} |grep bytes`<br />   DOWNOLD=`echo ${IFOUTPUT}|awk ‘{print $2}’|sed s/"bytes:"//`<br />   UPOLD=`echo ${IFOUTPUT}|grep bytes|awk ‘{print $6}’|sed s/"bytes:"//`<br />sleep 0.8<br />   IFOUTPUT=`${IFCONFIG} ${IFACE} |grep bytes`<br />   DOWNNOW=`echo ${IFOUTPUT}|awk ‘{print $2}’|sed s/"bytes:"//`<br />   UPNOW=`echo ${IFOUTPUT}|awk ‘{print $6}’|sed s/"bytes:"//`</span></p>  <span style="font-family:monospace;font-size:78%;color:black;"> </span> <p><span style="font-family:monospace;font-size:78%;color:black;">   let “UP= $UPNOW - $UPOLD”<br />   let “DOWN= $DOWNNOW - $DOWNOLD”<br />   let “TOTAL = UP + DOWN”<br />   echo “—-KBps Bandwitdh Monitor—-”<br />   echo “”<br />   echo ”        by KageSenshi”<br />   echo “”<br />   echo “”<br />   echo “——————————”<br />   echo “Bandwidth for Interface ${IFACE}”<br />   echo “——————————”<br />   echo “”<br />   echo ”               KBps    MBps”<br />   echo “Upload Speed   $(($UP / 1024)) $(($UP / 1024 / 1024))”<br />   echo “Download Speed $(($DOWN / 1024))       $(($DOWN / 1024 / 1024))”<br />   echo ”         Total $(($TOTAL / 1024))      $(($TOTAL / 1024 /1024))”<br />   echo “”</span></p>  <span style="font-family:monospace;font-size:78%;color:black;"> </span> <p><span style="font-family:monospace;font-size:78%;color:black;">#   uncomment this if u want the output to be stored in ur hdd<br />#   echo “${UP} ${DOWN} ${TOTAL}” >> $HOME/bwidth.txt</span></p>  <span style="font-family:monospace;font-size:78%;color:black;"> </span> <p><span style="font-family:monospace;font-size:78%;color:black;">   echo “”<br />   echo “*Tips : View this in realtime”<br />   echo ”    watch -d=c bwmon ${IFACE}  “<br />else<br />   echo “Bandwitdh Monitor “<br />   echo “By: KageSenshi “<br />   echo ” “<br />   echo “Usage:”<br />   echo ”           bwmon <eth>”<br />   echo ”           watch -d=n bwmon <eth>”<br />fi</span></p><div class="blogger-post-footer"><br/>
 <br/>
 - Izhar Firdaus -</div>                
-			</article>
-			
+         </article>
+
+<div class="post-nextprev">
+    <div class="container">
+        <div class="row prevnextlinks small font-weight-bold">
+          
+            <div class="col-md-6 rightborder pl-0">
+                <a class="text-dark" href="/2006/02/linux-vs-windows-viruses.html">&laquo;  Linux vs Windows Viruses</a>
+            </div>
+          
+          
+            <div class="col-md-6 text-right pr-0">
+                <a class="text-dark" href="/2006/05/thin-client-project-juz-for-fun.html"> Thin Client Project - juz for fun ....  &raquo;</a>
+            </div>
+          
+        </div>
+    </div>
+</div>
+
 			<!-- Tags -->
 			<div class="mb-4">
 				<span class="taglist">
@@ -191,7 +208,7 @@
             <!-- Mailchimp Subscribe Form -->
             
             
-            
+
              <!-- Author Box -->
                 				
 				<div class="row mt-5">
@@ -207,7 +224,7 @@
                               <a target="_blank" href="https://linkedin.com/in/kagesenshi" class="btn btn-outline-success btn-sm btn-round ml-2">Follow</a></span>
                            
                            <a class="btn btn-sm btn-outline-success btn-round" 
-                              href="https://paypal.me/kagesenshi">Buy Me A Coffee
+                              href="https://www.buymeacoffee.com/kagesenshi">Buy Me A Coffee
                               <i class="fa fa-heart text-danger"></i>
                            </a>
                            

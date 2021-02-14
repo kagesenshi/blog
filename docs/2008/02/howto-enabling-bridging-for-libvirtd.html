@@ -123,7 +123,7 @@
                               <span><a target="_blank" href="https://linkedin.com/in/kagesenshi" class="btn btn-outline-success btn-sm btn-round ml-1">Follow</a></span>
                               
                               <a class="btn btn-sm btn-outline-success btn-round" 
-                                 href="https://paypal.me/kagesenshi">Buy Me A Coffee
+                                 href="https://www.buymeacoffee.com/kagesenshi">Buy Me A Coffee
                                  <i class="fa fa-heart text-danger"></i>
                               </a>
                               
@@ -176,11 +176,28 @@
             
             <!-- Article -->
 			<article class="article-post">                
-			I need to implement an SNMP setup for Inigo, and I need a number of virtual machines for understanding SNMP and for testing and exploring possible solutions. Before this, I used Xen through virt-manager for my virtualization needs, but recently it feels like its more pain in the ass when I need to install various distro and OSes on the VM to test. Plus, Xen caused some weird problems which I don't really understand (one of it are the Xen bridging, on random, refused to work after reboot). So, I switched to use the normal kernel with Qemu instead to avoid the headache.<br /><br />Thanks to <a href="http://damaestro.us/">Jonathan (daMaestro)</a>, I got the Qemu bridge working. The <a href="http://www.watzmann.net/blog/index.php/2007/04/27/networking_with_kvm_and_libvirt">howto I followed from watzmann.net</a> does not work for me because of what I believe some missing details for me understand the setup and set it properly.<br /><br /><b>Creating a Bridge</b><br /><br />Lets assume we want to create a bridge called br0, which will be bridged to eth0. The host will be using a static IP 192.168.0.20 on a /24 network, with a gateway 192.168.0.1.<br /><br />Edit /etc/sysconfig/network-scripts/ifcfg-br0. Change it to be similar to this.<br /><br /><code><br />DEVICE=br0<br />BOOTPROTO=static<br />IPADDR=192.168.0.20<br />NETMASK=255.255.255.0<br />GATEWAY=192.168.0.1<br />ONBOOT=yes<br />TYPE=Bridge<br /></code><br /><br />Then, edit /etc/sysconfig/network-scripts/ifcfg-eth0 to this.<br /><br /><code><br />DEVICE=eth0<br />HWADDR=$MACADDRESS<br />ONBOOT=yes<br />BRIDGE=br0<br /></code><br /><br />(Replace $MACADDRESS with the MAC address of your network card.)<br /><br />Afterward, restart the network `/sbin/service network restart`<br /><br />From this point, you should be able to select the bridge when you are creating a new VM through virt-manager.<br /><br /><b>Firewall</b><br /><br />You will need to set br0 as a trusted interface through system-config-firewall before you'll be able to use the network.<br /><br />Yay, now I feel much more comfortable on Qemu.<div class="blogger-post-footer"><br/>
+            I need to implement an SNMP setup for Inigo, and I need a number of virtual machines for understanding SNMP and for testing and exploring possible solutions. Before this, I used Xen through virt-manager for my virtualization needs, but recently it feels like its more pain in the ass when I need to install various distro and OSes on the VM to test. Plus, Xen caused some weird problems which I don't really understand (one of it are the Xen bridging, on random, refused to work after reboot). So, I switched to use the normal kernel with Qemu instead to avoid the headache.<br /><br />Thanks to <a href="http://damaestro.us/">Jonathan (daMaestro)</a>, I got the Qemu bridge working. The <a href="http://www.watzmann.net/blog/index.php/2007/04/27/networking_with_kvm_and_libvirt">howto I followed from watzmann.net</a> does not work for me because of what I believe some missing details for me understand the setup and set it properly.<br /><br /><b>Creating a Bridge</b><br /><br />Lets assume we want to create a bridge called br0, which will be bridged to eth0. The host will be using a static IP 192.168.0.20 on a /24 network, with a gateway 192.168.0.1.<br /><br />Edit /etc/sysconfig/network-scripts/ifcfg-br0. Change it to be similar to this.<br /><br /><code><br />DEVICE=br0<br />BOOTPROTO=static<br />IPADDR=192.168.0.20<br />NETMASK=255.255.255.0<br />GATEWAY=192.168.0.1<br />ONBOOT=yes<br />TYPE=Bridge<br /></code><br /><br />Then, edit /etc/sysconfig/network-scripts/ifcfg-eth0 to this.<br /><br /><code><br />DEVICE=eth0<br />HWADDR=$MACADDRESS<br />ONBOOT=yes<br />BRIDGE=br0<br /></code><br /><br />(Replace $MACADDRESS with the MAC address of your network card.)<br /><br />Afterward, restart the network `/sbin/service network restart`<br /><br />From this point, you should be able to select the bridge when you are creating a new VM through virt-manager.<br /><br /><b>Firewall</b><br /><br />You will need to set br0 as a trusted interface through system-config-firewall before you'll be able to use the network.<br /><br />Yay, now I feel much more comfortable on Qemu.<div class="blogger-post-footer"><br/>
 <br/>
 - Izhar Firdaus -</div>                
-			</article>
-			
+         </article>
+
+<div class="post-nextprev">
+    <div class="container">
+        <div class="row prevnextlinks small font-weight-bold">
+          
+            <div class="col-md-6 rightborder pl-0">
+                <a class="text-dark" href="/2008/02/open-letter-for-rector-of-utp.html">&laquo;  An Open Letter for the Rector of PETRONAS University of Technology</a>
+            </div>
+          
+          
+            <div class="col-md-6 text-right pr-0">
+                <a class="text-dark" href="/2008/02/why-i-wrote-open-letter-to-rector.html"> Why I wrote the open letter to rector  &raquo;</a>
+            </div>
+          
+        </div>
+    </div>
+</div>
+
 			<!-- Tags -->
 			<div class="mb-4">
 				<span class="taglist">
@@ -195,7 +212,7 @@
             <!-- Mailchimp Subscribe Form -->
             
             
-            
+
              <!-- Author Box -->
                 				
 				<div class="row mt-5">
@@ -211,7 +228,7 @@
                               <a target="_blank" href="https://linkedin.com/in/kagesenshi" class="btn btn-outline-success btn-sm btn-round ml-2">Follow</a></span>
                            
                            <a class="btn btn-sm btn-outline-success btn-round" 
-                              href="https://paypal.me/kagesenshi">Buy Me A Coffee
+                              href="https://www.buymeacoffee.com/kagesenshi">Buy Me A Coffee
                               <i class="fa fa-heart text-danger"></i>
                            </a>
                            

@@ -123,7 +123,7 @@
                               <span><a target="_blank" href="https://linkedin.com/in/kagesenshi" class="btn btn-outline-success btn-sm btn-round ml-1">Follow</a></span>
                               
                               <a class="btn btn-sm btn-outline-success btn-round" 
-                                 href="https://paypal.me/kagesenshi">Buy Me A Coffee
+                                 href="https://www.buymeacoffee.com/kagesenshi">Buy Me A Coffee
                                  <i class="fa fa-heart text-danger"></i>
                               </a>
                               
@@ -176,11 +176,28 @@
             
             <!-- Article -->
 			<article class="article-post">                
-			I found a very usefull site for this purpose. It guide you step by step on how to find the process.<br /><br /><a href="http://linux-sxs.org/networking/portnumid.html">http://linux-sxs.org/networking/portnumid.html</a><br /><br />From the site, I wrote a script to ease the process.<br /><br /><blockquote><pre>#!/bin/bash<br />#<br /># Script to find what process is binding to which network socket<br /># Usage<br />#    portowner &lt;port&gt;<br />#    portowner all<br />#<br /># Author<br /># Mohd Izhar Firdaus Ismail &lt;kagesenshi.87@gmail.com&gt;<br />#<br /><br />findproc(){<br />        PIDS=`fuser -n tcp $@ 2&gt;/dev/null`<br />        echo "--------------"<br />        echo "Port $@"<br />        ps $PIDS<br />        echo "-------------"<br />}<br /><br />if [ "$1" == "" ];then<br />        echo "Usage:"<br />        echo "   $( basename $0 &lt;port&gt; ) "<br />        echo "   $( basename $0 ) all"<br />elif [ "$1" == "all" ];then<br />        PORTS=`netstat -na|grep tcp\<br />                |grep LISTEN|sed s/"\:\:\:"/"0.0.0.0\:"/g \<br />                |sed s/"\:"/" "/g|awk '{print $5}'|sort|uniq`<br />        for PORT in $PORTS;do<br />                findproc $PORT ;<br />        done<br />else<br />        for PORT in $@;do<br />                findproc $PORT ;<br />        done<br />fi<br /></pre></blockquote><div class="blogger-post-footer"><br/>
+            I found a very usefull site for this purpose. It guide you step by step on how to find the process.<br /><br /><a href="http://linux-sxs.org/networking/portnumid.html">http://linux-sxs.org/networking/portnumid.html</a><br /><br />From the site, I wrote a script to ease the process.<br /><br /><blockquote><pre>#!/bin/bash<br />#<br /># Script to find what process is binding to which network socket<br /># Usage<br />#    portowner &lt;port&gt;<br />#    portowner all<br />#<br /># Author<br /># Mohd Izhar Firdaus Ismail &lt;kagesenshi.87@gmail.com&gt;<br />#<br /><br />findproc(){<br />        PIDS=`fuser -n tcp $@ 2&gt;/dev/null`<br />        echo "--------------"<br />        echo "Port $@"<br />        ps $PIDS<br />        echo "-------------"<br />}<br /><br />if [ "$1" == "" ];then<br />        echo "Usage:"<br />        echo "   $( basename $0 &lt;port&gt; ) "<br />        echo "   $( basename $0 ) all"<br />elif [ "$1" == "all" ];then<br />        PORTS=`netstat -na|grep tcp\<br />                |grep LISTEN|sed s/"\:\:\:"/"0.0.0.0\:"/g \<br />                |sed s/"\:"/" "/g|awk '{print $5}'|sort|uniq`<br />        for PORT in $PORTS;do<br />                findproc $PORT ;<br />        done<br />else<br />        for PORT in $@;do<br />                findproc $PORT ;<br />        done<br />fi<br /></pre></blockquote><div class="blogger-post-footer"><br/>
 <br/>
 - Izhar Firdaus -</div>                
-			</article>
-			
+         </article>
+
+<div class="post-nextprev">
+    <div class="container">
+        <div class="row prevnextlinks small font-weight-bold">
+          
+            <div class="col-md-6 rightborder pl-0">
+                <a class="text-dark" href="/2006/07/popping-gnome-run-from-script.html">&laquo;  Popping gnome-run from script</a>
+            </div>
+          
+          
+            <div class="col-md-6 text-right pr-0">
+                <a class="text-dark" href="/2006/07/connect-googletalk-to-other-ims-using.html"> Connect Googletalk to other IM's using Jabber Transports  &raquo;</a>
+            </div>
+          
+        </div>
+    </div>
+</div>
+
 			<!-- Tags -->
 			<div class="mb-4">
 				<span class="taglist">
@@ -191,7 +208,7 @@
             <!-- Mailchimp Subscribe Form -->
             
             
-            
+
              <!-- Author Box -->
                 				
 				<div class="row mt-5">
@@ -207,7 +224,7 @@
                               <a target="_blank" href="https://linkedin.com/in/kagesenshi" class="btn btn-outline-success btn-sm btn-round ml-2">Follow</a></span>
                            
                            <a class="btn btn-sm btn-outline-success btn-round" 
-                              href="https://paypal.me/kagesenshi">Buy Me A Coffee
+                              href="https://www.buymeacoffee.com/kagesenshi">Buy Me A Coffee
                               <i class="fa fa-heart text-danger"></i>
                            </a>
                            

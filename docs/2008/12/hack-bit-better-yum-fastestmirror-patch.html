@@ -123,7 +123,7 @@
                               <span><a target="_blank" href="https://linkedin.com/in/kagesenshi" class="btn btn-outline-success btn-sm btn-round ml-1">Follow</a></span>
                               
                               <a class="btn btn-sm btn-outline-success btn-round" 
-                                 href="https://paypal.me/kagesenshi">Buy Me A Coffee
+                                 href="https://www.buymeacoffee.com/kagesenshi">Buy Me A Coffee
                                  <i class="fa fa-heart text-danger"></i>
                               </a>
                               
@@ -176,11 +176,28 @@
             
             <!-- Article -->
 			<article class="article-post">                
-			Those who use Fedora might be familiar with <code>yum-fastestmirror</code> plugin. Its a plugin for yum which polls yum mirrors for the one which responds the fastest. However, sometimes, the polling result might not be one might expected. <br /><br />For example, with the current fastestmirror, I usually get the singaporean mirror as the fastest. But, the singaporean mirror, in fact, only gives me around 2-4KBps download speed, which of course, pissed me off. The taiwanese and the australian mirrors give faster speed than that. So, I went looking at the fastestmirror code. <br /><br />Seems like fastestmirror does not sort mirrors by its download speed, but rather, by it connect() respond speed. That basically explains why it sometimes pick a mirror with slow download speed as fastest. As fast respond to connect(), doesn't necessarily means the mirror have higher upload speed bandwidth. <br /><br />So, I changed a bit of that behavior. Altered the code to download the repomd.xml, , see how fast the download went, and sort the mirrors according to that. For those who interested, my patch is here: <a href="http://fedorapeople.org/gitweb?p=izhar/public_git/hack-patches.git;a=blob_plain;f=fastestmirror-repomd-download-speed-timing.patch;hb=HEAD"/>fastestmirror-repomd-download-speed-timing.patch</a>. <br /><br />(Yup2, I know repomd.xml is too small for evaluating bandwidth download speed accurately, but at least thats better than simply connect(), and other files might be too large resulting in the polling process slower)<br /><br />If anybody want to improve on that patch, as usual, feel free to do so :D .<div class="blogger-post-footer"><br/>
+            Those who use Fedora might be familiar with <code>yum-fastestmirror</code> plugin. Its a plugin for yum which polls yum mirrors for the one which responds the fastest. However, sometimes, the polling result might not be one might expected. <br /><br />For example, with the current fastestmirror, I usually get the singaporean mirror as the fastest. But, the singaporean mirror, in fact, only gives me around 2-4KBps download speed, which of course, pissed me off. The taiwanese and the australian mirrors give faster speed than that. So, I went looking at the fastestmirror code. <br /><br />Seems like fastestmirror does not sort mirrors by its download speed, but rather, by it connect() respond speed. That basically explains why it sometimes pick a mirror with slow download speed as fastest. As fast respond to connect(), doesn't necessarily means the mirror have higher upload speed bandwidth. <br /><br />So, I changed a bit of that behavior. Altered the code to download the repomd.xml, , see how fast the download went, and sort the mirrors according to that. For those who interested, my patch is here: <a href="http://fedorapeople.org/gitweb?p=izhar/public_git/hack-patches.git;a=blob_plain;f=fastestmirror-repomd-download-speed-timing.patch;hb=HEAD"/>fastestmirror-repomd-download-speed-timing.patch</a>. <br /><br />(Yup2, I know repomd.xml is too small for evaluating bandwidth download speed accurately, but at least thats better than simply connect(), and other files might be too large resulting in the polling process slower)<br /><br />If anybody want to improve on that patch, as usual, feel free to do so :D .<div class="blogger-post-footer"><br/>
 <br/>
 - Izhar Firdaus -</div>                
-			</article>
-			
+         </article>
+
+<div class="post-nextprev">
+    <div class="container">
+        <div class="row prevnextlinks small font-weight-bold">
+          
+            <div class="col-md-6 rightborder pl-0">
+                <a class="text-dark" href="/2008/11/utps-new-course-registration-system-not.html">&laquo;  UTP's new course registration system not cross browsers compatible</a>
+            </div>
+          
+          
+            <div class="col-md-6 text-right pr-0">
+                <a class="text-dark" href="/2008/12/compizfusion-desktopeffects-dialog.html"> CompizFusion DesktopEffects Dialog  &raquo;</a>
+            </div>
+          
+        </div>
+    </div>
+</div>
+
 			<!-- Tags -->
 			<div class="mb-4">
 				<span class="taglist">
@@ -199,7 +216,7 @@
             <!-- Mailchimp Subscribe Form -->
             
             
-            
+
              <!-- Author Box -->
                 				
 				<div class="row mt-5">
@@ -215,7 +232,7 @@
                               <a target="_blank" href="https://linkedin.com/in/kagesenshi" class="btn btn-outline-success btn-sm btn-round ml-2">Follow</a></span>
                            
                            <a class="btn btn-sm btn-outline-success btn-round" 
-                              href="https://paypal.me/kagesenshi">Buy Me A Coffee
+                              href="https://www.buymeacoffee.com/kagesenshi">Buy Me A Coffee
                               <i class="fa fa-heart text-danger"></i>
                            </a>
                            

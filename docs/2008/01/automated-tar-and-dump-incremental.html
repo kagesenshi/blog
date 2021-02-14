@@ -123,7 +123,7 @@
                               <span><a target="_blank" href="https://linkedin.com/in/kagesenshi" class="btn btn-outline-success btn-sm btn-round ml-1">Follow</a></span>
                               
                               <a class="btn btn-sm btn-outline-success btn-round" 
-                                 href="https://paypal.me/kagesenshi">Buy Me A Coffee
+                                 href="https://www.buymeacoffee.com/kagesenshi">Buy Me A Coffee
                                  <i class="fa fa-heart text-danger"></i>
                               </a>
                               
@@ -176,11 +176,28 @@
             
             <!-- Article -->
 			<article class="article-post">                
-			The recent <a href="http://kaeru.inigo-tech.com/blog/archive/2008/01/17/tracking-down-unstability-and-recovering-freebsd-systems">gmirror failure</a> on Gambit caused us to switch to automated dump and tar instead.<br /><br />Our requirement was like this: Full backup on Mondays (around 3-5am) with daily incremental backups relative to the Monday backup. Whenever a full backup is being performed, the previous backups must not be overwritten until the full backup is done.<br /><br />And the results::<br /><blockquote><a href="http://kagesenshi-private.googlecode.com/svn/trunk/inigo/scripts/inigo-tarball-backups.sh">inigo-tarball-backups.sh</a> - an incremental tar backup script using FreeBSD's Tar<br /><br /><a href="http://kagesenshi-private.googlecode.com/svn/trunk/inigo/scripts/inigo-disk-dumps.sh">inigo-disk-dumps.sh</a> - an incremental live dump script using FreeBSD's Dump - now, I wish Linux's Dump have live dump support.<br /><br /><a href="http://kagesenshi-private.googlecode.com/svn/trunk/inigo/scripts/gnu-tar-incremental-backup.sh">gnu-tar-incremental-backup.sh</a> - an incremental tar backup script using GNU's Tar - I wrote this before the FreeBSD's Tar script on my Fedora laptop, but was surprised that FreeBSD's Tar doesn't have --listed-incremental option (-_-)". </blockquote><br /><br />For the scheduling, I just use cron. <br /><br />Do inform me if you have suggestions to improve the scripts or if you found any risky bug it in.<br /><br /><span style="font-weight:bold;">update</span>: Anybody knows how to properly tar a live directory? (eg: /var/log/).<div class="blogger-post-footer"><br/>
+            The recent <a href="http://kaeru.inigo-tech.com/blog/archive/2008/01/17/tracking-down-unstability-and-recovering-freebsd-systems">gmirror failure</a> on Gambit caused us to switch to automated dump and tar instead.<br /><br />Our requirement was like this: Full backup on Mondays (around 3-5am) with daily incremental backups relative to the Monday backup. Whenever a full backup is being performed, the previous backups must not be overwritten until the full backup is done.<br /><br />And the results::<br /><blockquote><a href="http://kagesenshi-private.googlecode.com/svn/trunk/inigo/scripts/inigo-tarball-backups.sh">inigo-tarball-backups.sh</a> - an incremental tar backup script using FreeBSD's Tar<br /><br /><a href="http://kagesenshi-private.googlecode.com/svn/trunk/inigo/scripts/inigo-disk-dumps.sh">inigo-disk-dumps.sh</a> - an incremental live dump script using FreeBSD's Dump - now, I wish Linux's Dump have live dump support.<br /><br /><a href="http://kagesenshi-private.googlecode.com/svn/trunk/inigo/scripts/gnu-tar-incremental-backup.sh">gnu-tar-incremental-backup.sh</a> - an incremental tar backup script using GNU's Tar - I wrote this before the FreeBSD's Tar script on my Fedora laptop, but was surprised that FreeBSD's Tar doesn't have --listed-incremental option (-_-)". </blockquote><br /><br />For the scheduling, I just use cron. <br /><br />Do inform me if you have suggestions to improve the scripts or if you found any risky bug it in.<br /><br /><span style="font-weight:bold;">update</span>: Anybody knows how to properly tar a live directory? (eg: /var/log/).<div class="blogger-post-footer"><br/>
 <br/>
 - Izhar Firdaus -</div>                
-			</article>
-			
+         </article>
+
+<div class="post-nextprev">
+    <div class="container">
+        <div class="row prevnextlinks small font-weight-bold">
+          
+            <div class="col-md-6 rightborder pl-0">
+                <a class="text-dark" href="/2008/01/original-simcity-gpled-as-micropolis.html">&laquo;  Original SimCity GPL'ed as Micropolis - here some RPMs for  Fedora Hackers</a>
+            </div>
+          
+          
+            <div class="col-md-6 text-right pr-0">
+                <a class="text-dark" href="/2008/01/micropolis-activity-rpm.html"> Micropolis-Activity RPM  &raquo;</a>
+            </div>
+          
+        </div>
+    </div>
+</div>
+
 			<!-- Tags -->
 			<div class="mb-4">
 				<span class="taglist">
@@ -201,7 +218,7 @@
             <!-- Mailchimp Subscribe Form -->
             
             
-            
+
              <!-- Author Box -->
                 				
 				<div class="row mt-5">
@@ -217,7 +234,7 @@
                               <a target="_blank" href="https://linkedin.com/in/kagesenshi" class="btn btn-outline-success btn-sm btn-round ml-2">Follow</a></span>
                            
                            <a class="btn btn-sm btn-outline-success btn-round" 
-                              href="https://paypal.me/kagesenshi">Buy Me A Coffee
+                              href="https://www.buymeacoffee.com/kagesenshi">Buy Me A Coffee
                               <i class="fa fa-heart text-danger"></i>
                            </a>
                            

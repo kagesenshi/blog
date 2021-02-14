@@ -123,7 +123,7 @@
                               <span><a target="_blank" href="https://linkedin.com/in/kagesenshi" class="btn btn-outline-success btn-sm btn-round ml-1">Follow</a></span>
                               
                               <a class="btn btn-sm btn-outline-success btn-round" 
-                                 href="https://paypal.me/kagesenshi">Buy Me A Coffee
+                                 href="https://www.buymeacoffee.com/kagesenshi">Buy Me A Coffee
                                  <i class="fa fa-heart text-danger"></i>
                               </a>
                               
@@ -176,11 +176,28 @@
             
             <!-- Article -->
 			<article class="article-post">                
-			WebSocket server side documentation/guides around tend to be very node.js oriented. However, I don't fancy rewriting stuff I already have simply to be able to make use of WebSocket. After some research, I figured out a mechanism for a service which will handle push for WebSocket, in a simpler manner which are familiar to everyone - simple POST/GET!<br /><br /><b>Example server code: (on Tornado 11.0)</b><br /><br /><pre>import tornado.ioloop<br />import tornado.web<br />from tornado import websocket<br /><br />GLOBALS={<br />    'sockets': []<br />}<br /><br />class MainHandler(tornado.web.RequestHandler):<br />    def get(self):<br />        self.write("Hello, world")<br /><br />class ClientSocket(websocket.WebSocketHandler):<br />    def open(self):<br />        GLOBALS['sockets'].append(self)<br />        print "WebSocket opened"<br /><br />    def on_close(self):<br />        print "WebSocket closed"<br />        GLOBALS['sockets'].remove(self)<br /><br />class Announcer(tornado.web.RequestHandler):<br />    def get(self, *args, **kwargs):<br />        data = self.get_argument('data')<br />        for socket in GLOBALS['sockets']:<br />            socket.write_message(data)<br />        self.write('Posted')<br /><br />application = tornado.web.Application([<br />    (r"/", MainHandler),<br />    (r"/socket", ClientSocket),<br />    (r"/push", Announcer),<br />])<br /><br />if __name__ == "__main__":<br />    application.listen(8888)<br />    tornado.ioloop.IOLoop.instance().start()<br /></pre><br /><b>Example Client Javascript (jQuery)</b><br /><br /><pre>$(document).ready(function () {<br />    var ws = new WebSocket("ws://localhost:8888/socket");<br />    ws.onmessage = function(event) {<br />       $('body').append('&lt;div&gt;' + event.data + '&lt;/div&gt;');<br />    }<br />    $('body').append('&lt;div&gt; Start! &lt;/div&gt;');<br />});<br /></pre><br /><b>How to try</b><br /><br />Start the Tornado server, load http://localhost:8888/push?data=somedatahere. This will send 'somedatahere' to the websockets and notify them all with the string.<br /><br />Probably this can evolve to a nicer service system. But I'll hack on it more later<div class="blogger-post-footer"><br/>
+            WebSocket server side documentation/guides around tend to be very node.js oriented. However, I don't fancy rewriting stuff I already have simply to be able to make use of WebSocket. After some research, I figured out a mechanism for a service which will handle push for WebSocket, in a simpler manner which are familiar to everyone - simple POST/GET!<br /><br /><b>Example server code: (on Tornado 11.0)</b><br /><br /><pre>import tornado.ioloop<br />import tornado.web<br />from tornado import websocket<br /><br />GLOBALS={<br />    'sockets': []<br />}<br /><br />class MainHandler(tornado.web.RequestHandler):<br />    def get(self):<br />        self.write("Hello, world")<br /><br />class ClientSocket(websocket.WebSocketHandler):<br />    def open(self):<br />        GLOBALS['sockets'].append(self)<br />        print "WebSocket opened"<br /><br />    def on_close(self):<br />        print "WebSocket closed"<br />        GLOBALS['sockets'].remove(self)<br /><br />class Announcer(tornado.web.RequestHandler):<br />    def get(self, *args, **kwargs):<br />        data = self.get_argument('data')<br />        for socket in GLOBALS['sockets']:<br />            socket.write_message(data)<br />        self.write('Posted')<br /><br />application = tornado.web.Application([<br />    (r"/", MainHandler),<br />    (r"/socket", ClientSocket),<br />    (r"/push", Announcer),<br />])<br /><br />if __name__ == "__main__":<br />    application.listen(8888)<br />    tornado.ioloop.IOLoop.instance().start()<br /></pre><br /><b>Example Client Javascript (jQuery)</b><br /><br /><pre>$(document).ready(function () {<br />    var ws = new WebSocket("ws://localhost:8888/socket");<br />    ws.onmessage = function(event) {<br />       $('body').append('&lt;div&gt;' + event.data + '&lt;/div&gt;');<br />    }<br />    $('body').append('&lt;div&gt; Start! &lt;/div&gt;');<br />});<br /></pre><br /><b>How to try</b><br /><br />Start the Tornado server, load http://localhost:8888/push?data=somedatahere. This will send 'somedatahere' to the websockets and notify them all with the string.<br /><br />Probably this can evolve to a nicer service system. But I'll hack on it more later<div class="blogger-post-footer"><br/>
 <br/>
 - Izhar Firdaus -</div>                
-			</article>
-			
+         </article>
+
+<div class="post-nextprev">
+    <div class="container">
+        <div class="row prevnextlinks small font-weight-bold">
+          
+            <div class="col-md-6 rightborder pl-0">
+                <a class="text-dark" href="/2011/09/introducing-collectivetrajectory-url.html">&laquo;  Introducing collective.trajectory : URL Routing, in Plone!!</a>
+            </div>
+          
+          
+            <div class="col-md-6 text-right pr-0">
+                <a class="text-dark" href="/2011/10/radiate-simple-push-server-for-socketio.html"> Radiate: A simple push server for SocketIO (alpha)  &raquo;</a>
+            </div>
+          
+        </div>
+    </div>
+</div>
+
 			<!-- Tags -->
 			<div class="mb-4">
 				<span class="taglist">
@@ -197,7 +214,7 @@
             <!-- Mailchimp Subscribe Form -->
             
             
-            
+
              <!-- Author Box -->
                 				
 				<div class="row mt-5">
@@ -213,7 +230,7 @@
                               <a target="_blank" href="https://linkedin.com/in/kagesenshi" class="btn btn-outline-success btn-sm btn-round ml-2">Follow</a></span>
                            
                            <a class="btn btn-sm btn-outline-success btn-round" 
-                              href="https://paypal.me/kagesenshi">Buy Me A Coffee
+                              href="https://www.buymeacoffee.com/kagesenshi">Buy Me A Coffee
                               <i class="fa fa-heart text-danger"></i>
                            </a>
                            

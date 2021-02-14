@@ -123,7 +123,7 @@
                               <span><a target="_blank" href="https://linkedin.com/in/kagesenshi" class="btn btn-outline-success btn-sm btn-round ml-1">Follow</a></span>
                               
                               <a class="btn btn-sm btn-outline-success btn-round" 
-                                 href="https://paypal.me/kagesenshi">Buy Me A Coffee
+                                 href="https://www.buymeacoffee.com/kagesenshi">Buy Me A Coffee
                                  <i class="fa fa-heart text-danger"></i>
                               </a>
                               
@@ -176,11 +176,28 @@
             
             <!-- Article -->
 			<article class="article-post">                
-			Just discovered this when I was glancing through the <a href="http://code.google.com/p/pystream/">pystream</a> (a CUDA library for Python) source codes. <br /><br />In Python2.5+, it is possible to directly load simple C shared libraries from Python without the need for writing C wrappers for it. (<a href="http://www.swig.org">SWIG</a> or <a href="http://www.developer.com/tech/article.php/2191421/Extending-Python-with-C.htm">manually writing one</a>). This can be achieved using the Python <a href="http://docs.python.org/library/ctypes.html">ctypes</a> module.<br /><br />Lets take a simple example:<br /><br /><pre><br />/* test.c */<br />int multiply(int a,int b){<br />    return a * b;<br />}<br /></pre><br /><br />Compile it as a SO library (ref: <a href="http://www.informit.com/articles/article.aspx?p=22424">Writing and using shared libraries</a>):<br /><br /><pre><br />gcc -c -fPIC test.c<br />gcc -shared -fPIC -o libtest.so test.o<br /></pre><br /><br />Now we got an SO file with a test function, lets load it in Python<br /><br /><pre><br />In [1]: import ctypes<br /><br />In [2]: libtest = ctypes.cdll.LoadLibrary('/path/to/libtest.so')<br /><br />In [3]: libtest.multiply(30,99)<br />Out[3]: 2970<br /></pre><br /><br />Hope this would be useful to someone.<br /><br />More details : <a href="http://docs.python.org/library/ctypes.html">http://docs.python.org/library/ctypes.html</a><br /><br />Happy Hacking :D<div class="blogger-post-footer"><br/>
+            Just discovered this when I was glancing through the <a href="http://code.google.com/p/pystream/">pystream</a> (a CUDA library for Python) source codes. <br /><br />In Python2.5+, it is possible to directly load simple C shared libraries from Python without the need for writing C wrappers for it. (<a href="http://www.swig.org">SWIG</a> or <a href="http://www.developer.com/tech/article.php/2191421/Extending-Python-with-C.htm">manually writing one</a>). This can be achieved using the Python <a href="http://docs.python.org/library/ctypes.html">ctypes</a> module.<br /><br />Lets take a simple example:<br /><br /><pre><br />/* test.c */<br />int multiply(int a,int b){<br />    return a * b;<br />}<br /></pre><br /><br />Compile it as a SO library (ref: <a href="http://www.informit.com/articles/article.aspx?p=22424">Writing and using shared libraries</a>):<br /><br /><pre><br />gcc -c -fPIC test.c<br />gcc -shared -fPIC -o libtest.so test.o<br /></pre><br /><br />Now we got an SO file with a test function, lets load it in Python<br /><br /><pre><br />In [1]: import ctypes<br /><br />In [2]: libtest = ctypes.cdll.LoadLibrary('/path/to/libtest.so')<br /><br />In [3]: libtest.multiply(30,99)<br />Out[3]: 2970<br /></pre><br /><br />Hope this would be useful to someone.<br /><br />More details : <a href="http://docs.python.org/library/ctypes.html">http://docs.python.org/library/ctypes.html</a><br /><br />Happy Hacking :D<div class="blogger-post-footer"><br/>
 <br/>
 - Izhar Firdaus -</div>                
-			</article>
-			
+         </article>
+
+<div class="post-nextprev">
+    <div class="container">
+        <div class="row prevnextlinks small font-weight-bold">
+          
+            <div class="col-md-6 rightborder pl-0">
+                <a class="text-dark" href="/2010/01/deen-show-proper-name-for-god.html">&laquo;  The Deen Show : Proper Name for GOD</a>
+            </div>
+          
+          
+            <div class="col-md-6 text-right pr-0">
+                <a class="text-dark" href="/2010/02/event-report-iium-fossday-2010.html"> Event Report : IIUM FOSSDay 2010  &raquo;</a>
+            </div>
+          
+        </div>
+    </div>
+</div>
+
 			<!-- Tags -->
 			<div class="mb-4">
 				<span class="taglist">
@@ -203,7 +220,7 @@
             <!-- Mailchimp Subscribe Form -->
             
             
-            
+
              <!-- Author Box -->
                 				
 				<div class="row mt-5">
@@ -219,7 +236,7 @@
                               <a target="_blank" href="https://linkedin.com/in/kagesenshi" class="btn btn-outline-success btn-sm btn-round ml-2">Follow</a></span>
                            
                            <a class="btn btn-sm btn-outline-success btn-round" 
-                              href="https://paypal.me/kagesenshi">Buy Me A Coffee
+                              href="https://www.buymeacoffee.com/kagesenshi">Buy Me A Coffee
                               <i class="fa fa-heart text-danger"></i>
                            </a>
                            
