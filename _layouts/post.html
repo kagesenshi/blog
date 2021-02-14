@@ -78,9 +78,26 @@ layout: default
             
             <!-- Article -->
 			<article class="article-post">                
-			{{ content }}                
-			</article>
-			
+            {{ content }}                
+         </article>
+
+<div class="post-nextprev">
+    <div class="container">
+        <div class="row prevnextlinks small font-weight-bold">
+          {% if page.previous.url %}
+            <div class="col-md-6 rightborder pl-0">
+                <a class="text-dark" href="{{ site.baseurl }}{{ page.previous.url }}">&laquo; {% if page.previous.image %} <img height="30px" class="mr-1" src="{% if page.previous.image contains "://" %}{{ page.previous.image }}{% else %}{{ site.baseurl }}/{{ page.previous.image }}{% endif %}"> {% endif %} {{page.previous.title}}</a>
+            </div>
+          {% endif %}
+          {% if page.next.url %}
+            <div class="col-md-6 text-right pr-0">
+                <a class="text-dark" href="{{ site.baseurl }}{{ page.next.url }}"> {{page.next.title}} {% if page.next.image %} <img height="30px" class="ml-1" src="{% if page.next.image contains "://" %}{{ page.next.image }}{% else %}{{ site.baseurl }}/{{ page.next.image }}{% endif %}"> {% endif %} &raquo;</a>
+            </div>
+          {% endif %}
+        </div>
+    </div>
+</div>
+
 			<!-- Tags -->
 			<div class="mb-4">
 				<span class="taglist">
@@ -116,7 +133,7 @@ layout: default
 			</div>
             {% endif %}
             
-            
+
              <!-- Author Box -->
                 {% if page.author %}				
 				<div class="row mt-5">

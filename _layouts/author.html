@@ -17,6 +17,16 @@ layout: default
              </h2>
              <p><a href="{{ site.authors[page.author-name].site }}">{{ site.authors[page.author-name].site }}</a></p>
              <p class="excerpt">{{ site.authors[page.author-name].bio }}</p>
+
+             {% if site.authors[page.author-name].buymeacoffee %}
+             <script data-name="BMC-Widget" 
+                data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="{{ site.authors[page.author-name].buymeacoffee }}" 
+                data-description="Support me on Buy me a coffee!" 
+                data-message="" 
+                data-color="#5F7FFF" 
+                data-position="Right" data-x_margin="18" data-y_margin="18">
+             </script>
+             {% endif %}
             </div>
             <div class="col-md-3 text-right">
                 <img alt="{{ site.authors[page.author-name].name }}" src="{{site.baseurl}}/{{ site.authors[page.author-name].avatar }}" class="rounded-circle" height="100" width="100">
