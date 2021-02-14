@@ -2,25 +2,28 @@
 title: Izhar Firdaus
 layout: default
 ---
+
+{% assign author = site.authors[page.author-name] %}
+
 <div class="container">
 <div class="row justify-content-center">
     <div class="col-md-8">        
        <div class="row align-items-center mb-5">
           <div class="col-md-9">
-             <h2 class="font-weight-bold">{{ site.authors[page.author-name].name }} <span class="small btn btn-outline-success btn-sm btn-round"><a href="{{ site.authors[page.author-name].linkedin }}">Follow</a></span>
-                {% if site.authors[page.author-name].donate %}
+             <h2 class="font-weight-bold">{{ author.name }} <span class="small btn btn-outline-success btn-sm btn-round"><a href="{{ author.linkedin }}">Follow</a></span>
+                {% if author.donate %}
                 <a class="btn btn-sm btn-outline-success btn-round" 
-                   href="{{ site.authors[page.author-name].donate }}">Buy Me A Coffee
+                   href="{{ author.donate }}">Support
                    <i class="fa fa-heart text-danger"></i>
                 </a>
                 {% endif %}
              </h2>
-             <p><a href="{{ site.authors[page.author-name].site }}">{{ site.authors[page.author-name].site }}</a></p>
-             <p class="excerpt">{{ site.authors[page.author-name].bio }}</p>
+             <p><a href="{{ author.site }}">{{ author.site }}</a></p>
+             <p class="excerpt">{{ author.bio }}</p>
 
-             {% if site.authors[page.author-name].buymeacoffee %}
+             {% if author.buymeacoffee %}
              <script data-name="BMC-Widget" 
-                data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="{{ site.authors[page.author-name].buymeacoffee }}" 
+                data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="{{ author.buymeacoffee }}" 
                 data-description="Support me on Buy me a coffee!" 
                 data-message="" 
                 data-color="#5F7FFF" 
@@ -29,10 +32,10 @@ layout: default
              {% endif %}
             </div>
             <div class="col-md-3 text-right">
-                <img alt="{{ site.authors[page.author-name].name }}" src="{{site.baseurl}}/{{ site.authors[page.author-name].avatar }}" class="rounded-circle" height="100" width="100">
+                <img alt="{{ author.name }}" src="{{site.baseurl}}/{{ author.avatar }}" class="rounded-circle" height="100" width="100">
             </div>
         </div>
-        <h4 class="font-weight-bold spanborder"><span>Posts by {{site.authors[page.author-name].name}}</span></h4>
+        <h4 class="font-weight-bold spanborder"><span>Posts by {{author.name}}</span></h4>
             {% assign posts = site.posts | where:"author",page.author-name %}
             {% for post in posts %}
             {% include simple-loop-card.html %}
