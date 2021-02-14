@@ -1,8 +1,7 @@
 # Site
 name: "KageSenshi's Log"
 description: 'Whatever it is, it might just be me'
-logo: 'assets/images/logo.png'
-favicon: 'assets/images/favicon.ico'
+favicon: 'assets/icons/favicon.ico'
 baseurl: ''
 url: 'https://blog.kagesenshi.org'
 disqus: 'kagesenshi'
