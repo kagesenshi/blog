@@ -107,10 +107,10 @@ description: "Whatever it is, it might just be me"
                         {{ third_post.date | date: '%b %d, %Y' }}
                     </small>
                 </div>
-            </div>
-        
-        <!-- fourth latest post -->
-        {%- assign fourth_post = site.posts[3] -%}        
+             </div>
+
+            <!-- fourth latest post -->
+        {% assign fourth_post = site.posts[3] -%}        
         <div class="mb-3 d-flex align-items-center">                
                 {% if fourth_post.image %}
                 <div class="col-md-4">
@@ -136,12 +136,14 @@ description: "Whatever it is, it might just be me"
                         {{ fourth_post.date | date: '%b %d, %Y' }}
                     </small>
                 </div>
-            </div>
+             </div>
         
-    </div>
+          </div> 
     
 </div>
-    
+
+{% include google-ad.html %}
+
 <!-- Featured - add sticky tag to the post you want to highlight here - tags: [featured] -->
 {% for post in site.posts %} 
 {% if post.tags contains "featured" %}
