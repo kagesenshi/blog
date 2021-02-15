@@ -78,9 +78,6 @@ layout: default
             </div>
             {% endif %}
 
-            <div class="mt-5">
-               {% include google-ad.html %}
-            </div>
 
          </div>
 		</div>
@@ -88,12 +85,14 @@ layout: default
         
       <div class="col-md-12 col-lg-8">
 
+               {% include google-ad.html %}
+
             <!-- Article -->
 			<article class="article-post mt-5">                
             {{ content }}                
          </article>
 
-         {% include google-ad.html %}
+
 
 <div class="post-nextprev">
     <div class="container">
@@ -119,7 +118,9 @@ layout: default
 				  <a class="sscroll btn btn-light btn-sm font-weight-bold" href="{{site.baseurl}}/tag/{{ tag | slugify }}.html">{{ tag }}</a>
 				{% endfor %}
 				</span>
-			</div>
+         </div>
+
+
  
             <!-- Mailchimp Subscribe Form -->
             {% if site.mailchimp-list %}
@@ -173,7 +174,7 @@ layout: default
                      </div>
                   </div>				
                 {% endif %}
-            
+
             <!-- Comments -->
             {% if page.comments != false %}
                 {% include comments.html %}
