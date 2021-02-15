@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: MyOSS
-title: Tag - MyOSS
+tag-name: myoss
+title: Tag - Myoss
 permalink: "/tag/myoss.html"
 ---

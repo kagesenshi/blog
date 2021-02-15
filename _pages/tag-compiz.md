@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: Compiz
+tag-name: compiz
 title: Tag - Compiz
 permalink: "/tag/compiz.html"
 ---

@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: Zope
+tag-name: zope
 title: Tag - Zope
 permalink: "/tag/zope.html"
 ---

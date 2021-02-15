@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: Guide
+tag-name: guide
 title: Tag - Guide
 permalink: "/tag/guide.html"
 ---

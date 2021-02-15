@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: Firefox
+tag-name: firefox
 title: Tag - Firefox
 permalink: "/tag/firefox.html"
 ---

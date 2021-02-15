@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: Hakaze
+tag-name: hakaze
 title: Tag - Hakaze
 permalink: "/tag/hakaze.html"
 ---

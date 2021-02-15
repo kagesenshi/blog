@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: AppRepo
-title: Tag - AppRepo
+tag-name: apprepo
+title: Tag - Apprepo
 permalink: "/tag/apprepo.html"
 ---

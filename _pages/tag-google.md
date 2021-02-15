@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: Google
+tag-name: google
 title: Tag - Google
 permalink: "/tag/google.html"
 ---

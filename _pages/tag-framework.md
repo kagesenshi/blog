@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: Framework
+tag-name: framework
 title: Tag - Framework
 permalink: "/tag/framework.html"
 ---

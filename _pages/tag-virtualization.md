@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: Virtualization
+tag-name: virtualization
 title: Tag - Virtualization
 permalink: "/tag/virtualization.html"
 ---

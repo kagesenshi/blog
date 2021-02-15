@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: Events
+tag-name: events
 title: Tag - Events
 permalink: "/tag/events.html"
 ---

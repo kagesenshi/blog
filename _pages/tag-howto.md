@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: HOWTO
-title: Tag - HOWTO
+tag-name: howto
+title: Tag - Howto
 permalink: "/tag/howto.html"
 ---

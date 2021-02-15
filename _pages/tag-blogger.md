@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: Blogger
+tag-name: blogger
 title: Tag - Blogger
 permalink: "/tag/blogger.html"
 ---

@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: Bicycle
+tag-name: bicycle
 title: Tag - Bicycle
 permalink: "/tag/bicycle.html"
 ---

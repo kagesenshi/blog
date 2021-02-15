@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: Buildout
+tag-name: buildout
 title: Tag - Buildout
 permalink: "/tag/buildout.html"
 ---

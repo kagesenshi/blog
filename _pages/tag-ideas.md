@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: Ideas
+tag-name: ideas
 title: Tag - Ideas
 permalink: "/tag/ideas.html"
 ---

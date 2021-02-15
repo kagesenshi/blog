@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: Grok
+tag-name: grok
 title: Tag - Grok
 permalink: "/tag/grok.html"
 ---

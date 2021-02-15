@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: Postfix
+tag-name: postfix
 title: Tag - Postfix
 permalink: "/tag/postfix.html"
 ---

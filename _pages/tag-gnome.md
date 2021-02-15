@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: GNOME
-title: Tag - GNOME
+tag-name: gnome
+title: Tag - Gnome
 permalink: "/tag/gnome.html"
 ---

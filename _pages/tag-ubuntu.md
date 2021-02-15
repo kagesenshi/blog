@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: Ubuntu
+tag-name: ubuntu
 title: Tag - Ubuntu
 permalink: "/tag/ubuntu.html"
 ---

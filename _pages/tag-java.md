@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: Java
+tag-name: java
 title: Tag - Java
 permalink: "/tag/java.html"
 ---

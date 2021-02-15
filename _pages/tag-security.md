@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: Security
+tag-name: security
 title: Tag - Security
 permalink: "/tag/security.html"
 ---

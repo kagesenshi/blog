@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: Plone
+tag-name: plone
 title: Tag - Plone
 permalink: "/tag/plone.html"
 ---

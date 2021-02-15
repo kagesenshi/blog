@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: Reviews
+tag-name: reviews
 title: Tag - Reviews
 permalink: "/tag/reviews.html"
 ---

@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: LXC
-title: Tag - LXC
+tag-name: lxc
+title: Tag - Lxc
 permalink: "/tag/lxc.html"
 ---

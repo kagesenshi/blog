@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: Inigo
+tag-name: inigo
 title: Tag - Inigo
 permalink: "/tag/inigo.html"
 ---

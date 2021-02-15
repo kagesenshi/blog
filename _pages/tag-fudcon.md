@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: FUDCon
-title: Tag - FUDCon
+tag-name: fudcon
+title: Tag - Fudcon
 permalink: "/tag/fudcon.html"
 ---

@@ -1193,6 +1193,10 @@
 <lastmod>2009-11-03T00:20:00+08:00</lastmod>
 </url>
 <url>
+<loc>https://blog.kagesenshi.org/2009/11/rms-n-me.html</loc>
+<lastmod>2009-11-07T16:39:00+08:00</lastmod>
+</url>
+<url>
 <loc>https://blog.kagesenshi.org/2010/01/allah-eloh-elohim.html</loc>
 <lastmod>2010-01-03T20:16:00+08:00</lastmod>
 </url>
@@ -1494,6 +1498,9 @@
 <loc>https://blog.kagesenshi.org/category/blog.html</loc>
 </url>
 <url>
+<loc>https://blog.kagesenshi.org/category/old-blog.html</loc>
+</url>
+<url>
 <loc>https://blog.kagesenshi.org/</loc>
 </url>
 <url>
@@ -1668,12 +1675,6 @@
 <loc>https://blog.kagesenshi.org/tag/pidgin.html</loc>
 </url>
 <url>
-<loc>https://blog.kagesenshi.org/tag/planetfedora.html</loc>
-</url>
-<url>
-<loc>https://blog.kagesenshi.org/tag/planetplone.html</loc>
-</url>
-<url>
 <loc>https://blog.kagesenshi.org/tag/plone.html</loc>
 </url>
 <url>
@@ -1689,7 +1690,7 @@
 <loc>https://blog.kagesenshi.org/tag/python.html</loc>
 </url>
 <url>
-<loc>https://blog.kagesenshi.org/tag/qt-kde.html</loc>
+<loc>https://blog.kagesenshi.org/tag/qt.html</loc>
 </url>
 <url>
 <loc>https://blog.kagesenshi.org/tag/rant.html</loc>

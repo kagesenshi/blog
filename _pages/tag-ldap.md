@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: LDAP
-title: Tag - LDAP
+tag-name: ldap
+title: Tag - Ldap
 permalink: "/tag/ldap.html"
 ---
