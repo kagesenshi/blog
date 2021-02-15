@@ -168,6 +168,7 @@
 
 
 <div class="container-lg pt-4 pb-4">
+
 	<div class="row justify-content-center">
         
         
@@ -204,19 +205,46 @@
 
             </div>
             
+
+            <div class="mt-5">
+               <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- blog -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8628730926652592"
+     data-ad-slot="4531556587"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+            </div>
+
          </div>
 		</div>
+
         
-        
-		<div class="col-md-12 col-lg-8">
-            
+      <div class="col-md-12 col-lg-8">
+
             <!-- Article -->
-			<article class="article-post">                
+			<article class="article-post mt-5">                
             Spent the whole day today learning Python <a href="http://docs.python.org/lib/module-xml.etree.ElementTree.html">ElementTree</a>. And the product, a yum plugin for parsing OpenSuSE's <a href="http://en.opensuse.org/Standards/One_Click_Install">One Click Install</a> metadata, though, its still quite incomplete.<br /><br />I've always wanted something like OCI, and I've been using RPM MetaPackages for most of my previous use. However, MetaPackages have some limitations, one of which it might conflict with existing RPMs, and if I use a lot of metapackages, I'll end up with a rpm database filled with them and each of them must have a unique name. That is good enough for sysadmins, but it can be a hassle for the so-called 'users' in the long term. <br /><br />OpenSuSE's implementation looks more suitable for me, so, after waiting for quite some time for someone to implement it on fedora (and nobody has - or I didn't notice it), I decided to jump and write my own. However, the implementation on OpenSuSE is only for YaST (which I guess it beats the purpose of having the XML format multi-distro), so, I need to write my own parser.<br /><br />I have experience writing yum plugins for adding features into yum for specific purposes, so what I needed is to figure out how to extract data from the XML file and install them. Gladly, ElementTree serve that purpose very well. Python Rocks!!.<br /><br />For those interested to try it out, the code is here - <a href="http://kagesenshi-private.googlecode.com/svn/trunk/yum-oneclickinstall/">http://kagesenshi-private.googlecode.com/svn/trunk/yum-oneclickinstall/</a>. It works ok through command line, though for GUI, I guess it'll need some work.<br /><br />To use, first, install it as you would to install any yum plugin (I won't help here, coz I don't want any 'users' to use it at this moment). Get a OneClickInstall XML file, theres an example in the code folder or write your own (OpenSuSE specification is good) and run:<br /><br /><pre># to install packages<br />yum oci-install oneclickinstallxmlfile<br /><br /># to query metadata for packages<br />yum oci-query packages oneclickinstallxmlfile<br /><br /># to query metadata for details<br />yum oci-query details oneclickinstallxmlfile<br /><br /># to query metadata for repositories<br />yum oci-query repositories oneclickinstallxmlfile<br /></pre><br /><br />(Of course, thats nowhere near being One-click)<br /><br />Installing packages kindof works, but I'm still working on the ability to install 3rd party repository (the code is there, just need to think of some way to make it safe). Adding 3rd party repo feature is controversially not safe, as mixing repositories might make user end up with dependencies and compatibility problems. So, need to think of a good way to handle that.<br /><br />Anyway, happy trying it. :D<div class="blogger-post-footer"><br/>
 <br/>
 - Izhar Firdaus -</div>                
          </article>
 
+         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- blog -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8628730926652592"
+     data-ad-slot="4531556587"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 
 <div class="post-nextprev">

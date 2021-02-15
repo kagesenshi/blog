@@ -168,6 +168,7 @@
 
 
 <div class="container-lg pt-4 pb-4">
+
 	<div class="row justify-content-center">
         
         
@@ -204,19 +205,46 @@
 
             </div>
             
+
+            <div class="mt-5">
+               <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- blog -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8628730926652592"
+     data-ad-slot="4531556587"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+            </div>
+
          </div>
 		</div>
+
         
-        
-		<div class="col-md-12 col-lg-8">
-            
+      <div class="col-md-12 col-lg-8">
+
             <!-- Article -->
-			<article class="article-post">                
+			<article class="article-post mt-5">                
             Sometimes, you might want to run certain X applications as a daemon in the background. For example, in my case, I want to make Ktorrent run in the background on startup while I control the torrents using its WebUI. However, to run Ktorrent , I <span style="font-style:italic">must</span> have X running and logged in to the desktop. So, how can I do this? , the answer is by using X Virtual Framebuffer Server.<br /><br /><span style="font-weight:bold">How it works?</span><br /><br />Xvfb emulates an X server without outputing it to monitor. Applications connect to it and run under the impression the GUI is there. Its as simple as that!. No modification needed on the applications that going to be run on it.<br /><br />Read more : <a href="http://en.wikipedia.org/wiki/Xvfb">http://en.wikipedia.org/wiki/Xvfb</a><br /><br /><span style="font-weight:bold">How to do it?</span><br /><br />First, make sure you have Xvfb installed. If you dont, install it using your package manager. <br />In Fedora, use<br /><pre>yum install xorg-x11-server-Xvfb</pre><br /><br />Then, run Xvfb in any unique/unused display number, in this example, I put 100. Disable access control to the display so that you dont have to go through the hassle of setting access control for it.<br /><pre>Xvfb :100 -ac</pre><br /><br />Now that you got Xvfb up and running, time to start the app.<br /><br />Before starting the app, export the DISPLAY environment variable to point to display number 100<br /><pre>export DISPLAY=:100.0</pre><br /><br />execute the command for the app, and ure good to go :D<br /><pre>ktorrent</pre><br /><br />Enjoy~<div class="blogger-post-footer"><br/>
 <br/>
 - Izhar Firdaus -</div>                
          </article>
 
+         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- blog -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8628730926652592"
+     data-ad-slot="4531556587"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 
 <div class="post-nextprev">

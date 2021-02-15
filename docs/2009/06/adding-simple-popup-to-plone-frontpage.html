@@ -168,6 +168,7 @@
 
 
 <div class="container-lg pt-4 pb-4">
+
 	<div class="row justify-content-center">
         
         
@@ -204,19 +205,46 @@
 
             </div>
             
+
+            <div class="mt-5">
+               <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- blog -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8628730926652592"
+     data-ad-slot="4531556587"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+            </div>
+
          </div>
 		</div>
+
         
-        
-		<div class="col-md-12 col-lg-8">
-            
+      <div class="col-md-12 col-lg-8">
+
             <!-- Article -->
-			<article class="article-post">                
+			<article class="article-post mt-5">                
             Here is a little guide for those who want to add a simple popup to the Plone frontpage for some purpose (eg: announcements, advertisements, etc).<br /><br />Create a basic html file containing the content you want to appear in the popup. Upload it into <code>$PLONE_SITE/portal_skins/custom</code> (as Page Template) and for the sake of this example, name it <code>popup.html</code><br /><br />Afterward, create a Javascript file with your Pop-Up loader script. For example , this script:<br /><br /><pre><br />function popup(mylink, windowname)<br />    {<br />      if (! window.focus)return true;<br />      var href;<br />      if (typeof(mylink) == 'string')<br />      href=mylink;<br />      else<br />      href=mylink.href;<br />      window.open(href, windowname, 'width=220,height=400,scrollbars=no');<br />      return false;<br />    };<br /><br />popup('popup.html', 'My Popup');<br /></pre><br /><br />Also upload this file into <code>$PLONE_SITE/portal_skins/custom</code> (as Page Template too). For this example, name it as <code>popup.js</code><br /><br />Afterward, in <code>$PLONE_SITE/portal_javascripts</code> , add <code>popup.js</code> as a new script into portal_javascripts and set its condition to : <br /><br /><code>python:here.restrictedTraverse('@@plone_context_state').is_portal_root()</code><br /><br />Save your work, and you are good to go :D<br /><br /><b>Note</b>: Lots of browsers now block javascript popups quite well.<div class="blogger-post-footer"><br/>
 <br/>
 - Izhar Firdaus -</div>                
          </article>
 
+         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- blog -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8628730926652592"
+     data-ad-slot="4531556587"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 
 <div class="post-nextprev">

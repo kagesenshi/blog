@@ -168,6 +168,7 @@
 
 
 <div class="container-lg pt-4 pb-4">
+
 	<div class="row justify-content-center">
         
         
@@ -204,19 +205,46 @@
 
             </div>
             
+
+            <div class="mt-5">
+               <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- blog -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8628730926652592"
+     data-ad-slot="4531556587"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+            </div>
+
          </div>
 		</div>
+
         
-        
-		<div class="col-md-12 col-lg-8">
-            
+      <div class="col-md-12 col-lg-8">
+
             <!-- Article -->
-			<article class="article-post">                
+			<article class="article-post mt-5">                
             My beloved R51 which I bought almost 3 years ago is suffering of old-age. It processor heats up quite fast to 80/85 Celsius and sometimes triggered shutdown alarm on 90C. The temperature during  idle is around 50C, which is pretty hot. Adding external fan and overriding the speed of the internal fan doesn't help much. <br /><br />Whenever it goes to 80C, I manually scale down the processor to cool it down. Hassle, but at least it works. However, there is an easier way to control this without any manual interaction, and that is through using the cpuspeed daemon. It should have been installed by default in your computer. If it isn't , you can install it through:<br /><br /><code>yum install cpuspeed</code><br /><br />cpuspeed in Fedora by default only turns on the default scaling governor and didn't do anything else. You will need to configure it through /etc/sysconfig/cpuspeed.<br /><br />Remember to set the Governor to "userspace" or your cpuspeed will not be started through the init script.<br /><br />In my setup to ensure that I don't burn my processor too much, I set my UP_THRESHOLD=99 DOWN_THRESHOLD=90, and uncommented the lowest line for the temperature check and set the max temperature as 75. Yes, theres no scientific explanation to explain whether the values I selected is good or not.  I simply set in so that my processor will only scale up if its being used 100%, scales down as soon as the processor usage reduce to 90%, and forbid scaling up if the temperature is above 75C.<br /><br />Once you have configured it, restart cpuspeed<br /><br /><code>/sbin/service cpuspeed restart</code><br /><br />After I applied those above, my processor doesn't gets hot easily anymore :D. Yay~.<div class="blogger-post-footer"><br/>
 <br/>
 - Izhar Firdaus -</div>                
          </article>
 
+         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- blog -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8628730926652592"
+     data-ad-slot="4531556587"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 
 <div class="post-nextprev">

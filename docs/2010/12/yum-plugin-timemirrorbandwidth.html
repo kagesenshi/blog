@@ -168,6 +168,7 @@
 
 
 <div class="container-lg pt-4 pb-4">
+
 	<div class="row justify-content-center">
         
         
@@ -204,19 +205,46 @@
 
             </div>
             
+
+            <div class="mt-5">
+               <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- blog -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8628730926652592"
+     data-ad-slot="4531556587"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+            </div>
+
          </div>
 		</div>
+
         
-        
-		<div class="col-md-12 col-lg-8">
-            
+      <div class="col-md-12 col-lg-8">
+
             <!-- Article -->
-			<article class="article-post">                
+			<article class="article-post mt-5">                
             Something I came up in during <a href="https://fedoraproject.org/wiki/Ambassadors/MalaysianTeam/Events/Meetup_KL_Dec2010">the small FAD we had in .MY</a> last week.<br /><br />Yum's fastestmirror plugin is kindof broken by design, because the plugin's definition of 'fastest' means shortest handshake time, rather than shortest download time (highest bandwidth).<br /><br />If a particular country had nearby mirrors which have a really low bandwidth, fastestmirror actually made the download speed slower for users who are using it. (in my case, the nearby mirrors are extremely slow, its faster to simply force yum to grab from Taiwan mirrors, and I believe lots of local users here are also affected by this)<br /><br />This plugin is a hack which complements fastestmirror by timing the metadata download time of repositories, sort them and set fastestmirror.conf to only include the top 3 mirrors with shortest metadata download time for each repository. <br /><br />Source: <a href="http://fedorapeople.org/gitweb?p=izhar/public_git/hack-patches.git;a=blob_plain;f=yum-plugin-timemirrorbandwidth/timemirrorbandwidth.py">timemirrorbandwidth.py</a><br /><br />To install, simply copy the file into <code>/usr/lib/yum-plugins/</code> and create a <code>/etc/yum/pluginconf.d/timemirrorbandwidth.conf</code> with this contents:<br /><br /><code>[main]<br />enabled=1</code><br /><br />(I should put this in RPM i guess)<br /><br />To use, simply execute:<br /><br /><code>yum time-mirrors --disableplugin=fastestmirror</code><br /><br />the plugin will start scoring the available mirrors and add the fastest 3 mirrors for each repository into fastestmirror.conf's include_only list. I wont make this plugin to run the timing each time yum is executed, because that will mean extreme slowdown.<br /><br />Feel free to improve it .. (probably i should move this into github or something).. Have fun!<div class="blogger-post-footer"><br/>
 <br/>
 - Izhar Firdaus -</div>                
          </article>
 
+         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- blog -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8628730926652592"
+     data-ad-slot="4531556587"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 
 <div class="post-nextprev">

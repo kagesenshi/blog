@@ -168,6 +168,7 @@
 
 
 <div class="container-lg pt-4 pb-4">
+
 	<div class="row justify-content-center">
         
         
@@ -204,19 +205,46 @@
 
             </div>
             
+
+            <div class="mt-5">
+               <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- blog -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8628730926652592"
+     data-ad-slot="4531556587"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+            </div>
+
          </div>
 		</div>
+
         
-        
-		<div class="col-md-12 col-lg-8">
-            
+      <div class="col-md-12 col-lg-8">
+
             <!-- Article -->
-			<article class="article-post">                
+			<article class="article-post mt-5">                
             WebSocket server side documentation/guides around tend to be very node.js oriented. However, I don't fancy rewriting stuff I already have simply to be able to make use of WebSocket. After some research, I figured out a mechanism for a service which will handle push for WebSocket, in a simpler manner which are familiar to everyone - simple POST/GET!<br /><br /><b>Example server code: (on Tornado 11.0)</b><br /><br /><pre>import tornado.ioloop<br />import tornado.web<br />from tornado import websocket<br /><br />GLOBALS={<br />    'sockets': []<br />}<br /><br />class MainHandler(tornado.web.RequestHandler):<br />    def get(self):<br />        self.write("Hello, world")<br /><br />class ClientSocket(websocket.WebSocketHandler):<br />    def open(self):<br />        GLOBALS['sockets'].append(self)<br />        print "WebSocket opened"<br /><br />    def on_close(self):<br />        print "WebSocket closed"<br />        GLOBALS['sockets'].remove(self)<br /><br />class Announcer(tornado.web.RequestHandler):<br />    def get(self, *args, **kwargs):<br />        data = self.get_argument('data')<br />        for socket in GLOBALS['sockets']:<br />            socket.write_message(data)<br />        self.write('Posted')<br /><br />application = tornado.web.Application([<br />    (r"/", MainHandler),<br />    (r"/socket", ClientSocket),<br />    (r"/push", Announcer),<br />])<br /><br />if __name__ == "__main__":<br />    application.listen(8888)<br />    tornado.ioloop.IOLoop.instance().start()<br /></pre><br /><b>Example Client Javascript (jQuery)</b><br /><br /><pre>$(document).ready(function () {<br />    var ws = new WebSocket("ws://localhost:8888/socket");<br />    ws.onmessage = function(event) {<br />       $('body').append('&lt;div&gt;' + event.data + '&lt;/div&gt;');<br />    }<br />    $('body').append('&lt;div&gt; Start! &lt;/div&gt;');<br />});<br /></pre><br /><b>How to try</b><br /><br />Start the Tornado server, load http://localhost:8888/push?data=somedatahere. This will send 'somedatahere' to the websockets and notify them all with the string.<br /><br />Probably this can evolve to a nicer service system. But I'll hack on it more later<div class="blogger-post-footer"><br/>
 <br/>
 - Izhar Firdaus -</div>                
          </article>
 
+         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- blog -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8628730926652592"
+     data-ad-slot="4531556587"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 
 <div class="post-nextprev">

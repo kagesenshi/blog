@@ -168,6 +168,7 @@
 
 
 <div class="container-lg pt-4 pb-4">
+
 	<div class="row justify-content-center">
         
         
@@ -204,19 +205,46 @@
 
             </div>
             
+
+            <div class="mt-5">
+               <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- blog -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8628730926652592"
+     data-ad-slot="4531556587"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+            </div>
+
          </div>
 		</div>
+
         
-        
-		<div class="col-md-12 col-lg-8">
-            
+      <div class="col-md-12 col-lg-8">
+
             <!-- Article -->
-			<article class="article-post">                
+			<article class="article-post mt-5">                
             This is almost a very old news I presume, nonetheless, I just noticed it today while wasting my time jumping to random Open Source project sites. <br /><br />It is well known that skype and pulseaudio doesn't play well together. Skype's ALSA implementation doesn't really implement all of the standard ALSA API which caused alsa-plugins-pulse to not work with skype. Fortunately, as stated in <a href="http://pulseaudio.org/wiki/PerfectSetup#Skype">PulseAudio Perfect Setup</a> page, the skype static OSS (<a href="http://en.wikipedia.org/wiki/Open_Sound_System">Open Sound System</a> - another sound standard, different than <a href="http://en.wikipedia.org/wiki/Advanced_Linux_Sound_Architecture">ALSA</a>) package can be used to work around this issue through padsp.<br /><br />However, the skype_static-oss package come in a tarball, of which, is ugly/inconvenient to certain people (like me). So, I've hacked together a spec to repackage that binary blob and make Skype almost JustWorks for Fedora. I don't know what Skype's regulation for redistribution of their binaries, so, to be safe, I can only provide you the RPM spec file.<br /><br />Here is the spec file : <a href="http://izhar.fedorapeople.org/misc/skype_static-oss.spec">skype_static-oss.spec</a>.<br /><br />Just put the skype_static-oss tarball in your rpmbuild SOURCES directory, and invoke rpmbuild -bb with the spec file. Install the generated rpm and use it as you would normally.<br /><br />For those who are not familiar with rpmbuild, heres a little script to get you going<br /><br /><code><br /># as root<br />yum install rpmdevtools<br /><br /># as user<br />rpmdev-setuptree<br />cd ~/rpmbuild/SPEC<br />wget http://izhar.fedorapeople.org/misc/skype_static-oss.spec<br />spectool -R -g -A skype_static-oss.spec<br />rpmbuild -bb skype_static-oss.spec<br /><br /># ... wait ...  wait ...  wait<br /># grab the generated RPM<br /># rpm -ivh (the generated rpm)<br /># enjoy~<br /><br /></code><br /><br />Oh btw, the spec is under <a href="http://sam.zoy.org/wtfpl/">WTFPL</a>. Just do wtf you want with it.<div class="blogger-post-footer"><br/>
 <br/>
 - Izhar Firdaus -</div>                
          </article>
 
+         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- blog -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8628730926652592"
+     data-ad-slot="4531556587"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 
 <div class="post-nextprev">

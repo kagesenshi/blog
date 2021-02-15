@@ -168,6 +168,7 @@
 
 
 <div class="container-lg pt-4 pb-4">
+
 	<div class="row justify-content-center">
         
         
@@ -204,19 +205,46 @@
 
             </div>
             
+
+            <div class="mt-5">
+               <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- blog -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8628730926652592"
+     data-ad-slot="4531556587"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+            </div>
+
          </div>
 		</div>
+
         
-        
-		<div class="col-md-12 col-lg-8">
-            
+      <div class="col-md-12 col-lg-8">
+
             <!-- Article -->
-			<article class="article-post">                
+			<article class="article-post mt-5">                
             Those who use Fedora might be familiar with <code>yum-fastestmirror</code> plugin. Its a plugin for yum which polls yum mirrors for the one which responds the fastest. However, sometimes, the polling result might not be one might expected. <br /><br />For example, with the current fastestmirror, I usually get the singaporean mirror as the fastest. But, the singaporean mirror, in fact, only gives me around 2-4KBps download speed, which of course, pissed me off. The taiwanese and the australian mirrors give faster speed than that. So, I went looking at the fastestmirror code. <br /><br />Seems like fastestmirror does not sort mirrors by its download speed, but rather, by it connect() respond speed. That basically explains why it sometimes pick a mirror with slow download speed as fastest. As fast respond to connect(), doesn't necessarily means the mirror have higher upload speed bandwidth. <br /><br />So, I changed a bit of that behavior. Altered the code to download the repomd.xml, , see how fast the download went, and sort the mirrors according to that. For those who interested, my patch is here: <a href="http://fedorapeople.org/gitweb?p=izhar/public_git/hack-patches.git;a=blob_plain;f=fastestmirror-repomd-download-speed-timing.patch;hb=HEAD"/>fastestmirror-repomd-download-speed-timing.patch</a>. <br /><br />(Yup2, I know repomd.xml is too small for evaluating bandwidth download speed accurately, but at least thats better than simply connect(), and other files might be too large resulting in the polling process slower)<br /><br />If anybody want to improve on that patch, as usual, feel free to do so :D .<div class="blogger-post-footer"><br/>
 <br/>
 - Izhar Firdaus -</div>                
          </article>
 
+         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- blog -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8628730926652592"
+     data-ad-slot="4531556587"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 
 <div class="post-nextprev">

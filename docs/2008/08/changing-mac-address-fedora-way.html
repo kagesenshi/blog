@@ -168,6 +168,7 @@
 
 
 <div class="container-lg pt-4 pb-4">
+
 	<div class="row justify-content-center">
         
         
@@ -204,19 +205,46 @@
 
             </div>
             
+
+            <div class="mt-5">
+               <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- blog -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8628730926652592"
+     data-ad-slot="4531556587"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+            </div>
+
          </div>
 		</div>
+
         
-        
-		<div class="col-md-12 col-lg-8">
-            
+      <div class="col-md-12 col-lg-8">
+
             <!-- Article -->
-			<article class="article-post">                
+			<article class="article-post mt-5">                
             Been a month since my last post .. mainly due to lack of idea on what to blog .. <br /><br />Anyway, today is a bit special.. why?, the crazy IT Management Service of PETRONAS University is doing their crazy operation again .. Hunting down any box with listening port that run services - and confiscate the computers, with, or without the owner's concern .. 2 of my friends got their computers confiscated simply for having IRCd, Httpd and a local Squid cache (to help cache the sites their visited due to the university network is fsckingly slow) running .. <br /><br />After some data gathering I found out those ITMS guys detect machines physically through MAC address. So, as a precaution, I changed mine. <br /><br />Changing MAC can easily be done using ifconfig, anyway, here's the elegant way to do it for Fedora or Fedora derivatives users.<br /><br />The catch is, no NetworkManager please. Turn it off, NetworkManager is not that mature for this stunt yet. Use the traditional all-powerful system-config-network to set ur network settings. Afterward, open <code>/etc/sysconfig/network-scripts/ifcfg-&lt;ethX&gt;</code> and add this line:<br /><br /><blockquote><code>MACADDR=your:new:fake:MAC:addr:ess</code></blockquote><br /><br />then , restart the network service <code>/sbin/service network restart</code>. The change will take effect immediately. Don't forget to set NetworkManager to NOT start on boot and set the network init to start on boot using system-config-services.<br /><br />Not sure how well this approach can help .. but I hope it'll help  a bit ..<br /><br />For those students out there (especially those who are in ICT field), who are thinking to come and study in Universiti Teknologi PETRONAS, think again before applying, as those darned ITMS will make sure y'all are unable to explore stuff beyond what u learn in course subjects.<div class="blogger-post-footer"><br/>
 <br/>
 - Izhar Firdaus -</div>                
          </article>
 
+         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- blog -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8628730926652592"
+     data-ad-slot="4531556587"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 
 <div class="post-nextprev">
