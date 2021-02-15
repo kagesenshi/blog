@@ -1,15 +1,17 @@
 ---
-layout: post
-title: Tee'ing Python subprocess.Popen output
-date: '2008-02-28T11:11:00.003+08:00'
 author: kagesenshi
+blogger_id: tag:blogger.com,1999:blog-28371165.post-2171617641556386047
+blogger_orig_url: https://blog.kagesenshi.org/2008/02/teeing-python-subprocesspopen-output.html
+categories:
+- old blog
+date: '2008-02-28T11:11:00.003+08:00'
+layout: post
+modified_time: '2008-02-28T11:27:23.870+08:00'
 tags:
 - Programming
 - Python
 - Hacks
-modified_time: '2008-02-28T11:27:23.870+08:00'
-blogger_id: tag:blogger.com,1999:blog-28371165.post-2171617641556386047
-blogger_orig_url: https://blog.kagesenshi.org/2008/02/teeing-python-subprocesspopen-output.html
+title: Tee'ing Python subprocess.Popen output
 ---
 
 A little hack for python coders out there who wanted to have a functionality similar to the unix's tee command for redirecting output to multiple places.<br /><br /><code><pre><br />import sys<br />from subprocess import Popen,PIPE<br />p = Popen(['put','command','and','arguments','here'],stdout=PIPE)<br /><br />while True:<br />   o = p.stdout.readline()<br />   if o == '' and p.poll() != None: break<br />   # the 'o' variable stores a line from the command's stdout<br />   # do anything u wish with the 'o' variable here<br />   # this loop will break once theres a blank output <br />   # from stdout and the subprocess have ended<br /></pre></code><div class="blogger-post-footer"><br/>

@@ -1,14 +1,16 @@
 ---
-layout: post
-title: plone.app.caching and archetype.fieldtraverser
-date: '2012-04-10T12:19:00.000+08:00'
 author: kagesenshi
+blogger_id: tag:blogger.com,1999:blog-28371165.post-8984787764596873661
+blogger_orig_url: https://blog.kagesenshi.org/2012/04/ploneappcaching-and-archetypefieldtrave.html
+categories:
+- old blog
+date: '2012-04-10T12:19:00.000+08:00'
+layout: post
+modified_time: '2012-04-10T12:19:34.604+08:00'
 tags:
 - Hacks
 - PlanetPlone
-modified_time: '2012-04-10T12:19:34.604+08:00'
-blogger_id: tag:blogger.com,1999:blog-28371165.post-8984787764596873661
-blogger_orig_url: https://blog.kagesenshi.org/2012/04/ploneappcaching-and-archetypefieldtrave.html
+title: plone.app.caching and archetype.fieldtraverser
 ---
 
 <div dir="ltr" style="text-align: left;" trbidi="on"><a href="http://pypi.python.org/pypi/plone.app.caching">plone.app.caching</a> doesnt seem to support <a href="http://pypi.python.org/pypi/archetypes.fieldtraverser">archetype.fieldtraverser</a>'s ++atfield+FieldName urls. Here's a quick hack to make it cacheable.<br /><br />Add this into your configure.zcml: <br /><br /><pre>&lt;configure <br />    ...<br />    xmlns:cache="http://namespaces.zope.org/cache"<br />    ...<br />    /&gt;<br />...<br />&lt;cache:ruleset<br />    for="archetypes.fieldtraverser.fieldtraverser.FieldContentView"<br />    ruleset="plone.content.itemView"<br />/&gt;<br />...<br /><br />&lt;/configure&gt;<br /></pre><br />Thats it. It should be following the contentItem caching rule settings afterward.</div><div class="blogger-post-footer"><br/>

@@ -1,17 +1,19 @@
 ---
-layout: post
-title: ODFPy - Python ODF manipulation library & tools
-date: '2009-08-12T21:58:00.009+08:00'
 author: kagesenshi
+blogger_id: tag:blogger.com,1999:blog-28371165.post-2795866592374334630
+blogger_orig_url: https://blog.kagesenshi.org/2009/08/odfpy-python-odf-manipulation-library.html
+categories:
+- old blog
+date: '2009-08-12T21:58:00.009+08:00'
+layout: post
+modified_time: '2011-10-07T12:39:58.097+08:00'
 tags:
 - PlanetFedora
 - Python
 - Fedora
 - PlanetPlone
 - Plone
-modified_time: '2011-10-07T12:39:58.097+08:00'
-blogger_id: tag:blogger.com,1999:blog-28371165.post-2795866592374334630
-blogger_orig_url: https://blog.kagesenshi.org/2009/08/odfpy-python-odf-manipulation-library.html
+title: ODFPy - Python ODF manipulation library & tools
 ---
 
 I was looking for some cli tools to convert odf to html, however, most ODF converters I found out there utilizes OpenOffice-Uno or OpenOffice macro for conversion of ODF documents - which means, they need a full blown openoffice to be installed and running before being able to convert the documents. Unoconv is one of them (available in Fedora repos). These type of tools are resource intensive, and can't really run without GUI, not quite what I want.<br /><br />Searching for ODF through yum revealed a package which looks quite interesting to me:<br /><br /><pre>odfpy.noarch : Python library for manipulating OpenDocument files</pre><br /><br />Being curious, I installed <a href="http://opendocumentfellowship.com/projects/odfpy">ODFPy</a>, and to my surprise, the package also provide some scripts to automatically convert ODF to several text based formats - odf2xhtml,odf2mht,odf2xml and odf2war - just what I was looking for. Looking at the available libs, theres also odf2moinmoin.py.<br /><br />While not perfect, the conversion works fairly ok, plus, if stuff does not work correctly, the scripts are in Python and from a quick glance, they looks quite easy to adjust and enhance. <br /><br />Might be fun if can integrate this with Plone. ^-^<div class="blogger-post-footer"><br/>

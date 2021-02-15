@@ -1,8 +1,12 @@
 ---
-layout: post
-title: Using deliverance as WSGI pipeline to elegantly theme a repoze.bfg project
-date: '2010-05-08T22:28:00.004+08:00'
 author: kagesenshi
+blogger_id: tag:blogger.com,1999:blog-28371165.post-6356385781542575121
+blogger_orig_url: https://blog.kagesenshi.org/2010/05/using-deliverance-as-wsgi-pipeline-to.html
+categories:
+- old blog
+date: '2010-05-08T22:28:00.004+08:00'
+layout: post
+modified_time: '2011-10-07T12:39:58.116+08:00'
 tags:
 - Buildout
 - Python
@@ -13,9 +17,7 @@ tags:
 - repoze.bfg
 - Zope
 - Tips
-modified_time: '2011-10-07T12:39:58.116+08:00'
-blogger_id: tag:blogger.com,1999:blog-28371165.post-6356385781542575121
-blogger_orig_url: https://blog.kagesenshi.org/2010/05/using-deliverance-as-wsgi-pipeline-to.html
+title: Using deliverance as WSGI pipeline to elegantly theme a repoze.bfg project
 ---
 
 I was looking around for template inheritance solution for repoze.bfg, as it seems like by default, BFG does not have context view traversal support to acquire template macros. <br /><br />In Plone/Grok template inheritance can be done by registering main_template as a view, and using a template that fill the slots in main_template such as this:<br /><pre>&lt;html xmlns:tal="http://xml.zope.org/namespaces/tal"<br />      xmlns:metal="http://xml.zope.org/namespaces/metal"<br />      metal:use-macro="context/main_template/macros/master"&gt;<br />&lt;head&gt;&lt/head&gt;<br />&lt;body&gt;<br />  &lt;div metal:fill-slot="main"&gt;<br />     Some content<br />  &lt;/div&gt;<br />&lt;/body&gt;<br />&lt;/html&gt;</pre><br /><br />However, by default, repoze.bfg does not support getting view macro from a context. So a PageTemplate object need to by passed by a view in order to use the macro from the template. Eg:<br /><pre>from repoze.bfg.chameleon_zpt import get_template<br /><br />def my_view(context,request):<br />    main_template = get_template('templates/main_template.pt')<br />    return dict(main_template=main_template)</pre><br /><br />So the view would be using:<br /><pre>&lt;html xmlns:tal="http://xml.zope.org/namespaces/tal"<br />      xmlns:metal="http://xml.zope.org/namespaces/metal"<br />      metal:use-macro="main_template.macros['master']"&gt;</pre><br /><br />Simple enough, but something came up my mind. "How about I theme this using Deliverance?"<br /><br /><b>What is Deliverance?</b><br /><br />In simple terms, its a theming proxy which also available as a WSGI middleware. It allow developers to theme different systems without the need to know the internal of the systems. <a href="http://deliveranceproject.org/">More information here.</a><br /><br /><b>Setting up Deliverance in repoze.bfg buildout</b><br /><br />So lets get to the fun stuff.<br /><br />I'm assuming that repoze.bfg is installed in a buildout, and a project called 'helloworld' is installed in the buildout, similar to the one I've shown in <a href="http://blog.kagesenshi.org/2010/05/repozebfg-introduction-and.html">my previous post</a><br /><br />First, add the egg:<br /><pre>[buildout]<br />...<br />[repoze]<br />...<br />eggs = <br />  ...<br />  Deliverance<br />...</pre><br /><br />and run <code>./bin/buildout -vvv</code><br /><br />Now, configure the Deliverance filter.<br /><br />Open <code>src/helloworld/helloworld.ini</code> , rename <code>[app:main]</code> to <code>[app:helloworld]</code> and add these:<br /><pre>[filter:deliverance]<br />use = egg:Deliverance#main<br />theme_uri = /static/layout.html<br />rule_uri = /static/rules.xml<br /><br />[pipeline:main]<br />pipeline = <br />   deliverance<br />   helloworld</pre><br /><br />Afterward, create a layout.html and a rules.xml in <code>helloworld/templates/static</code> with these contents:<br /><br />layout.html<br /><pre>&lt;html&gt;<br />  &lt;head&gt;<br />  &lt;title&gt;The Theme&lt;/title&gt;<br />  &lt;/head&gt;<br />&lt;body&gt;<br />  &lt;h1&gt;A theme&lt;/h1&gt;<br />  &lt;div id="content"&gt;<br />  &lt;/div&gt;<br />  &lt;hr&gt;<br />&lt;/body&gt; <br />&lt;/html&gt;</pre><br /><br />rules.xml<br /><pre>&lt;ruleset&gt;<br />  &lt;rule&gt;<br />    &lt;replace content="children:body" theme="children:#content" if-content="not:#content"/&gt;<br />    &lt;replace content="children:#content" theme="children:#content"/&gt;<br />  &lt;/rule&gt;<br />&lt;/ruleset&gt;</pre><br /><br />Documentation of the rules markup are here: <a href="http://packages.python.org/Deliverance/configuration.html#rule">http://packages.python.org/Deliverance/configuration.html#rule</a><br /><br />Now you're ready for profit :D<br /><br />Start the server using <code>./bin/paster serve src/helloworld/helloworld.ini</code><br /><br />Happy Hacking!<div class="blogger-post-footer"><br/>

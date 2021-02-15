@@ -1,8 +1,12 @@
 ---
-layout: post
-title: Pidgin and GNOME3
-date: '2011-04-12T03:15:00.005+08:00'
 author: kagesenshi
+blogger_id: tag:blogger.com,1999:blog-28371165.post-2447539089921371486
+blogger_orig_url: https://blog.kagesenshi.org/2011/04/pidgin-and-gnome3.html
+categories:
+- old blog
+date: '2011-04-12T03:15:00.005+08:00'
+layout: post
+modified_time: '2011-10-07T12:39:10.137+08:00'
 tags:
 - Pidgin
 - PlanetFedora
@@ -10,9 +14,7 @@ tags:
 - Fedora
 - Hacks
 - GNOME
-modified_time: '2011-10-07T12:39:10.137+08:00'
-blogger_id: tag:blogger.com,1999:blog-28371165.post-2447539089921371486
-blogger_orig_url: https://blog.kagesenshi.org/2011/04/pidgin-and-gnome3.html
+title: Pidgin and GNOME3
 ---
 
 GNOME3 comes with Telepathy/Empathy integration. However, I'm mainly a Pidgin user because Telepathy/Empathy lacks of per-account proxy settings. I always force my IMs to go through a proxy in VPN regardless where I am, but not for other apps, so telepathy/empathy is out of the equation.<br /><br />Anyway , pidgin users who are like me, here is a little present for y'all.<br /><br /><s><a href="http://fedorapeople.org/gitweb?p=izhar/public_git/hack-patches.git;a=tree;f=gnomeshell@pidgin.im">Pidgin GNOME3 Integration Extension</a></s><br /><br /><s>Just copy the <code>gnomeshell@pidgin.im</code> folder into your <code>~/.local/share/gnome-shell/extensions/</code> and restart your gnome-shell. </s><br /><br />The extension utilize pidgin's dbus API, so it'll need pidgin to be running. I only did some rough test with it only on my Fedora 15 machine, but I believe it should work ok everywhere else.<br /><br />Now for me to get some sleep XD.<br /><br /><b>Update</b>: For some reason unknown to me, my git repos dissappeared from fedorapeople.org/git. The code is now hosted here: <a href="https://github.com/kagesenshi/gnome-shell-extensions-pidgin">https://github.com/kagesenshi/gnome-shell-extensions-pidgin</a>. To install, create a <code>pidgin@gnome-shell-extensions.gnome.org</code> directory in <code>~/.local/share/gnome-shell/extensions</code>, copy the 2 files into it and restart gnome-shell. Sorry for the broken link.<div class="blogger-post-footer"><br/>

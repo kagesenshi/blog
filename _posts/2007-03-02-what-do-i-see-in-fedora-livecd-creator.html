@@ -1,17 +1,19 @@
 ---
-layout: post
-title: What do I see in the Fedora LiveCD-Creator project
-date: '2007-03-02T18:03:00.000+08:00'
 author: kagesenshi
+blogger_id: tag:blogger.com,1999:blog-28371165.post-3294479074785257321
+blogger_orig_url: https://blog.kagesenshi.org/2007/03/what-do-i-see-in-fedora-livecd-creator.html
+categories:
+- old blog
+date: '2007-03-02T18:03:00.000+08:00'
+layout: post
+modified_time: '2011-10-07T12:36:50.780+08:00'
 tags:
 - Linux
 - Reviews
 - PlanetFedora
 - Open Source
 - Fedora
-modified_time: '2011-10-07T12:36:50.780+08:00'
-blogger_id: tag:blogger.com,1999:blog-28371165.post-3294479074785257321
-blogger_orig_url: https://blog.kagesenshi.org/2007/03/what-do-i-see-in-fedora-livecd-creator.html
+title: What do I see in the Fedora LiveCD-Creator project
 ---
 
 I have been playing around with <a href="http://fedoraproject.org/wiki/FedoraLiveCD/LiveCDHowTo">livecd-creator</a> for a while now. And these are some possibilities that I can see from the project + the custom distro project.<br /><br /><ul><li>Flexibility in creating customized liveCD (obvious)</li><li>A lot of Live distros based on Fedora will be emerging in the OpenSource world</li><li>Fedora will become a root for possibly a distro that can succeed in market more that itself</li><li>and best of all - the LiveDistros won't be needing to host ISOs!!</li></ul><br /><br /><span style="font-weight:bold;">Flexibility in creating a customized liveCD</span><br /><br />This is the most obvious reason of all. The livecd-creator script uses a simple and easy to understand config file (which actually is a bash script - and theres a plan to move to kickstart) to generate the liveCD. Basically any user who have experience installing gentoo from stage1/stage2 or installing fedora into chroot can get the hang it in no time. The config also is not that hard to understand if you are a newbie. Its quite easy to customize it if you know bash/sh scripting.<br /><br /><span style="font-weight:bold;">A lot of Live distros based on Fedora will be emerging in the OpenSource world</span><br /><br />Easy to do = lots of people will play with it<br /><br /><span style="font-weight:bold;">Fedora will become a root for possibly a distro that can succeed in market more that itself</span><br /><br />Day by day I see Fedora growing in term of code maturity and community. With the right tools and the right person to lead the way, we might be able to see children of Fedora that can make their parent proud. <br /><br /><span style="font-weight:bold;">LiveDistros won't be needing to host ISOs!!</span><br /><br />Ok, now this is what I love so much when playing around with livecd-creator. The livecd-creator script stores the configs and customization stuff for the LiveCD inside a RPM package. Therefore,   new distributors can simply host that RPM package, and let users who interested to use it to generate the LiveCD themselves .. with latest packages and updates!!!!<br /><br />Imagine this, a student who just started to get into distro development has created a LiveCD using the livecd-tools. He dont have enough money to find hosting for the ISO images. He just upload the RPM into his blog, and interested users can simply get his liveCD by generating it themselves!!<br /><br />The distributor also does not need to worry about getting sources of all the packages he/she used for his distro to meet with GPL requirement. He/she only created and distributed the config that define the distro, other packages are fetch directly from online repositories (which already have the sources) by the user/person who generate the ISO image. So, considering the distributor does not distribute the other packages, he/she does not need to provide their sources. Providing the source for the config RPM is enough to fulfill the requirement. (I might be wrong in this opinion, please correct me if I am)<br /><br />=======<br /><br />I enjoy seeing this development, and it makes me happy becoming a Fedora user. To the Fedora Team , good job!! . And thanks a lot for giving me a GREAT distro!. <(^-^)><div class="blogger-post-footer"><br/>

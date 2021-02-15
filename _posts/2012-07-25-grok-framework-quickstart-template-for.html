@@ -1,8 +1,12 @@
 ---
-layout: post
-title: Grok framework quickstart template for OpenShift using the DIY cartridge
-date: '2012-07-25T05:44:00.000+08:00'
 author: kagesenshi
+blogger_id: tag:blogger.com,1999:blog-28371165.post-6998094180884594573
+blogger_orig_url: https://blog.kagesenshi.org/2012/07/grok-framework-quickstart-template-for.html
+categories:
+- old blog
+date: '2012-07-25T05:44:00.000+08:00'
+layout: post
+modified_time: '2012-07-25T05:44:17.027+08:00'
 tags:
 - Buildout
 - Linux
@@ -15,9 +19,7 @@ tags:
 - Announcement
 - Cloud
 - Zope
-modified_time: '2012-07-25T05:44:17.027+08:00'
-blogger_id: tag:blogger.com,1999:blog-28371165.post-6998094180884594573
-blogger_orig_url: https://blog.kagesenshi.org/2012/07/grok-framework-quickstart-template-for.html
+title: Grok framework quickstart template for OpenShift using the DIY cartridge
 ---
 
 <div dir="ltr" style="text-align: left;" trbidi="on">Another OpenShift goodness for Zope developers. A quickstart template for the <a href="http://grok.zope.org/">Grok framework</a>! Grok is now deployable easily on <a href="http://openshift.redhat.com/">openshift.redhat.com</a>!<br /><br />Check it out here: <a href="https://github.com/kagesenshi/grok-openshift-quickstart">https://github.com/kagesenshi/grok-openshift-quickstart</a><br /><br /><b>Grok on OpenShift</b> <br /><br />Unlike the Plone template which is pretty straightforward, the Grok template requires some additional steps to initialize the project. This is mainly due to Grok projects are packaged in python eggs by default, so the package name is quite important. A preconfigured package name would surely cause name clashes.<br /><br />To initialize the project, just run initialize.py with your project name as the parameter. The script will automatically install grokproject, create your project, move the files around so that it works nicely with OpenShift, and add the necessary files into the git repo. <br /><br /><b>Features</b><br /><ul style="text-align: left;"><li>Create a grok project using your own custom project name</li><li>Deploy your application using the environment variables of OpenShift</li><li>Build process, caching and storage is implemented the in a very similar way with the <a href="http://blog.kagesenshi.org/2012/07/plone-on-openshift-quickstart-using-diy.html">Plone template I created earlier.</a> </li></ul></div><div class="blogger-post-footer"><br/>

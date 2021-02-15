@@ -1,15 +1,17 @@
 ---
-layout: post
-title: 'gpk-install-catalog: a gem which is somewhat hidden'
-date: '2011-12-22T11:45:00.000+08:00'
 author: kagesenshi
+blogger_id: tag:blogger.com,1999:blog-28371165.post-3798604504230847776
+blogger_orig_url: https://blog.kagesenshi.org/2011/12/gpk-install-catalog-gem-which-is.html
+categories:
+- old blog
+date: '2011-12-22T11:45:00.000+08:00'
+layout: post
+modified_time: '2011-12-22T11:58:15.812+08:00'
 tags:
 - AppRepo
 - PlanetFedora
 - Fedora
-modified_time: '2011-12-22T11:58:15.812+08:00'
-blogger_id: tag:blogger.com,1999:blog-28371165.post-3798604504230847776
-blogger_orig_url: https://blog.kagesenshi.org/2011/12/gpk-install-catalog-gem-which-is.html
+title: 'gpk-install-catalog: a gem which is somewhat hidden'
 ---
 
 <div dir="ltr" style="text-align: left;" trbidi="on">Just discovered this: <a href="http://docs.fedoraproject.org/en-US/Fedora/14/html/Software_Management_Guide/ch09s03.html">http://docs.fedoraproject.org/en-US/Fedora/14/html/Software_Management_Guide/ch09s03.html<br /></a><br /><br />Apparently PackageKit have a format for describing how to install multiple packages.<br /><br /><pre>[PackageKit Catalog]<br /><br />InstallPackages(fedora)=packagename1;packagename2;<br /></pre><br />This fits my usecase for AppRepo very very well. Should I discovered this earlier, I would have started coding AppRepo way back, but what made me procrastinate was the lack of easy way to tell the user's system what packages should be installed, and the browser plugin was quite flaky (still flaky today too, at least it doesn't crash as much).<br /><br />Will be adding a button for download catalog in AppRepo later today.&nbsp; User can open the catalog file using gpk-install-catalog. This method works better across browsers too, as users does not have to have the browser plugin installed. </div><div class="blogger-post-footer"><br/>

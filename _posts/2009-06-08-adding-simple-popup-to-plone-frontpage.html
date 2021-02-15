@@ -1,14 +1,16 @@
 ---
-layout: post
-title: Adding simple popup to Plone frontpage
-date: '2009-06-08T12:46:00.004+08:00'
 author: kagesenshi
+blogger_id: tag:blogger.com,1999:blog-28371165.post-6799440422715252013
+blogger_orig_url: https://blog.kagesenshi.org/2009/06/adding-simple-popup-to-plone-frontpage.html
+categories:
+- old blog
+date: '2009-06-08T12:46:00.004+08:00'
+layout: post
+modified_time: '2011-10-07T12:39:58.131+08:00'
 tags:
 - PlanetPlone
 - Plone
-modified_time: '2011-10-07T12:39:58.131+08:00'
-blogger_id: tag:blogger.com,1999:blog-28371165.post-6799440422715252013
-blogger_orig_url: https://blog.kagesenshi.org/2009/06/adding-simple-popup-to-plone-frontpage.html
+title: Adding simple popup to Plone frontpage
 ---
 
 Here is a little guide for those who want to add a simple popup to the Plone frontpage for some purpose (eg: announcements, advertisements, etc).<br /><br />Create a basic html file containing the content you want to appear in the popup. Upload it into <code>$PLONE_SITE/portal_skins/custom</code> (as Page Template) and for the sake of this example, name it <code>popup.html</code><br /><br />Afterward, create a Javascript file with your Pop-Up loader script. For example , this script:<br /><br /><pre><br />function popup(mylink, windowname)<br />    {<br />      if (! window.focus)return true;<br />      var href;<br />      if (typeof(mylink) == 'string')<br />      href=mylink;<br />      else<br />      href=mylink.href;<br />      window.open(href, windowname, 'width=220,height=400,scrollbars=no');<br />      return false;<br />    };<br /><br />popup('popup.html', 'My Popup');<br /></pre><br /><br />Also upload this file into <code>$PLONE_SITE/portal_skins/custom</code> (as Page Template too). For this example, name it as <code>popup.js</code><br /><br />Afterward, in <code>$PLONE_SITE/portal_javascripts</code> , add <code>popup.js</code> as a new script into portal_javascripts and set its condition to : <br /><br /><code>python:here.restrictedTraverse('@@plone_context_state').is_portal_root()</code><br /><br />Save your work, and you are good to go :D<br /><br /><b>Note</b>: Lots of browsers now block javascript popups quite well.<div class="blogger-post-footer"><br/>

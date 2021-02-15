@@ -1,12 +1,14 @@
 ---
-layout: post
-title: Bandwidth Monitoring Script (through ifconfig)
-date: '2006-03-14T09:50:00.000+08:00'
 author: kagesenshi
-tags:
-modified_time: '2006-10-11T06:49:42.911+08:00'
 blogger_id: tag:blogger.com,1999:blog-28371165.post-114996769292767865
 blogger_orig_url: https://blog.kagesenshi.org/2006/03/bandwidth-monitoring-script-through.html
+categories:
+- old blog
+date: '2006-03-14T09:50:00.000+08:00'
+layout: post
+modified_time: '2006-10-11T06:49:42.911+08:00'
+tags: null
+title: Bandwidth Monitoring Script (through ifconfig)
 ---
 
 <p>Some ppl might need sumthing to monitor their bwidth … i think this script would b enough for some of us … i wrote it by myself by manipulating the output of ifconfig …</p>      <span style="font-family:monospace;font-size:78%;color:black;"><br /><code><br />#!/bin/bash</code></span> <span style="font-family:monospace;font-size:78%;color:black;"> </span> <p><span style="font-family:monospace;font-size:78%;color:black;">IFCONFIG="/sbin/ifconfig”<br />IFACE=$1<br />if [ “${1}” != “” ]; then<br />   IFOUTPUT=`${IFCONFIG} ${IFACE} |grep bytes`<br />   DOWNOLD=`echo ${IFOUTPUT}|awk ‘{print $2}’|sed s/"bytes:"//`<br />   UPOLD=`echo ${IFOUTPUT}|grep bytes|awk ‘{print $6}’|sed s/"bytes:"//`<br />sleep 0.8<br />   IFOUTPUT=`${IFCONFIG} ${IFACE} |grep bytes`<br />   DOWNNOW=`echo ${IFOUTPUT}|awk ‘{print $2}’|sed s/"bytes:"//`<br />   UPNOW=`echo ${IFOUTPUT}|awk ‘{print $6}’|sed s/"bytes:"//`</span></p>  <span style="font-family:monospace;font-size:78%;color:black;"> </span> <p><span style="font-family:monospace;font-size:78%;color:black;">   let “UP= $UPNOW - $UPOLD”<br />   let “DOWN= $DOWNNOW - $DOWNOLD”<br />   let “TOTAL = UP + DOWN”<br />   echo “—-KBps Bandwitdh Monitor—-”<br />   echo “”<br />   echo ”        by KageSenshi”<br />   echo “”<br />   echo “”<br />   echo “——————————”<br />   echo “Bandwidth for Interface ${IFACE}”<br />   echo “——————————”<br />   echo “”<br />   echo ”               KBps    MBps”<br />   echo “Upload Speed   $(($UP / 1024)) $(($UP / 1024 / 1024))”<br />   echo “Download Speed $(($DOWN / 1024))       $(($DOWN / 1024 / 1024))”<br />   echo ”         Total $(($TOTAL / 1024))      $(($TOTAL / 1024 /1024))”<br />   echo “”</span></p>  <span style="font-family:monospace;font-size:78%;color:black;"> </span> <p><span style="font-family:monospace;font-size:78%;color:black;">#   uncomment this if u want the output to be stored in ur hdd<br />#   echo “${UP} ${DOWN} ${TOTAL}” >> $HOME/bwidth.txt</span></p>  <span style="font-family:monospace;font-size:78%;color:black;"> </span> <p><span style="font-family:monospace;font-size:78%;color:black;">   echo “”<br />   echo “*Tips : View this in realtime”<br />   echo ”    watch -d=c bwmon ${IFACE}  “<br />else<br />   echo “Bandwitdh Monitor “<br />   echo “By: KageSenshi “<br />   echo ” “<br />   echo “Usage:”<br />   echo ”           bwmon <eth>”<br />   echo ”           watch -d=n bwmon <eth>”<br />fi</span></p><div class="blogger-post-footer"><br/>

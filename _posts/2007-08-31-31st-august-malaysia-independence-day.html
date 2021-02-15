@@ -1,16 +1,18 @@
 ---
-layout: post
-title: 31st August - Malaysia Independence Day Anniversary .. and TMnut blocked my
-  IRC access???
-date: '2007-08-31T23:33:00.000+08:00'
 author: kagesenshi
+blogger_id: tag:blogger.com,1999:blog-28371165.post-6576942057246031484
+blogger_orig_url: https://blog.kagesenshi.org/2007/08/31st-august-malaysia-independence-day.html
+categories:
+- old blog
+date: '2007-08-31T23:33:00.000+08:00'
+layout: post
+modified_time: '2007-09-01T15:03:34.136+08:00'
 tags:
 - Geek Log
 - Rant
-modified_time: '2007-09-01T15:03:34.136+08:00'
 thumbnail: http://lh6.google.com/kagesenshi.87/Rtg5a_8GHaI/AAAAAAAAAFQ/zQWTtMIxibk/s72-c/malaysia_flag.jpg
-blogger_id: tag:blogger.com,1999:blog-28371165.post-6576942057246031484
-blogger_orig_url: https://blog.kagesenshi.org/2007/08/31st-august-malaysia-independence-day.html
+title: 31st August - Malaysia Independence Day Anniversary .. and TMnut blocked my
+  IRC access???
 ---
 
 <a href="http://picasaweb.google.com/kagesenshi.87/Misc/photo#5104893313627332002"><img src="http://lh6.google.com/kagesenshi.87/Rtg5a_8GHaI/AAAAAAAAAFQ/zQWTtMIxibk/s144/malaysia_flag.jpg" /></a><br />(Flag img taken from <a href="http://ditesh.gathani.org/blog/2007/08/31/happy-merdeka/">Ditesh's post</a>)<br /><br /><br />Okay .. its 31st August again .. the anniversary of Malaysia independence from Great Britain .. and I'm at home for a holiday .. and guess what .. I noticed a shocking discovery .. <a href="http://www.tm.net.my/">The DARNED TMnut</a> blocked my IRC access!!! - on port 6667 in particular<br /><br />Some Xchat output<br /><pre><br />* Looking up irc.freenode.net<br />* Connecting to chat.freenode.net (204.11.244.21) port 6667...<br />* Connection failed. Error: Connection refused<br />* Looking up irc.dal.net<br />* Connecting to irc.dal.net (194.68.45.50) port 6667...<br />* Connection failed. Error: Connection refused<br />* Disconnected ().<br />* Looking up irc.prison.net<br />* Connecting to irc.prison.net (209.249.249.126) port 6667...<br />* Connection failed. Error: Connection refused<br />* Disconnected ().<br />* Looking up irc.rizon.net<br />* Connecting to us.iso.rizon.net (216.246.56.111) port 6667...<br />* Connection failed. Error: Connection refused<br />* Looking up irc.dal.net<br />* Connecting to irc.dal.net (194.68.45.50) port 6669...<br />* Connected. Now logging in...<br />* *** Looking up your hostname...<br />* *** Found your hostname, cached<br />* *** Checking Ident<br /></pre><br /><br />SEE THAT??!! .. outbound port 6667 access is blocked!!<br /><br />being curious if they blocked also inbound port 6667 to my tunneled UTPchat IRC server, I ssh'ed to an external box, made my irc server listening on port 6667-6669 .. and tried netcat'ing to it .. and heres the output<br /><br /><pre><br />[kagesenshi@devel ~]$ nc tunnel.utpchat.net 6667<br />[kagesenshi@devel ~]$ nc tunnel.utpchat.net 6668<br />:tunnel.utpchat.net NOTICE AUTH :*** Looking up your hostname...<br />:tunnel.utpchat.net NOTICE AUTH :*** Couldn't resolve your hostname; using your IP address instead<br />^C<br />[kagesenshi@devel ~]$ nc tunnel.utpchat.net 6669<br />:tunnel.utpchat.net NOTICE AUTH :*** Looking up your hostname...<br />:tunnel.utpchat.net NOTICE AUTH :*** Couldn't resolve your hostname; using your IP address instead<br />^C<br />[kagesenshi@devel ~]$ <br /></pre><br /><br />Notice that connection is refused to port 6667 <br /><br />WTF!! .. damn .. if not because ure the only ISP which my family can afford, (and generally the ONLY ISP in Malaysia) ... I would tell my dad to switch to other ISP... grrr ....<br /><br />grr ... Heck .. I want my Freedom!! .. <br /><br />Its "Merdeka" (Independence) anniversary .. and here I am , with my Freedom to IRC blocked ..<br /><br /><div align="center"><a href="http://www.redesignmalaysia.com" target="_blank"><img src="http://www.redesignmalaysia.com/banners/125x125-suck-url.gif" alt="Malaysia's broadband sucks - RedesignMalaysia.com" width="125" height="125" border="0"></a></div><br /><br /><span style="font-weight:bold;">Update :</span> I just checked it again today, and it looks like my IRC access is back ... Happy .. but still pissed off ..<div class="blogger-post-footer"><br/>

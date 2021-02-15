@@ -1,14 +1,16 @@
 ---
-layout: post
-title: Fedora repository mirroring script using reposync
-date: '2007-06-09T20:12:00.000+08:00'
 author: kagesenshi
+blogger_id: tag:blogger.com,1999:blog-28371165.post-157600947389918944
+blogger_orig_url: https://blog.kagesenshi.org/2007/06/fedora-repository-mirroring-script.html
+categories:
+- old blog
+date: '2007-06-09T20:12:00.000+08:00'
+layout: post
+modified_time: '2011-10-07T12:36:50.628+08:00'
 tags:
 - PlanetFedora
 - Fedora
-modified_time: '2011-10-07T12:36:50.628+08:00'
-blogger_id: tag:blogger.com,1999:blog-28371165.post-157600947389918944
-blogger_orig_url: https://blog.kagesenshi.org/2007/06/fedora-repository-mirroring-script.html
+title: Fedora repository mirroring script using reposync
 ---
 
 I'm back~ :D<br /><br />As my first post of this holidays .. I give y'all the script i've been using to mirror and sync the fedora repos. The script is using reposync,repomanage (both provided by yum-utils) and createrepo , so you will need to yum for those them first.<br /><br /><pre><br />#!/bin/bash -x<br /><br />unset http_proxy<br />#export http_proxy=http://127.0.0.1:3128<br /><br /># mirror root - the place you want the rpms to be downloaded<br />MROOT="/mnt/mirror/repos"<br /><br /># processor architectures (space separated)<br />ARCHS="i686 x86_64"<br /><br /># repository names (space separated)<br />REPOS="fedora updates"<br /><br />if [ "$1" != "" ];then<br />    REPOS="$@"<br />fi<br /><br />downcomps(){<br />        wget -N $1/repodata/comps.xml<br />}<br /><br /># this part will download the comps.xml files .. it still need some improvements though<br />getcomps(){<br />        case "$1" in<br />        fedora)<br />                downcomps http://download.fedora.redhat.com/pub/fedora/linux/releases/7/Everything/i386/os/<br />        ;;<br />        updates)<br />                downcomps http://download.fedora.redhat.com/pub/fedora/linux/updates/7/i386/<br />        ;;<br />        *)<br />                echo error<br />        ;;<br />        esac<br />}<br /><br />downrepo () {<br />    cd $MROOT<br />    if [ "$2" == "i686" ];then<br />       cd i386<br />    else<br />       cd $2<br />    fi<br />    echo "Sychronizing Repositories"<br />    reposync -r $1 -a $2 --newest-only -t /var/tmp/reposync-cache  <br />    STAT=$?<br />    if [ "$STAT" == "0" ];then<br />        cd $1<br />        echo "Cleaning old packages"<br />        repomanage --withbroken --old . |grep -v 'kernel\-' |grep -v -i 'nvidia'|grep -v -i 'fglrx'|xargs rm -rf<br />        rm -rf .repodata .olddata<br />        echo "Recreating repodata"<br />        getcomps $1<br />#        rm -f comps.xml<br />        if [ -e comps.xml ];then<br />            createrepo --groupfile comps.xml .<br />        else<br />            createrepo .<br />        fi<br />    fi<br />    cd $MROOT<br />}<br /><br /><br />#yum clean all --noplugins <br />while [ "1" == "1" ];do<br />        for REPO in $REPOS;do<br />          # yum makecache --disablerepo=* --enablerepo=$REPO<br />           for ARCH in $ARCHS;do<br />              echo downloading $REPO $ARCH<br />              downrepo $REPO $ARCH<br />           done<br />        done<br />echo Update done, halting for 2 hours<br />sleep 7200<br />done<br /></pre><div class="blogger-post-footer"><br/>

@@ -1,16 +1,18 @@
 ---
-layout: post
-title: 'Hack: A bit better yum-fastestmirror patch'
-date: '2008-12-25T16:49:00.004+08:00'
 author: kagesenshi
+blogger_id: tag:blogger.com,1999:blog-28371165.post-4484677847862387649
+blogger_orig_url: https://blog.kagesenshi.org/2008/12/hack-bit-better-yum-fastestmirror-patch.html
+categories:
+- old blog
+date: '2008-12-25T16:49:00.004+08:00'
+layout: post
+modified_time: '2011-10-07T12:39:10.193+08:00'
 tags:
 - PlanetFedora
 - Fedora
 - Hacks
 - Yum
-modified_time: '2011-10-07T12:39:10.193+08:00'
-blogger_id: tag:blogger.com,1999:blog-28371165.post-4484677847862387649
-blogger_orig_url: https://blog.kagesenshi.org/2008/12/hack-bit-better-yum-fastestmirror-patch.html
+title: 'Hack: A bit better yum-fastestmirror patch'
 ---
 
 Those who use Fedora might be familiar with <code>yum-fastestmirror</code> plugin. Its a plugin for yum which polls yum mirrors for the one which responds the fastest. However, sometimes, the polling result might not be one might expected. <br /><br />For example, with the current fastestmirror, I usually get the singaporean mirror as the fastest. But, the singaporean mirror, in fact, only gives me around 2-4KBps download speed, which of course, pissed me off. The taiwanese and the australian mirrors give faster speed than that. So, I went looking at the fastestmirror code. <br /><br />Seems like fastestmirror does not sort mirrors by its download speed, but rather, by it connect() respond speed. That basically explains why it sometimes pick a mirror with slow download speed as fastest. As fast respond to connect(), doesn't necessarily means the mirror have higher upload speed bandwidth. <br /><br />So, I changed a bit of that behavior. Altered the code to download the repomd.xml, , see how fast the download went, and sort the mirrors according to that. For those who interested, my patch is here: <a href="http://fedorapeople.org/gitweb?p=izhar/public_git/hack-patches.git;a=blob_plain;f=fastestmirror-repomd-download-speed-timing.patch;hb=HEAD"/>fastestmirror-repomd-download-speed-timing.patch</a>. <br /><br />(Yup2, I know repomd.xml is too small for evaluating bandwidth download speed accurately, but at least thats better than simply connect(), and other files might be too large resulting in the polling process slower)<br /><br />If anybody want to improve on that patch, as usual, feel free to do so :D .<div class="blogger-post-footer"><br/>

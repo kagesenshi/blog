@@ -1,18 +1,20 @@
 ---
-layout: post
-title: Local behavior support for Dexterity
-date: '2011-12-26T14:47:00.001+08:00'
 author: kagesenshi
+blogger_id: tag:blogger.com,1999:blog-28371165.post-4453906520851289160
+blogger_orig_url: https://blog.kagesenshi.org/2011/12/local-behavior-support-for-dexterity.html
+categories:
+- old blog
+date: '2011-12-26T14:47:00.001+08:00'
+layout: post
+modified_time: '2011-12-26T14:49:21.847+08:00'
 tags:
 - Inigo
 - Python
 - Hacks
 - PlanetPlone
 - Plone
-modified_time: '2011-12-26T14:49:21.847+08:00'
 thumbnail: http://1.bp.blogspot.com/-XP0KtBEuETw/TvgX8arI0-I/AAAAAAAAA_c/MGhnHzO4nmw/s72-c/dexteritylocalbehavior.jpg
-blogger_id: tag:blogger.com,1999:blog-28371165.post-4453906520851289160
-blogger_orig_url: https://blog.kagesenshi.org/2011/12/local-behavior-support-for-dexterity.html
+title: Local behavior support for Dexterity
 ---
 
 <div dir="ltr" style="text-align: left;" trbidi="on"><br />Just created this: <a href="https://github.com/inigoconsulting/collective.localbehavior">https://github.com/inigoconsulting/collective.localbehavior</a><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-XP0KtBEuETw/TvgX8arI0-I/AAAAAAAAA_c/MGhnHzO4nmw/s1600/dexteritylocalbehavior.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="400" src="http://1.bp.blogspot.com/-XP0KtBEuETw/TvgX8arI0-I/AAAAAAAAA_c/MGhnHzO4nmw/s400/dexteritylocalbehavior.jpg" width="285" /></a></div><br />Back in <a href="http://mygosscon.oscc.org.my/2011/">MyGOSSCon</a>, Dylan Jay of Pretaweb mentioned about his <a href="http://comments.gmane.org/gmane.comp.web.zope.plone.devel/28176">discussion on getting rid of content type concept altogether</a> and replace it with just Deco type.<br /><br />It sounds to me a lot like having local behavior for Dexterity, where each content may have its own set of behaviors assigned. So you can just add a Dexterity content, and if suddenly you decide you want to add more fields or behaviors, just for that content, you can just assign the local behavior on it.<br /><br />eg: you added a Page, but suddenly you think that this page should be an event. The main way to do this is to delete the page, and create an Event instead. But with local behavior, your can just assign an Event local behavior and the content will have the fields and viewlets needed to turn it into an event. <br /><br />If you are interested in above, you might also be interested with this : <a href="http://svn.plone.org/svn/collective/collective.miscbehaviors/">http://svn.plone.org/svn/collective/collective.miscbehaviors/</a><br /><br /><br /></div><div class="blogger-post-footer"><br/>

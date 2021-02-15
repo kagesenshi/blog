@@ -1,8 +1,12 @@
 ---
-layout: post
-title: Update on Compiz Fusion repository
-date: '2007-06-26T14:23:00.000+08:00'
 author: kagesenshi
+blogger_id: tag:blogger.com,1999:blog-28371165.post-3230749192225208757
+blogger_orig_url: https://blog.kagesenshi.org/2007/06/update-on-compiz-fusion-repository.html
+categories:
+- old blog
+date: '2007-06-26T14:23:00.000+08:00'
+layout: post
+modified_time: '2011-10-07T12:36:50.760+08:00'
 tags:
 - Compiz
 - Linux
@@ -10,9 +14,7 @@ tags:
 - Geek Log
 - Open Source
 - Fedora
-modified_time: '2011-10-07T12:36:50.760+08:00'
-blogger_id: tag:blogger.com,1999:blog-28371165.post-3230749192225208757
-blogger_orig_url: https://blog.kagesenshi.org/2007/06/update-on-compiz-fusion-repository.html
+title: Update on Compiz Fusion repository
 ---
 
 I have updated the repository just now. A few noticable changes are:<br /><blockquote><br />package updated to 20070625 morning's git (I'm @ GMT +8 if that matters)<br />compiz package is slow splitted into compiz-gnome and compiz-kde<br />release numbering is changed to follow <a href="http://fedoraproject.org/wiki/Packaging/NamingGuidelines#head-d97a3f40b6dd9d2288206ac9bd8f1bf9b791b22a">Fedora Packaging: Naming Guideline</a><br />a few bug fixes at the specfiles<br /></blockquote><br /><br /><span style="font-weight:bold;">IMPORTANT NOTE:</span><br /><br />To those who are using 20070622git packages, you will need to remove them manually before upgrading through yum, or it wont work. This is because the change in the release numbering which make yum thinks the the older packages are newer.<br /><br />To erase them<br /><pre>yum erase \*compiz\*<br />yum erase \*emerald\*</pre><br /><br /><span style="font-weight:bold;">Installing the new packages</span><br /><br /><pre><br /># Install the repository (if you havent)<br />cd /etc/yum.repos.d/<br />wget http://repo.kagesenshi.org/pub/kagesenshi.repo<br /><br /># all compiz fusion packages (GNOME and KDE)<br />yum install compiz<br /><br /># compiz fusion and emerald (for GNOME)<br />yum install compiz-gnome<br /><br /># compiz fusion and KDE window decorator (for KDE)<br />yum install compiz-kde<br /></pre><br /><br />Enjoy~<br /><br /><a href="http://blog.kagesenshi.org/2007/06/compiz-fusion-repository-for-fedora-7.html">Original Post : Compiz Fusion Repository for Fedora 7</a><div class="blogger-post-footer"><br/>

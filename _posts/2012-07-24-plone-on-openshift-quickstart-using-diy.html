@@ -1,8 +1,12 @@
 ---
-layout: post
-title: Plone on OpenShift quickstart using the DIY cartridge
-date: '2012-07-24T05:26:00.000+08:00'
 author: kagesenshi
+blogger_id: tag:blogger.com,1999:blog-28371165.post-1532930121403974898
+blogger_orig_url: https://blog.kagesenshi.org/2012/07/plone-on-openshift-quickstart-using-diy.html
+categories:
+- old blog
+date: '2012-07-24T05:26:00.000+08:00'
+layout: post
+modified_time: '2012-07-24T05:27:24.678+08:00'
 tags:
 - Linux
 - Grok
@@ -17,9 +21,7 @@ tags:
 - Plone
 - Cloud
 - Zope
-modified_time: '2012-07-24T05:27:24.678+08:00'
-blogger_id: tag:blogger.com,1999:blog-28371165.post-1532930121403974898
-blogger_orig_url: https://blog.kagesenshi.org/2012/07/plone-on-openshift-quickstart-using-diy.html
+title: Plone on OpenShift quickstart using the DIY cartridge
 ---
 
 <div dir="ltr" style="text-align: left;" trbidi="on"><br />TLDR; Plone is now deployable easily on <a href="http://openshift.redhat.com/">openshift.redhat.com</a> . Check out the repository here: <a href="https://github.com/kagesenshi/plone-openshift-quickstart">https://github.com/kagesenshi/plone-openshift-quickstart</a>.<br /><br /><b>Plone on openshift.redhat.com</b><br /><br />Yesterday I posted about&nbsp; <a href="http://blog.kagesenshi.org/2012/07/plone-cartridge-for-deployment-on.html">deploying Plone using a cartridge</a> in your own private OpenShift Origin VM.<br /><br />Afterwards that day, I had some chat in the <a href="http://webchat.freenode.net/?channels=#openshift">#openshift IRC channel</a> and was informed that it is OK to run buildout in <a href="http://openshift.redhat.com/">openshift.redhat.com</a>, and last night, I converted the scripts and config from the cartridge so that it fits in the workflow of the DIY cartridge.<br /><br />Features/Notes:<br /><ul style="text-align: left;"><li>Deploys Plone 4.2 with Dexterity content types easily and quickly on openshift.redhat.com</li><li>Downloads are cached in ${OPENSHIFT_TMP_DIR}/${OPENDIR_APP_UUID}-cache. However, as this is not shared, it means all new apps will have to redownload the python eggs. While it might be possible to use a shared download cache for this&nbsp; (OPENSHIFT_TMP_DIR is apparently /tmp), I am not sure whether the SELinux settings in the server allows it or not.</li><li>Virtualenv and generated eggs are stored in OPENSHIFT_DATA_DIR. Technically though, they are not exactly data. However, as we need them to be persistent, and the DIY cartridge does not provide a folder to store persistent, non-data, automatically generated files, they had to be stored there.</li><li>The quickstart template is quite generic for any <a href="http://buildout.org/">buildout</a>-based deployment. So, technically, you can add support for <a href="http://grok.zope.org/">Grok</a>, <a href="http://bluebream.zope.org/">BlueBream</a> and any framework that can be deployed using buildout using this template as its base. I'm planning to create a quickstart template for deploying Grok either tonight or later this week.&nbsp; Will post about it.</li></ul></div><div class="blogger-post-footer"><br/>
