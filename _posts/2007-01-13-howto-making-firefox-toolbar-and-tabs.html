@@ -1,16 +1,18 @@
 ---
-layout: post
-title: 'HOWTO: Making Firefox toolbar and tabs smaller'
-date: '2007-01-13T14:26:00.000+08:00'
 author: kagesenshi
+blogger_id: tag:blogger.com,1999:blog-28371165.post-930037078168410785
+blogger_orig_url: https://blog.kagesenshi.org/2007/01/howto-making-firefox-toolbar-and-tabs.html
+categories:
+- old blog
+date: '2007-01-13T14:26:00.000+08:00'
+layout: post
+modified_time: '2008-01-11T11:26:05.248+08:00'
 tags:
 - Open Source
 - Hacks
 - HOWTO
-modified_time: '2008-01-11T11:26:05.248+08:00'
 thumbnail: http://3.bp.blogspot.com/_0DENAyCRujw/Rah-TxDFw_I/AAAAAAAAAAY/d0hzK6nJ4-Y/s72-c/070113-01.jpg
-blogger_id: tag:blogger.com,1999:blog-28371165.post-930037078168410785
-blogger_orig_url: https://blog.kagesenshi.org/2007/01/howto-making-firefox-toolbar-and-tabs.html
+title: 'HOWTO: Making Firefox toolbar and tabs smaller'
 ---
 
 People with low resolution screens might want to make stuff smaller to save space. Below is a guide to shrink the Firefox toolbar .<br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://3.bp.blogspot.com/_0DENAyCRujw/Rah-TxDFw_I/AAAAAAAAAAY/d0hzK6nJ4-Y/s1600-h/070113-01.jpg"><img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer;" src="http://3.bp.blogspot.com/_0DENAyCRujw/Rah-TxDFw_I/AAAAAAAAAAY/d0hzK6nJ4-Y/s320/070113-01.jpg" alt="" id="BLOGGER_PHOTO_ID_5019400662753330162" border="0" /></a><br /><br /><span style="font-weight:bold;">Switching to small icons</span><br /><br />First we need to use small icons for the toolbars. Just right click at the toolbar, click customize, and select "Use small icons".<br /><br /><span style="font-weight:bold;">Resizing the toolbar</span><br /><br />There are no menus to change the toolbar width from within firefox. Therefore, we need to edit the userChrome.css file. The userChrome.css file is located in your Firefox profile folder. The location differs according to the OS. Locate your profile folder by following <a href="http://www.mozilla.org/support/firefox/edit#profile">this guide</a>. After you located the profile folder, find the file at &lt;profile-folder&gt;/chrome/userChrome.css . If it doesn't exist yet, create it.<br /><br />Now, add this css entry into userChrome.css<br /><pre>toolbar {<br />max-height:30px !important;<br />}</pre><br />This will resize the toolbars width to 30px. <br /><br /><span style="font-weight:bold;">Resizing the tabbrowser</span><br /><br />Add this entry into userChrome.css to resize the tabbrowser tab width to 30px and remove any paddings and margins.<br /><pre>.tabbrowser-tabs {<br /> max-height: 30px !important;<br /> padding:0;<br /> margin: 0;<br />}</pre><br />Restart firefox, and you're done. Feel free to experiment with various values.<br /><br />Btw, if you noticed in the screenshot, my menu toolbar has been removed and replaced with a menu button. I'll post a guide to do this when I have time.<div class="blogger-post-footer"><br/>

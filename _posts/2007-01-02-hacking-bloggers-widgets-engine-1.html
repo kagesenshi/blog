@@ -1,16 +1,18 @@
 ---
-layout: post
-title: 'Hacking Blogger''s widgets engine #1'
-date: '2007-01-02T23:58:00.000+08:00'
 author: kagesenshi
+blogger_id: tag:blogger.com,1999:blog-28371165.post-6301457851087770358
+blogger_orig_url: https://blog.kagesenshi.org/2007/01/hacking-bloggers-widgets-engine-1.html
+categories:
+- old blog
+date: '2007-01-02T23:58:00.000+08:00'
+layout: post
+modified_time: '2007-01-03T14:09:14.642+08:00'
 tags:
 - Blogger
 - Geek Log
 - Web
-modified_time: '2007-01-03T14:09:14.642+08:00'
 thumbnail: http://2.bp.blogspot.com/_0DENAyCRujw/RZsoNY_nJTI/AAAAAAAAAAM/nCmtvU5fJX4/s72-c/070103-01.jpg
-blogger_id: tag:blogger.com,1999:blog-28371165.post-6301457851087770358
-blogger_orig_url: https://blog.kagesenshi.org/2007/01/hacking-bloggers-widgets-engine-1.html
+title: 'Hacking Blogger''s widgets engine #1'
 ---
 
 I just started playing around with the new Blogger's widget based template engine. At first it was confusing because its not normal HTML based template, but a strict XHTML 1.0 XML template. But after a playing around with it for a few hours, I started to understand the elements of the template and started to modify my template little by little (those who entered my blog a few times today might noticed that the template keep changing) and testing what element will affect what values. This is what I've learned so far.<br /><br /><span style="font-weight: bold;">The Template</span><br />The template generally consist of 2 significant parts, the layout and the widgets. The layout template is the one Blogger shows by default when you enter edit-html mode. The widgets are shown below the layout template after you check "Expand widget template" checkbox. You only need to change the layout part if you want to customize the base appearance of your blog. If you want more widget specific customization, edit the widget.<br /><br /><br /><span style="font-weight: bold;">Theming</span><br />The theming system in the widgets engine depends heavily on CSS. If you scroll down the layout code of the default themes, you'll see that more than 80% of the layout is CSS. XHTML is only used to define how stuff will be arranged and CSS will define how stuff will look like.<br /><br /><br /><span style="font-weight: bold;"><span style="font-style: italic;">Font and Colors</span></span><br />The new engine provide a nice UI interface for changing the color and font values in the CSS code. You just need to define the variables inside the CSS code using &lt;variable&gt; tags and it will appear at the "Font and Colors" setting in Blogger.<br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://2.bp.blogspot.com/_0DENAyCRujw/RZsoNY_nJTI/AAAAAAAAAAM/nCmtvU5fJX4/s1600-h/070103-01.jpg"><img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer;" src="http://2.bp.blogspot.com/_0DENAyCRujw/RZsoNY_nJTI/AAAAAAAAAAM/nCmtvU5fJX4/s320/070103-01.jpg" alt="" id="BLOGGER_PHOTO_ID_5015646820519847218" border="0" /></a><br /><br />Example of a variable definition<br /><pre>&lt;Variable name="bodyBgColor" description="Background Color" type="color" <br />default="#cfcfcf" value="#C3D9FF"&gt;</pre><br /><br />Example of using the variable inside the CSS<br /><pre>body {<br />   background-color: $bodyBgColor;<br />}</pre><br /><br />From what I found for now, the variable tag only support 2 types which are color and font. So, you can only use it for CSS font and color settings only. <br /><br />Thats all I guess for now. I will be posting more of this in the future. So, stay tuned (^-^)<div class="blogger-post-footer"><br/>

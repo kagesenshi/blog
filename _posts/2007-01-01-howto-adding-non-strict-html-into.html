@@ -1,14 +1,16 @@
 ---
-layout: post
-title: 'HOWTO: Adding Non-Strict HTML into Blogger Widget Template XML'
-date: '2007-01-01T16:36:00.000+08:00'
 author: kagesenshi
+blogger_id: tag:blogger.com,1999:blog-28371165.post-7609103882650429940
+blogger_orig_url: https://blog.kagesenshi.org/2007/01/howto-adding-non-strict-html-into.html
+categories:
+- old blog
+date: '2007-01-01T16:36:00.000+08:00'
+layout: post
+modified_time: '2007-01-02T00:21:51.737+08:00'
 tags:
 - Geek Log
 - Misc
-modified_time: '2007-01-02T00:21:51.737+08:00'
-blogger_id: tag:blogger.com,1999:blog-28371165.post-7609103882650429940
-blogger_orig_url: https://blog.kagesenshi.org/2007/01/howto-adding-non-strict-html-into.html
+title: 'HOWTO: Adding Non-Strict HTML into Blogger Widget Template XML'
 ---
 
 I have been trying to insert some javascript buttons into the Posts widget of the new Blogger engine. There are no predefined widgets provided by Blogger for this purpose, so, I opened the template's HTML to insert it. However, the task that I thought gonna be easy became a frustrating task because the engine requires strict XHTML coding in the template thus making everything a nightmare to pass the syntax checker.<br /><br />Struggling to insert the code, I discovered that the engine will parse any &amp;lt; and &amp;gt; entries into &lt; and &gt; of the generated code. So , I fire up gedit, paste the code, and do a search and replace for &amp; &lt; and &gt;, replacing them with &amp;amp; &amp;lt; &amp;gt; and pasted the new code into the template. The result is -&gt; Success!! -&gt; look at the stumbleupon button below :)<br /><br />Linux and BSD users can do this quickly on a text file by using sed.<pre>cat file|sed s/'\&'/'\&amp;amp;'/g|sed s/'<'/'\&amp;lt;'/g|sed s/'>'/'\&amp;gt;'/g<br /></pre><div class="blogger-post-footer"><br/>

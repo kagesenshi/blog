@@ -1,15 +1,17 @@
 ---
-layout: post
-title: Spinning a minimal Fedora LiveCD
-date: '2008-01-29T22:29:00.000+08:00'
 author: kagesenshi
+blogger_id: tag:blogger.com,1999:blog-28371165.post-6344331591593944117
+blogger_orig_url: https://blog.kagesenshi.org/2008/01/spinning-minimal-fedora-livecd.html
+categories:
+- old blog
+date: '2008-01-29T22:29:00.000+08:00'
+layout: post
+modified_time: '2011-10-07T12:36:51.023+08:00'
 tags:
 - PlanetFedora
 - Geek Log
 - Fedora
-modified_time: '2011-10-07T12:36:51.023+08:00'
-blogger_id: tag:blogger.com,1999:blog-28371165.post-6344331591593944117
-blogger_orig_url: https://blog.kagesenshi.org/2008/01/spinning-minimal-fedora-livecd.html
+title: Spinning a minimal Fedora LiveCD
 ---
 
 I've been spending today trying to spin a minimal Fedora liveCD as a base for spinning various of other custom spins for easing future stuff, and for fun. The package list was based on <a href="http://packages.ubuntu.com/feisty/metapackages/ubuntu-minimal.html">Ubuntu-Minimal metapackage</a> dependencies (of course, with some modification) and I'm using Revisor 2.0.5-15.fc8 for building the CD from a kickstart file.<br /><br />The build went smoothly, however, it seems like I missed some dependency or something. When the liveCD boots, it complained during startup:<br /><br /><code>---------------------------------------------------------<br />WARNING: Requested /sbin/init binary does not exist on rootfs<br />---------------------------------------------------------<br /><br />Dropping to a shell. Good luck!<br /><br />bash: no job control in this shell<br />bash-3.2#</code><br /><br />I have sysvinit in the kickstart and checking in the image file (after mounted them) /sysroot/squashfs.img/os.img/sbin/init is there.<br /><br />Anybody know what dependency I might be missing here?? I'm going to checkout the rescue CD afterward to figure it out, but would appreciate some help if someone have solved this problem before.<br /><br />After this one is working, I'm going to spin one based on freebsd 6.2 package selection ;)<br /><br /><span style="font-weight:bold;">Edit</span>: I forgot to point to the kickstart file : <a href="http://pastebin.ca/879232">http://pastebin.ca/879232</a><div class="blogger-post-footer"><br/>

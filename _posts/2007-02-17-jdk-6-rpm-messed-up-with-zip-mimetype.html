@@ -1,16 +1,18 @@
 ---
-layout: post
-title: JDK 6 RPM messed up with zip mimetype
-date: '2007-02-17T20:50:00.000+08:00'
 author: kagesenshi
+blogger_id: tag:blogger.com,1999:blog-28371165.post-3207525058266596443
+blogger_orig_url: https://blog.kagesenshi.org/2007/02/jdk-6-rpm-messed-up-with-zip-mimetype.html
+categories:
+- old blog
+date: '2007-02-17T20:50:00.000+08:00'
+layout: post
+modified_time: '2007-02-17T21:43:00.794+08:00'
 tags:
 - Linux
 - Open Source
 - Fedora
 - Hacks
-modified_time: '2007-02-17T21:43:00.794+08:00'
-blogger_id: tag:blogger.com,1999:blog-28371165.post-3207525058266596443
-blogger_orig_url: https://blog.kagesenshi.org/2007/02/jdk-6-rpm-messed-up-with-zip-mimetype.html
+title: JDK 6 RPM messed up with zip mimetype
 ---
 
 I installed JDK 6 RPM from Sun's <a href='http://java.sun.com/javase/downloads/index.jsp'>Java SE download page</a> for my Object Oriented Programming course. After installation, I was annoyed by all of my zipfiles and files that uses zip format to be identified as x-java-archive. This change created an annoying "Warning wrong filetype" when opening files that uses zip format but uses different extension - like ODF files. And when I select those files, their icons also changed to java-archive icons.<br /><br />Being greatly annoyed, I started hunting down the mime-type definition. First, I tried to find the definition by grepping x-java-archive from the jdk rpm<br /><pre># rpm -ql jdk|grep x-java-archive|grep -v icons<br />/usr/java/jdk1.6.0/jre/lib/desktop/mime/packages/x-java-archive.xml</pre>Bingo!. Found it.<br /><br />I fired up vi and edited the definition file and commented out the &lt;magic&gt; tag<br /><pre>&lt;!-- &lt;magic priority="85"&gt;<br />      &lt;match type="string" value="PK\003\004" offset="0"&gt;<br />        match type="host16" value="0xcafe" offset="40" /&gt;<br />      &lt;/match&gt;<br />&lt;/magic&gt; --&gt;</pre><br />Juz to be sure , I tried to locate other x-java-archive definitions and commented out their &lt;magic&gt; tags<br /><br /><pre># updatedb <br /># locate x-java-archive.xml<br />/usr/java/jdk1.6.0/jre/lib/desktop/mime/packages/x-java-archive.xml<br />/usr/share/mime/application/x-java-archive.xml<br />/usr/share/mime/packages/x-java-archive.xml<br /></pre><br />After editing them, the mime cache need to be updated for things to take effect immediately.<br /><pre>cd /usr/share/mime/<br />update-mime-database /usr/share/mime/</pre><br />Finally, relogin to gnome for applying the changes.<br /><br />Yeah~!, no longer annoying "Warning wrong filetype" messages when double-clicking ODF files and others that uses zip format.<div class="blogger-post-footer"><br/>

@@ -1,8 +1,12 @@
 ---
-layout: post
-title: 'Hacks: Replace yum''s downloader with Axel'
-date: '2008-11-16T23:32:00.003+08:00'
 author: kagesenshi
+blogger_id: tag:blogger.com,1999:blog-28371165.post-7650267412327851998
+blogger_orig_url: https://blog.kagesenshi.org/2008/11/hacks-replace-yums-downloader-with-axel.html
+categories:
+- old blog
+date: '2008-11-16T23:32:00.003+08:00'
+layout: post
+modified_time: '2008-11-16T23:58:26.438+08:00'
 tags:
 - Programming
 - Python
@@ -10,9 +14,7 @@ tags:
 - Hacks
 - HOWTO
 - Yum
-modified_time: '2008-11-16T23:58:26.438+08:00'
-blogger_id: tag:blogger.com,1999:blog-28371165.post-7650267412327851998
-blogger_orig_url: https://blog.kagesenshi.org/2008/11/hacks-replace-yums-downloader-with-axel.html
+title: 'Hacks: Replace yum''s downloader with Axel'
 ---
 
 <pre>/!\ This is an ugly hack, use it at your own risk, <br />I am not responsible for any breakage<br /><br />P/S, your sysadmin might not gonna like this</pre><br /><br />Disclaimer aside, I really love Python. <br /><br />So, I'm behind such a bad network which keep timing out, and downloading stuff using yum in this network is a real PITA. And so, I had enough of it and decided to hack around.<br /><br /><a href="http://axel.alioth.debian.org">Axel</a> is a CLI download accelerator thats lightweight and pretty fast. I've been using it quite frequently to get a bit more speed for my downloads. I think, why not just replace this urllib2 grabber with axel, so, I did. (I am such an evil guy)<br /><br />After a few hours looking through yum code to find what to modify, I ended up with this<br /><br /><pre><br /><br /># file: /usr/lib/python2.5/site-packages/urlgrabber/customgrabber.py<br /><br />import grabber<br />import os<br /><br />class AxelGrabber(grabber.URLGrabber):<br />   def urlgrab(self, url, filename=None, **kwargs):<br />        """grab the file at <url> and make a local copy at <filename><br />        If filename is none, the basename of the url is used.<br />        urlgrab returns the filename of the local file, which may be <br />        different from the passed-in filename if copy_local == 0.<br />        """<br /><br />        opts = self.opts.derive(**kwargs)<br />        (url,parts) = opts.urlparser.parse(url, opts)<br />        (scheme, host, path, parm, query, frag) = parts<br /><br /><br />        def retryfunc(opts, url, filename):<br />            if os.environ.has_key('http_proxy'):<br />               os.environ['HTTP_PROXY'] = os.environ['http_proxy']<br />            os.system('/usr/bin/axel -a -o %s %s' % (filename,url))<br />            return filename<br /> <br />        return self._retry(opts, retryfunc, url, filename)<br /></pre><br /><br />Make sure you put the file above at its path unless you are sure what you are doing. To make it usable with yum, some modification is needed in one of yum's source file. <br /><br />Edit <br /><pre>/usr/lib/python2.5/site-packages/yum/yumRepo.py</pre><br />change<br /><pre>from urlgrabber.grabber import URLGrabber</pre><br />to<br /><pre>from urlgrabber.customgrabber import AxelGrabber as URLGrabber</pre><br /><br />and you are good to go. Do it at YOUR own risk remember.<div class="blogger-post-footer"><br/>

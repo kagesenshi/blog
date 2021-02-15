@@ -1,17 +1,19 @@
 ---
-layout: post
-title: 'Obviel.js: Object, View, Element Javascript lib'
-date: '2011-11-28T12:26:00.001+08:00'
 author: kagesenshi
+blogger_id: tag:blogger.com,1999:blog-28371165.post-9181244187390538045
+blogger_orig_url: https://blog.kagesenshi.org/2011/11/obvieljs-object-view-element-javascript.html
+categories:
+- old blog
+date: '2011-11-28T12:26:00.001+08:00'
+layout: post
+modified_time: '2011-11-28T13:14:50.058+08:00'
 tags:
 - Obviel
 - Geek Log
 - PlanetPlone
 - Framework
 - Plone
-modified_time: '2011-11-28T13:14:50.058+08:00'
-blogger_id: tag:blogger.com,1999:blog-28371165.post-9181244187390538045
-blogger_orig_url: https://blog.kagesenshi.org/2011/11/obvieljs-object-view-element-javascript.html
+title: 'Obviel.js: Object, View, Element Javascript lib'
 ---
 
 <div dir="ltr" style="text-align: left;" trbidi="on">I just saw the posts by <a href="http://faassen.n--tree.net/">Martijn Faassen</a> related to <a href="http://obviel.org/">Obviel</a>, I was quite busy this past month that I did not notice them, and due to my mail filters I also didn't notice I was added into the <a href="https://groups.google.com/group/obviel">obviel googlegroup</a>. (Sorry Martijn &gt;.&lt;)<br /><br />Anyway, a year ago until a few months back, I was working with Martijn for his client project. It was a pleasure working with him and I learnt quite a lot from him. In the project, we utilize a pattern to allow us to write dynamic site using javascript for the frontend, and JSON at the backend. The server controls what would be displayed in the frontend by returning JSON objects with a specific iface (short for interface). Obviel was then born out from it.<br /><br />For example, a simple hello world app.<br /><br /><pre>$(document).ready(function(){<br />    $('#main').render('http://path/to/app.json')<br />})</pre><br />Where app.json is :<br /><br /><pre>{<br />   iface: 'print',<br />   message: 'Hello world'<br />}</pre><br />And the obviel view defined as :<br /><br /><pre>obviel.view({<br />    iface: 'print',<br />    render: function () {<br />        this.el.append('&lt;div&gt;' + this.obj.message + '&lt;/div&gt;');<br />    }<br />})</pre><br />What Obviel will do is, it will load the JSON, and load the view of the iface of the JSON (in this case, 'print'), and render the view with the data provided by the JSON file (in this case, append the message into #main wrapped in div). Quite cool eh?<br /><br />Theoretically, you can also use it with WebSocket Push, and have the server fully control what to display in the browser by pushing JSON object. I haven't actually give it a try, but will do when I find the chance, and not feeling lazy. If you want to try it, go ahead, and probably use this <a href="http://blog.kagesenshi.org/2011/10/radiate-simple-push-server-for-socketio.html">radiate socketIO server</a> I wrote 2 months back. It might also be possible to have a view which output Obviel objects for Plone content type, and combine with Diazo, to create a full JS UI for Plone, but those are stuff to poke at when totally not busy. <br /><br />For more reading, check out Martijn's posts in his blog here <a href="http://faassen.n--tree.net/blog/view/weblog/2011/11/02/0">http://faassen.n--tree.net/blog/view/weblog/2011/11/02/0</a> and read up the documentation at the Obviel site: <a href="http://www.obviel.org/en/0.-0/index.html">http://www.obviel.org/en/0.-0/index.html</a></div><div class="blogger-post-footer"><br/>

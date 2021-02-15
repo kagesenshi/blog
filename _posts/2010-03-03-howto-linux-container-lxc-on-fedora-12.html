@@ -1,8 +1,12 @@
 ---
-layout: post
-title: 'HOWTO: Linux Container (LXC) on Fedora 12'
-date: '2010-03-03T13:35:00.006+08:00'
 author: kagesenshi
+blogger_id: tag:blogger.com,1999:blog-28371165.post-7569034800567268281
+blogger_orig_url: https://blog.kagesenshi.org/2010/03/howto-linux-container-lxc-on-fedora-12.html
+categories:
+- old blog
+date: '2010-03-03T13:35:00.006+08:00'
+layout: post
+modified_time: '2011-10-07T12:39:10.256+08:00'
 tags:
 - Linux
 - LXC
@@ -14,10 +18,8 @@ tags:
 - FreeBSD
 - HOWTO
 - Yum
-modified_time: '2011-10-07T12:39:10.256+08:00'
 thumbnail: http://2.bp.blogspot.com/_0DENAyCRujw/S43_-lgUToI/AAAAAAAAAnE/thUra7WhbL8/s72-c/20100303-01.jpg
-blogger_id: tag:blogger.com,1999:blog-28371165.post-7569034800567268281
-blogger_orig_url: https://blog.kagesenshi.org/2010/03/howto-linux-container-lxc-on-fedora-12.html
+title: 'HOWTO: Linux Container (LXC) on Fedora 12'
 ---
 
 Those who are familiar with <a href="http://www.freebsd.org/doc/handbook/jails.html">BSD Jails</a> or <a href="http://www.sun.com/bigadmin/content/zones/index.jsp">Solaris Zones</a> might be quite familiar to the concept of <a href="http://en.wikipedia.org/wiki/Operating_system-level_virtualization">OS-level virtualization</a>. The Linux world have several options for this, such as the <a href="http://user-mode-linux.sourceforge.net/">User Mode Linux (UML)</a>, <a href="http://wiki.openvz.org/Main_Page">OpenVZ</a>, <a href="http://linux-vserver.org/Welcome_to_Linux-VServer.org">Linux Vserver</a>, and most recently, <a href="http://lxc.sourceforge.net/">Linux Container (LXC)</a>.<br /><br />Unlike the other alternatives, which requires specially patched kernels to run it, LXC got fully functional in the upstream kernel since 2.6.29, which is a plus as it made it easier to deploy it in many prexisting distros which ship 2.6.29, including Fedora - without messing around with the distro packages.<br /><br />In this HOWTO, I'll guide through the process of deploying your own LXC in Fedora 12, with NAT to libvirt's virbr0 <br /><br /><span style="font-weight:bold;">Preparation</span><br /><br /><pre>yum install libvirt lxc</pre><br /><br />(ping me if i forgot to add any packages)<br /><br />start libvirt so that virbr0 is configured<br /><pre>/sbin/service libvirtd start</pre><br /><br />mount control group in /cgroup<br /><pre>echo "none /cgroup cgroup   defaults  0 0" >> /etc/fstab<br />mkdir /cgroup<br />mount /cgroup</pre><br /><br /><span style="font-weight:bold;">LXC Fedora Script</span><br /><br />The <code>lxc</code> rpm provides a script named <code>lxc-fedora</code> to aid creation of lxc container. However, when I tried it, it doesnt quite work. After some googling, I found this guide <a href="http://blog.bodhizazen.net/linux/lxc-configure-fedora-containers/">http://blog.bodhizazen.net/linux/lxc-configure-fedora-containers/</a>, of which, based on it, I've updated the lxc-fedora script accordingly to make it work using <code>febootstrap</code>.<br /><br />You can grab the script in my FedoraPeople GIT repository here : <a href="http://fedorapeople.org/gitweb?p=izhar/public_git/hack-patches.git;a=blob_plain;f=lxc-febootstrap;hb=HEAD">lxc-febootstrap</a><br /><br />Download the script and save it somewhere in you system path.<br /><br /><span style="font-weight:bold;">Creating the Container</span><br /><br /><pre>lxc-febootstrap create</pre><br /><br />The script would install the container rootfs in /var/lib/lxc/rootfs/. So make sure you have enough free space to store it (around 400MB for the base bootstrap). You'll also need approximately 400MB in /var/cache/lxc for the reusable vanilla copy of the rootfs.<br /><br />Answer the questions from the script, and wait until the process is done. At the end of the process, the script would ask for a password for root. Set it.<br /><br /><span style="font-weight:bold;">Controlling the LXC Container</span><br /><br />You can start the container using:<br /><pre>lxc-start -n &lt;containername&gt;</pre><br /><br />You can start the container in background using:<br /><pre>lxc-start -d -n &lt;containername&gt;</pre><br /><br />Stop it using:<br /><pre>lxc-stop -n &lt;containername&gt;</pre><br /><br />Destroy it using:<br /><pre>lxc-febootstrap destroy</pre><br /><br />Connect to a console of the LXC using:<br /><pre>lxc-console -n &lt;containername&gt;</pre><br /><br /><span style="font-weight:bold;">Networking</span><br /><br />The <code>lxc-febootstrap</code> script have been configured to make use of libvirt's virbr0. It is a virtual bridge, so treat it like any other networking bridge in Linux. <br /><br />The default configuration of virbr0 (if i'm not mistaken) is that it have dhcp and routing already configured for virtual machines that utilize it. So, networking should JustWorks (unless I missed certain steps in this guide, currently it worksforme).<br /><br />Thats it .. Enjoy and Happy Hacking :D<br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://2.bp.blogspot.com/_0DENAyCRujw/S43_-lgUToI/AAAAAAAAAnE/thUra7WhbL8/s1600-h/20100303-01.jpg"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 320px; height: 202px;" src="http://2.bp.blogspot.com/_0DENAyCRujw/S43_-lgUToI/AAAAAAAAAnE/thUra7WhbL8/s320/20100303-01.jpg" border="0" alt=""id="BLOGGER_PHOTO_ID_5444288975245430402" /></a><div class="blogger-post-footer"><br/>

@@ -1,8 +1,12 @@
 ---
-layout: post
-title: Zenoss on Fedora 8
-date: '2008-02-05T14:38:00.000+08:00'
 author: kagesenshi
+blogger_id: tag:blogger.com,1999:blog-28371165.post-6656706680446326249
+blogger_orig_url: https://blog.kagesenshi.org/2008/02/zenoss-on-fedora-8.html
+categories:
+- old blog
+date: '2008-02-05T14:38:00.000+08:00'
+layout: post
+modified_time: '2011-10-07T12:36:51.043+08:00'
 tags:
 - Zenoss
 - PlanetFedora
@@ -10,9 +14,7 @@ tags:
 - Geek Log
 - Fedora
 - FreeBSD
-modified_time: '2011-10-07T12:36:51.043+08:00'
-blogger_id: tag:blogger.com,1999:blog-28371165.post-6656706680446326249
-blogger_orig_url: https://blog.kagesenshi.org/2008/02/zenoss-on-fedora-8.html
+title: Zenoss on Fedora 8
 ---
 
 I've wasted 1.5 day trying to get <a href="http://zenoss.com">zenoss</a> from their RPM to run on my F8 laptop using compat-python24 from livna. I've tried lots of ways like recompiling, export PYTHON and PYTHONPATH env variables etc but without much luck. I solved it just now after looking into the python files and noticed that they are all hardcoded with /usr/bin/python instead of /usr/bin/env python. There are even some that uses /opt/zenoss/bin/python. Here's my little hackfix to make zenoss starts cleanly.<br /><br />Before running this, I recommend existing zenoss install to be removed, rm -rf /opt/zenoss, and reinstall it clean.<br /><br /><code><br />#!/bin/sh<br /><br />ZENOSS_DIR="/opt/zenoss"<br />PYTHON="/usr/bin/python2.4"<br />cd $ZENOSS_DIR<br /><br />find . -type f -exec sed -i "s|/usr/bin/python|${ZENOSS_DIR}/bin/python|g" '{}' ';'<br /><br />cd $ZENOSS_DIR/bin<br />rm python<br />ln -s $PYTHON python<br /></code><br /><br />A little description about the above script. It simply change all /usr/bin/python to /opt/zenoss/bin/python and replace the symlink /opt/zenoss/bin/python to point to /usr/bin/python2.4<br /><br />Now Zenoss can be started using /sbin/service zenoss start.  <br /><br />Happy that I have a test instance now, time to figure out how to install it on freebsd qemu. >.<<div class="blogger-post-footer"><br/>

@@ -1,15 +1,17 @@
 ---
-layout: post
-title: Is this why APT depsolve/search is fast?
-date: '2008-06-26T00:19:00.006+08:00'
 author: kagesenshi
+blogger_id: tag:blogger.com,1999:blog-28371165.post-7086104374946720511
+blogger_orig_url: https://blog.kagesenshi.org/2008/06/is-this-why-apt-depsolvesearch-is-fast.html
+categories:
+- old blog
+date: '2008-06-26T00:19:00.006+08:00'
+layout: post
+modified_time: '2008-06-26T02:55:55.764+08:00'
 tags:
 - Debian
 - Ubuntu
 - Fedora
-modified_time: '2008-06-26T02:55:55.764+08:00'
-blogger_id: tag:blogger.com,1999:blog-28371165.post-7086104374946720511
-blogger_orig_url: https://blog.kagesenshi.org/2008/06/is-this-why-apt-depsolvesearch-is-fast.html
+title: Is this why APT depsolve/search is fast?
 ---
 
 On a blog post about libBCD dependency resolution algorithm test (which Yum/APT fails, and zypper scores): <a href="http://duncan.mac-vicar.com/blog/archives/310">http://duncan.mac-vicar.com/blog/archives/310</a><br /><br /><blockquote>Debian’s apt-get won’t succeed here, because AFAIK Debian only has dependencies across packages, not on libraries. Actually I still wonder how smart could succeed here using a debian backend. I ignore if apt-rpm does support library dependencies.</blockquote><br /><br />While I can't verify this (not that familiar with the deb packaging), but if that is really true, it more or less explains why apt is faster than yum - they dont have much stuff to consider and process in the metadata. Yum+RPM can do dep check by libraries, files, executables, perl modules, and some other modules, which makes the metadata large, and depsolve requires more stuff to consider. So, APT-deb users, stop complaining YUM is slow (/me stares at ubuntu zombies) :P <br /><br />Do tell me if that is wrong :)<br /><br />On another note, Yaakov M. Nemoy wrote <a href="http://loupgaroublond.blogspot.com/2008/06/do-we-really-need-another-packaging.html">a very good post about why its not good to standardize to only 1 packaging system and package format</a> across distributions.<div class="blogger-post-footer"><br/>

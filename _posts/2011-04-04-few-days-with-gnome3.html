@@ -1,17 +1,19 @@
 ---
-layout: post
-title: Few days with GNOME3
-date: '2011-04-04T15:04:00.012+08:00'
 author: kagesenshi
+blogger_id: tag:blogger.com,1999:blog-28371165.post-5773534661569095714
+blogger_orig_url: https://blog.kagesenshi.org/2011/04/few-days-with-gnome3.html
+categories:
+- old blog
+date: '2011-04-04T15:04:00.012+08:00'
+layout: post
+modified_time: '2011-04-05T11:24:28.827+08:00'
 tags:
 - Geek Log
 - Fedora
 - Hacks
 - GNOME
-modified_time: '2011-04-05T11:24:28.827+08:00'
 thumbnail: http://3.bp.blogspot.com/-mqkipKWensc/TZlyw-W4p5I/AAAAAAAAApw/f-owhOArv1E/s72-c/sidepanel.png
-blogger_id: tag:blogger.com,1999:blog-28371165.post-5773534661569095714
-blogger_orig_url: https://blog.kagesenshi.org/2011/04/few-days-with-gnome3.html
+title: Few days with GNOME3
 ---
 
 So I've been on GNOME3 for a few days now. Liking it a lot except for the minor annoyance I mentioned back in <a href="http://blog.kagesenshi.org/2011/03/fedora-15-gnome3-initial-impression.html">my previous post.</a><br /><br />I've got over the lack of blinking taskbar functionality as the new notification system works quite nice in filling that gap. However, I still feel the activity overview is an extra step too many to switch windows. Works nice during leisure, but a bit tiring during work. <br /><br /><b>Dock</b><br />When was looking through the <a href="http://git.gnome.org/browse/gnome-shell-extensions">gnome-shell-extensions git</a> trying to understand how the gnome-shell javascript extension mechanism works, I found an extension called 'dock'. It basically brought the dash panel which appear at the left side of the activity overview to the desktop, so that its accessible outside of the overview screen.<br /><br />The behavior is pretty much similar to the dash panel, left click to focus on application, right click to view a popup menu which allow you to open new window or select other existing windows.<br /><br />It works quite ok to fill the gap the taskbar left behind, but I found the right click to select other window on a multi windowed app takes a bit of 'effort'. Also, the panel appear on the right side, which is a bit uncomfortable as other 'selector'/'menu' stuff are at the left side. So I modified it a bit to change the behavior to:<br /><ul><li>when icon is left-clicked, if application already selected, present the menu, else select the application.</li><li>smaller icons</li><li>appear on left side of the screen</li></ul><br />It filled the gap the taskbar left behind quite well (for me at least), and will be using it until I become comfortable enough to use a workflow that works better with the overview screen.<br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://3.bp.blogspot.com/-mqkipKWensc/TZlyw-W4p5I/AAAAAAAAApw/f-owhOArv1E/s1600/sidepanel.png"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 248px; height: 320px;" src="http://3.bp.blogspot.com/-mqkipKWensc/TZlyw-W4p5I/AAAAAAAAApw/f-owhOArv1E/s320/sidepanel.png" border="0" alt=""id="BLOGGER_PHOTO_ID_5591626598055454610" /></a><br /><br /><b>System Monitor</b><br /><br />As for the missing system monitor, <a href="http://conky.sourceforge.net/">conky</a> filled the gap just nice :)<br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://1.bp.blogspot.com/-arn6yD6ZqbY/TZlzmOm1GVI/AAAAAAAAAqY/nsgMYceKvDQ/s1600/conky.png"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 400px; height: 28px;" src="http://1.bp.blogspot.com/-arn6yD6ZqbY/TZlzmOm1GVI/AAAAAAAAAqY/nsgMYceKvDQ/s400/conky.png" border="0" alt=""id="BLOGGER_PHOTO_ID_5591627512950364498" /></a><br /><br />Get the conkyrc here<br /><br /><b>Wishlist</b><br /><br />There's still one item that I missed from GNOME2, namely the <a href="http://projecthamster.wordpress.com/">hamster-applet</a> and the international clock. Another thing I would want to see is a pidgin integration extension with the gnome-shell chat system. Telepathy still lacks of proxy support while all my messenger account go through a proxy on VPN. <br /><br />I'm not familiar with DBus programming and still having very little idea on how to work with the GNOME-JS stuff. Not sure when the features will be available, probably I need to learn DBus/GJS someday if nobody building em.<br /><br /><b>Update:</b> as requested by a commenter, here are the <a href="http://fedorapeople.org/gitweb?p=izhar/public_git/hack-patches.git;a=blob_plain;f=gnome-shell-dock.patch">patch to the dock's extensions.js</a> and the <a href="http://fedorapeople.org/gitweb?p=izhar/public_git/hack-patches.git;a=blob_plain;f=conkyrc">conkyrc</a> used<div class="blogger-post-footer"><br/>

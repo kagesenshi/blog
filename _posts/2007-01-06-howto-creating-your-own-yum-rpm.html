@@ -1,17 +1,19 @@
 ---
-layout: post
-title: 'HOWTO: Creating your own YUM RPM repository'
-date: '2007-01-06T12:00:00.000+08:00'
 author: kagesenshi
+blogger_id: tag:blogger.com,1999:blog-28371165.post-6032012832684029453
+blogger_orig_url: https://blog.kagesenshi.org/2007/01/howto-creating-your-own-yum-rpm.html
+categories:
+- old blog
+date: '2007-01-06T12:00:00.000+08:00'
+layout: post
+modified_time: '2011-10-07T12:36:51.002+08:00'
 tags:
 - Linux
 - PlanetFedora
 - Open Source
 - Fedora
 - HOWTO
-modified_time: '2011-10-07T12:36:51.002+08:00'
-blogger_id: tag:blogger.com,1999:blog-28371165.post-6032012832684029453
-blogger_orig_url: https://blog.kagesenshi.org/2007/01/howto-creating-your-own-yum-rpm.html
+title: 'HOWTO: Creating your own YUM RPM repository'
 ---
 
 <a href='http://en.wikipedia.org/wiki/Yellow_dog_Updater%2C_Modified'>YUM</a> is the default package manager provided with most RPM distros, especially Fedora and Redhat based distros. It is similar to <a href='http://en.wikipedia.org/wiki/Advanced_Packaging_Tool'>APT</a> of the Debian based distros. Admittedly, it is not the best package manager in term of performance, I personally feels APT is faster and easier to use. However, it do have some good points. One of it is the ease of creating a YUM RPM repositories.<br /><br />Some users might want to store cached/downloaded RPM packages for backup or future offline use. Some of them might also want to easily resolve dependencies of downloaded RPMs from non-repository sources. By having their own repository, they can easily install the RPMs and avoid dependency hell.<br /><br />To create our own repo, we use a tool called "createrepo". Its available in the Fedora DVD/CD and you just need to insert the DVD/CD and install it. You can also get it through yum.<br /><pre>yum install createrepo</pre>After you've installed createrepo, dump all of the RPMs you want to create a repo with inside a directory. For the sake of this howto, lets say the directory is '/mnt/storage/myrepo/'.<br /><br />Then, run createrepo in the directory. More options of createrepo can be found in its manpage.<br /><pre>cd /mnt/storage/myrepo/<br />createrepo .</pre>After createrepo finished generating the metadata, your repository is ready for use.<br /><br />To use the repo, you'll need to create a yum configuration for it in /etc/yum.repos.d/. Below is an example of a basic yum configuration.<br /><pre># file /etc/yum.repos.d/myrepo.repo<br />[myrepo]<br />name=My Personal Yum Repo<br />baseurl=file:///mnt/storage/myrepo/<br />enabled=0</pre><br /><br />I purposely set "enabled = 0" so that yum won't automatically use the repo by default. This is to avoid conflict between packages from the official repos and your repo. You can explicitly tell yum to use it by using the "--enablerepo=" option.<br /><pre>yum --enablerepo=myrepo install &lt;packagename&gt;</pre><br /><br />To those who prefer to use APT, the latest <a href='http://en.wikipedia.org/wiki/Apt-rpm'>APT-RPM</a> tool can use Yum repositories as its repo. Thus making the usage of APT easier on YUM distros.<br /><br />Thats all folks. Enjoy your new RPM repo. :)<div class="blogger-post-footer"><br/>

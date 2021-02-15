@@ -1,12 +1,14 @@
 ---
-layout: post
-title: Finding What Process is Binding Network Socket / Port
-date: '2006-07-21T20:01:00.000+08:00'
 author: kagesenshi
-tags:
-modified_time: '2006-10-11T06:49:45.515+08:00'
 blogger_id: tag:blogger.com,1999:blog-28371165.post-115348210409256855
 blogger_orig_url: https://blog.kagesenshi.org/2006/07/finding-what-process-is-binding.html
+categories:
+- old blog
+date: '2006-07-21T20:01:00.000+08:00'
+layout: post
+modified_time: '2006-10-11T06:49:45.515+08:00'
+tags: null
+title: Finding What Process is Binding Network Socket / Port
 ---
 
 I found a very usefull site for this purpose. It guide you step by step on how to find the process.<br /><br /><a href="http://linux-sxs.org/networking/portnumid.html">http://linux-sxs.org/networking/portnumid.html</a><br /><br />From the site, I wrote a script to ease the process.<br /><br /><blockquote><pre>#!/bin/bash<br />#<br /># Script to find what process is binding to which network socket<br /># Usage<br />#    portowner &lt;port&gt;<br />#    portowner all<br />#<br /># Author<br /># Mohd Izhar Firdaus Ismail &lt;kagesenshi.87@gmail.com&gt;<br />#<br /><br />findproc(){<br />        PIDS=`fuser -n tcp $@ 2&gt;/dev/null`<br />        echo "--------------"<br />        echo "Port $@"<br />        ps $PIDS<br />        echo "-------------"<br />}<br /><br />if [ "$1" == "" ];then<br />        echo "Usage:"<br />        echo "   $( basename $0 &lt;port&gt; ) "<br />        echo "   $( basename $0 ) all"<br />elif [ "$1" == "all" ];then<br />        PORTS=`netstat -na|grep tcp\<br />                |grep LISTEN|sed s/"\:\:\:"/"0.0.0.0\:"/g \<br />                |sed s/"\:"/" "/g|awk '{print $5}'|sort|uniq`<br />        for PORT in $PORTS;do<br />                findproc $PORT ;<br />        done<br />else<br />        for PORT in $@;do<br />                findproc $PORT ;<br />        done<br />fi<br /></pre></blockquote><div class="blogger-post-footer"><br/>

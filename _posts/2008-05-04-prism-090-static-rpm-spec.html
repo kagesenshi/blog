@@ -1,16 +1,18 @@
 ---
-layout: post
-title: Prism 0.9.0 Static RPM SPEC
-date: '2008-05-04T01:12:00.002+08:00'
 author: kagesenshi
+blogger_id: tag:blogger.com,1999:blog-28371165.post-4818761154653972521
+blogger_orig_url: https://blog.kagesenshi.org/2008/05/prism-090-static-rpm-spec.html
+categories:
+- old blog
+date: '2008-05-04T01:12:00.002+08:00'
+layout: post
+modified_time: '2011-10-07T12:36:50.905+08:00'
 tags:
 - PlanetFedora
 - Fedora
 - Hacks
 - Web
-modified_time: '2011-10-07T12:36:50.905+08:00'
-blogger_id: tag:blogger.com,1999:blog-28371165.post-4818761154653972521
-blogger_orig_url: https://blog.kagesenshi.org/2008/05/prism-090-static-rpm-spec.html
+title: Prism 0.9.0 Static RPM SPEC
 ---
 
 Call me impatient of whatever. I've been wanting to use <a href="http://wiki.mozilla.org/Prism">Mozilla Prism</a>. It is not yet packaged in Fedora so I tried my luck to package it properly for Fedora. However, I totally have no idea how Mozilla buildsystem work and how to compile Prism's trunk on Fedora. Trying to follow the <a href="http://developer.mozilla.org/en/docs/Creating_XULRunner_Apps_with_the_Mozilla_Build_System"> Creating XULRunner Apps with the Mozilla Build System</a> lead me nowhere. I got stuck trying to find what package provide the buildsystem and the "client.mk" file, but I given up due to I totally have no clue. In the end, I ended up packaging the official binary tarball released by upstream and make it installed in /opt. <br /><br />Here is the specfile for those interested to use prism on Fedora: <a href="http://izhar.fedorapeople.org/static-specs/prism_static.spec">http://izhar.fedorapeople.org/static-specs/prism_static.spec</a><br /><br />Like the <a href="http://blog.kagesenshi.org/2008/04/little-hack-to-get-working-skype-rpm.html">Static OSS Skype SPEC</a> I made before, just download the corresponding source and invoke rpmbuild with the spec. For those who are not familiar with rpmbuild, the shell commands below will help you<br /><br /><code><br /># as root<br />yum install rpmdevtools<br /><br /># as user<br />rpmdev-setuptree<br />cd ~/rpmbuild/SPEC<br />wget http://izhar.fedorapeople.org/static-specs/prism_static.spec<br />spectool -R -g -A prism_static.spec<br />rpmbuild -bb prism_static.spec<br /><br /># ... wait ... wait ... wait<br /># grab the generated RPM<br /># rpm -ivh (the generated rpm)<br /># enjoy~<br /></code><div class="blogger-post-footer"><br/>

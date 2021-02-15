@@ -1,8 +1,12 @@
 ---
-layout: post
-title: Changing MAC Address, the Fedora way
-date: '2008-08-12T17:25:00.003+08:00'
 author: kagesenshi
+blogger_id: tag:blogger.com,1999:blog-28371165.post-2296044435998634384
+blogger_orig_url: https://blog.kagesenshi.org/2008/08/changing-mac-address-fedora-way.html
+categories:
+- old blog
+date: '2008-08-12T17:25:00.003+08:00'
+layout: post
+modified_time: '2011-10-07T12:36:50.686+08:00'
 tags:
 - PlanetFedora
 - Rant
@@ -10,9 +14,7 @@ tags:
 - Hacks
 - UTPchat
 - Tips
-modified_time: '2011-10-07T12:36:50.686+08:00'
-blogger_id: tag:blogger.com,1999:blog-28371165.post-2296044435998634384
-blogger_orig_url: https://blog.kagesenshi.org/2008/08/changing-mac-address-fedora-way.html
+title: Changing MAC Address, the Fedora way
 ---
 
 Been a month since my last post .. mainly due to lack of idea on what to blog .. <br /><br />Anyway, today is a bit special.. why?, the crazy IT Management Service of PETRONAS University is doing their crazy operation again .. Hunting down any box with listening port that run services - and confiscate the computers, with, or without the owner's concern .. 2 of my friends got their computers confiscated simply for having IRCd, Httpd and a local Squid cache (to help cache the sites their visited due to the university network is fsckingly slow) running .. <br /><br />After some data gathering I found out those ITMS guys detect machines physically through MAC address. So, as a precaution, I changed mine. <br /><br />Changing MAC can easily be done using ifconfig, anyway, here's the elegant way to do it for Fedora or Fedora derivatives users.<br /><br />The catch is, no NetworkManager please. Turn it off, NetworkManager is not that mature for this stunt yet. Use the traditional all-powerful system-config-network to set ur network settings. Afterward, open <code>/etc/sysconfig/network-scripts/ifcfg-&lt;ethX&gt;</code> and add this line:<br /><br /><blockquote><code>MACADDR=your:new:fake:MAC:addr:ess</code></blockquote><br /><br />then , restart the network service <code>/sbin/service network restart</code>. The change will take effect immediately. Don't forget to set NetworkManager to NOT start on boot and set the network init to start on boot using system-config-services.<br /><br />Not sure how well this approach can help .. but I hope it'll help  a bit ..<br /><br />For those students out there (especially those who are in ICT field), who are thinking to come and study in Universiti Teknologi PETRONAS, think again before applying, as those darned ITMS will make sure y'all are unable to explore stuff beyond what u learn in course subjects.<div class="blogger-post-footer"><br/>

@@ -1,15 +1,17 @@
 ---
-layout: post
-title: 'HOWTO: Extracting RPM from command line'
-date: '2007-01-17T10:44:00.000+08:00'
 author: kagesenshi
+blogger_id: tag:blogger.com,1999:blog-28371165.post-3284266008453408577
+blogger_orig_url: https://blog.kagesenshi.org/2007/01/howto-extracting-rpm-from-command-line.html
+categories:
+- old blog
+date: '2007-01-17T10:44:00.000+08:00'
+layout: post
+modified_time: '2008-01-11T11:26:05.246+08:00'
 tags:
 - Linux
 - Open Source
 - HOWTO
-modified_time: '2008-01-11T11:26:05.246+08:00'
-blogger_id: tag:blogger.com,1999:blog-28371165.post-3284266008453408577
-blogger_orig_url: https://blog.kagesenshi.org/2007/01/howto-extracting-rpm-from-command-line.html
+title: 'HOWTO: Extracting RPM from command line'
 ---
 
 Sometimes, admins might want to extract some files from a RPM file for some purposes. If on a system with GUI, this can be easily done using file-roller or some other GUI based archive manager that supports RPM/CPIO archives. RPMs are basically modified CPIO archives, so we use rpm2cpio and cpio command to extract files from it in a CLI environment.<br /><br /><span style="font-weight:bold;">List out contained files</span><br /><pre>rpm2cpio &lt;rpmpackage.rpm&gt; |cpio -t</pre><br /><span style="font-weight:bold;">Extract all files</span><br /><pre>rpm2cpio &lt;rpmpackage.rpm&gt; |cpio -id</pre> <br /><span style="font-weight:bold;">Extract specific file</span><br /><pre>rpm2cpio &lt;rpmpackage.rpm&gt; |cpio -id &lt;file&gt;</pre> Note: extracting specific files requires you to put the full path of the file in the archive which you get from the <span style="font-style:italic;">cpio -t</span> output.<br /><br />You can read more about using cpio from the manpages and from <a href='http://bradthemad.org/tech/notes/cpio_directory.php'>this site</a><div class="blogger-post-footer"><br/>

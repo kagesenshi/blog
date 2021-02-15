@@ -1,13 +1,15 @@
 ---
-layout: post
-title: Some tweaks for increasing Firefox's application performance
-date: '2006-07-20T23:44:00.000+08:00'
 author: kagesenshi
-tags:
-- Misc
-modified_time: '2007-01-02T09:36:56.422+08:00'
 blogger_id: tag:blogger.com,1999:blog-28371165.post-115341007387042072
 blogger_orig_url: https://blog.kagesenshi.org/2006/07/some-tweaks-for-increasing-firefoxs.html
+categories:
+- old blog
+date: '2006-07-20T23:44:00.000+08:00'
+layout: post
+modified_time: '2007-01-02T09:36:56.422+08:00'
+tags:
+- Misc
+title: Some tweaks for increasing Firefox's application performance
 ---
 
 <div xmlns="http://www.w3.org/1999/xhtml">This might be an oldie, i know that there are quite a number of sites have given similar tips. But their tips brings more latency to my firefox instead of improving it. So, i played around to find what worked fine for me.<br /><u><big><b><br /><small>Reduce Cache Memory Allocation</small><br /></b></big><br /></u>Lots of people say allocating more cache will give better performance, however, i found out having too much RAM allocated for website cache is somewhat unnecessary. You dont need the RAM's speed to cache your visited websites, the harddisk's cache speed is high enough for that. Even a slow hdd will have more than 10MBps speed which is very fast for loading websites. Also, the RAM cache will build up and makes other applications that need the speed become very sluggish.<br /><br />Here are the options in about:config for this<br /><br /><blockquote><i>browser.cache.memory.capacity<br />browser.cache.memory.enable</i><br /></blockquote><br />You may choose to reduce the value ( in KB ), or disable it altogether. Be sure to enable disk cache because if you disable both, performance will drop.<br /><u><br /><b>Enable Pipelining and Increase Max Connection Per Server<br /></b><br /></u>This is the most common tweak around. It enables firefox to request webpages and images using multiple connections.<br /><br />enable these two<br /><br /><blockquote><i>network.http.pipelining</i><br /><i>network.http.firstrequest</i><br /></blockquote><br />Set these to some value higher than default, i recommend not setting it more that twice of the default value because it will increase load at the server and yourself. if youre using proxies, you can also turn on proxy pipelining.<br /><br /><blockquote><i>network.http.max-connections</i><br /><i>network.http.max-connections-per-server</i><br /><i>network.http.max-persistent-connections-per-server</i><br /><i>network.http.max-pipelining-piperequest</i><br /></blockquote><u><br /><b>Set Images to Draw Immediately<br /></b><br /></u>You may notice firefox waited images to be loaded in some percentage before started drawing it. If you dont like this "feature", you can turn it off by setting this value to 0.<br /><br /><blockquote><i>nglayout.initialpaint.delay<br /><br /></i>From Mozilla Knowledgebase:<br />Lower values will make a page initially display more quickly, but will<br />make the page take longer to finish rendering. Higher values will have<br />the opposite effect.<br /></blockquote><u><br /><b>Limit Caches for Previously Visited Sites<br /><br /></b></u>This options will allow you to control memory consumption for storing previously visited sites' cache.<br /><br /><blockquote><i>browser.sessionhistory.max_total_viewers</i><br /></blockquote><br />Set this number to your preference. Keep in mind that for each cached pages, around 4MB of RAM is used.<br /><s><br /><u><br /><br /><b>Try not to use Fasterfox</b><br /></u><br />This might be a crazy advice, but my experience with fasterfox makes firefox sluggish. The tweaks set by fasterfox is for faster browsing experience, but it eats up system resources. Its better to find what fasterfox modifies and set it manually by yourself.<br /></s><br /><br />Seems like the latest version of this extension on firefox2 doesn't hog system as bad as before.<br /></div><div class="blogger-post-footer"><br/>

@@ -1,16 +1,18 @@
 ---
-layout: post
-title: Qemu slow disk throughput
-date: '2008-03-07T10:12:00.004+08:00'
 author: kagesenshi
+blogger_id: tag:blogger.com,1999:blog-28371165.post-2640293394133192297
+blogger_orig_url: https://blog.kagesenshi.org/2008/03/qemu-slow-disk-throughput.html
+categories:
+- old blog
+date: '2008-03-07T10:12:00.004+08:00'
+layout: post
+modified_time: '2011-10-07T12:39:58.092+08:00'
 tags:
 - Fedora
 - PlanetPlone
 - Plone
 - Zope
-modified_time: '2011-10-07T12:39:58.092+08:00'
-blogger_id: tag:blogger.com,1999:blog-28371165.post-2640293394133192297
-blogger_orig_url: https://blog.kagesenshi.org/2008/03/qemu-slow-disk-throughput.html
+title: Qemu slow disk throughput
 ---
 
 I am doing some development for a UN community site, using Zope/Plone. I uses Qemu for hosting the guest OS for my development environment.<br /><br />For 2 days, I keep wondering why Zope/Plone loads damn slow on the qemu machine eventhough I have allocated both cores of the processor, and 512RAM for it. 15 minutes simply to start up is really not desirable. I kept on investigating and guess what:<br /><br /><code>[root@unapcict ~]# /sbin/hdparm -t /dev/hda<br /><br />/dev/hda:<br /> Timing buffered disk reads:   18 MB in  3.03 seconds =   5.95 MB/sec</code><br /><br />Just for a comparison, the host hdd's speed:<br /><br /><code>[root@Nobuyuki ~]# /sbin/hdparm -t /dev/sdc<br /><br />/dev/sdc:<br /> Timing buffered disk reads:  174 MB in  3.01 seconds =  57.71 MB/sec</code><br /><br />Darn.. So, thats what the reason. Dear lazywebs, anybody know how to improve the speed??.<div class="blogger-post-footer"><br/>

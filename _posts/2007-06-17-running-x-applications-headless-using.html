@@ -1,16 +1,18 @@
 ---
-layout: post
-title: Running X applications headless using Xvfb
-date: '2007-06-17T03:28:00.000+08:00'
 author: kagesenshi
+blogger_id: tag:blogger.com,1999:blog-28371165.post-6015978197120178467
+blogger_orig_url: https://blog.kagesenshi.org/2007/06/running-x-applications-headless-using.html
+categories:
+- old blog
+date: '2007-06-17T03:28:00.000+08:00'
+layout: post
+modified_time: '2011-10-07T12:36:50.994+08:00'
 tags:
 - Linux
 - PlanetFedora
 - Fedora
 - Hacks
-modified_time: '2011-10-07T12:36:50.994+08:00'
-blogger_id: tag:blogger.com,1999:blog-28371165.post-6015978197120178467
-blogger_orig_url: https://blog.kagesenshi.org/2007/06/running-x-applications-headless-using.html
+title: Running X applications headless using Xvfb
 ---
 
 Sometimes, you might want to run certain X applications as a daemon in the background. For example, in my case, I want to make Ktorrent run in the background on startup while I control the torrents using its WebUI. However, to run Ktorrent , I <span style="font-style:italic">must</span> have X running and logged in to the desktop. So, how can I do this? , the answer is by using X Virtual Framebuffer Server.<br /><br /><span style="font-weight:bold">How it works?</span><br /><br />Xvfb emulates an X server without outputing it to monitor. Applications connect to it and run under the impression the GUI is there. Its as simple as that!. No modification needed on the applications that going to be run on it.<br /><br />Read more : <a href="http://en.wikipedia.org/wiki/Xvfb">http://en.wikipedia.org/wiki/Xvfb</a><br /><br /><span style="font-weight:bold">How to do it?</span><br /><br />First, make sure you have Xvfb installed. If you dont, install it using your package manager. <br />In Fedora, use<br /><pre>yum install xorg-x11-server-Xvfb</pre><br /><br />Then, run Xvfb in any unique/unused display number, in this example, I put 100. Disable access control to the display so that you dont have to go through the hassle of setting access control for it.<br /><pre>Xvfb :100 -ac</pre><br /><br />Now that you got Xvfb up and running, time to start the app.<br /><br />Before starting the app, export the DISPLAY environment variable to point to display number 100<br /><pre>export DISPLAY=:100.0</pre><br /><br />execute the command for the app, and ure good to go :D<br /><pre>ktorrent</pre><br /><br />Enjoy~<div class="blogger-post-footer"><br/>

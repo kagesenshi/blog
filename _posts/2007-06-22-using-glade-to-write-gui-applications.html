@@ -1,17 +1,19 @@
 ---
-layout: post
-title: Using Glade to write GUI applications
-date: '2007-06-22T04:04:00.000+08:00'
 author: kagesenshi
+blogger_id: tag:blogger.com,1999:blog-28371165.post-7064660558222998851
+blogger_orig_url: https://blog.kagesenshi.org/2007/06/using-glade-to-write-gui-applications.html
+categories:
+- old blog
+date: '2007-06-22T04:04:00.000+08:00'
+layout: post
+modified_time: '2008-01-11T11:26:05.241+08:00'
 tags:
 - Programming
 - Java
 - Python
 - HOWTO
 - Ruby
-modified_time: '2008-01-11T11:26:05.241+08:00'
-blogger_id: tag:blogger.com,1999:blog-28371165.post-7064660558222998851
-blogger_orig_url: https://blog.kagesenshi.org/2007/06/using-glade-to-write-gui-applications.html
+title: Using Glade to write GUI applications
 ---
 
 A few useful links for people who want to learn on how to write GTK applications using Glade<br /><br /><ul><li> Python - <a href="http://video.google.com/videoplay?docid=5838951374743244232">http://video.google.com/videoplay?docid=5838951374743244232</a></li><br /><li> Java - <a href="http://people.redhat.com/overholt/nativeeclipse/index.html">http://people.redhat.com/overholt/nativeeclipse/index.html</a></li><br /><li> Ruby - <a href="http://robrohan.com/2007/05/21/linux-gui-programming-with-ruby/">http://robrohan.com/2007/05/21/linux-gui-programming-with-ruby/</a> </li><br /></ul><br /><br />The video for using Glade with Python is not very clear, so I'll explain a little bit the process below.<br /><br />1. Build your GUI<br /><br />2. Open a .py file, and import gtk and gtk.glade<br /><pre>#!/usr/bin/python<br />import gtk<br />import gtk.glade</pre><br /><br />3. define your handlers method<br /><pre>def hander_method(widget):<br />    do_something_here<br />    do_more<br /></pre><br /><br />4. load the glade XML<br /><pre>xml = gtk.glade.XML("/path/to/glade/file")</pre><br /><br />5. connect handlers to its methods/functions<br /><pre>dict = { 'handler_name' : handler_method,<br />'handler_name2' : handler_method2<br /> }<br /><br />xml.signal_autoconnect(dict)</pre><br /><br />6. run gtk instance<br /><pre>gtk.main()</pre><br /><br />I also have written a similar script to the ruby glade template generator in Video 3. It'll generate a very basic Python template for use. ( I couldn't find where to download GladeGen )<br /><br /><a href="http://kagesenshi.87.googlepages.com/pyglade-gentemplate.py">pyglade-gentemplate.py</a><div class="blogger-post-footer"><br/>

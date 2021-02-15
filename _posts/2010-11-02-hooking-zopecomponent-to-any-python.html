@@ -1,17 +1,19 @@
 ---
-layout: post
-title: Hooking zope.component to any python project
-date: '2010-11-02T01:29:00.003+08:00'
 author: kagesenshi
+blogger_id: tag:blogger.com,1999:blog-28371165.post-705102368954667395
+blogger_orig_url: https://blog.kagesenshi.org/2010/11/hooking-zopecomponent-to-any-python.html
+categories:
+- old blog
+date: '2010-11-02T01:29:00.003+08:00'
+layout: post
+modified_time: '2010-11-02T01:55:58.663+08:00'
 tags:
 - Inigo
 - Python
 - Hacks
 - HOWTO
 - Zope
-modified_time: '2010-11-02T01:55:58.663+08:00'
-blogger_id: tag:blogger.com,1999:blog-28371165.post-705102368954667395
-blogger_orig_url: https://blog.kagesenshi.org/2010/11/hooking-zopecomponent-to-any-python.html
+title: Hooking zope.component to any python project
 ---
 
 <a href="http://pypi.python.org/pypi/zope.component">Zope Component Architecture</a> is a set of libraries used for aiding in writing component based applications using python. It provides some useful libraries to handle common patterns such as factory, adapter, multiadapter, and subscribers. <br /><br />In <a href="http://www.inigo-tech.com">Inigo</a>, we utilizes Zope Component Architecture widely in our development process as it helps us in decoupling components in our system.<br /><br />Anyway, lets get straight to the point of this post. Basically, what I'll go through in this post would be one method of hooking zope.component together with a configure.zcml into your current python project. It might not be the best way, but the simplest that I know of.<br /><br /><b>Requirements</b><br /><br /><ul><li>You'll need to have these installed in your python environment: <code>zope.component, zope.configuration</code>.</li><li>Your project is packaged as an egg (probably possible if not as an egg, but I never tried that)</li></ul><br /><br /><b>Setting up</b><br /><br />In your project egg module directory, create a file called <code>configure.zcml</code> with this content:<br /><br /><pre>&lt;configure xmlns="http://namespaces.zope.org/zope"&gt;<br />&lt/configure&gt;</pre><br /><br />This file will be the starting point for your project's component registration<br /><br /><b>Loading configure.zcml</b><br /><br />In your python project, probably right at the start of the main() function, add this:<br /><br /><pre>from zope.configuration.xmlconfig import xmlconfig<br />from StringIO import StringIO<br />xmlconfig(StringIO('''<br />    &lt;configure xmlns="http://namespaces.zope.org/zope"&gt;<br />    &lt;include package="your.project.egg.module"/&gt;<br />    &lt;/configure&gt;'''))</pre><br /><br />Thats it, and you now can use ZCA in your app like you do in Zope.<div class="blogger-post-footer"><br/>

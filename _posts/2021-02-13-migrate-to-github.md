@@ -1,8 +1,10 @@
 ---
+categories:
+- old blog
+date: 2021-02-13 19:39 +0800
+image: assets/images/2021/github-pages.jpg
 layout: post
 title: Migrated to Github Pages
-date: "2021-02-13 19:39 +0800"
-image: assets/images/2021/github-pages.jpg
 ---
 
 This blog, originally created circa 2005, was originally hosted 

@@ -1,16 +1,18 @@
 ---
-layout: post
-title: USB "Key" based authentication using pam_usb in Fedora
-date: '2007-07-21T09:08:00.000+08:00'
 author: kagesenshi
+blogger_id: tag:blogger.com,1999:blog-28371165.post-5098269047193542615
+blogger_orig_url: https://blog.kagesenshi.org/2007/07/usb-key-based-authentication-using.html
+categories:
+- old blog
+date: '2007-07-21T09:08:00.000+08:00'
+layout: post
+modified_time: '2011-10-07T12:36:50.936+08:00'
 tags:
 - Linux
 - PlanetFedora
 - Fedora
 - HOWTO
-modified_time: '2011-10-07T12:36:50.936+08:00'
-blogger_id: tag:blogger.com,1999:blog-28371165.post-5098269047193542615
-blogger_orig_url: https://blog.kagesenshi.org/2007/07/usb-key-based-authentication-using.html
+title: USB "Key" based authentication using pam_usb in Fedora
 ---
 
 <span style="font-weight:bold;">What Is pam_usb?</span><br /><br />pam_usb provides hardware authentication for Linux using ordinary USB Flash Drives.<br />It works with any application supporting <a href="http://www.kernel.org/pub/linux/libs/pam/">PAM (Pluggable Authentication Module)</a>, such as su, any login manager (GDM, KDM), etc. The pam_usb package contains:<br /><br /><a href="http://www.pamusb.org/">http://www.pamusb.org/</a><br /><br /><span style="font-weight:bold;">So? What does it do?</span><br /><br />pam_usb enables you to login to your system using a USB "Key" as a physical authentication device. Ever watched some of those movies where user required to key in some sort of card before logging into the computer? Well, pam_usb allows you to do this on Linux, using your USB drive!.<br /><br /><span style="font-weight:bold;">Getting pam_usb</span><br /><br />pam_usb 0.3.3 is available in Fedora repository.<br /><pre>yum install pam_usb pam_usb-hotplug</pre><br /><br /><span style="font-weight:bold;">Setting up Your Computer</span><br /><br />1 . Setting up console login to use pam_usb<br />    add this entry to the first line in /etc/pam.d/login<br /><pre>auth       sufficient   pam_usb.so</pre><br /><br />2 . Setting up GDM to use pam_usb<br />    add this entry to the first line in /etc/pam.d/gdm<br /><pre>auth       sufficient   pam_usb.so allow_remote</pre><br /><br />1 . Setting up su command to use pam_usb<br />    add this entry to the first line in /etc/pam.d/su<br /><pre>auth       sufficient   pam_usb.so</pre><br /><br />more details about options can be acquired from the quickstart, located at<br />file:///usr/share/doc/pam_usb-0.3.3/quickstart.html<br /><br /><span style="font-weight:bold;">Creating your DSA key pair</span><br /><br />To enable your USB drive as an authentication device, you will need to generate a set of public and private key which one will reside in the USB device and another in your home folder.<br /><br />To generate the key, first, make sure your USB drive is mounted, then this command:<br /><pre>usbadm keygen <span style="font-style:italic;">/path/to/usb/mountpoint username keybits</span></pre><br />eg:<br /><pre>usbadm keygen /media/usbdrive root 1024</span></pre><br /><br />Thats it, you're done. Try <span style="font-style:italic;">su</span>-ing to root to test out whether it works or not.<br /><br /><span style="font-weight:bold;">Enabling log for debugging</span><br /><br />In case it did not work, you can enable pam_usb logging to find out whats wrong. To enable logging, add <span style="font-style:italic;">log_file=/var/log/pam_usb.log</span> at the end of pam_usb entry in the pam.d files.<br /><br />eg:<pre>auth       sufficient   pam_usb.so log_file=/var/log/pam_usb.log</pre><br /><br />then create an empty log file <br /><pre>touch /var/log/pam_usb.log</pre><br /><br />done.<br /><br />Ref:<br /><a href="http://forums.gentoo.org/viewtopic-t-305540-highlight-pamusb.html">http://forums.gentoo.org/viewtopic-t-305540-highlight-pamusb.html</a><div class="blogger-post-footer"><br/>

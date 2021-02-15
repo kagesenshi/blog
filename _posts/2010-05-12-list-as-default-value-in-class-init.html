@@ -1,16 +1,18 @@
 ---
-layout: post
-title: list as default value in class __init__() - watchout for surprise
-date: '2010-05-12T15:12:00.011+08:00'
 author: kagesenshi
+blogger_id: tag:blogger.com,1999:blog-28371165.post-2522199574445001692
+blogger_orig_url: https://blog.kagesenshi.org/2010/05/list-as-default-value-in-class-init.html
+categories:
+- old blog
+date: '2010-05-12T15:12:00.011+08:00'
+layout: post
+modified_time: '2010-05-12T15:49:45.486+08:00'
 tags:
 - Inigo
 - Python
 - Fedora
 - Tips
-modified_time: '2010-05-12T15:49:45.486+08:00'
-blogger_id: tag:blogger.com,1999:blog-28371165.post-2522199574445001692
-blogger_orig_url: https://blog.kagesenshi.org/2010/05/list-as-default-value-in-class-init.html
+title: list as default value in class __init__() - watchout for surprise
 ---
 
 <b>Note to self: don't use list as a default value in class methods if its going to be modified later, as it might cause some trouble.</b><br /><br />Just realized something:<br /><br /><pre>In [1]: class MyClass(object):<br />   ...:     def __init__(self,data=[]):<br />   ...:         self.data = data<br />   ...:         <br />   ...:     def addData(self,value):<br />   ...:         self.data.append(value)<br />   ...:         <br />   ...:         <br /><br />In [2]: obj = MyClass()<br /><br />In [3]: obj.addData('hello')<br /><br />In [4]: obj.data<br />Out[4]: ['hello']<br /><br />In [5]: obj2 = MyClass()<br /><br />In [6]: obj2.data<br />Out[6]: ['hello']<br /><br />In [7]: obj3 = MyClass([])<br /><br />In [8]: obj3.data<br />Out[8]: []</pre><br /><br /><pre>In [12]: def myfunc(val,data=[]):<br />   ....:     data.append(val)<br />   ....:     return data<br />   ....: <br /><br />In [13]: myfunc(1)<br />Out[13]: [1]<br /><br />In [14]: myfunc(2)<br />Out[14]: [1, 2]<br /><br />In [15]: myfunc(3)<br />Out[15]: [1, 2, 3]</pre><br /><br />At first i thought its a bug/weirdness, but after banging my head a bit to wall and a long stare at the ceiling, it made sense.<br /><br />During class definition, the list object already instantiated. Therefore, the default value of <code>data</code> variable is a reference to a list object, rather than a new list on each instantiation.<br /><br />Not quite sure how to explain this in words .. <br /><br /><pre>In [1]: class MyClass(object):<br />   ...:     def __init__(self,data=[]): # data-&gt;List object at 0x0001<br />   ...:         self.data = data        # self.data-&gt;List object at 0x0001<br />   ...:         <br />   ...:     def addData(self,value):<br />   ...:         self.data.append(value) # self.data-&gt;List object at 0x0001<br />   ...:         <br />   ...:         <br /><br />In [2]: obj = MyClass()<br /><br />In [3]: obj.addData('hello')<br /><br />In [4]: obj.data           # obj.data-&gt;List object at 0x0001<br />Out[4]: ['hello']<br /><br />In [5]: obj2 = MyClass()<br /><br />In [6]: obj2.data          # obj2.data-&gt;List object at 0x0001<br />Out[6]: ['hello']<br /><br />In [7]: obj3 = MyClass([]) # []-&gt;List object at 0x0002<br /><br />In [8]: obj3.data          # obj3.data-&gt;List object at 0x0002<br />Out[8]: []</pre><br /><br />I think you got the idea.<div class="blogger-post-footer"><br/>

@@ -1,17 +1,19 @@
 ---
-layout: post
-title: 'HOWTO: Mirroring Yum repositories using Yum-Utils'
-date: '2007-01-31T00:19:00.000+08:00'
 author: kagesenshi
+blogger_id: tag:blogger.com,1999:blog-28371165.post-1327123434626145679
+blogger_orig_url: https://blog.kagesenshi.org/2007/01/howto-mirroring-yum-repositories-using.html
+categories:
+- old blog
+date: '2007-01-31T00:19:00.000+08:00'
+layout: post
+modified_time: '2011-10-07T12:36:50.603+08:00'
 tags:
 - Linux
 - PlanetFedora
 - Open Source
 - Fedora
 - HOWTO
-modified_time: '2011-10-07T12:36:50.603+08:00'
-blogger_id: tag:blogger.com,1999:blog-28371165.post-1327123434626145679
-blogger_orig_url: https://blog.kagesenshi.org/2007/01/howto-mirroring-yum-repositories-using.html
+title: 'HOWTO: Mirroring Yum repositories using Yum-Utils'
 ---
 
 As promised before in one of my <a href='http://kagesenshi.blogspot.com/2007/01/useful-yum-repository-tools-in-yum.html'>previous post</a>, a Howto on how to mirror and manage yum repositories using some of the utilities in <a href='http://linux.duke.edu/'>yum-utils</a>.<br /><br />The first step is, well, of course, is to get yum-utils from fedora repository<br /><pre>yum install yum-utils</pre><br /><br /><span style="font-weight:bold;">Reposync</span><br />Reposync is a utility for mirroring and synchronizing local copy of a yum/rpmmetadata repository.<br /><br />This utility is very useful if you wanted to make a yum repository mirror. Before this, I used "wget -R -np -N" but this method is a little bit tedious and it doesnt work with repos that didn't use directory listing. Plus, it also download together additional site stuff that I don't need/want and it doesn't verify checksum of the downloaded packages.<br /><br />Mirroring a repo using this utility is easy, just execute this command<br /><pre>reposync -r &lt;repoid&gt; -a &lt;arch&gt; -n</pre><br />and the repo will be mirrored in a folder with the same name of the repoid in the directory you executed the command. Eg: you executed the command in <span style="font-style:italic;">/mnt/storage/mirrors/</span> and the repo you are mirroring is <span style="font-style:italic;">extras</span>, so, the RPMs will be downloaded at <span style="font-style:italic;">/mnt/storage/mirrors/extras/</span>.<br /><br />Available options<br /><pre>$ reposync --help<br />usage: <br />    Reposync is used to synchronize a remote yum repository to a local <br />    directory using yum to retrieve the packages.<br />    <br />    /usr/bin/reposync [options]<br />    <br /><br />options:<br />  -h, --help            show this help message and exit<br />  -c CONFIG, --config=CONFIG<br />                        config file to use (defaults to /etc/yum.conf)<br />  -a ARCH, --arch=ARCH  act as if running the specified arch (default: current<br />                        arch, note: does not override $releasever)<br />  -r REPOID, --repoid=REPOID<br />                        specify repo ids to query, can be specified multiple<br />                        times (default is all enabled)<br />  -t, --tempcache       Use a temp dir for storing/accessing yum-cache<br />  -p DESTDIR, --download_path=DESTDIR<br />                        Path to download packages to: defaults to current dir<br />  -u, --urls            Just list urls of what would be downloaded, don't<br />                        download<br />  -n, --newest-only     Download only newest packages per-repo<br />  -q, --quiet           Output as little as possible<br /></pre><br /><br /><span style="font-weight:bold;">Repomanage</span><br />Repomanage is a utility for repository managers to manage old and new packages in a repository. It will read the RPM packages in the directory and list out old/new packages from the directory to stdout. <br /><br />Example of using repomanage for removing old packages in the current directory and its subdirectories.<br /><pre>repomanage --old . |xargs rm -rf</pre><br /><br />Available options<br /><pre>$ reposync --help<br />usage: repomanage [--old] [--new] path.<br /><br />options:<br />  -h, --help            show this help message and exit<br />  -o, --old             print the older packages<br />  -n, --new             print the newest packages<br />  -s, --space           space separated output, not newline<br />  -k KEEP, --keep=KEEP  newest N packages to keep - defaults to 1<br />  -c, --nocheck         do not check package paload signatures/digests</pre><br /><br /><span style="font-weight:bold;">Regenerating the repo</span><br /><br />Now thats you've done mirroring and cleaning up old packages, its time to regenerate a repository metadata for the repo and make it usable through yum. Read my post on how to create your own Yum repository <a href='http://kagesenshi.blogspot.com/2007/01/howto-creating-your-own-yum-rpm.html'>here</a>.<br /><br />Enjoy your new local repos~ :)<div class="blogger-post-footer"><br/>

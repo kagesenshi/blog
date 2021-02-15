@@ -1,14 +1,16 @@
 ---
-layout: post
-title: Grokking Grok
-date: '2009-09-14T01:48:00.006+08:00'
 author: kagesenshi
+blogger_id: tag:blogger.com,1999:blog-28371165.post-1569389061992083262
+blogger_orig_url: https://blog.kagesenshi.org/2009/09/grokking-grok.html
+categories:
+- old blog
+date: '2009-09-14T01:48:00.006+08:00'
+layout: post
+modified_time: '2009-09-14T10:49:09.340+08:00'
 tags:
 - Grok
 - Zope
-modified_time: '2009-09-14T10:49:09.340+08:00'
-blogger_id: tag:blogger.com,1999:blog-28371165.post-1569389061992083262
-blogger_orig_url: https://blog.kagesenshi.org/2009/09/grokking-grok.html
+title: Grokking Grok
 ---
 
 *yawn*.. been a while since I last posted anything technical here. So some update.<br /><br />I just started playing with <a href="http://grok.zope.org/">Grok</a> while trying to understand more on <a href="http://wiki.zope.org/zope3/Zope3Wiki">Zope3</a> stuff. So this post and the next few posts will focus mainly on Grok and how to do stuff on it (from my understanding). <br /><br /><b>Installing Grok</b><br /><br />Using buildout, here's the <code>buildout.cfg</code>:<br /><br /><pre>[buildout]<br />parts = grok<br />download-cache = downloads<br /><br />[grok]<br />recipe = zc.recipe.egg<br />eggs = <br />   grokproject</pre><br /><br /><br />Using virtenv / normal python<br /><br /><pre>easy_install-2.4 grokproject</pre><br /><br /><b>Creating a Grok Project</b><br /><br /><pre>grokproject --zopectl [projectname]</pre><br /><br />That command will create another buildout with grok and zope3.<div class="blogger-post-footer"><br/>
