@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: Geek Log
-title: Tag - Geek Log
+tag-name: geek log
+title: Tag - Geek log
 permalink: "/tag/geek-log.html"
 ---

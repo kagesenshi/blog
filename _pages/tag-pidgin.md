@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: Pidgin
+tag-name: pidgin
 title: Tag - Pidgin
 permalink: "/tag/pidgin.html"
 ---

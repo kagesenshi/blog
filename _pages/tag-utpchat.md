@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: UTPchat
-title: Tag - UTPchat
+tag-name: utpchat
+title: Tag - Utpchat
 permalink: "/tag/utpchat.html"
 ---

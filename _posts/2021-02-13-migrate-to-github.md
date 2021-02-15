@@ -1,6 +1,6 @@
 ---
 categories:
-- old blog
+- blog
 date: 2021-02-13 19:39 +0800
 image: assets/images/2021/github-pages.jpg
 layout: post

@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: Philosophy
+tag-name: philosophy
 title: Tag - Philosophy
 permalink: "/tag/philosophy.html"
 ---

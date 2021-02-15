@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: Debian
+tag-name: debian
 title: Tag - Debian
 permalink: "/tag/debian.html"
 ---

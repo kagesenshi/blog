@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: Psychology
+tag-name: psychology
 title: Tag - Psychology
 permalink: "/tag/psychology.html"
 ---

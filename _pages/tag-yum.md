@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: Yum
+tag-name: yum
 title: Tag - Yum
 permalink: "/tag/yum.html"
 ---

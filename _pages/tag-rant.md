@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: Rant
+tag-name: rant
 title: Tag - Rant
 permalink: "/tag/rant.html"
 ---

@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: Programming
+tag-name: programming
 title: Tag - Programming
 permalink: "/tag/programming.html"
 ---

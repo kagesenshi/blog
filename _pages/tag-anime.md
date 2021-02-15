@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: Anime
+tag-name: anime
 title: Tag - Anime
 permalink: "/tag/anime.html"
 ---

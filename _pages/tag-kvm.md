@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: KVM
-title: Tag - KVM
+tag-name: kvm
+title: Tag - Kvm
 permalink: "/tag/kvm.html"
 ---

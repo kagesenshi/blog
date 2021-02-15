@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: Dovecot
+tag-name: dovecot
 title: Tag - Dovecot
 permalink: "/tag/dovecot.html"
 ---

@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: Fedora
+tag-name: fedora
 title: Tag - Fedora
 permalink: "/tag/fedora.html"
 ---

@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: FreeBSD
-title: Tag - FreeBSD
+tag-name: freebsd
+title: Tag - Freebsd
 permalink: "/tag/freebsd.html"
 ---

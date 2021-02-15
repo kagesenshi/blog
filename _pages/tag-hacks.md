@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: Hacks
+tag-name: hacks
 title: Tag - Hacks
 permalink: "/tag/hacks.html"
 ---

@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: Reg
+tag-name: reg
 title: Tag - Reg
 permalink: "/tag/reg.html"
 ---

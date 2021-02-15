@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: Cloud
+tag-name: cloud
 title: Tag - Cloud
 permalink: "/tag/cloud.html"
 ---

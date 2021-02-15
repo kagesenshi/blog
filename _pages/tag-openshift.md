@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: OpenShift
-title: Tag - OpenShift
+tag-name: openshift
+title: Tag - Openshift
 permalink: "/tag/openshift.html"
 ---

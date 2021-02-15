@@ -20,7 +20,7 @@ plugins:
 feed:
   tags: 
     only:
-      - Fedora
+      - fedora
 
 timezone: Asia/Kuala_Lumpur
 authors:
@@ -44,8 +44,6 @@ defaults:
     values:
       layout: post
       author: kagesenshi
-      categories: [blog]
-      avatar: assets/images/anonavatar.png
       license: cc-by
       
   # all pages

@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: HiTB
-title: Tag - HiTB
+tag-name: hitb
+title: Tag - Hitb
 permalink: "/tag/hitb.html"
 ---

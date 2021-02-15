@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: Javascript
+tag-name: javascript
 title: Tag - Javascript
 permalink: "/tag/javascript.html"
 ---

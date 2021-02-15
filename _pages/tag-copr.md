@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: Copr
+tag-name: copr
 title: Tag - Copr
 permalink: "/tag/copr.html"
 ---

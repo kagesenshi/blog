@@ -12,7 +12,7 @@ permalink: "/tags.html"
     {% assign sortedTags = site.tags | sort %}
     {% for tag in sortedTags %}
      {% assign tag4url = tag[0] | slugify %}
-     <a class="sscroll btn btn-light btn-sm text-capitalize font-weight-bold" href="{{site.baseurl}}/tag/{{tag4url}}.html">
+     <a class="sscroll btn btn-light btn-sm font-weight-bold mt-3" href="{{site.baseurl}}/tag/{{tag4url}}.html">
         {{tag[0]}}
      </a>
      {% endfor %}

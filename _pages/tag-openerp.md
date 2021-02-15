@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: OpenERP
-title: Tag - OpenERP
+tag-name: openerp
+title: Tag - Openerp
 permalink: "/tag/openerp.html"
 ---

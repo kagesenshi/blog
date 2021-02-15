@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: KDE
-title: Tag - KDE
+tag-name: kde
+title: Tag - Kde
 permalink: "/tag/kde.html"
 ---

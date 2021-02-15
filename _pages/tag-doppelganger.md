@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: Doppelganger
+tag-name: doppelganger
 title: Tag - Doppelganger
 permalink: "/tag/doppelganger.html"
 ---

@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: Misc
+tag-name: misc
 title: Tag - Misc
 permalink: "/tag/misc.html"
 ---

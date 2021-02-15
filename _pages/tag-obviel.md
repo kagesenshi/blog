@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: Obviel
+tag-name: obviel
 title: Tag - Obviel
 permalink: "/tag/obviel.html"
 ---

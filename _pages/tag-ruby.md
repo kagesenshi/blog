@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: Ruby
+tag-name: ruby
 title: Tag - Ruby
 permalink: "/tag/ruby.html"
 ---

@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: Tools
+tag-name: tools
 title: Tag - Tools
 permalink: "/tag/tools.html"
 ---

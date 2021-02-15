@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: Physics
+tag-name: physics
 title: Tag - Physics
 permalink: "/tag/physics.html"
 ---

@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: Funny
+tag-name: funny
 title: Tag - Funny
 permalink: "/tag/funny.html"
 ---

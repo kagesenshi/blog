@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: Devices
+tag-name: devices
 title: Tag - Devices
 permalink: "/tag/devices.html"
 ---

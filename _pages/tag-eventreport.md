@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: EventReport
-title: Tag - EventReport
+tag-name: eventreport
+title: Tag - Eventreport
 permalink: "/tag/eventreport.html"
 ---

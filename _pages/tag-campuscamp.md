@@ -1,6 +1,6 @@
 ---
 layout: tags
-tag-name: CampusCamp
-title: Tag - CampusCamp
+tag-name: campuscamp
+title: Tag - Campuscamp
 permalink: "/tag/campuscamp.html"
 ---

@@ -155,7 +155,7 @@ description: "Whatever it is, it might just be me"
                 </p>
                 <a href="{{site.baseurl}}{{post.url}}" class="btn btn-dark">Read More</a>
             </div>
-            <div class="col-md-6 d-none d-md-block pr-0" style="background-size:cover;background-image:url({% if post.image contains "://" %}{{ post.image }}{% else %}{{ post.image | absolute_url }}{% endif %}});">	
+            <div class="col-md-6 d-none d-md-block pr-0" style="background-size:cover;background-image:url({% if post.image contains "://" %}{{ post.image }}{% else %}{{site.baseurl}}/{{ post.image }}{% endif %});">	
             </div>
         </div>
     </div>
