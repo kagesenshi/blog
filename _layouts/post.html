@@ -85,7 +85,7 @@ layout: default
         
       <div class="col-md-12 col-lg-8">
 
-               {% include google-ad.html %}
+          {% include google-ad.html %}
 
             <!-- Article -->
 			<article class="article-post mt-5">                
@@ -179,7 +179,20 @@ layout: default
             {% if page.comments != false %}
                 {% include comments.html %}
             {% endif %}
-            
+
+          {% include google-ad.html %}
+
+          <div class="mt-5">
+             {% assign post = page.next %}
+             <p class="text-uppercase font-weight-bold">
+             <a class="sscroll text-danger" href="{{ post.url}}">&laquo; Previous Post </a></p>
+             {% include main-loop-card.html %}
+             {% assign post = page.previous %}
+             <p class="text-uppercase font-weight-bold">
+             <a class="sscroll text-danger"  href="{{ post.url}}">Next Post &raquo;</a></p>
+             {% include main-loop-card.html %}
+          </div>
+
 		</div>
         
         
