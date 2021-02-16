@@ -1,0 +1,28 @@
+    <div class="card border-0 mb-4 box-shadow">   
+    <a href="{{site.baseurl}}{{post.url}}">
+       <div class="cardimage" style="background-image: url({% if post.image contains "://" %}{{ post.image }}{% else %} {{site.baseurl}}/{{ post.image}}{% endif %}); height: 200px;    background-size: cover;    background-repeat: no-repeat;"></div>     
+    </a>
+    <div class="card-body px-0 pb-0 d-flex flex-column align-items-start">
+    <h2 class="h4 font-weight-bold">
+    <a class="text-dark" href="{{site.baseurl}}{{post.url}}">{{ post.title }}</a>
+    </h2>
+    <p class="excerpt">
+        {{ post.excerpt | strip_html | strip_newlines | truncate: 136 }}
+    </p>
+    <div>
+       <small class="d-block text-muted">
+          {% if post.categories != empty %}
+            In <span class="catlist">
+                {% for category in post.categories %}
+                <a class="sscroll badge badge-light text-capitalize smoothscroll" href="{{site.baseurl}}/category/{{ category | slugify }}.html">{{ category }}</a><span class="sep">, </span>
+                {% endfor %}
+             </span>                  
+           {% endif %} 
+        </small>
+        <small class="text-muted">
+            {{ post.date | date: '%b %d, %Y' }}
+        </small>
+    </div>
+    </div>
+    </div>
+ 
