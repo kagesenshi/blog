@@ -23,9 +23,6 @@ However, this is far from truth. The focus to CentOS Stream is primarily:
 * an announcement that CentOS will no longer release point releases (8,1, 8,2, 8,3..)
 * smoothen out the flow for community contributions ("community" in this sense are
   people who work on improving CentOS, such as fixing bugs, who are not Red Hat employees)
-* make modularity a first class citizen, where core of the OS is well maintained with
-  latest security updates and bugfixes, while ecosystem packages are maintained separately
-  as AppStreams.
 
 No more point release
 ----------------------
