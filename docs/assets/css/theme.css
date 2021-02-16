@@ -802,6 +802,10 @@ div.a2a_full_footer {display:none;}
 	 .topfirstimage {
 		 height:280px !Important;
 	 }
+
+     .cardimage {
+         height:280px !Important;
+     }
  }
  
 
@@ -812,4 +816,8 @@ div.a2a_full_footer {display:none;}
 
 .post-license {
     font-size: 70%;
+}
+
+.cardimage {
+      background-position: center;
 }

@@ -45,6 +45,7 @@ defaults:
       layout: post
       author: kagesenshi
       license: cc-by
+      image: assets/images/og_default.jpg
       
   # all pages
   - scope:
