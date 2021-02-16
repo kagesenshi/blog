@@ -23,7 +23,7 @@
 
     <!-- Begin Jekyll SEO tag v2.7.1 -->
 <meta name="generator" content="Jekyll v4.2.0" />
-<meta property="og:title" content="Using Glade to write GUI applications| KageSenshi's Log" />
+<meta property="og:title" content="Using Glade to write GUI applications | KageSenshi's Log" />
 <meta name="author" content="kagesenshi" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="A few useful links for people who want to learn on how to write GTK applications using Glade&lt;ul&gt;&lt;li&gt; Python - http://video.google.com/videoplay?docid=5838951374743244232&lt;/li&gt;&lt;li&gt; Java - http://people.redhat.com/overholt/nativeeclipse/index.html&lt;/li&gt;&lt;li&gt; Ruby - http://robrohan.com/2007/05/21/linux-gui-programming-with-ruby/ &lt;/li&gt;&lt;/ul&gt;The video for using Glade with Python is not very clear, so I’ll explain a little bit the process below.1. Build your GUI2. Open a .py file, and import gtk and gtk.glade&lt;pre&gt;#!/usr/bin/pythonimport gtkimport gtk.glade&lt;/pre&gt;3. define your handlers method&lt;pre&gt;def hander_method(widget): do_something_here do_more&lt;/pre&gt;4. load the glade XML&lt;pre&gt;xml = gtk.glade.XML(“/path/to/glade/file”)&lt;/pre&gt;5. connect handlers to its methods/functions&lt;pre&gt;dict = { ‘handler_name’ : handler_method,‘handler_name2’ : handler_method2 }xml.signal_autoconnect(dict)&lt;/pre&gt;6. run gtk instance&lt;pre&gt;gtk.main()&lt;/pre&gt;I also have written a similar script to the ruby glade template generator in Video 3. It’ll generate a very basic Python template for use. ( I couldn’t find where to download GladeGen )pyglade-gentemplate.py&lt;div class=&quot;blogger-post-footer&quot;&gt; Izhar Firdaus -&lt;/div&gt;" />

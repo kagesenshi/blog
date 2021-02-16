@@ -23,7 +23,7 @@
 
     <!-- Begin Jekyll SEO tag v2.7.1 -->
 <meta name="generator" content="Jekyll v4.2.0" />
-<meta property="og:title" content="Replacing Plone Event Location field with a Google Map| KageSenshi's Log" />
+<meta property="og:title" content="Replacing Plone Event Location field with a Google Map | KageSenshi's Log" />
 <meta name="author" content="kagesenshi" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Want Plone Event contenttype to have use a Google Map?Use this : https://dev.inigo-tech.com/svn/base/inigo.eventlocationmap/trunk/A Five product for replacing Location field in ATEvent to a Google Map field Installing:You will first need to deploy Products.Maps into your site first. checkout the product into your buildout src directory::&lt;pre&gt;cd $buildoutroot/src/svn co &lt;br /&gt; https://dev.inigo-tech.com/svn/base/inigo.eventlocationmap/trunk/ &lt;br /&gt; inigo.eventlocationmap&lt;/pre&gt;In buildout.cfg::&lt;pre&gt; [buildout] …. eggs = inigo.eventlocationmap develop = src/inigo.eventlocationmap …. [instance] …. zcml = inigo.eventlocationmap&lt;/pre&gt;The catch? WARNING: this will break your existing event content, you need to migrate their location field to use longitude/latitude tupleHow to migrate? I’m still figuring it out myself.&lt;div style=&quot;text-align:center&quot;&gt;&lt;/div&gt;Credits to Jarn AS for the excellent Products.Maps&lt;div class=&quot;blogger-post-footer&quot;&gt; Izhar Firdaus -&lt;/div&gt;" />

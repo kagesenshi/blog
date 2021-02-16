@@ -6,7 +6,7 @@ tags:
 - centos
 image: assets/images/distros/centos.png
 layout: post
-title: Is CentOS Dead? The reports of its demise are greatly exaggerated.
+title: Is CentOS Dead? The reports of its demise are greatly exaggerated. 
 date: 2021-02-16 21:31 +0800
 ---
 End of last year, CentOS project announced that they are [shifting their

@@ -23,7 +23,7 @@
 
     <!-- Begin Jekyll SEO tag v2.7.1 -->
 <meta name="generator" content="Jekyll v4.2.0" />
-<meta property="og:title" content="Adding simple popup to Plone frontpage| KageSenshi's Log" />
+<meta property="og:title" content="Adding simple popup to Plone frontpage | KageSenshi's Log" />
 <meta name="author" content="kagesenshi" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Here is a little guide for those who want to add a simple popup to the Plone frontpage for some purpose (eg: announcements, advertisements, etc).Create a basic html file containing the content you want to appear in the popup. Upload it into $PLONE_SITE/portal_skins/custom (as Page Template) and for the sake of this example, name it popup.htmlAfterward, create a Javascript file with your Pop-Up loader script. For example , this script:&lt;pre&gt;function popup(mylink, windowname) { if (! window.focus)return true; var href; if (typeof(mylink) == ‘string’) href=mylink; else href=mylink.href; window.open(href, windowname, ‘width=220,height=400,scrollbars=no’); return false; };popup(‘popup.html’, ‘My Popup’);&lt;/pre&gt;Also upload this file into $PLONE_SITE/portal_skins/custom (as Page Template too). For this example, name it as popup.jsAfterward, in $PLONE_SITE/portal_javascripts , add popup.js as a new script into portal_javascripts and set its condition to : python:here.restrictedTraverse(&#39;@@plone_context_state&#39;).is_portal_root()Save your work, and you are good to go :DNote: Lots of browsers now block javascript popups quite well.&lt;div class=&quot;blogger-post-footer&quot;&gt; Izhar Firdaus -&lt;/div&gt;" />

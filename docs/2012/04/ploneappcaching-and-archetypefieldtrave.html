@@ -23,7 +23,7 @@
 
     <!-- Begin Jekyll SEO tag v2.7.1 -->
 <meta name="generator" content="Jekyll v4.2.0" />
-<meta property="og:title" content="plone.app.caching and archetype.fieldtraverser| KageSenshi's Log" />
+<meta property="og:title" content="plone.app.caching and archetype.fieldtraverser | KageSenshi's Log" />
 <meta name="author" content="kagesenshi" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="plone.app.caching doesnt seem to support archetype.fieldtraverser&#39;s ++atfield+FieldName urls. Here&#39;s a quick hack to make it cacheable.Add this into your configure.zcml: &lt;configure ... xmlns:cache=&quot;http://namespaces.zope.org/cache&quot; ... /&gt;...&lt;cache:ruleset for=&quot;archetypes.fieldtraverser.fieldtraverser.FieldContentView&quot; ruleset=&quot;plone.content.itemView&quot;/&gt;...&lt;/configure&gt;Thats it. It should be following the contentItem caching rule settings afterward. - Izhar Firdaus -" />

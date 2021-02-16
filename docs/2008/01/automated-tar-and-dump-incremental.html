@@ -23,7 +23,7 @@
 
     <!-- Begin Jekyll SEO tag v2.7.1 -->
 <meta name="generator" content="Jekyll v4.2.0" />
-<meta property="og:title" content="Automated tar and dump incremental backup script for FBSD| KageSenshi's Log" />
+<meta property="og:title" content="Automated tar and dump incremental backup script for FBSD | KageSenshi's Log" />
 <meta name="author" content="kagesenshi" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="The recent gmirror failure on Gambit caused us to switch to automated dump and tar instead.Our requirement was like this: Full backup on Mondays (around 3-5am) with daily incremental backups relative to the Monday backup. Whenever a full backup is being performed, the previous backups must not be overwritten until the full backup is done.And the results::&lt;blockquote&gt;inigo-tarball-backups.sh - an incremental tar backup script using FreeBSD’s Tarinigo-disk-dumps.sh - an incremental live dump script using FreeBSD’s Dump - now, I wish Linux’s Dump have live dump support.gnu-tar-incremental-backup.sh - an incremental tar backup script using GNU’s Tar - I wrote this before the FreeBSD’s Tar script on my Fedora laptop, but was surprised that FreeBSD’s Tar doesn’t have –listed-incremental option (-_-)”. &lt;/blockquote&gt;For the scheduling, I just use cron. Do inform me if you have suggestions to improve the scripts or if you found any risky bug it in.update: Anybody knows how to properly tar a live directory? (eg: /var/log/).&lt;div class=&quot;blogger-post-footer&quot;&gt; Izhar Firdaus -&lt;/div&gt;" />

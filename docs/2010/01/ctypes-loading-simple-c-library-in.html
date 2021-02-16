@@ -23,7 +23,7 @@
 
     <!-- Begin Jekyll SEO tag v2.7.1 -->
 <meta name="generator" content="Jekyll v4.2.0" />
-<meta property="og:title" content="ctypes : Loading simple C library in Python 2.5+| KageSenshi's Log" />
+<meta property="og:title" content="ctypes : Loading simple C library in Python 2.5+ | KageSenshi's Log" />
 <meta name="author" content="kagesenshi" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Just discovered this when I was glancing through the pystream (a CUDA library for Python) source codes. In Python2.5+, it is possible to directly load simple C shared libraries from Python without the need for writing C wrappers for it. (SWIG or manually writing one). This can be achieved using the Python ctypes module.Lets take a simple example:&lt;pre&gt;/* test.c */int multiply(int a,int b){ return a * b;}&lt;/pre&gt;Compile it as a SO library (ref: Writing and using shared libraries):&lt;pre&gt;gcc -c -fPIC test.cgcc -shared -fPIC -o libtest.so test.o&lt;/pre&gt;Now we got an SO file with a test function, lets load it in Python&lt;pre&gt;In [1]: import ctypesIn [2]: libtest = ctypes.cdll.LoadLibrary(‘/path/to/libtest.so’)In [3]: libtest.multiply(30,99)Out[3]: 2970&lt;/pre&gt;Hope this would be useful to someone.More details : http://docs.python.org/library/ctypes.htmlHappy Hacking :D&lt;div class=&quot;blogger-post-footer&quot;&gt; Izhar Firdaus -&lt;/div&gt;" />
