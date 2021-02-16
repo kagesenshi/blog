@@ -23,24 +23,24 @@
 
     <!-- Begin Jekyll SEO tag v2.7.1 -->
 <meta name="generator" content="Jekyll v4.2.0" />
-<meta property="og:title" content="Migrated to Github Pages| KageSenshi's Log" />
+<meta property="og:title" content="Is CentOS Dead? The reports of its demise are greatly exaggerated.| KageSenshi's Log" />
 <meta name="author" content="kagesenshi" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="This blog, originally created circa 2005, was originally hosted on top of Google’s Blogger. At the time, Blogger was a decent free platform, which works fine for my needs. This blog was originally created as a platform for me to share my thoughts, which, is pretty much taken over by social platforms such as Facebook nowadays." />
-<meta property="og:description" content="This blog, originally created circa 2005, was originally hosted on top of Google’s Blogger. At the time, Blogger was a decent free platform, which works fine for my needs. This blog was originally created as a platform for me to share my thoughts, which, is pretty much taken over by social platforms such as Facebook nowadays." />
-<link rel="canonical" href="https://blog.kagesenshi.org/2021/02/migrate-to-github.html" />
-<meta property="og:url" content="https://blog.kagesenshi.org/2021/02/migrate-to-github.html" />
+<meta name="description" content="End of last year, CentOS project announced that they are shifting their focus to CentOS Stream." />
+<meta property="og:description" content="End of last year, CentOS project announced that they are shifting their focus to CentOS Stream." />
+<link rel="canonical" href="https://blog.kagesenshi.org/2021/02/is-centos-dead.html" />
+<meta property="og:url" content="https://blog.kagesenshi.org/2021/02/is-centos-dead.html" />
 <meta property="og:site_name" content="KageSenshi’s Log" />
-<meta property="og:image" content="https://blog.kagesenshi.org/assets/images/2021/github-pages.jpg" />
+<meta property="og:image" content="https://blog.kagesenshi.org/assets/images/distros/centos.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-02-13T19:39:00+08:00" />
+<meta property="article:published_time" content="2021-02-16T21:31:00+08:00" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="https://blog.kagesenshi.org/assets/images/2021/github-pages.jpg" />
-<meta property="twitter:title" content="Migrated to Github Pages" />
+<meta property="twitter:image" content="https://blog.kagesenshi.org/assets/images/distros/centos.png" />
+<meta property="twitter:title" content="Is CentOS Dead? The reports of its demise are greatly exaggerated." />
 <!-- End Jekyll SEO tag -->
 
 
-    <title>Migrated to Github Pages | KageSenshi's Log</title>
+    <title>Is CentOS Dead? The reports of its demise are greatly exaggerated. | KageSenshi's Log</title>
 
     <link rel="shortcut icon" type="image/x-icon" href="/assets/icons/favicon.ico">
 
@@ -130,7 +130,7 @@
                         
                         </span>
 					</p>
-					<h1 class="display-4 mb-4 article-headline">Migrated to Github Pages</h1>
+					<h1 class="display-4 mb-4 article-headline">Is CentOS Dead? The reports of its demise are greatly exaggerated.</h1>
 					<div class="d-flex align-items-center">
                   
 
@@ -148,10 +148,10 @@
                               </a>
                               
 
-                            <span class="text-muted d-block mt-1">Feb 13, 2021 · <span class="reading-time">
+                            <span class="text-muted d-block mt-1">Feb 16, 2021 · <span class="reading-time">
   
   
-    2 mins read
+    7 mins read
   
 </span>
     </span>
@@ -160,7 +160,7 @@
 				</div>
                 
 				<div class="col-md-6 pr-0 align-self-center">
-					<img class="rounded" src="/assets/images/2021/github-pages.jpg" alt="Migrated to Github Pages">
+					<img class="rounded" src="/assets/images/distros/centos.png" alt="Is CentOS Dead? The reports of its demise are greatly exaggerated.">
 				</div>
                 
 			</div>
@@ -223,43 +223,141 @@
 
             <!-- Article -->
 			<article class="article-post mt-5">                
-            <p>This blog, originally created circa 2005, was originally hosted 
-on top of <a href="http://blogger.com">Google’s Blogger</a>. At the time, Blogger
-was a decent free platform, which works fine for my needs. This blog was
-originally created as a platform for me to share my thoughts, which,
-is pretty much taken over by social platforms such as <a href="http://facebook.com">Facebook</a>
-nowadays.</p>
+            <p>End of last year, CentOS project announced that they are <a href="https://blog.centos.org/2020/12/future-is-centos-stream/">shifting their
+focus to CentOS Stream</a>.</p>
 
-<p>The move to social feed platforms have pretty much made me wonder what to
-put on this blog, and one conclusion that I’ve reached was to use it
-mostly to post tech tutorials and howtos. However, due to the limited
-features of Blogger, I regularly faced frustrations when writing on its
-editor, primarily with the lack of tools for handling code snippets.</p>
+<p>Not surprisingly, this triggered a major outlash from users worldwide, especially
+from those who barely understand the change, and merely react to perception
+raised by various online media, who are not even contributors to the Fedora nor
+CentOS project. The general tone is, “RedHat have killed CentOS”, “CentOS is dead”,
+and similar perception.</p>
 
-<p>I’ve reviewed <a href="http://wordpress.com">Wordpress</a> and <a href="http://medium.com">Medium</a>
-but Wordpress seems kinda overkill for my needs, while Medium have similar 
-limitations as Blogger. Having regularly used <a href="http://www.sphinx-doc.org">Sphinx</a>
-and <a href="https://docutils.sourceforge.io/rst.html">RestructuredText</a> for my documentation 
-needs, which I found pleasant for writing, made me wish for a blog platform out there
-that works with RST. When I discovered Github Pages can be used to host static sites
-for free, I decided that I would want to migrate this blog to it, and use some form
-of static site generator to generate things from RST.</p>
+<p>However, this is far from truth. The focus to CentOS Stream is primarily:</p>
 
-<p>Years of procrastination later, I stumbled upon <a href="https://ablog.readthedocs.io/">Ablog</a> 
-which is basically Jekyll-like extension for Sphinx, which I finally get around 
-to try it out, however, its lack of Blogger migration tool, a not-that-straightforward
-way to customize how things are rendered, and also the fact that it is a project
-that is now stuck in maintenance mode, made it not that attractive to use.</p>
+<ul>
+  <li>an announcement that CentOS will no longer release point releases (8,1, 8,2, 8,3..)</li>
+  <li>smoothen out the flow for community contributions (“community” in this sense are
+people who work on improving CentOS, such as fixing bugs, who are not Red Hat employees)</li>
+  <li>make modularity a first class citizen, where core of the OS is well maintained with
+latest security updates and bugfixes, while ecosystem packages are maintained separately
+as AppStreams.</li>
+</ul>
 
-<p>Finally I decided to try out <a href="https://ablog.readthedocs.io/">Jekyll</a>, and after a day of
-of hacking and tweaking, finally, this blog is migrated to GitHub. It is still not RST,
-but at least it is not as bad as the editor at Blogger, and I can customize and automate
-quite a bit of things. Jekyll still have some quirks that annoys me, primarily the part
-where it list down all posts from beginning of time in its category/tag pages, but with
-some tweaks I managed to made it a bit bearable.</p>
+<h2 id="no-more-point-release">No more point release</h2>
 
-<p>Hopefully now that this blog is on markdown+git, I can be a bit more motivated
-to write again.</p>
+<p>Historically, CentOS tracks RHEL, of which a new CentOS release is created, after a new 
+RHEL release is launched. This make sense at the early days of CentOS, where it is primarily
+a rebranded rebuild of RHEL. But take note, the point releases of RHEL recent years, are 
+primarily a snapshot of a specific state of the RHEL updates repositories, akin to a 
+mid-release <a href="https://fedoraproject.org/wiki/Respins-SIG">Fedora respin</a>. This allows 
+sysadmin to create a new installation with latest set of packages with latest bugfixes
+from the start, rather than installing an old point release, and <code class="language-plaintext highlighter-rouge">yum update</code> afterwards. 
+A legacy from the era where internet was a fraction of the speed available today.</p>
+
+<p>If you are a sysadmin that regularly run <code class="language-plaintext highlighter-rouge">yum update</code> on your server, basically nothing will
+change for you. If you use containers and always ensure you containers runs <code class="language-plaintext highlighter-rouge">yum update</code> during
+build, nothing will change for you too.</p>
+
+<h2 id="empowering-the-community-in-communityenterprise-linux">Empowering the Community in C(ommunity)Ent(erprise) Linux</h2>
+
+<p>This is something which I believe many users would barely appreciate, but is something very
+important to us who involve in Open Source OS level development, or involve in supporting 
+our clients commercially. The traditional CentOS is not that open to community, because
+it is trying to keep bug-to-bug compatibility to RHEL. This is a problem when:</p>
+
+<ul>
+  <li>If you found a bug in a package coming from CentOS, and you want to contribute fixes 
+to the bug, in the traditional flow, you would have to get this bug fixed upstream in RHEL,
+as it could not be accepted in CentOS.</li>
+  <li>If you created some packages, and want these packages to be part of the main distribution
+channels (eg: AppStreams), there are no clear way for this.</li>
+</ul>
+
+<p>While majority of users who involve in application deployment, or userspace application
+development barely have any use case for above flow, for those who are involved with 
+large enterprises and large projects that work closely with RHEL/CentOS ecosystem would face
+frustrations in the processes. This is especially true for projects such as OpenStack, OKD,
+oVirt, and companies such as Intel and Facebook, who uses, fix bugs and improve CentOS. The 
+new change of project governance now would make it easier to the community to get involved.</p>
+
+<p>Remember here, a “community” in an Open Source project are people who contributes to a project,
+which can be as doing something as simple as promoting the project, supporting/helping
+others in using the project in community forums, or something more complex such as fixing bugs
+and building new features. A user who only consume, while some may argue is part of the community,
+barely holds currency in influencing the direction of the project. One could not expect 
+a consumer-first direction like what can be seen in commercial softwares, because in commercial
+softwares, the consumers are contributing back in the form of payment to the organization
+that produce the software, and that is a big influence. When the threshold of contributors 
+drop in an Open Source project, or start to be mainly handled by a single person or organization,
+a project is more likely to die, or to turn to proprietary model in order to sustain itself.</p>
+
+<h2 id="stability">Stability</h2>
+
+<p>Some argue that the switch to rolling release model of CentOS Stream would imply CentOS 
+would now no longer be stable. But what exactly is “stable”?. In software development,
+the word “stable” can mean different things. To a consumer, “stable” is usually mean
+something would not crash, nor have issues. However, to developers, “stable” means
+a state of no changes nor updates.</p>
+
+<p>Being “stable” in the sense of no updates, may not translate to “stable” of no issues.
+Modern software development usually applies agile methodology to develop software. 
+An initial version of a software may not be issue-proof in its early releases, and
+would require constant updates to be rolled out to fix issues. However, constant
+updates would mean, the software is not “no-changes stable”. Traditional CentOS and
+RHEL is very resistant to changes due to its approach of minimizing updates, however, 
+this results in an ecosystem where new bugfixes to softwares could not be easily rolled out, and
+also create an environment that is difficult to work with for modern agile developers
+who may require latest version of components, which carry latest bugfixes and improvements. 
+Unlike the old days where software were developed in very slow waterfall model, modern
+application development demands faster adoption of updates, and there is a need to
+address this requirement.</p>
+
+<p>Having said that, “no change stable” is also important, however, not in the sense of 
+barely having changes. There can be changes, but changes are managed to minimize service
+distruption. How software developers traditionally manage this stability is 
+through good release engineering which splits software releases into major and minor release. 
+Within a major release, users of a software can expect no changes in the public interfaces
+of the software, and that all other software that depend on it would continue working,
+across all minor releases of the software. Minor releases would only be doing bugfixes,
+and new feature introduction, without breaking existing functionalities.</p>
+
+<p>Circa 2013, there was an initiative in Fedora in creating a better, and more agile Fedora, 
+called the <a href="https://fedoraproject.org/wiki/Fedora.next">Fedora.next Initiative</a>. One of 
+the result of that is <a href="https://docs.fedoraproject.org/en-US/modularity/">Fedora Modularity</a>, 
+which is a new architecture where Fedora would have a base OS layer, which are maintained 
+on its own stream, and “modules” where users may choose a specific major release of a 
+software component, and only receive updates related to that major release. CentOS/RHEL
+AppStream repositories, introduced in RHEL8/CentOS8, was born from this initiative.</p>
+
+<p>With AppStreams, you can now choose to, for example, enable only PostgreSQL 9 and subscribe 
+to its updates and bugfixes, without risking your system updating to PostgreSQL 12, which 
+is also available in the modularity repos. This create a platform that would allow 
+better “issue-proof stability”, while keeping balance with “no-changes stability”.</p>
+
+<p>With fixes landing in CentOS first before going into RHEL, it also opens up better opportunity
+for the community to receives fixes early, and bugfix contributions from the community
+would be easier to be accepted. Additionally, Fedora still play a role in ensuring stability
+of CentOS/RHEL, because introduction of new major features and major component versions will
+still land in Fedora first, instead of CentOS. Fedora still serve as the development
+ground for the next major release of CentOS/RHEL, through the 
+<a href="https://docs.fedoraproject.org/en-US/eln/">Fedora ELN (El-nino / Enterprise Linux Next, whichever you fancy), Buildroot</a>.</p>
+
+<p>One might think that with CentOS receive fixes first before RHEL, CentOS is now a beta for RHEL,
+however, this is nonsense. Under that analogy, would the traditional setup where RHEL receives 
+fixes first before CentOS, make RHEL a beta version of CentOS?. We all know that is false.</p>
+
+<h2 id="whats-with-the-eol">What’s with the EOL?</h2>
+
+<p>The announcement from CentOS of EOL-ing traditional CentOS is mainly about that they are
+stopping the effort to produce point-releases of CentOS 8. CentOS 8 will still continue to
+be supported until RHEL 8 full-support EOL, which is until 2024. CentOS 9 will still 
+be released alongside RHEL 9, and that too, will be supported until RHEL 9 full-support EOL.</p>
+
+<p>Hope this clears up the FUD about CentOS Stream that have been going around for a while now. 
+You may also check out <a href="https://www.slideshare.net/kagesenshi/centos-stream-how-will-this-impact-you">this presentation</a> for additional information.</p>
+
+<p>Don’t worry, CentOS will still continue to be a great Community-driven Enterprise Linux 
+distribution.</p>
                 
          </article>
 				
@@ -268,13 +366,9 @@ to write again.</p>
         <div class="row prevnextlinks small font-weight-bold">
           
             <div class="col-md-6 rightborder pl-0">
-                <a class="text-dark" href="/2021/02/abyres-data-visualization-powered-by.html">&laquo;  <img height="30px" class="mr-1" src="https://1.bp.blogspot.com/-v-dUySg5dF4/YB9m3KWqkaI/AAAAAAAAXog/tOhAu4Ks85Yghm7iwxZ7ipXWXJ7pfLEWQCLcBGAsYHQ/s1317/Screenshot%2Bfrom%2B2021-02-04%2B22-52-10.png">  Abyres Data Visualization, powered by Apache Superset is now on COPR</a>
+                <a class="text-dark" href="/2021/02/migrate-to-github.html">&laquo;  <img height="30px" class="mr-1" src="/assets/images/2021/github-pages.jpg">  Migrated to Github Pages</a>
             </div>
           
-          
-            <div class="col-md-6 text-right pr-0">
-                <a class="text-dark" href="/2021/02/is-centos-dead.html"> Is CentOS Dead? The reports of its demise are greatly exaggerated.  <img height="30px" class="ml-1" src="/assets/images/distros/centos.png">  &raquo;</a>
-            </div>
           
         </div>
     </div>
@@ -283,6 +377,10 @@ to write again.</p>
 			<!-- Tags -->
 			<div class="mb-4">
 				<span class="taglist">
+				
+				  <a class="sscroll btn btn-light btn-sm font-weight-bold" href="/tag/fedora.html">fedora</a>
+				
+				  <a class="sscroll btn btn-light btn-sm font-weight-bold" href="/tag/centos.html">centos</a>
 				
 				</span>
          </div>
@@ -358,18 +456,22 @@ to write again.</p>
              <div class="col-md-6">
                 
                 
-                <p class="text-uppercase font-weight-bold">
-                <a class="sscroll text-danger" href="/2021/02/is-centos-dead.html">&laquo; Next Post </a></p>
+             </div>
+             <div class="col-md-6">
+                
+                
+                <p class="text-uppercase font-weight-bold text-right">
+                <a class="sscroll text-danger"  href="/2021/02/migrate-to-github.html">Previous Post &raquo;</a></p>
                     <div class="card border-0 mb-4 box-shadow">   
-    <a href="/2021/02/is-centos-dead.html">
-       <div class="cardimage" style="background-image: url( /assets/images/distros/centos.png); height: 200px;    background-size: cover;    background-repeat: no-repeat;"></div>     
+    <a href="/2021/02/migrate-to-github.html">
+       <div class="cardimage" style="background-image: url( /assets/images/2021/github-pages.jpg); height: 200px;    background-size: cover;    background-repeat: no-repeat;"></div>     
     </a>
     <div class="card-body px-0 pb-0 d-flex flex-column align-items-start">
     <h2 class="h4 font-weight-bold">
-    <a class="text-dark" href="/2021/02/is-centos-dead.html">Is CentOS Dead? The reports of its demise are greatly exaggerated.</a>
+    <a class="text-dark" href="/2021/02/migrate-to-github.html">Migrated to Github Pages</a>
     </h2>
     <p class="excerpt">
-        End of last year, CentOS project announced that they are shifting theirfocus to CentOS Stream.
+        This blog, originally created circa 2005, was originally hosted on top of Google’s Blogger. At the time, Bloggerwas a decent free pla...
     </p>
     <div>
        <small class="d-block text-muted">
@@ -382,43 +484,7 @@ to write again.</p>
             
         </small>
         <small class="text-muted">
-            Feb 16, 2021
-        </small>
-    </div>
-    </div>
-    </div>
- 
-
-                
-             </div>
-             <div class="col-md-6">
-                
-                
-                <p class="text-uppercase font-weight-bold text-right">
-                <a class="sscroll text-danger"  href="/2021/02/abyres-data-visualization-powered-by.html">Previous Post &raquo;</a></p>
-                    <div class="card border-0 mb-4 box-shadow">   
-    <a href="/2021/02/abyres-data-visualization-powered-by.html">
-       <div class="cardimage" style="background-image: url(https://1.bp.blogspot.com/-v-dUySg5dF4/YB9m3KWqkaI/AAAAAAAAXog/tOhAu4Ks85Yghm7iwxZ7ipXWXJ7pfLEWQCLcBGAsYHQ/s1317/Screenshot%2Bfrom%2B2021-02-04%2B22-52-10.png); height: 200px;    background-size: cover;    background-repeat: no-repeat;"></div>     
-    </a>
-    <div class="card-body px-0 pb-0 d-flex flex-column align-items-start">
-    <h2 class="h4 font-weight-bold">
-    <a class="text-dark" href="/2021/02/abyres-data-visualization-powered-by.html">Abyres Data Visualization, powered by Apache Superset is now on COPR</a>
-    </h2>
-    <p class="excerpt">
-        In Abyres, we use Apache Superset for many of our data visualization needs. Traditionally, we utilize Superset primarily from what di...
-    </p>
-    <div>
-       <small class="d-block text-muted">
-          
-            In <span class="catlist">
-                
-                <a class="sscroll badge badge-light text-capitalize smoothscroll" href="/category/old-blog.html">old blog</a><span class="sep">, </span>
-                
-             </span>                  
-            
-        </small>
-        <small class="text-muted">
-            Feb 07, 2021
+            Feb 13, 2021
         </small>
     </div>
     </div>
@@ -451,13 +517,9 @@ to write again.</p>
         <div class="row prevnextlinks small font-weight-bold">
           
             <div class="col-md-6 rightborder pl-0">
-                <a class="text-dark" href="/2021/02/abyres-data-visualization-powered-by.html"> <img height="30px" class="mr-1" src="https://1.bp.blogspot.com/-v-dUySg5dF4/YB9m3KWqkaI/AAAAAAAAXog/tOhAu4Ks85Yghm7iwxZ7ipXWXJ7pfLEWQCLcBGAsYHQ/s1317/Screenshot%2Bfrom%2B2021-02-04%2B22-52-10.png">  Abyres Data Visualization, powered by Apache Superset is now on COPR</a>
+                <a class="text-dark" href="/2021/02/migrate-to-github.html"> <img height="30px" class="mr-1" src="/assets/images/2021/github-pages.jpg">  Migrated to Github Pages</a>
             </div>
           
-          
-            <div class="col-md-6 text-right pr-0">
-                <a class="text-dark" href="/2021/02/is-centos-dead.html"> Is CentOS Dead? The reports of its demise are greatly exaggerated.  <img height="30px" class="ml-1" src="/assets/images/distros/centos.png"> </a>
-            </div>
           
         </div>
     </div>
