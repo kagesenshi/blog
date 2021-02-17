@@ -38,7 +38,8 @@ A legacy from the era where internet was a fraction of the speed available today
 
 If you are a sysadmin that regularly run `yum update` on your server, basically nothing will
 change for you. If you use containers and always ensure you containers runs `yum update` during
-build, nothing will change for you too. 
+build, nothing will change for you too. If you only enable security updates, you too, will 
+continue to have the same experience.
 
 Empowering the Community in C(ommunity)Ent(erprise) Linux
 -----------------------------------------------------------
