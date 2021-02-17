@@ -118,7 +118,7 @@ mkdir /tmp/disk/root/root/.ssh/
 cat /path/to/ssh/public/key > /tmp/disk/root/root/.ssh/authorized_keys
 chmod og-rwx -R /tmp/disk/root/root/.ssh/
 
-# remote root password 
+# remove root password 
 sed -i 's/root:x:/root::/' /tmp/disk/root/etc/passwd
 
 ```

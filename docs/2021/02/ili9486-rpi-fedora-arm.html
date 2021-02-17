@@ -319,7 +319,7 @@ mount /dev/mmcblk0p2 /tmp/disk/
 <span class="nb">cat</span> /path/to/ssh/public/key <span class="o">&gt;</span> /tmp/disk/root/root/.ssh/authorized_keys
 <span class="nb">chmod </span>og-rwx <span class="nt">-R</span> /tmp/disk/root/root/.ssh/
 
-<span class="c"># remote root password </span>
+<span class="c"># remove root password </span>
 <span class="nb">sed</span> <span class="nt">-i</span> <span class="s1">'s/root:x:/root::/'</span> /tmp/disk/root/etc/passwd
 
 </code></pre></div></div>
