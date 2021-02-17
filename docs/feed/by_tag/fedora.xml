@@ -1,136 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.kagesenshi.org/feed/by_tag/fedora.xml" rel="self" type="application/atom+xml" /><link href="https://blog.kagesenshi.org/" rel="alternate" type="text/html" /><updated>2021-02-17T14:28:08+08:00</updated><id>https://blog.kagesenshi.org/feed/by_tag/fedora.xml</id><title type="html">KageSenshi’s Log</title><subtitle>Whatever it is, it might just be me</subtitle><entry><title type="html">Is CentOS Dead? The reports of its demise are greatly exaggerated.</title><link href="https://blog.kagesenshi.org/2021/02/is-centos-dead.html" rel="alternate" type="text/html" title="Is CentOS Dead? The reports of its demise are greatly exaggerated." /><published>2021-02-16T21:31:00+08:00</published><updated>2021-02-16T21:31:00+08:00</updated><id>https://blog.kagesenshi.org/2021/02/is-centos-dead</id><content type="html" xml:base="https://blog.kagesenshi.org/2021/02/is-centos-dead.html">&lt;p&gt;End of last year, CentOS project announced that they are &lt;a href=&quot;https://blog.centos.org/2020/12/future-is-centos-stream/&quot;&gt;shifting their
-focus to CentOS Stream&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Not surprisingly, this triggered a major outlash from users worldwide, especially
-from those who barely understand the change, and merely react to perception
-raised by various online media, who are not even contributors to the Fedora nor
-CentOS project. The general tone is, “RedHat have killed CentOS”, “CentOS is dead”,
-and similar perception.&lt;/p&gt;
-
-&lt;p&gt;However, this is far from truth. The focus to CentOS Stream is primarily:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;an announcement that CentOS will no longer release point releases (8,1, 8,2, 8,3..)&lt;/li&gt;
-  &lt;li&gt;smoothen out the flow for community contributions (“community” in this sense are
-people who work on improving CentOS, such as fixing bugs, who are not Red Hat employees)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;no-more-point-release&quot;&gt;No more point release&lt;/h2&gt;
-
-&lt;p&gt;Historically, CentOS tracks RHEL, of which a new CentOS release is created, after a new 
-RHEL release is launched. This make sense at the early days of CentOS, where it is primarily
-a rebranded rebuild of RHEL. But take note, the point releases of RHEL recent years, are 
-primarily a snapshot of a specific state of the RHEL updates repositories, akin to a 
-mid-release &lt;a href=&quot;https://fedoraproject.org/wiki/Respins-SIG&quot;&gt;Fedora respin&lt;/a&gt;. This allows 
-sysadmin to create a new installation with latest set of packages with latest bugfixes
-from the start, rather than installing an old point release, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;yum update&lt;/code&gt; afterwards. 
-A legacy from the era where internet was a fraction of the speed available today.&lt;/p&gt;
-
-&lt;p&gt;If you are a sysadmin that regularly run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;yum update&lt;/code&gt; on your server, basically nothing will
-change for you. If you use containers and always ensure you containers runs &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;yum update&lt;/code&gt; during
-build, nothing will change for you too. If you only enable security updates, you too, will 
-continue to have the same experience.&lt;/p&gt;
-
-&lt;h2 id=&quot;empowering-the-community-in-communityenterprise-linux&quot;&gt;Empowering the Community in C(ommunity)Ent(erprise) Linux&lt;/h2&gt;
-
-&lt;p&gt;This is something which I believe many users would barely appreciate, but is something very
-important to us who involve in Open Source OS level development, or involve in supporting 
-our clients commercially. The traditional CentOS is not that open to community, because
-it is trying to keep bug-to-bug compatibility to RHEL. This is a problem when:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;If you found a bug in a package coming from CentOS, and you want to contribute fixes 
-to the bug, in the traditional flow, you would have to get this bug fixed upstream in RHEL,
-as it could not be accepted in CentOS.&lt;/li&gt;
-  &lt;li&gt;If you created some packages, and want these packages to be part of the main distribution
-channels (eg: AppStreams), there are no clear way for this.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;While majority of users who involve in application deployment, or userspace application
-development barely have any use case for above flow, for those who are involved with 
-large enterprises and large projects that work closely with RHEL/CentOS ecosystem would face
-frustrations in the processes. This is especially true for projects such as OpenStack, OKD,
-oVirt, and companies such as Intel and Facebook, who uses, fix bugs and improve CentOS. The 
-new change of project governance now would make it easier to the community to get involved.&lt;/p&gt;
-
-&lt;p&gt;Remember here, a “community” in an Open Source project are people who contributes to a project,
-which can be as doing something as simple as promoting the project, supporting/helping
-others in using the project in community forums, or something more complex such as fixing bugs
-and building new features. A user who only consume, while some may argue is part of the community,
-barely holds currency in influencing the direction of the project. One could not expect 
-a consumer-first direction like what can be seen in commercial softwares, because in commercial
-softwares, the consumers are contributing back in the form of payment to the organization
-that produce the software, and that is a big influence. When the threshold of contributors 
-drop in an Open Source project, or start to be mainly handled by a single person or organization,
-a project is more likely to die, or to turn to proprietary model in order to sustain itself.&lt;/p&gt;
-
-&lt;h2 id=&quot;stability&quot;&gt;Stability&lt;/h2&gt;
-
-&lt;p&gt;Some argue that the switch to rolling release model of CentOS Stream would imply CentOS 
-would now no longer be stable. But what exactly is “stable”?. In software development,
-the word “stable” can mean different things. To a consumer, “stable” is usually mean
-something would not crash, nor have issues. However, to developers, “stable” means
-a state of no changes nor updates.&lt;/p&gt;
-
-&lt;p&gt;Being “stable” in the sense of no updates, may not translate to “stable” of no issues.
-Modern software development usually applies agile methodology to develop software. 
-An initial version of a software may not be issue-proof in its early releases, and
-would require constant updates to be rolled out to fix issues. However, constant
-updates would mean, the software is not “no-changes stable”. Traditional CentOS and
-RHEL is very resistant to changes due to its approach of minimizing updates, however, 
-this results in an ecosystem where new bugfixes to softwares could not be easily rolled out, and
-also create an environment that is difficult to work with for modern agile developers
-who may require latest version of components, which carry latest bugfixes and improvements. 
-Unlike the old days where software were developed in very slow waterfall model, modern
-application development demands faster adoption of updates, and there is a need to
-address this requirement.&lt;/p&gt;
-
-&lt;p&gt;Having said that, “no change stable” is also important, however, not in the sense of 
-barely having changes. There can be changes, but changes are managed to minimize service
-distruption. How software developers traditionally manage this stability is 
-through good release engineering which splits software releases into major and minor release. 
-Within a major release, users of a software can expect no changes in the public interfaces
-of the software, and that all other software that depend on it would continue working,
-across all minor releases of the software. Minor releases would only be doing bugfixes,
-and new feature introduction, without breaking existing functionalities.&lt;/p&gt;
-
-&lt;p&gt;Circa 2013, there was an initiative in Fedora in creating a better, and more agile Fedora, 
-called the &lt;a href=&quot;https://fedoraproject.org/wiki/Fedora.next&quot;&gt;Fedora.next Initiative&lt;/a&gt;. One of 
-the result of that is &lt;a href=&quot;https://docs.fedoraproject.org/en-US/modularity/&quot;&gt;Fedora Modularity&lt;/a&gt;, 
-which is a new architecture where Fedora would have a base OS layer, which are maintained 
-on its own stream, and “modules” where users may choose a specific major release of a 
-software component, and only receive updates related to that major release. CentOS/RHEL
-AppStream repositories, introduced in RHEL8/CentOS8, was born from this initiative.&lt;/p&gt;
-
-&lt;p&gt;With AppStreams, you can now choose to, for example, enable only PostgreSQL 9 and subscribe 
-to its updates and bugfixes, without risking your system updating to PostgreSQL 12, which 
-is also available in the modularity repos. This create a platform that would allow 
-better “issue-proof stability”, while keeping balance with “no-changes stability”.&lt;/p&gt;
-
-&lt;p&gt;With fixes landing in CentOS first before going into RHEL, it also opens up better opportunity
-for the community to receives fixes early, and bugfix contributions from the community
-would be easier to be accepted. Additionally, Fedora still play a role in ensuring stability
-of CentOS/RHEL, because introduction of new major features and major component versions will
-still land in Fedora first, instead of CentOS. Fedora still serve as the development
-ground for the next major release of CentOS/RHEL, through the 
-&lt;a href=&quot;https://docs.fedoraproject.org/en-US/eln/&quot;&gt;Fedora ELN (El-nino / Enterprise Linux Next, whichever you fancy), Buildroot&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;One might think that with CentOS receive fixes first before RHEL, CentOS is now a beta for RHEL,
-however, this is nonsense. Under that analogy, would the traditional setup where RHEL receives 
-fixes first before CentOS, make RHEL a beta version of CentOS?. We all know that is false.&lt;/p&gt;
-
-&lt;h2 id=&quot;whats-with-the-eol&quot;&gt;What’s with the EOL?&lt;/h2&gt;
-
-&lt;p&gt;The announcement from CentOS of EOL-ing traditional CentOS is mainly about that they are
-stopping the effort to produce point-releases of CentOS 8. CentOS 8 will still continue to
-be supported until RHEL 8 full-support EOL, which is until 2024. CentOS 9 will still 
-be released alongside RHEL 9, and that too, will be supported until RHEL 9 full-support EOL.&lt;/p&gt;
-
-&lt;p&gt;Hope this clears up the FUD about CentOS Stream that have been going around for a while now. 
-You may also check out &lt;a href=&quot;https://www.slideshare.net/kagesenshi/centos-stream-how-will-this-impact-you&quot;&gt;this presentation&lt;/a&gt; for additional information.&lt;/p&gt;
-
-&lt;p&gt;Don’t worry, CentOS will still continue to be a great Community-driven Enterprise Linux 
-distribution.&lt;/p&gt;</content><author><name>kagesenshi</name></author><category term="blog" /><category term="fedora" /><category term="centos" /><summary type="html">End of last year, CentOS project announced that they are shifting their focus to CentOS Stream.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://blog.kagesenshi.org/assets/images/distros/centos.png" /><media:content medium="image" url="https://blog.kagesenshi.org/assets/images/distros/centos.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Howto get ILI9486 Raspberry Pi 3.5” LCD to work with Fedora ARM</title><link href="https://blog.kagesenshi.org/2021/02/ili9486-rpi-fedora-arm.html" rel="alternate" type="text/html" title="Howto get ILI9486 Raspberry Pi 3.5” LCD to work with Fedora ARM" /><published>2021-02-14T22:00:00+08:00</published><updated>2021-02-14T22:00:00+08:00</updated><id>https://blog.kagesenshi.org/2021/02/ili9486-rpi-fedora-arm</id><content type="html" xml:base="https://blog.kagesenshi.org/2021/02/ili9486-rpi-fedora-arm.html">&lt;p&gt;&lt;a href=&quot;https://arm.fedoraproject.org/&quot;&gt;Fedora ARM&lt;/a&gt; provides a full fledged Linux distro 
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.kagesenshi.org/feed/by_tag/fedora.xml" rel="self" type="application/atom+xml" /><link href="https://blog.kagesenshi.org/" rel="alternate" type="text/html" /><updated>2021-02-17T14:30:01+08:00</updated><id>https://blog.kagesenshi.org/feed/by_tag/fedora.xml</id><title type="html">KageSenshi’s Log</title><subtitle>Whatever it is, it might just be me</subtitle><entry><title type="html">Howto get ILI9486 Raspberry Pi 3.5” LCD to work with Fedora ARM</title><link href="https://blog.kagesenshi.org/2021/02/ili9486-rpi-fedora-arm.html" rel="alternate" type="text/html" title="Howto get ILI9486 Raspberry Pi 3.5” LCD to work with Fedora ARM" /><published>2021-02-17T14:29:00+08:00</published><updated>2021-02-17T14:29:00+08:00</updated><id>https://blog.kagesenshi.org/2021/02/ili9486-rpi-fedora-arm</id><content type="html" xml:base="https://blog.kagesenshi.org/2021/02/ili9486-rpi-fedora-arm.html">&lt;p&gt;&lt;a href=&quot;https://arm.fedoraproject.org/&quot;&gt;Fedora ARM&lt;/a&gt; provides a full fledged Linux distro 
 with rich ecosystem of server packages available for the ARM ecosystem.&lt;/p&gt;
 
 &lt;p&gt;However, ever since Fedora released an official ARM spin, specialized Fedora
@@ -312,7 +180,139 @@ adding &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fbcon=
 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/boot/efi/cmdline.txt&lt;/code&gt;, and reboot the device.&lt;/p&gt;
 
 &lt;p&gt;Hope this guide would be helpful to those who own such LCD and do share if 
-you found this guide useful.&lt;/p&gt;</content><author><name>kagesenshi</name></author><category term="howto" /><category term="featured" /><category term="fedora" /><category term="raspberry pi" /><summary type="html">Fedora ARM provides a full fledged Linux distro with rich ecosystem of server packages available for the ARM ecosystem.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://blog.kagesenshi.org/assets/images/2021/ili9486-rpi.jpg" /><media:content medium="image" url="https://blog.kagesenshi.org/assets/images/2021/ili9486-rpi.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Redash RPM in COPR</title><link href="https://blog.kagesenshi.org/2017/04/redash-rpm-in-copr.html" rel="alternate" type="text/html" title="Redash RPM in COPR" /><published>2017-04-10T00:26:00+08:00</published><updated>2017-04-10T00:26:00+08:00</updated><id>https://blog.kagesenshi.org/2017/04/redash-rpm-in-copr</id><content type="html" xml:base="https://blog.kagesenshi.org/2017/04/redash-rpm-in-copr.html">&lt;div dir=&quot;ltr&quot; style=&quot;text-align: left;&quot; trbidi=&quot;on&quot;&gt;Just a quick announcement post.&amp;nbsp; &lt;br /&gt;&lt;br /&gt;I've added a &lt;a href=&quot;http://redash.io/&quot;&gt;redash&lt;/a&gt; build in COPR.&lt;br /&gt;&lt;br /&gt;&lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;&lt;a href=&quot;https://3.bp.blogspot.com/-LLMV53VgLdU/WOpggDEUl_I/AAAAAAAAL4M/A5YggCFSHrEafC5PXrEZgk10z0LtNG3gwCLcB/s1600/redash.png&quot; imageanchor=&quot;1&quot; style=&quot;margin-left: 1em; margin-right: 1em;&quot;&gt;&lt;img border=&quot;0&quot; height=&quot;266&quot; src=&quot;https://3.bp.blogspot.com/-LLMV53VgLdU/WOpggDEUl_I/AAAAAAAAL4M/A5YggCFSHrEafC5PXrEZgk10z0LtNG3gwCLcB/s400/redash.png&quot; width=&quot;400&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;br /&gt;&lt;br /&gt;To install:&lt;br /&gt;&lt;br /&gt;&lt;pre&gt;dnf copr enable izhar/redash&lt;br /&gt;dnf install redash&lt;/pre&gt;&lt;br /&gt;Configure your database at &lt;code&gt;/etc/redash.cfg&lt;/code&gt;&lt;br /&gt;&lt;br /&gt;Service is managed by supervisord, so start supervisord to start the service.&lt;br /&gt;&lt;br /&gt;&lt;pre&gt;service redis start&lt;br /&gt;service supervisord start&lt;/pre&gt;&lt;br /&gt;(I probably should figure out how to write systemd service)&lt;br /&gt;&lt;br /&gt;Load redash on &lt;a href=&quot;http://localhost:5000/&quot;&gt;http://localhost:5000&lt;/a&gt; &lt;br /&gt;&lt;br /&gt;&lt;/div&gt;&lt;div class=&quot;blogger-post-footer&quot;&gt;&lt;br/&gt;
+you found this guide useful.&lt;/p&gt;</content><author><name>kagesenshi</name></author><category term="howto" /><category term="featured" /><category term="fedora" /><category term="raspberry pi" /><summary type="html">Fedora ARM provides a full fledged Linux distro with rich ecosystem of server packages available for the ARM ecosystem.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://blog.kagesenshi.org/assets/images/2021/ili9486-rpi.jpg" /><media:content medium="image" url="https://blog.kagesenshi.org/assets/images/2021/ili9486-rpi.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Is CentOS Dead? The reports of its demise are greatly exaggerated.</title><link href="https://blog.kagesenshi.org/2021/02/is-centos-dead.html" rel="alternate" type="text/html" title="Is CentOS Dead? The reports of its demise are greatly exaggerated." /><published>2021-02-16T21:31:00+08:00</published><updated>2021-02-16T21:31:00+08:00</updated><id>https://blog.kagesenshi.org/2021/02/is-centos-dead</id><content type="html" xml:base="https://blog.kagesenshi.org/2021/02/is-centos-dead.html">&lt;p&gt;End of last year, CentOS project announced that they are &lt;a href=&quot;https://blog.centos.org/2020/12/future-is-centos-stream/&quot;&gt;shifting their
+focus to CentOS Stream&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Not surprisingly, this triggered a major outlash from users worldwide, especially
+from those who barely understand the change, and merely react to perception
+raised by various online media, who are not even contributors to the Fedora nor
+CentOS project. The general tone is, “RedHat have killed CentOS”, “CentOS is dead”,
+and similar perception.&lt;/p&gt;
+
+&lt;p&gt;However, this is far from truth. The focus to CentOS Stream is primarily:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;an announcement that CentOS will no longer release point releases (8,1, 8,2, 8,3..)&lt;/li&gt;
+  &lt;li&gt;smoothen out the flow for community contributions (“community” in this sense are
+people who work on improving CentOS, such as fixing bugs, who are not Red Hat employees)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;no-more-point-release&quot;&gt;No more point release&lt;/h2&gt;
+
+&lt;p&gt;Historically, CentOS tracks RHEL, of which a new CentOS release is created, after a new 
+RHEL release is launched. This make sense at the early days of CentOS, where it is primarily
+a rebranded rebuild of RHEL. But take note, the point releases of RHEL recent years, are 
+primarily a snapshot of a specific state of the RHEL updates repositories, akin to a 
+mid-release &lt;a href=&quot;https://fedoraproject.org/wiki/Respins-SIG&quot;&gt;Fedora respin&lt;/a&gt;. This allows 
+sysadmin to create a new installation with latest set of packages with latest bugfixes
+from the start, rather than installing an old point release, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;yum update&lt;/code&gt; afterwards. 
+A legacy from the era where internet was a fraction of the speed available today.&lt;/p&gt;
+
+&lt;p&gt;If you are a sysadmin that regularly run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;yum update&lt;/code&gt; on your server, basically nothing will
+change for you. If you use containers and always ensure you containers runs &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;yum update&lt;/code&gt; during
+build, nothing will change for you too. If you only enable security updates, you too, will 
+continue to have the same experience.&lt;/p&gt;
+
+&lt;h2 id=&quot;empowering-the-community-in-communityenterprise-linux&quot;&gt;Empowering the Community in C(ommunity)Ent(erprise) Linux&lt;/h2&gt;
+
+&lt;p&gt;This is something which I believe many users would barely appreciate, but is something very
+important to us who involve in Open Source OS level development, or involve in supporting 
+our clients commercially. The traditional CentOS is not that open to community, because
+it is trying to keep bug-to-bug compatibility to RHEL. This is a problem when:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;If you found a bug in a package coming from CentOS, and you want to contribute fixes 
+to the bug, in the traditional flow, you would have to get this bug fixed upstream in RHEL,
+as it could not be accepted in CentOS.&lt;/li&gt;
+  &lt;li&gt;If you created some packages, and want these packages to be part of the main distribution
+channels (eg: AppStreams), there are no clear way for this.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;While majority of users who involve in application deployment, or userspace application
+development barely have any use case for above flow, for those who are involved with 
+large enterprises and large projects that work closely with RHEL/CentOS ecosystem would face
+frustrations in the processes. This is especially true for projects such as OpenStack, OKD,
+oVirt, and companies such as Intel and Facebook, who uses, fix bugs and improve CentOS. The 
+new change of project governance now would make it easier to the community to get involved.&lt;/p&gt;
+
+&lt;p&gt;Remember here, a “community” in an Open Source project are people who contributes to a project,
+which can be as doing something as simple as promoting the project, supporting/helping
+others in using the project in community forums, or something more complex such as fixing bugs
+and building new features. A user who only consume, while some may argue is part of the community,
+barely holds currency in influencing the direction of the project. One could not expect 
+a consumer-first direction like what can be seen in commercial softwares, because in commercial
+softwares, the consumers are contributing back in the form of payment to the organization
+that produce the software, and that is a big influence. When the threshold of contributors 
+drop in an Open Source project, or start to be mainly handled by a single person or organization,
+a project is more likely to die, or to turn to proprietary model in order to sustain itself.&lt;/p&gt;
+
+&lt;h2 id=&quot;stability&quot;&gt;Stability&lt;/h2&gt;
+
+&lt;p&gt;Some argue that the switch to rolling release model of CentOS Stream would imply CentOS 
+would now no longer be stable. But what exactly is “stable”?. In software development,
+the word “stable” can mean different things. To a consumer, “stable” is usually mean
+something would not crash, nor have issues. However, to developers, “stable” means
+a state of no changes nor updates.&lt;/p&gt;
+
+&lt;p&gt;Being “stable” in the sense of no updates, may not translate to “stable” of no issues.
+Modern software development usually applies agile methodology to develop software. 
+An initial version of a software may not be issue-proof in its early releases, and
+would require constant updates to be rolled out to fix issues. However, constant
+updates would mean, the software is not “no-changes stable”. Traditional CentOS and
+RHEL is very resistant to changes due to its approach of minimizing updates, however, 
+this results in an ecosystem where new bugfixes to softwares could not be easily rolled out, and
+also create an environment that is difficult to work with for modern agile developers
+who may require latest version of components, which carry latest bugfixes and improvements. 
+Unlike the old days where software were developed in very slow waterfall model, modern
+application development demands faster adoption of updates, and there is a need to
+address this requirement.&lt;/p&gt;
+
+&lt;p&gt;Having said that, “no change stable” is also important, however, not in the sense of 
+barely having changes. There can be changes, but changes are managed to minimize service
+distruption. How software developers traditionally manage this stability is 
+through good release engineering which splits software releases into major and minor release. 
+Within a major release, users of a software can expect no changes in the public interfaces
+of the software, and that all other software that depend on it would continue working,
+across all minor releases of the software. Minor releases would only be doing bugfixes,
+and new feature introduction, without breaking existing functionalities.&lt;/p&gt;
+
+&lt;p&gt;Circa 2013, there was an initiative in Fedora in creating a better, and more agile Fedora, 
+called the &lt;a href=&quot;https://fedoraproject.org/wiki/Fedora.next&quot;&gt;Fedora.next Initiative&lt;/a&gt;. One of 
+the result of that is &lt;a href=&quot;https://docs.fedoraproject.org/en-US/modularity/&quot;&gt;Fedora Modularity&lt;/a&gt;, 
+which is a new architecture where Fedora would have a base OS layer, which are maintained 
+on its own stream, and “modules” where users may choose a specific major release of a 
+software component, and only receive updates related to that major release. CentOS/RHEL
+AppStream repositories, introduced in RHEL8/CentOS8, was born from this initiative.&lt;/p&gt;
+
+&lt;p&gt;With AppStreams, you can now choose to, for example, enable only PostgreSQL 9 and subscribe 
+to its updates and bugfixes, without risking your system updating to PostgreSQL 12, which 
+is also available in the modularity repos. This create a platform that would allow 
+better “issue-proof stability”, while keeping balance with “no-changes stability”.&lt;/p&gt;
+
+&lt;p&gt;With fixes landing in CentOS first before going into RHEL, it also opens up better opportunity
+for the community to receives fixes early, and bugfix contributions from the community
+would be easier to be accepted. Additionally, Fedora still play a role in ensuring stability
+of CentOS/RHEL, because introduction of new major features and major component versions will
+still land in Fedora first, instead of CentOS. Fedora still serve as the development
+ground for the next major release of CentOS/RHEL, through the 
+&lt;a href=&quot;https://docs.fedoraproject.org/en-US/eln/&quot;&gt;Fedora ELN (El-nino / Enterprise Linux Next, whichever you fancy), Buildroot&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;One might think that with CentOS receive fixes first before RHEL, CentOS is now a beta for RHEL,
+however, this is nonsense. Under that analogy, would the traditional setup where RHEL receives 
+fixes first before CentOS, make RHEL a beta version of CentOS?. We all know that is false.&lt;/p&gt;
+
+&lt;h2 id=&quot;whats-with-the-eol&quot;&gt;What’s with the EOL?&lt;/h2&gt;
+
+&lt;p&gt;The announcement from CentOS of EOL-ing traditional CentOS is mainly about that they are
+stopping the effort to produce point-releases of CentOS 8. CentOS 8 will still continue to
+be supported until RHEL 8 full-support EOL, which is until 2024. CentOS 9 will still 
+be released alongside RHEL 9, and that too, will be supported until RHEL 9 full-support EOL.&lt;/p&gt;
+
+&lt;p&gt;Hope this clears up the FUD about CentOS Stream that have been going around for a while now. 
+You may also check out &lt;a href=&quot;https://www.slideshare.net/kagesenshi/centos-stream-how-will-this-impact-you&quot;&gt;this presentation&lt;/a&gt; for additional information.&lt;/p&gt;
+
+&lt;p&gt;Don’t worry, CentOS will still continue to be a great Community-driven Enterprise Linux 
+distribution.&lt;/p&gt;</content><author><name>kagesenshi</name></author><category term="blog" /><category term="fedora" /><category term="centos" /><summary type="html">End of last year, CentOS project announced that they are shifting their focus to CentOS Stream.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://blog.kagesenshi.org/assets/images/distros/centos.png" /><media:content medium="image" url="https://blog.kagesenshi.org/assets/images/distros/centos.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Redash RPM in COPR</title><link href="https://blog.kagesenshi.org/2017/04/redash-rpm-in-copr.html" rel="alternate" type="text/html" title="Redash RPM in COPR" /><published>2017-04-10T00:26:00+08:00</published><updated>2017-04-10T00:26:00+08:00</updated><id>https://blog.kagesenshi.org/2017/04/redash-rpm-in-copr</id><content type="html" xml:base="https://blog.kagesenshi.org/2017/04/redash-rpm-in-copr.html">&lt;div dir=&quot;ltr&quot; style=&quot;text-align: left;&quot; trbidi=&quot;on&quot;&gt;Just a quick announcement post.&amp;nbsp; &lt;br /&gt;&lt;br /&gt;I've added a &lt;a href=&quot;http://redash.io/&quot;&gt;redash&lt;/a&gt; build in COPR.&lt;br /&gt;&lt;br /&gt;&lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;&lt;a href=&quot;https://3.bp.blogspot.com/-LLMV53VgLdU/WOpggDEUl_I/AAAAAAAAL4M/A5YggCFSHrEafC5PXrEZgk10z0LtNG3gwCLcB/s1600/redash.png&quot; imageanchor=&quot;1&quot; style=&quot;margin-left: 1em; margin-right: 1em;&quot;&gt;&lt;img border=&quot;0&quot; height=&quot;266&quot; src=&quot;https://3.bp.blogspot.com/-LLMV53VgLdU/WOpggDEUl_I/AAAAAAAAL4M/A5YggCFSHrEafC5PXrEZgk10z0LtNG3gwCLcB/s400/redash.png&quot; width=&quot;400&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;br /&gt;&lt;br /&gt;To install:&lt;br /&gt;&lt;br /&gt;&lt;pre&gt;dnf copr enable izhar/redash&lt;br /&gt;dnf install redash&lt;/pre&gt;&lt;br /&gt;Configure your database at &lt;code&gt;/etc/redash.cfg&lt;/code&gt;&lt;br /&gt;&lt;br /&gt;Service is managed by supervisord, so start supervisord to start the service.&lt;br /&gt;&lt;br /&gt;&lt;pre&gt;service redis start&lt;br /&gt;service supervisord start&lt;/pre&gt;&lt;br /&gt;(I probably should figure out how to write systemd service)&lt;br /&gt;&lt;br /&gt;Load redash on &lt;a href=&quot;http://localhost:5000/&quot;&gt;http://localhost:5000&lt;/a&gt; &lt;br /&gt;&lt;br /&gt;&lt;/div&gt;&lt;div class=&quot;blogger-post-footer&quot;&gt;&lt;br/&gt;
 &lt;br/&gt;
 - Izhar Firdaus -&lt;/div&gt;</content><author><name>kagesenshi</name></author><category term="old blog" /><category term="myoss" /><category term="fedora" /><category term="python" /><category term="copr" /><category term="redash" /><summary type="html">Just a quick announcement post.&amp;nbsp; I've added a redash build in COPR.To install:dnf copr enable izhar/redashdnf install redashConfigure your database at /etc/redash.cfgService is managed by supervisord, so start supervisord to start the service.service redis startservice supervisord start(I probably should figure out how to write systemd service)Load redash on http://localhost:5000 - Izhar Firdaus -</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://3.bp.blogspot.com/-LLMV53VgLdU/WOpggDEUl_I/AAAAAAAAL4M/A5YggCFSHrEafC5PXrEZgk10z0LtNG3gwCLcB/s1600/redash.png" /><media:content medium="image" url="https://3.bp.blogspot.com/-LLMV53VgLdU/WOpggDEUl_I/AAAAAAAAL4M/A5YggCFSHrEafC5PXrEZgk10z0LtNG3gwCLcB/s1600/redash.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Announcing PlatoCDP, a Plone distribution for enterprises.</title><link href="https://blog.kagesenshi.org/2014/08/announcing-platocdp-plone-distribution.html" rel="alternate" type="text/html" title="Announcing PlatoCDP, a Plone distribution for enterprises." /><published>2014-08-07T10:31:00+08:00</published><updated>2014-08-07T10:31:00+08:00</updated><id>https://blog.kagesenshi.org/2014/08/announcing-platocdp-plone-distribution</id><content type="html" xml:base="https://blog.kagesenshi.org/2014/08/announcing-platocdp-plone-distribution.html">&lt;div dir=&quot;ltr&quot; style=&quot;text-align: left;&quot; trbidi=&quot;on&quot;&gt;&lt;br /&gt;&lt;br /&gt;&lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;&lt;a href=&quot;http://4.bp.blogspot.com/-kbU3Qyscp0w/U-LctBYuYkI/AAAAAAAAD7Q/GttEQEMgx30/s1600/platocdplogo.png&quot; style=&quot;margin-left: 1em; margin-right: 1em;&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;http://4.bp.blogspot.com/-kbU3Qyscp0w/U-LctBYuYkI/AAAAAAAAD7Q/GttEQEMgx30/s1600/platocdplogo.png&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;br /&gt;&lt;br /&gt;Announcing the first release of &lt;a href=&quot;http://koslab.org/&quot;&gt;PlatoCDP Plone distribution&lt;/a&gt;.  A Plone distribution with the goal of attempting to build a more  supportable, enterprise-ready, document management and content  management&amp;nbsp; solution for government and enterprises. The ideal aim is to  develop improvements on the distribution so that it will be a viable alternative to Sharepoint.&lt;br /&gt;So what is it exactly?&lt;br /&gt;&lt;ul style=&quot;text-align: left;&quot;&gt;&lt;li&gt;An  enterprise Plone distribution - that is, an integrated product which  includes Plone, selected Plone add-ons, 3rd party softwares and  integration/automation improvements to deliver an enterprise ready  product for customers.&lt;/li&gt;&lt;li&gt;Is it a rebrand of Plone? - It is an  enterprise distribution product. PlatoCDP to Plone is like RHEL to Fedora. It is not a mere rebrand. PlatoCDP includes core Plone, additional components from the  collective and its own improvements. We engage on packaging, certification and development activities to make the whole stack supportable for enterprises. These components of the  distribution will be supported by KOSLAB through our support  subscription. &lt;/li&gt;&lt;/ul&gt;&lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;&lt;a href=&quot;http://3.bp.blogspot.com/-F5EJIny38eI/U-LdJh9MLJI/AAAAAAAAD7Y/__e6bxmlnGc/s1600/platocdp-enterprise-cycle.png&quot; style=&quot;margin-left: 1em; margin-right: 1em;&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;http://3.bp.blogspot.com/-F5EJIny38eI/U-LdJh9MLJI/AAAAAAAAD7Y/__e6bxmlnGc/s1600/platocdp-enterprise-cycle.png&quot; height=&quot;148&quot; width=&quot;400&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;ul style=&quot;text-align: left;&quot;&gt;&lt;li&gt;Major features highlights of PlatoCDP 4.0b1&lt;/li&gt;&lt;ul&gt;&lt;li&gt;Out of the box clustered Plone setup - preconfigured for high availability and scaling. &lt;/li&gt;&lt;li&gt;Out of the box support of collective.documentviewer. The whole setup is fully functional with very minimal effort.&amp;nbsp; &lt;/li&gt;&lt;li&gt;Commonly used add-ons such as&lt;/li&gt;&lt;ul&gt;&lt;li&gt;eea.facetednavigation&lt;/li&gt;&lt;li&gt;solgema.fullcalendar&lt;/li&gt;&lt;li&gt;plonetruegallery&lt;/li&gt;&lt;li&gt;contentwellportlets&lt;/li&gt;&lt;li&gt;collective.unslider &lt;/li&gt;&lt;li&gt;and more (&lt;a href=&quot;https://github.com/koslab/platocdp.policy/blob/master/setup.py&quot;&gt;dependency list&lt;/a&gt;) &lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;li&gt;Some future roadmap in mind&lt;/li&gt;&lt;ul&gt;&lt;li&gt;Development  of cluster management console to aid system administrators in managing,  scaling and monitoring PlatoCDP deployments, plus aiding with filing  bugs and support requests.&lt;/li&gt;&lt;li&gt;Fix WSAPI4Plone and include it into distribution, and provide an API for 3rd party integration.&lt;/li&gt;&lt;li&gt;Marketplace for 3rd party add-on/themes&lt;/li&gt;&lt;li&gt;Video conversion integration (possibly from Plumi transcoder) &lt;/li&gt;&lt;li&gt;Mobile client&lt;/li&gt;&lt;li&gt;Folder sync client&lt;/li&gt;&lt;li&gt;Cloud offering&lt;/li&gt;&lt;/ul&gt;&lt;li&gt;Upstream  commitment - Having been a Fedora Ambassador for over 7 years now, I  believe in the philosophy of innovating on upstream rather than  downstream. Therefore, wherever practical, PlatoCDP improvements shall  be developed primarily on the Plone collective. &lt;/li&gt;&lt;/ul&gt;&amp;nbsp;Check it out at &lt;a href=&quot;http://www.koslab.org/&quot;&gt;http://www.koslab.org&lt;/a&gt; &lt;/div&gt;&lt;div class=&quot;blogger-post-footer&quot;&gt;&lt;br/&gt;
 &lt;br/&gt;
