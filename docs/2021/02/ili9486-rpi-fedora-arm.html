@@ -23,24 +23,24 @@
 
     <!-- Begin Jekyll SEO tag v2.7.1 -->
 <meta name="generator" content="Jekyll v4.2.0" />
-<meta property="og:title" content="Migrated to Github Pages | KageSenshi's Log" />
+<meta property="og:title" content="Howto get ILI9486 Raspberry Pi 3.5” LCD to work with Fedora ARM | KageSenshi's Log" />
 <meta name="author" content="kagesenshi" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="This blog, originally created circa 2005, was originally hosted on top of Google’s Blogger. At the time, Blogger was a decent free platform, which works fine for my needs. This blog was originally created as a platform for me to share my thoughts, which, is pretty much taken over by social platforms such as Facebook nowadays." />
-<meta property="og:description" content="This blog, originally created circa 2005, was originally hosted on top of Google’s Blogger. At the time, Blogger was a decent free platform, which works fine for my needs. This blog was originally created as a platform for me to share my thoughts, which, is pretty much taken over by social platforms such as Facebook nowadays." />
-<link rel="canonical" href="https://blog.kagesenshi.org/2021/02/migrate-to-github.html" />
-<meta property="og:url" content="https://blog.kagesenshi.org/2021/02/migrate-to-github.html" />
+<meta name="description" content="Fedora ARM provides a full fledged Linux distro with rich ecosystem of server packages available for the ARM ecosystem." />
+<meta property="og:description" content="Fedora ARM provides a full fledged Linux distro with rich ecosystem of server packages available for the ARM ecosystem." />
+<link rel="canonical" href="https://blog.kagesenshi.org/2021/02/ili9486-rpi-fedora-arm.html" />
+<meta property="og:url" content="https://blog.kagesenshi.org/2021/02/ili9486-rpi-fedora-arm.html" />
 <meta property="og:site_name" content="KageSenshi’s Log" />
-<meta property="og:image" itemprop="image" content="https://blog.kagesenshi.org/assets/images/2021/github-pages.jpg" />
+<meta property="og:image" itemprop="image" content="https://blog.kagesenshi.org/assets/images/2021/ili9486-rpi.jpg" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-02-13T19:39:00+08:00" />
+<meta property="article:published_time" content="2021-02-14T22:00:00+08:00" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="https://blog.kagesenshi.org/assets/images/2021/github-pages.jpg" />
-<meta property="twitter:title" content="Migrated to Github Pages" />
+<meta property="twitter:image" content="https://blog.kagesenshi.org/assets/images/2021/ili9486-rpi.jpg" />
+<meta property="twitter:title" content="Howto get ILI9486 Raspberry Pi 3.5” LCD to work with Fedora ARM" />
 <!-- End Jekyll SEO tag -->
 
 
-    <title>Migrated to Github Pages | KageSenshi's Log</title>
+    <title>Howto get ILI9486 Raspberry Pi 3.5" LCD to work with Fedora ARM  | KageSenshi's Log</title>
 
     <link rel="shortcut icon" type="image/x-icon" href="/assets/icons/favicon.ico">
 
@@ -126,11 +126,11 @@
 					<p class="text-uppercase font-weight-bold">
                         <span class="catlist">
 						
-                          <a class="sscroll text-danger" href="/category/blog">blog</a><span class="sep">, </span>
+                          <a class="sscroll text-danger" href="/category/howto">howto</a><span class="sep">, </span>
                         
                         </span>
 					</p>
-					<h1 class="display-4 mb-4 article-headline">Migrated to Github Pages</h1>
+					<h1 class="display-4 mb-4 article-headline">Howto get ILI9486 Raspberry Pi 3.5" LCD to work with Fedora ARM </h1>
 					<div class="d-flex align-items-center">
                   
 
@@ -148,10 +148,10 @@
                               </a>
                               
 
-                            <span class="text-muted d-block mt-1">Feb 13, 2021 · <span class="reading-time">
+                            <span class="text-muted d-block mt-1">Feb 14, 2021 · <span class="reading-time">
   
   
-    2 mins read
+    5 mins read
   
 </span>
     </span>
@@ -160,7 +160,7 @@
 				</div>
                 
 				<div class="col-md-6 pr-0 align-self-center">
-					<img class="rounded" src="/assets/images/2021/github-pages.jpg" alt="Migrated to Github Pages">
+					<img class="rounded" src="/assets/images/2021/ili9486-rpi.jpg" alt="Howto get ILI9486 Raspberry Pi 3.5" LCD to work with Fedora ARM ">
 				</div>
                 
 			</div>
@@ -223,43 +223,189 @@
 
             <!-- Article -->
 			<article class="article-post mt-5">                
-            <p>This blog, originally created circa 2005, was originally hosted 
-on top of <a href="http://blogger.com">Google’s Blogger</a>. At the time, Blogger
-was a decent free platform, which works fine for my needs. This blog was
-originally created as a platform for me to share my thoughts, which,
-is pretty much taken over by social platforms such as <a href="http://facebook.com">Facebook</a>
-nowadays.</p>
+            <p><a href="https://arm.fedoraproject.org/">Fedora ARM</a> provides a full fledged Linux distro 
+with rich ecosystem of server packages available for the ARM ecosystem.</p>
 
-<p>The move to social feed platforms have pretty much made me wonder what to
-put on this blog, and one conclusion that I’ve reached was to use it
-mostly to post tech tutorials and howtos. However, due to the limited
-features of Blogger, I regularly faced frustrations when writing on its
-editor, primarily with the lack of tools for handling code snippets.</p>
+<p>However, ever since Fedora released an official ARM spin, specialized Fedora
+derivative for Raspberry Pi such as <a href="https://github.com/fedberry/fedberry">Fedberry</a>
+and <a href="http://pidora.ca">Pidora</a> pretty much went out of development, and getting 
+Rpi accessories to work with Fedora ARM, especially those that does not work with 
+upstream Linux.org kernel, is not quite obvious,</p>
 
-<p>I’ve reviewed <a href="http://wordpress.com">Wordpress</a> and <a href="http://medium.com">Medium</a>
-but Wordpress seems kinda overkill for my needs, while Medium have similar 
-limitations as Blogger. Having regularly used <a href="http://www.sphinx-doc.org">Sphinx</a>
-and <a href="https://docutils.sourceforge.io/rst.html">RestructuredText</a> for my documentation 
-needs, which I found pleasant for writing, made me wish for a blog platform out there
-that works with RST. When I discovered Github Pages can be used to host static sites
-for free, I decided that I would want to migrate this blog to it, and use some form
-of static site generator to generate things from RST.</p>
+<p>In this tutorial, we would go about in getting <a href="http://www.lcdwiki.com/3.5inch_RPi_Display">ILI9486/XPT2046 3.5” LCD</a>, which I bought <a href="https://c.lazada.com.my/t/c.Y5Zo03?url=https%3A%2F%2Fwww.lazada.com.my%2Fproducts%2Fsuhuo-35-320480-tft-touch-screen-lcd-display-case-for-raspberry-pi-a-b-a-2b-3b-3b-i1199146314-s3518982705.html&amp;">from Lazada</a>
+to work with Fedora ARM on Rpi3, up until the point where a framebuffer device is available 
+for attaching CLI console to the display. The process provided by 
+this tutorial in theory should also work with several other LCD devices, but because 
+I only have this 3.5” LCD, so I can only test against it.</p>
 
-<p>Years of procrastination later, I stumbled upon <a href="https://ablog.readthedocs.io/">Ablog</a> 
-which is basically Jekyll-like extension for Sphinx, which I finally get around 
-to try it out, however, its lack of Blogger migration tool, a not-that-straightforward
-way to customize how things are rendered, and also the fact that it is a project
-that is now stuck in maintenance mode, made it not that attractive to use.</p>
+<h2 id="installing-fedora-arm-with-downstream-raspbian-kernel">Installing Fedora ARM with downstream Raspbian Kernel</h2>
 
-<p>Finally I decided to try out <a href="https://ablog.readthedocs.io/">Jekyll</a>, and after a day of
-of hacking and tweaking, finally, this blog is migrated to GitHub. It is still not RST,
-but at least it is not as bad as the editor at Blogger, and I can customize and automate
-quite a bit of things. Jekyll still have some quirks that annoys me, primarily the part
-where it list down all posts from beginning of time in its category/tag pages, but with
-some tweaks I managed to made it a bit bearable.</p>
+<p>To start, you will need to use <a href="https://bintray.com/dwrobel/fda-images/server/aarch64-f33-20201230#files">dwrobel’s spin of Fedora ARM image</a>
+instead of the main official image. This image basically replaced the default Fedora
+kernel which is from upstream Linux.org kernel, to a <a href="https://github.com/raspberrypi/linux">kernel provided by Raspberry Pi Foundation</a>. It is important for you to use this kernel to 
+get the LCD to work, because a lot of kernel modules required to work with Rpi accessories
+are not yet available in upstream kernel for various reasons.</p>
 
-<p>Hopefully now that this blog is on markdown+git, I can be a bit more motivated
-to write again.</p>
+<p>You will notice that the image download page splitted the file into two, 
+<code class="language-plaintext highlighter-rouge">fedora-server-aarch64-f33-20201230-sda.raw.xz.aa</code>
+and <code class="language-plaintext highlighter-rouge">fedora-server-aarch64-f33-20201230-sda.raw.xz.ab</code>. You will need to merge these files into
+a single image before you can work with it:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># merge files</span>
+<span class="nb">cat </span>fedora-server-aarch64-f33-20201230-sda.raw.xz.aa <span class="se">\</span>
+    fedora-server-aarch64-f33-20201230-sda.raw.xz.ab <span class="se">\</span>
+    <span class="o">&gt;</span> fedora-server-aarch64-f33-20201230-sda.raw.xz
+
+<span class="c"># verify checksum</span>
+<span class="nb">sha512sum</span> <span class="nt">-c</span> fedora-server-aarch64-f33-20201230-sda.raw.xz.sha512sum
+</code></pre></div></div>
+
+<p>After successful merging, you can then copy this image into your sdcard. 
+Please take note, <a href="https://fedoraproject.org/wiki/Architectures/ARM/Installation#Arm_Image_Installer">Fedora ARM Image Installer</a> 
+does not quite work correctly with this image.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># decompress</span>
+xz <span class="nt">-d</span> fedora-server-aarch64-f33-20201230-sda.raw.xz 
+
+<span class="c"># dd into sdcard</span>
+<span class="nb">dd </span><span class="k">if</span><span class="o">=</span>fedora-server-aarch64-f33-20201230-sda.raw <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0 
+</code></pre></div></div>
+
+<p>Afterwards, you may want to resize the root partition to make use
+of the whole sdcard, to do this, disconnect and reconnect the sdcard
+to reload, and then lets run <code class="language-plaintext highlighter-rouge">parted</code>.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>umount /dev/mmcblk0<span class="k">*</span> <span class="c"># just to be sure</span>
+parted /dev/mmcblk0
+</code></pre></div></div>
+
+<p>Then use <code class="language-plaintext highlighter-rouge">resizepart</code> to resize the btrfs partition.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">[root@chihaya ~]#</span><span class="w"> </span>parted /dev/mmcblk0                                     
+<span class="go">GNU Parted 3.3
+Using /dev/mmcblk0
+Welcome to GNU Parted! Type 'help' to view a list of commands.
+(parted) print free                                                       
+Model: SD SN64G (sd/mmc)
+Disk /dev/mmcblk0: 63.9GB
+Sector size (logical/physical): 512B/512B
+Partition Table: msdos
+Disk Flags: 
+
+Number  Start   End     Size    Type     File system  Flags
+        1024B   4194kB  4193kB           Free Space
+ 1      4194kB  516MB   512MB   primary  fat16        boot, lba
+ 2      516MB   3016MB  2500MB  primary  btrfs
+        3016MB  63.9GB  60.8GB           Free Space
+
+(parted) resizepart 2                                                     
+End?  [3016MB]? 63.9GB                                                    
+(parted) q
+Information: You may need to update /etc/fstab.
+
+</span><span class="gp">[root@chihaya ~]#</span><span class="w">        
+</span></code></pre></div></div>
+
+<p>The btrfs partition can now be mounted for adding your SSH key,
+for remote network access, which can be added using the following 
+steps.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># mount
+mkdir /tmp/disk
+mount /dev/mmcblk0
+mount /dev/mmcblk0p2 /tmp/disk/
+
+# add ssh key
+mkdir /tmp/disk/root/root/.ssh/
+cat /path/to/ssh/public/key &gt; /tmp/disk/root/root/.ssh/authorized_keys
+chmod og-rwx -R /tmp/disk/root/root/.ssh/
+
+# remote root password 
+sed -i 's/root:x:/root::/' /tmp/disk/root/etc/passwd
+
+</code></pre></div></div>
+
+<p>Static network IP can be configured using</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat &gt; /tmp/disk/root/etc/sysconfig/network-scripts/ifcfg-eth0 &lt;&lt; EOF
+TYPE=Ethernet
+PROXY_METHOD=none
+BROWSER_ONLY=no
+BOOTPROTO=none
+DNS1=8.8.8.8
+DNS2=8.8.4.4
+DEFROUTE=yes
+IPV4_FAILURE_FATAL=no
+IPV6INIT=no
+IPV6_AUTOCONF=yes
+IPV6_DEFROUTE=yes
+IPV6_FAILURE_FATAL=no
+IPV6_ADDR_GEN_MODE=stable-privacy
+NAME="Default"
+ONBOOT=yes
+IPADDR=10.42.0.210
+PREFIX=24
+GATEWAY=10.42.0.1
+EOF
+</code></pre></div></div>
+
+<p>Finally, unmount the sdcard.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>umount /tmp/disk
+</code></pre></div></div>
+
+<p>If nothing went wrong with the steps, you can now hook up your Rpi
+to the network, boot it up and connect to it.</p>
+
+<h2 id="setting-up-lcd-framebuffer-device">Setting up LCD framebuffer device</h2>
+
+<p>To setup the LCD device, you will need to install additional device tree overlays
+for the LCD. The <a href="https://github.com/goodtft/LCD-show/">LCD-show github repository from goodtft</a> provides
+the necessary files, however, the script provided by the repo is designed to work only
+on raspbian based devices. In Fedora ARM, we’ll have to do this manually with
+the following steps.</p>
+
+<p>SSH into the Rpi</p>
+
+<pre><code class="language-bsh">ssh 10.42.0.210 -l root
+</code></pre>
+
+<p>In <code class="language-plaintext highlighter-rouge">/boot/config.txt</code>, you will need to add the following lines
+before <code class="language-plaintext highlighter-rouge">[pi4]</code> section of the config (implicit <code class="language-plaintext highlighter-rouge">[all]</code> section).</p>
+
+<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="py">hdmi_force_hotplug</span><span class="p">=</span><span class="s">1</span>
+<span class="py">dtparam</span><span class="p">=</span><span class="s">i2c_arm=on</span>
+<span class="py">dtparam</span><span class="p">=</span><span class="s">spi=on</span>
+<span class="py">dtoverlay</span><span class="p">=</span><span class="s">tft35a:rotate=90</span>
+</code></pre></div></div>
+
+<p>Download the 3.5” LCD overlay:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget https://github.com/goodtft/LCD-show/raw/master/usr/tft35a-overlay.dtb <span class="se">\</span>
+   <span class="nt">-O</span> /boot/efi/overlays/tft35a.dtbo
+</code></pre></div></div>
+
+<p>Reboot the device.</p>
+
+<p>With the steps above, it should be enough to get the LCD working with a
+framebuffer device at <code class="language-plaintext highlighter-rouge">/dev/fb1</code>. The LCD should be showing black screen after
+the reboot.</p>
+
+<p>You can then use this framebuffer device either to run a console, or to use 
+with your PyGame application, or to run X server.</p>
+
+<p>To test the framebuffer device, you can run the following command the screen
+should be showing random black and white dots.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> /dev/urandom <span class="o">&gt;</span> /dev/fb1
+</code></pre></div></div>
+
+<p>You can also, configure the LCD device as the default kernel console output
+adding <code class="language-plaintext highlighter-rouge">fbcon=map:10 fbcon=font:ProFont6x11</code> to the kernel boot option in 
+<code class="language-plaintext highlighter-rouge">/boot/efi/cmdline.txt</code>, and reboot the device.</p>
+
+<p>Hope this guide would be helpful to those who own such LCD and do share if 
+you found this guide useful.</p>
                 
          </article>
 				
@@ -267,6 +413,12 @@ to write again.</p>
 			<!-- Tags -->
 			<div class="mb-4">
 				<span class="taglist">
+				
+				  <a class="sscroll btn btn-light btn-sm font-weight-bold" href="/tag/featured.html">featured</a>
+				
+				  <a class="sscroll btn btn-light btn-sm font-weight-bold" href="/tag/fedora.html">fedora</a>
+				
+				  <a class="sscroll btn btn-light btn-sm font-weight-bold" href="/tag/raspberry-pi.html">raspberry pi</a>
 				
 				</span>
          </div>
@@ -344,28 +496,28 @@ to write again.</p>
                 
 
                     <div class="card border-0 mb-4 box-shadow">   
-    <a href="/2021/02/abyres-data-visualization-powered-by.html">
-       <div class="cardimage" style="background-image: url(https://1.bp.blogspot.com/-v-dUySg5dF4/YB9m3KWqkaI/AAAAAAAAXog/tOhAu4Ks85Yghm7iwxZ7ipXWXJ7pfLEWQCLcBGAsYHQ/s1317/Screenshot%2Bfrom%2B2021-02-04%2B22-52-10.png); height: 200px;    background-size: cover;    background-repeat: no-repeat;"></div>     
+    <a href="/2021/02/migrate-to-github.html">
+       <div class="cardimage" style="background-image: url( /assets/images/2021/github-pages.jpg); height: 200px;    background-size: cover;    background-repeat: no-repeat;"></div>     
     </a>
     <div class="card-body px-0 pb-0 d-flex flex-column align-items-start">
     <h2 class="h4 font-weight-bold">
-    <a class="text-dark" href="/2021/02/abyres-data-visualization-powered-by.html">Abyres Data Visualization, powered by Apache Superset is now on COPR</a>
+    <a class="text-dark" href="/2021/02/migrate-to-github.html">Migrated to Github Pages</a>
     </h2>
     <p class="excerpt">
-        In Abyres, we use Apache Superset for many of our data visualization needs. Traditionally, we utilize Superset primarily from what di...
+        This blog, originally created circa 2005, was originally hosted on top of Google’s Blogger. At the time, Bloggerwas a decent free pla...
     </p>
     <div>
        <small class="d-block text-muted">
           
             In <span class="catlist">
                 
-                <a class="sscroll badge badge-light text-capitalize smoothscroll" href="/category/old-blog.html">old blog</a><span class="sep">, </span>
+                <a class="sscroll badge badge-light text-capitalize smoothscroll" href="/category/blog.html">blog</a><span class="sep">, </span>
                 
              </span>                  
             
         </small>
         <small class="text-muted">
-            Feb 07, 2021
+            Feb 13, 2021
         </small>
     </div>
     </div>
@@ -373,7 +525,7 @@ to write again.</p>
  
 
                 <p class="text-uppercase font-weight-bold">
-                <a class="sscroll text-danger"  href="/2021/02/abyres-data-visualization-powered-by.html">&laquo; Previous Post</a></p>
+                <a class="sscroll text-danger"  href="/2021/02/migrate-to-github.html">&laquo; Previous Post</a></p>
                 
              </div>
              <div class="col-md-6">
@@ -382,28 +534,28 @@ to write again.</p>
 
 
                     <div class="card border-0 mb-4 box-shadow">   
-    <a href="/2021/02/ili9486-rpi-fedora-arm.html">
-       <div class="cardimage" style="background-image: url( /assets/images/2021/ili9486-rpi.jpg); height: 200px;    background-size: cover;    background-repeat: no-repeat;"></div>     
+    <a href="/2021/02/is-centos-dead.html">
+       <div class="cardimage" style="background-image: url( /assets/images/distros/centos.png); height: 200px;    background-size: cover;    background-repeat: no-repeat;"></div>     
     </a>
     <div class="card-body px-0 pb-0 d-flex flex-column align-items-start">
     <h2 class="h4 font-weight-bold">
-    <a class="text-dark" href="/2021/02/ili9486-rpi-fedora-arm.html">Howto get ILI9486 Raspberry Pi 3.5" LCD to work with Fedora ARM </a>
+    <a class="text-dark" href="/2021/02/is-centos-dead.html">Is CentOS Dead? The reports of its demise are greatly exaggerated.</a>
     </h2>
     <p class="excerpt">
-        Fedora ARM provides a full fledged Linux distro with rich ecosystem of server packages available for the ARM ecosystem.
+        End of last year, CentOS project announced that they are shifting theirfocus to CentOS Stream.
     </p>
     <div>
        <small class="d-block text-muted">
           
             In <span class="catlist">
                 
-                <a class="sscroll badge badge-light text-capitalize smoothscroll" href="/category/howto.html">howto</a><span class="sep">, </span>
+                <a class="sscroll badge badge-light text-capitalize smoothscroll" href="/category/blog.html">blog</a><span class="sep">, </span>
                 
              </span>                  
             
         </small>
         <small class="text-muted">
-            Feb 14, 2021
+            Feb 16, 2021
         </small>
     </div>
     </div>
@@ -411,7 +563,7 @@ to write again.</p>
  
 
                 <p class="text-uppercase font-weight-bold text-right">
-                <a class="sscroll text-danger" href="/2021/02/ili9486-rpi-fedora-arm.html">Next Post &raquo;</a></p>
+                <a class="sscroll text-danger" href="/2021/02/is-centos-dead.html">Next Post &raquo;</a></p>
                 
              </div>
           </div>
@@ -438,12 +590,12 @@ to write again.</p>
         <div class="row prevnextlinks small font-weight-bold">
           
             <div class="col-md-6 rightborder pl-0">
-                <a class="text-dark" href="/2021/02/abyres-data-visualization-powered-by.html"> <img height="30px" class="mr-1" src="https://1.bp.blogspot.com/-v-dUySg5dF4/YB9m3KWqkaI/AAAAAAAAXog/tOhAu4Ks85Yghm7iwxZ7ipXWXJ7pfLEWQCLcBGAsYHQ/s1317/Screenshot%2Bfrom%2B2021-02-04%2B22-52-10.png">  Abyres Data Visualization, powered by Apache Superset is now on COPR</a>
+                <a class="text-dark" href="/2021/02/migrate-to-github.html"> <img height="30px" class="mr-1" src="/assets/images/2021/github-pages.jpg">  Migrated to Github Pages</a>
             </div>
           
           
             <div class="col-md-6 text-right pr-0">
-                <a class="text-dark" href="/2021/02/ili9486-rpi-fedora-arm.html"> Howto get ILI9486 Raspberry Pi 3.5" LCD to work with Fedora ARM   <img height="30px" class="ml-1" src="/assets/images/2021/ili9486-rpi.jpg"> </a>
+                <a class="text-dark" href="/2021/02/is-centos-dead.html"> Is CentOS Dead? The reports of its demise are greatly exaggerated.  <img height="30px" class="ml-1" src="/assets/images/distros/centos.png"> </a>
             </div>
           
         </div>

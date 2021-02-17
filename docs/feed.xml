@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.kagesenshi.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.kagesenshi.org/" rel="alternate" type="text/html" /><updated>2021-02-17T10:34:45+08:00</updated><id>https://blog.kagesenshi.org/feed.xml</id><title type="html">KageSenshi’s Log</title><subtitle>Whatever it is, it might just be me</subtitle><entry><title type="html">Is CentOS Dead? The reports of its demise are greatly exaggerated.</title><link href="https://blog.kagesenshi.org/2021/02/is-centos-dead.html" rel="alternate" type="text/html" title="Is CentOS Dead? The reports of its demise are greatly exaggerated." /><published>2021-02-16T21:31:00+08:00</published><updated>2021-02-16T21:31:00+08:00</updated><id>https://blog.kagesenshi.org/2021/02/is-centos-dead</id><content type="html" xml:base="https://blog.kagesenshi.org/2021/02/is-centos-dead.html">&lt;p&gt;End of last year, CentOS project announced that they are &lt;a href=&quot;https://blog.centos.org/2020/12/future-is-centos-stream/&quot;&gt;shifting their
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.kagesenshi.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.kagesenshi.org/" rel="alternate" type="text/html" /><updated>2021-02-17T14:28:08+08:00</updated><id>https://blog.kagesenshi.org/feed.xml</id><title type="html">KageSenshi’s Log</title><subtitle>Whatever it is, it might just be me</subtitle><entry><title type="html">Is CentOS Dead? The reports of its demise are greatly exaggerated.</title><link href="https://blog.kagesenshi.org/2021/02/is-centos-dead.html" rel="alternate" type="text/html" title="Is CentOS Dead? The reports of its demise are greatly exaggerated." /><published>2021-02-16T21:31:00+08:00</published><updated>2021-02-16T21:31:00+08:00</updated><id>https://blog.kagesenshi.org/2021/02/is-centos-dead</id><content type="html" xml:base="https://blog.kagesenshi.org/2021/02/is-centos-dead.html">&lt;p&gt;End of last year, CentOS project announced that they are &lt;a href=&quot;https://blog.centos.org/2020/12/future-is-centos-stream/&quot;&gt;shifting their
 focus to CentOS Stream&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Not surprisingly, this triggered a major outlash from users worldwide, especially
@@ -130,7 +130,189 @@ be released alongside RHEL 9, and that too, will be supported until RHEL 9 full-
 You may also check out &lt;a href=&quot;https://www.slideshare.net/kagesenshi/centos-stream-how-will-this-impact-you&quot;&gt;this presentation&lt;/a&gt; for additional information.&lt;/p&gt;
 
 &lt;p&gt;Don’t worry, CentOS will still continue to be a great Community-driven Enterprise Linux 
-distribution.&lt;/p&gt;</content><author><name>kagesenshi</name></author><category term="blog" /><category term="fedora" /><category term="centos" /><summary type="html">End of last year, CentOS project announced that they are shifting their focus to CentOS Stream.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://blog.kagesenshi.org/assets/images/distros/centos.png" /><media:content medium="image" url="https://blog.kagesenshi.org/assets/images/distros/centos.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Migrated to Github Pages</title><link href="https://blog.kagesenshi.org/2021/02/migrate-to-github.html" rel="alternate" type="text/html" title="Migrated to Github Pages" /><published>2021-02-13T19:39:00+08:00</published><updated>2021-02-13T19:39:00+08:00</updated><id>https://blog.kagesenshi.org/2021/02/migrate-to-github</id><content type="html" xml:base="https://blog.kagesenshi.org/2021/02/migrate-to-github.html">&lt;p&gt;This blog, originally created circa 2005, was originally hosted 
+distribution.&lt;/p&gt;</content><author><name>kagesenshi</name></author><category term="blog" /><category term="fedora" /><category term="centos" /><summary type="html">End of last year, CentOS project announced that they are shifting their focus to CentOS Stream.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://blog.kagesenshi.org/assets/images/distros/centos.png" /><media:content medium="image" url="https://blog.kagesenshi.org/assets/images/distros/centos.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Howto get ILI9486 Raspberry Pi 3.5” LCD to work with Fedora ARM</title><link href="https://blog.kagesenshi.org/2021/02/ili9486-rpi-fedora-arm.html" rel="alternate" type="text/html" title="Howto get ILI9486 Raspberry Pi 3.5” LCD to work with Fedora ARM" /><published>2021-02-14T22:00:00+08:00</published><updated>2021-02-14T22:00:00+08:00</updated><id>https://blog.kagesenshi.org/2021/02/ili9486-rpi-fedora-arm</id><content type="html" xml:base="https://blog.kagesenshi.org/2021/02/ili9486-rpi-fedora-arm.html">&lt;p&gt;&lt;a href=&quot;https://arm.fedoraproject.org/&quot;&gt;Fedora ARM&lt;/a&gt; provides a full fledged Linux distro 
+with rich ecosystem of server packages available for the ARM ecosystem.&lt;/p&gt;
+
+&lt;p&gt;However, ever since Fedora released an official ARM spin, specialized Fedora
+derivative for Raspberry Pi such as &lt;a href=&quot;https://github.com/fedberry/fedberry&quot;&gt;Fedberry&lt;/a&gt;
+and &lt;a href=&quot;http://pidora.ca&quot;&gt;Pidora&lt;/a&gt; pretty much went out of development, and getting 
+Rpi accessories to work with Fedora ARM, especially those that does not work with 
+upstream Linux.org kernel, is not quite obvious,&lt;/p&gt;
+
+&lt;p&gt;In this tutorial, we would go about in getting &lt;a href=&quot;http://www.lcdwiki.com/3.5inch_RPi_Display&quot;&gt;ILI9486/XPT2046 3.5” LCD&lt;/a&gt;, which I bought &lt;a href=&quot;https://c.lazada.com.my/t/c.Y5Zo03?url=https%3A%2F%2Fwww.lazada.com.my%2Fproducts%2Fsuhuo-35-320480-tft-touch-screen-lcd-display-case-for-raspberry-pi-a-b-a-2b-3b-3b-i1199146314-s3518982705.html&amp;amp;&quot;&gt;from Lazada&lt;/a&gt;
+to work with Fedora ARM on Rpi3, up until the point where a framebuffer device is available 
+for attaching CLI console to the display. The process provided by 
+this tutorial in theory should also work with several other LCD devices, but because 
+I only have this 3.5” LCD, so I can only test against it.&lt;/p&gt;
+
+&lt;h2 id=&quot;installing-fedora-arm-with-downstream-raspbian-kernel&quot;&gt;Installing Fedora ARM with downstream Raspbian Kernel&lt;/h2&gt;
+
+&lt;p&gt;To start, you will need to use &lt;a href=&quot;https://bintray.com/dwrobel/fda-images/server/aarch64-f33-20201230#files&quot;&gt;dwrobel’s spin of Fedora ARM image&lt;/a&gt;
+instead of the main official image. This image basically replaced the default Fedora
+kernel which is from upstream Linux.org kernel, to a &lt;a href=&quot;https://github.com/raspberrypi/linux&quot;&gt;kernel provided by Raspberry Pi Foundation&lt;/a&gt;. It is important for you to use this kernel to 
+get the LCD to work, because a lot of kernel modules required to work with Rpi accessories
+are not yet available in upstream kernel for various reasons.&lt;/p&gt;
+
+&lt;p&gt;You will notice that the image download page splitted the file into two, 
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fedora-server-aarch64-f33-20201230-sda.raw.xz.aa&lt;/code&gt;
+and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fedora-server-aarch64-f33-20201230-sda.raw.xz.ab&lt;/code&gt;. You will need to merge these files into
+a single image before you can work with it:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# merge files&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;cat &lt;/span&gt;fedora-server-aarch64-f33-20201230-sda.raw.xz.aa &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+    fedora-server-aarch64-f33-20201230-sda.raw.xz.ab &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; fedora-server-aarch64-f33-20201230-sda.raw.xz
+
+&lt;span class=&quot;c&quot;&gt;# verify checksum&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;sha512sum&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; fedora-server-aarch64-f33-20201230-sda.raw.xz.sha512sum
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;After successful merging, you can then copy this image into your sdcard. 
+Please take note, &lt;a href=&quot;https://fedoraproject.org/wiki/Architectures/ARM/Installation#Arm_Image_Installer&quot;&gt;Fedora ARM Image Installer&lt;/a&gt; 
+does not quite work correctly with this image.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# decompress&lt;/span&gt;
+xz &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; fedora-server-aarch64-f33-20201230-sda.raw.xz 
+
+&lt;span class=&quot;c&quot;&gt;# dd into sdcard&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;dd &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;fedora-server-aarch64-f33-20201230-sda.raw &lt;span class=&quot;nv&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/dev/mmcblk0 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Afterwards, you may want to resize the root partition to make use
+of the whole sdcard, to do this, disconnect and reconnect the sdcard
+to reload, and then lets run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;parted&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;umount /dev/mmcblk0&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# just to be sure&lt;/span&gt;
+parted /dev/mmcblk0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Then use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;resizepart&lt;/code&gt; to resize the btrfs partition.&lt;/p&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;[root@chihaya ~]#&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;parted /dev/mmcblk0                                     
+&lt;span class=&quot;go&quot;&gt;GNU Parted 3.3
+Using /dev/mmcblk0
+Welcome to GNU Parted! Type 'help' to view a list of commands.
+(parted) print free                                                       
+Model: SD SN64G (sd/mmc)
+Disk /dev/mmcblk0: 63.9GB
+Sector size (logical/physical): 512B/512B
+Partition Table: msdos
+Disk Flags: 
+
+Number  Start   End     Size    Type     File system  Flags
+        1024B   4194kB  4193kB           Free Space
+ 1      4194kB  516MB   512MB   primary  fat16        boot, lba
+ 2      516MB   3016MB  2500MB  primary  btrfs
+        3016MB  63.9GB  60.8GB           Free Space
+
+(parted) resizepart 2                                                     
+End?  [3016MB]? 63.9GB                                                    
+(parted) q
+Information: You may need to update /etc/fstab.
+
+&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;[root@chihaya ~]#&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;        
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The btrfs partition can now be mounted for adding your SSH key,
+for remote network access, which can be added using the following 
+steps.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# mount
+mkdir /tmp/disk
+mount /dev/mmcblk0
+mount /dev/mmcblk0p2 /tmp/disk/
+
+# add ssh key
+mkdir /tmp/disk/root/root/.ssh/
+cat /path/to/ssh/public/key &amp;gt; /tmp/disk/root/root/.ssh/authorized_keys
+chmod og-rwx -R /tmp/disk/root/root/.ssh/
+
+# remote root password 
+sed -i 's/root:x:/root::/' /tmp/disk/root/etc/passwd
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Static network IP can be configured using&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cat &amp;gt; /tmp/disk/root/etc/sysconfig/network-scripts/ifcfg-eth0 &amp;lt;&amp;lt; EOF
+TYPE=Ethernet
+PROXY_METHOD=none
+BROWSER_ONLY=no
+BOOTPROTO=none
+DNS1=8.8.8.8
+DNS2=8.8.4.4
+DEFROUTE=yes
+IPV4_FAILURE_FATAL=no
+IPV6INIT=no
+IPV6_AUTOCONF=yes
+IPV6_DEFROUTE=yes
+IPV6_FAILURE_FATAL=no
+IPV6_ADDR_GEN_MODE=stable-privacy
+NAME=&quot;Default&quot;
+ONBOOT=yes
+IPADDR=10.42.0.210
+PREFIX=24
+GATEWAY=10.42.0.1
+EOF
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Finally, unmount the sdcard.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;umount /tmp/disk
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;If nothing went wrong with the steps, you can now hook up your Rpi
+to the network, boot it up and connect to it.&lt;/p&gt;
+
+&lt;h2 id=&quot;setting-up-lcd-framebuffer-device&quot;&gt;Setting up LCD framebuffer device&lt;/h2&gt;
+
+&lt;p&gt;To setup the LCD device, you will need to install additional device tree overlays
+for the LCD. The &lt;a href=&quot;https://github.com/goodtft/LCD-show/&quot;&gt;LCD-show github repository from goodtft&lt;/a&gt; provides
+the necessary files, however, the script provided by the repo is designed to work only
+on raspbian based devices. In Fedora ARM, we’ll have to do this manually with
+the following steps.&lt;/p&gt;
+
+&lt;p&gt;SSH into the Rpi&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bsh&quot;&gt;ssh 10.42.0.210 -l root
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/boot/config.txt&lt;/code&gt;, you will need to add the following lines
+before &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[pi4]&lt;/code&gt; section of the config (implicit &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[all]&lt;/code&gt; section).&lt;/p&gt;
+
+&lt;div class=&quot;language-ini highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;py&quot;&gt;hdmi_force_hotplug&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;py&quot;&gt;dtparam&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;i2c_arm=on&lt;/span&gt;
+&lt;span class=&quot;py&quot;&gt;dtparam&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;spi=on&lt;/span&gt;
+&lt;span class=&quot;py&quot;&gt;dtoverlay&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;tft35a:rotate=90&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Download the 3.5” LCD overlay:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;wget https://github.com/goodtft/LCD-show/raw/master/usr/tft35a-overlay.dtb &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+   &lt;span class=&quot;nt&quot;&gt;-O&lt;/span&gt; /boot/efi/overlays/tft35a.dtbo
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Reboot the device.&lt;/p&gt;
+
+&lt;p&gt;With the steps above, it should be enough to get the LCD working with a
+framebuffer device at &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/dev/fb1&lt;/code&gt;. The LCD should be showing black screen after
+the reboot.&lt;/p&gt;
+
+&lt;p&gt;You can then use this framebuffer device either to run a console, or to use 
+with your PyGame application, or to run X server.&lt;/p&gt;
+
+&lt;p&gt;To test the framebuffer device, you can run the following command the screen
+should be showing random black and white dots.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; /dev/urandom &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; /dev/fb1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You can also, configure the LCD device as the default kernel console output
+adding &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fbcon=map:10 fbcon=font:ProFont6x11&lt;/code&gt; to the kernel boot option in 
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/boot/efi/cmdline.txt&lt;/code&gt;, and reboot the device.&lt;/p&gt;
+
+&lt;p&gt;Hope this guide would be helpful to those who own such LCD and do share if 
+you found this guide useful.&lt;/p&gt;</content><author><name>kagesenshi</name></author><category term="howto" /><category term="featured" /><category term="fedora" /><category term="raspberry pi" /><summary type="html">Fedora ARM provides a full fledged Linux distro with rich ecosystem of server packages available for the ARM ecosystem.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://blog.kagesenshi.org/assets/images/2021/ili9486-rpi.jpg" /><media:content medium="image" url="https://blog.kagesenshi.org/assets/images/2021/ili9486-rpi.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Migrated to Github Pages</title><link href="https://blog.kagesenshi.org/2021/02/migrate-to-github.html" rel="alternate" type="text/html" title="Migrated to Github Pages" /><published>2021-02-13T19:39:00+08:00</published><updated>2021-02-13T19:39:00+08:00</updated><id>https://blog.kagesenshi.org/2021/02/migrate-to-github</id><content type="html" xml:base="https://blog.kagesenshi.org/2021/02/migrate-to-github.html">&lt;p&gt;This blog, originally created circa 2005, was originally hosted 
 on top of &lt;a href=&quot;http://blogger.com&quot;&gt;Google’s Blogger&lt;/a&gt;. At the time, Blogger
 was a decent free platform, which works fine for my needs. This blog was
 originally created as a platform for me to share my thoughts, which,
@@ -180,6 +362,4 @@ to write again.&lt;/p&gt;</content><author><name>kagesenshi</name></author><cate
 &lt;br/&gt;
 - Izhar Firdaus -&lt;/div&gt;</content><author><name>kagesenshi</name></author><category term="old blog" /><category term="psychology" /><category term="geek log" /><summary type="html">So .... I think by now plenty of people have known that I left Inigo Consulting a few months ago. Those who are wondering why, the reasons was primarily due to personal mental health reasons, which I identified the core source was that I pushed myself a bit too far, investing time and emotion on a business model that is not going to work out for my long term personal goals.I realized things are not going to the right direction for about a year plus, but my philosophy of persistence kept me pushing it - possibly beyond my limits and nearing total mental breakdown. This led to generalized anxiety disorder, which destabilized myself, and led to other problems that cause plenty of things around me to collapse and destroyed, affected me emotionally (which, again, I did not realize my limits, due to I have a bit of alexithymia - inability to accurately identify and express complex emotions besides basic happy/sad) made me push myself into a mild form of emotional posttraumatic stress disorder which kept popping up until today if I forgot to take my pills before sleep. Kind-of silly really, it was not a big problem if viewed in a logical perspective, though probably I was already at the verge of mental breakdown before it happened, so the effect was amplified.Took me 3 months struggling with GAD/PTSD aftermath where I was really dysfunctional , before I finally decide to seek professional help, and now on Alprazolam / Xanax therapy to help balance out the calming chemical in my brian, and recalibrate it to be able to handle stress and anxiety again. Some people might want me to stop taking this, but for me, I think I'm well informed enough on the purpose of the drug to take it properly for the therapy. My doctor himself had anxiety disorder before, and he is quite helpful in providing instructions and information on how I should self-tune the dosages, to reboot the brain to be able to handle high stress like how it used to.Decided to make a drastic changes in my life, started with getting rid the core anxiety source, so I quit Inigo, revamping a lot of things, and in the process of selling my shares in Inigo to get back my previous time investments, anf to fend off and get rid of any financial related commitments while I figure out whats new to do. I would probably be better off as an independent dev, however, I lack the understanding of full business process and sales cycle flow due to being shielded from clients, and stuck with a single technology during in Inigo, I have to start from scratch on this one and pick up the skills elsewhere first. Been on Alprazolam for more than 2 months now, at about 1mg-2mg dosage per day, and its been really helpful in keeping myself functional. I would probably be on this for the next few months to a year before I can slowly cut down on the dosages. I'm currently in heavy research mode on Hadoop/BigData ecosystem for a Proof of Concept implementation for Abyres Sdn Bhd. Not sure about joining them full time yet, as I'm currently joining as an intern. Waiting for paperworks to be out first before giving my final decision. Nonetheless, I learned quite a bit of business process, client management processes, leveraging partner skills and their version of tech company business model, simply by observing the clients, the team, and the management. The most interesting lesson I learned so far was from Jeff of Hortonworks, where he helped me understand the separation of development, product, services and sales and how these 4 components can be separated into several companies, and how they function and interact with each other in a FOSS-based business ecosystem.&amp;nbsp; These knowledge are really useful if I were to decide to run my own company again in the future, or perhaps a return to Inigo. I will be blogging about them more in the future, after I get this Tech Discovery POC fully running and I will share what I have learned and discovered.P/S: I particularly like the reduced fear/reduced inhibition effects xanax have. Somehow I feel like I'm back to my university days, where I'm willing to take the risk of doing something big , cool, and which others are skeptical and afraid to try. For example, dealing with large corporations for a big project. Really helpful in making me take that first few steps of the stuff I really want to do.To those still in Inigo, all the best. I might come back in future, either joining it back, or to create a separate branch of it, but things will be run in a totally different way than the model we used these past 5 years. Though that will all depends on how things are progressing, and what I will be learning and discovering throughout the months/years to come. - Izhar Firdaus -</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://blog.kagesenshi.org/assets/images/og_default.jpg" /><media:content medium="image" url="https://blog.kagesenshi.org/assets/images/og_default.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Reboot!!!!!!!!!!</title><link href="https://blog.kagesenshi.org/2014/02/reboot.html" rel="alternate" type="text/html" title="Reboot!!!!!!!!!!" /><published>2014-02-21T02:22:00+08:00</published><updated>2014-02-21T02:22:00+08:00</updated><id>https://blog.kagesenshi.org/2014/02/reboot</id><content type="html" xml:base="https://blog.kagesenshi.org/2014/02/reboot.html">&lt;div dir=&quot;ltr&quot; style=&quot;text-align: left;&quot; trbidi=&quot;on&quot;&gt;So I guess I have been missing from posting things on this blog for over a year now ... Bunch of stuff happened in the past years .. theres a likelihood that I might be back ^_^ ..&amp;nbsp; &lt;/div&gt;&lt;div class=&quot;blogger-post-footer&quot;&gt;&lt;br/&gt;
 &lt;br/&gt;
-- Izhar Firdaus -&lt;/div&gt;</content><author><name>kagesenshi</name></author><category term="old blog" /><category term="geek log" /><summary type="html">So I guess I have been missing from posting things on this blog for over a year now ... Bunch of stuff happened in the past years .. theres a likelihood that I might be back ^_^ ..&amp;nbsp; - Izhar Firdaus -</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://blog.kagesenshi.org/assets/images/og_default.jpg" /><media:content medium="image" url="https://blog.kagesenshi.org/assets/images/og_default.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">New Toy: Doppelganger 211 Folding Bicycle</title><link href="https://blog.kagesenshi.org/2013/01/new-toy-doppelganger-211-folding-bicycle.html" rel="alternate" type="text/html" title="New Toy: Doppelganger 211 Folding Bicycle" /><published>2013-01-07T20:59:00+08:00</published><updated>2013-01-07T20:59:00+08:00</updated><id>https://blog.kagesenshi.org/2013/01/new-toy-doppelganger-211-folding-bicycle</id><content type="html" xml:base="https://blog.kagesenshi.org/2013/01/new-toy-doppelganger-211-folding-bicycle.html">&lt;div dir=&quot;ltr&quot; style=&quot;text-align: left;&quot; trbidi=&quot;on&quot;&gt;&lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;&lt;a href=&quot;http://4.bp.blogspot.com/-o3UoMhr8O1I/UOq3B0b__RI/AAAAAAAABfM/8Fq9xmP5KuI/s1600/dp211-1.jpg&quot; imageanchor=&quot;1&quot; style=&quot;margin-left: 1em; margin-right: 1em;&quot;&gt;&lt;img border=&quot;0&quot; height=&quot;266&quot; src=&quot;http://4.bp.blogspot.com/-o3UoMhr8O1I/UOq3B0b__RI/AAAAAAAABfM/8Fq9xmP5KuI/s400/dp211-1.jpg&quot; width=&quot;400&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;br /&gt;So I just got myself a new toy : a &lt;a href=&quot;http://www.doppelganger.jp/en/product/211/&quot;&gt;Doppelganger 211&lt;/a&gt; Folding Bicycle. I've been wanting to grab a folding bike ever since I got back from &lt;a href=&quot;http://conference.hitb.org/&quot;&gt;HackInTheBox Amsterdam&lt;/a&gt; a few years ago, but due to random stuff happening regularly, I've been delaying on the plan. This is my first personal bicycle since about 10 years ago, where previously during primary school and lower secondary school, bicycle was my primary vehicle.&lt;br /&gt;&lt;br /&gt;&lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;&lt;a href=&quot;http://3.bp.blogspot.com/-uAvg_aDWQ2M/UOrE0-7eYgI/AAAAAAAABfc/HAdnmUEAEj4/s1600/dp211-2.jpg&quot; imageanchor=&quot;1&quot; style=&quot;margin-left: 1em; margin-right: 1em;&quot;&gt;&lt;img border=&quot;0&quot; height=&quot;192&quot; src=&quot;http://3.bp.blogspot.com/-uAvg_aDWQ2M/UOrE0-7eYgI/AAAAAAAABfc/HAdnmUEAEj4/s320/dp211-2.jpg&quot; width=&quot;320&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;br /&gt;&lt;br /&gt;&lt;b&gt;Why?&lt;/b&gt;&lt;br /&gt;&lt;br /&gt;Why am I buying a folding bike?. Especially when I already have a car?. No solid reason, but there are several reasons which made it a nice-to-have:&lt;br /&gt;&lt;ul style=&quot;text-align: left;&quot;&gt;&lt;li&gt;I don't like driving for short distance, but walking consumes too much time. A bicycle is a nice middle point. &lt;/li&gt;&lt;li&gt;I regularly switch between staying at office and home for a few days, so if I have a bicycle, I want it to not be confined in either of the 2 places, thus, the bicycle need to be able to be transportable in my car - therefore, it should be a folding bike.&lt;/li&gt;&lt;li&gt;Sometimes when I need to travel, I keep finding myself wishing there's a bicycle with me so that I can cover more ground in short amount of time. Most of the time, when I'm travelling , it is for conferences, of which I don't have much free time, so being able to cover more ground quickly would put the free time to good use.&lt;/li&gt;&lt;li&gt;When on random trip to local places, it's also nice to be able to park somewhere and explore the local vicinity on bicycle.&lt;/li&gt;&lt;li&gt;I've been without a bicycle for 10years now, and I want a new bike!.&amp;nbsp; &lt;/li&gt;&lt;/ul&gt;&lt;b&gt;Why a Doppelganger?&lt;/b&gt; &lt;br /&gt;&lt;br /&gt;The reason I picked the brand is quite straightforward - it is not too expensive, have a decent spec, and not to forget, the design is a beauty. I bought mine for less than MYR1.5k from the people at &lt;a href=&quot;http://www.esybike.com/&quot;&gt;EsyBike&lt;/a&gt;. The 20&quot; wheeled bicycle is equipped with 7-speed Shimano gears, front disc brake, and detachable LED torchlight. &lt;br /&gt;&lt;br /&gt;&lt;b&gt;Review&lt;/b&gt;&lt;br /&gt;&lt;br /&gt;As I mentioned earlier, I have been without a bicycle for 10 years now, so some part of this review is mainly based on comparing with the stuff I had from back then.&lt;br /&gt;&lt;ul style=&quot;text-align: left;&quot;&gt;&lt;li&gt;Design - For a folding bike at this price, this machine is a real beauty. When I was considering to buy a folding bike, I researched on various brands of folding bicycle. A lot of the bike designs goes somewhere along the line that it might look as if a panda riding a tiny bicycle when being ridden. There are a number of nice designs from ORiBike, Hummer and Montague, however, their prices are way beyond my budget.&amp;nbsp;&lt;/li&gt;&lt;li&gt;Rigidity and stability - The bike feels very solid and stable, giving a good confidence when riding it.&lt;/li&gt;&lt;li&gt;Portability - The portability is decent enough, but not great. The bike barely fit into my car trunk (then again I have a &lt;a href=&quot;https://www.google.com.my/search?q=satria%20neo%20cps&amp;amp;tbm=isch&quot;&gt;very small car&lt;/a&gt;) and I had to remove the pedals before it can fit in, horizontally. The bike folds to a small form, good for stowing, but a bit difficult to carry due to the parts doesn't lock together. I somewhat figured out how to roll the bike while it is folded, making it easier to walk it on a short distance, with a limitation that I can only push it in only a single direction as the other direction will cause the pedal to hit the front wheel. The stock pedal is also not foldable. I'm thinking of buying a foldable pedal and a carry bag and hopefully they'll aid in the portability of this bike.&lt;/li&gt;&lt;li&gt;Performance - The 7 speed Shimano works quite well in aiding me climbing hilly roads. The disc brake is awesome, and that is quite important to me as I tend to be a fast cyclist. 12kg weight is light enough for me to pick up the bike onto pavements paths or small obstacles. However, probably due to I was primarily using 26&quot; wheels during my childhood, getting used to 20&quot; wheels takes a bit. 20 inchers have more sensitive steering, and more bumpy ride, so it takes a bit of effort to control and being comfortable on Malaysian roads.&amp;nbsp;&lt;/li&gt;&lt;/ul&gt;In summary,&amp;nbsp; the bike have a decent performance and great design, however, it need a bit of effort to bring around when folded. But for the price, it is still pretty impressive. I hope this machine will serve me well for the days to come.&lt;/div&gt;&lt;div class=&quot;blogger-post-footer&quot;&gt;&lt;br/&gt;
-&lt;br/&gt;
-- Izhar Firdaus -&lt;/div&gt;</content><author><name>kagesenshi</name></author><category term="old blog" /><category term="reviews" /><category term="geek log" /><category term="bicycle" /><category term="doppelganger" /><summary type="html">So I just got myself a new toy : a Doppelganger 211 Folding Bicycle. I've been wanting to grab a folding bike ever since I got back from HackInTheBox Amsterdam a few years ago, but due to random stuff happening regularly, I've been delaying on the plan. This is my first personal bicycle since about 10 years ago, where previously during primary school and lower secondary school, bicycle was my primary vehicle.Why?Why am I buying a folding bike?. Especially when I already have a car?. No solid reason, but there are several reasons which made it a nice-to-have:I don't like driving for short distance, but walking consumes too much time. A bicycle is a nice middle point. I regularly switch between staying at office and home for a few days, so if I have a bicycle, I want it to not be confined in either of the 2 places, thus, the bicycle need to be able to be transportable in my car - therefore, it should be a folding bike.Sometimes when I need to travel, I keep finding myself wishing there's a bicycle with me so that I can cover more ground in short amount of time. Most of the time, when I'm travelling , it is for conferences, of which I don't have much free time, so being able to cover more ground quickly would put the free time to good use.When on random trip to local places, it's also nice to be able to park somewhere and explore the local vicinity on bicycle.I've been without a bicycle for 10years now, and I want a new bike!.&amp;nbsp; Why a Doppelganger? The reason I picked the brand is quite straightforward - it is not too expensive, have a decent spec, and not to forget, the design is a beauty. I bought mine for less than MYR1.5k from the people at EsyBike. The 20&quot; wheeled bicycle is equipped with 7-speed Shimano gears, front disc brake, and detachable LED torchlight. ReviewAs I mentioned earlier, I have been without a bicycle for 10 years now, so some part of this review is mainly based on comparing with the stuff I had from back then.Design - For a folding bike at this price, this machine is a real beauty. When I was considering to buy a folding bike, I researched on various brands of folding bicycle. A lot of the bike designs goes somewhere along the line that it might look as if a panda riding a tiny bicycle when being ridden. There are a number of nice designs from ORiBike, Hummer and Montague, however, their prices are way beyond my budget.&amp;nbsp;Rigidity and stability - The bike feels very solid and stable, giving a good confidence when riding it.Portability - The portability is decent enough, but not great. The bike barely fit into my car trunk (then again I have a very small car) and I had to remove the pedals before it can fit in, horizontally. The bike folds to a small form, good for stowing, but a bit difficult to carry due to the parts doesn't lock together. I somewhat figured out how to roll the bike while it is folded, making it easier to walk it on a short distance, with a limitation that I can only push it in only a single direction as the other direction will cause the pedal to hit the front wheel. The stock pedal is also not foldable. I'm thinking of buying a foldable pedal and a carry bag and hopefully they'll aid in the portability of this bike.Performance - The 7 speed Shimano works quite well in aiding me climbing hilly roads. The disc brake is awesome, and that is quite important to me as I tend to be a fast cyclist. 12kg weight is light enough for me to pick up the bike onto pavements paths or small obstacles. However, probably due to I was primarily using 26&quot; wheels during my childhood, getting used to 20&quot; wheels takes a bit. 20 inchers have more sensitive steering, and more bumpy ride, so it takes a bit of effort to control and being comfortable on Malaysian roads.&amp;nbsp;In summary,&amp;nbsp; the bike have a decent performance and great design, however, it need a bit of effort to bring around when folded. But for the price, it is still pretty impressive. I hope this machine will serve me well for the days to come. - Izhar Firdaus -</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://blog.kagesenshi.org/assets/images/og_default.jpg" /><media:content medium="image" url="https://blog.kagesenshi.org/assets/images/og_default.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+- Izhar Firdaus -&lt;/div&gt;</content><author><name>kagesenshi</name></author><category term="old blog" /><category term="geek log" /><summary type="html">So I guess I have been missing from posting things on this blog for over a year now ... Bunch of stuff happened in the past years .. theres a likelihood that I might be back ^_^ ..&amp;nbsp; - Izhar Firdaus -</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://blog.kagesenshi.org/assets/images/og_default.jpg" /><media:content medium="image" url="https://blog.kagesenshi.org/assets/images/og_default.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
