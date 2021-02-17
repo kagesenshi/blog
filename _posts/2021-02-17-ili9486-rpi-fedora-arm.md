@@ -209,5 +209,8 @@ You can also, configure the LCD device as the default kernel console output
 adding `fbcon=map:10 fbcon=font:ProFont6x11` to the kernel boot option in 
 `/boot/efi/cmdline.txt`, and reboot the device.
 
+I have yet to try getting X GUI running on this, but I will definitely share
+once I got time to try and figure it out. 
+
 Hope this guide would be helpful to those who own such LCD and do share if 
 you found this guide useful.
