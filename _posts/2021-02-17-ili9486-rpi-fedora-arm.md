@@ -111,7 +111,6 @@ steps.
 ```bash
 # mount
 mkdir /tmp/disk
-mount /dev/mmcblk0
 mount /dev/mmcblk0p2 /tmp/disk/
 
 # add ssh key
