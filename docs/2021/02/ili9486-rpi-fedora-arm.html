@@ -310,24 +310,24 @@ Information: You may need to update /etc/fstab.
 for remote network access, which can be added using the following 
 steps.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># mount
-mkdir /tmp/disk
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># mount</span>
+<span class="nb">mkdir</span> /tmp/disk
 mount /dev/mmcblk0
 mount /dev/mmcblk0p2 /tmp/disk/
 
-# add ssh key
-mkdir /tmp/disk/root/root/.ssh/
-cat /path/to/ssh/public/key &gt; /tmp/disk/root/root/.ssh/authorized_keys
-chmod og-rwx -R /tmp/disk/root/root/.ssh/
+<span class="c"># add ssh key</span>
+<span class="nb">mkdir</span> /tmp/disk/root/root/.ssh/
+<span class="nb">cat</span> /path/to/ssh/public/key <span class="o">&gt;</span> /tmp/disk/root/root/.ssh/authorized_keys
+<span class="nb">chmod </span>og-rwx <span class="nt">-R</span> /tmp/disk/root/root/.ssh/
 
-# remote root password 
-sed -i 's/root:x:/root::/' /tmp/disk/root/etc/passwd
+<span class="c"># remote root password </span>
+<span class="nb">sed</span> <span class="nt">-i</span> <span class="s1">'s/root:x:/root::/'</span> /tmp/disk/root/etc/passwd
 
 </code></pre></div></div>
 
 <p>Static network IP can be configured using</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat &gt; /tmp/disk/root/etc/sysconfig/network-scripts/ifcfg-eth0 &lt;&lt; EOF
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> <span class="o">&gt;</span> /tmp/disk/root/etc/sysconfig/network-scripts/ifcfg-eth0 <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
 TYPE=Ethernet
 PROXY_METHOD=none
 BROWSER_ONLY=no
@@ -346,8 +346,8 @@ ONBOOT=yes
 IPADDR=10.42.0.210
 PREFIX=24
 GATEWAY=10.42.0.1
-EOF
-</code></pre></div></div>
+</span><span class="no">EOF
+</span></code></pre></div></div>
 
 <p>Finally, unmount the sdcard.</p>
 
@@ -367,8 +367,8 @@ the following steps.</p>
 
 <p>SSH into the Rpi</p>
 
-<pre><code class="language-bsh">ssh 10.42.0.210 -l root
-</code></pre>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh 10.42.0.210 <span class="nt">-l</span> root
+</code></pre></div></div>
 
 <p>In <code class="language-plaintext highlighter-rouge">/boot/config.txt</code>, you will need to add the following lines
 before <code class="language-plaintext highlighter-rouge">[pi4]</code> section of the config (implicit <code class="language-plaintext highlighter-rouge">[all]</code> section).</p>

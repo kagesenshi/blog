@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.kagesenshi.org/feed/by_tag/fedora.xml" rel="self" type="application/atom+xml" /><link href="https://blog.kagesenshi.org/" rel="alternate" type="text/html" /><updated>2021-02-17T14:30:01+08:00</updated><id>https://blog.kagesenshi.org/feed/by_tag/fedora.xml</id><title type="html">KageSenshi’s Log</title><subtitle>Whatever it is, it might just be me</subtitle><entry><title type="html">Howto get ILI9486 Raspberry Pi 3.5” LCD to work with Fedora ARM</title><link href="https://blog.kagesenshi.org/2021/02/ili9486-rpi-fedora-arm.html" rel="alternate" type="text/html" title="Howto get ILI9486 Raspberry Pi 3.5” LCD to work with Fedora ARM" /><published>2021-02-17T14:29:00+08:00</published><updated>2021-02-17T14:29:00+08:00</updated><id>https://blog.kagesenshi.org/2021/02/ili9486-rpi-fedora-arm</id><content type="html" xml:base="https://blog.kagesenshi.org/2021/02/ili9486-rpi-fedora-arm.html">&lt;p&gt;&lt;a href=&quot;https://arm.fedoraproject.org/&quot;&gt;Fedora ARM&lt;/a&gt; provides a full fledged Linux distro 
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.kagesenshi.org/feed/by_tag/fedora.xml" rel="self" type="application/atom+xml" /><link href="https://blog.kagesenshi.org/" rel="alternate" type="text/html" /><updated>2021-02-17T14:32:47+08:00</updated><id>https://blog.kagesenshi.org/feed/by_tag/fedora.xml</id><title type="html">KageSenshi’s Log</title><subtitle>Whatever it is, it might just be me</subtitle><entry><title type="html">Howto get ILI9486 Raspberry Pi 3.5” LCD to work with Fedora ARM</title><link href="https://blog.kagesenshi.org/2021/02/ili9486-rpi-fedora-arm.html" rel="alternate" type="text/html" title="Howto get ILI9486 Raspberry Pi 3.5” LCD to work with Fedora ARM" /><published>2021-02-17T14:29:00+08:00</published><updated>2021-02-17T14:29:00+08:00</updated><id>https://blog.kagesenshi.org/2021/02/ili9486-rpi-fedora-arm</id><content type="html" xml:base="https://blog.kagesenshi.org/2021/02/ili9486-rpi-fedora-arm.html">&lt;p&gt;&lt;a href=&quot;https://arm.fedoraproject.org/&quot;&gt;Fedora ARM&lt;/a&gt; provides a full fledged Linux distro 
 with rich ecosystem of server packages available for the ARM ecosystem.&lt;/p&gt;
 
 &lt;p&gt;However, ever since Fedora released an official ARM spin, specialized Fedora
@@ -85,24 +85,24 @@ Information: You may need to update /etc/fstab.
 for remote network access, which can be added using the following 
 steps.&lt;/p&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# mount
-mkdir /tmp/disk
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# mount&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; /tmp/disk
 mount /dev/mmcblk0
 mount /dev/mmcblk0p2 /tmp/disk/
 
-# add ssh key
-mkdir /tmp/disk/root/root/.ssh/
-cat /path/to/ssh/public/key &amp;gt; /tmp/disk/root/root/.ssh/authorized_keys
-chmod og-rwx -R /tmp/disk/root/root/.ssh/
+&lt;span class=&quot;c&quot;&gt;# add ssh key&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; /tmp/disk/root/root/.ssh/
+&lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; /path/to/ssh/public/key &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; /tmp/disk/root/root/.ssh/authorized_keys
+&lt;span class=&quot;nb&quot;&gt;chmod &lt;/span&gt;og-rwx &lt;span class=&quot;nt&quot;&gt;-R&lt;/span&gt; /tmp/disk/root/root/.ssh/
 
-# remote root password 
-sed -i 's/root:x:/root::/' /tmp/disk/root/etc/passwd
+&lt;span class=&quot;c&quot;&gt;# remote root password &lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;sed&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'s/root:x:/root::/'&lt;/span&gt; /tmp/disk/root/etc/passwd
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Static network IP can be configured using&lt;/p&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cat &amp;gt; /tmp/disk/root/etc/sysconfig/network-scripts/ifcfg-eth0 &amp;lt;&amp;lt; EOF
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; /tmp/disk/root/etc/sysconfig/network-scripts/ifcfg-eth0 &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;EOF&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;
 TYPE=Ethernet
 PROXY_METHOD=none
 BROWSER_ONLY=no
@@ -121,8 +121,8 @@ ONBOOT=yes
 IPADDR=10.42.0.210
 PREFIX=24
 GATEWAY=10.42.0.1
-EOF
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;EOF
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Finally, unmount the sdcard.&lt;/p&gt;
 
@@ -142,8 +142,8 @@ the following steps.&lt;/p&gt;
 
 &lt;p&gt;SSH into the Rpi&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-bsh&quot;&gt;ssh 10.42.0.210 -l root
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ssh 10.42.0.210 &lt;span class=&quot;nt&quot;&gt;-l&lt;/span&gt; root
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;In &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/boot/config.txt&lt;/code&gt;, you will need to add the following lines
 before &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[pi4]&lt;/code&gt; section of the config (implicit &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[all]&lt;/code&gt; section).&lt;/p&gt;

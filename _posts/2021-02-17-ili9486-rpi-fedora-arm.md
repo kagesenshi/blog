@@ -108,7 +108,7 @@ The btrfs partition can now be mounted for adding your SSH key,
 for remote network access, which can be added using the following 
 steps.
 
-```
+```bash
 # mount
 mkdir /tmp/disk
 mount /dev/mmcblk0
@@ -126,7 +126,7 @@ sed -i 's/root:x:/root::/' /tmp/disk/root/etc/passwd
 
 Static network IP can be configured using 
 
-```
+```bash
 cat > /tmp/disk/root/etc/sysconfig/network-scripts/ifcfg-eth0 << EOF
 TYPE=Ethernet
 PROXY_METHOD=none
@@ -169,7 +169,7 @@ the following steps.
 
 SSH into the Rpi
 
-```bsh
+```bash
 ssh 10.42.0.210 -l root
 ```
 
