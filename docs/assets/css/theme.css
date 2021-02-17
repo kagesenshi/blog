@@ -825,10 +825,10 @@ div.a2a_full_footer {display:none;}
 
 @media (max-width:767.98px) {
     .h2 {
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
     article {
-        font-size:15px;
+        font-size:17px;
     }
 }
 
