@@ -821,3 +821,14 @@ div.a2a_full_footer {display:none;}
 .cardimage {
       background-position: center;
 }
+
+
+@media (max-width:767.98px) {
+    .h2 {
+        font-size: 1rem;
+    }
+    article {
+        font-size:15px;
+    }
+}
+
