@@ -8,7 +8,7 @@ tags:
 - featured
 - fedora
 - raspberry pi
-title: 'Howto get ILI9486 Raspberry Pi 3.5" LCD to work with Fedora ARM '
+title: 'How to get ILI9486 Raspberry Pi 3.5" LCD to work with Fedora ARM '
 
 ---
 [Fedora ARM](https://arm.fedoraproject.org/) provides a full fledged Linux distro 
