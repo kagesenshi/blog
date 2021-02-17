@@ -82,22 +82,6 @@ layout: default
             {{ content }}                
          </article>
 				
-<div class="post-nextprev">
-    <div class="container">
-        <div class="row prevnextlinks small font-weight-bold">
-          {% if page.previous.url %}
-            <div class="col-md-6 rightborder pl-0">
-                <a class="text-dark" href="{{ site.baseurl }}{{ page.previous.url }}">&laquo; {% if page.previous.image %} <img height="30px" class="mr-1" src="{% if page.previous.image contains "://" %}{{ page.previous.image }}{% else %}{{ site.baseurl }}/{{ page.previous.image }}{% endif %}"> {% endif %} {{page.previous.title}}</a>
-            </div>
-          {% endif %}
-          {% if page.next.url %}
-            <div class="col-md-6 text-right pr-0">
-                <a class="text-dark" href="{{ site.baseurl }}{{ page.next.url }}"> {{page.next.title}} {% if page.next.image %} <img height="30px" class="ml-1" src="{% if page.next.image contains "://" %}{{ page.next.image }}{% else %}{{ site.baseurl }}/{{ page.next.image }}{% endif %}"> {% endif %} &raquo;</a>
-            </div>
-          {% endif %}
-        </div>
-    </div>
-</div>
 
 			<!-- Tags -->
 			<div class="mb-4">
@@ -170,21 +154,24 @@ layout: default
 
           {% include google-ad.html %}
 
-          <div class="row">
-             <div class="col-md-6">
-                {% assign post = page.next %}
-                {% if post %}
-                <p class="text-uppercase font-weight-bold">
-                <a class="sscroll text-danger" href="{{ post.url}}">&laquo; Next Post </a></p>
-                {% include loop-card.html %}
-                {% endif %}
-             </div>
+          <div class="row mt-3">
              <div class="col-md-6">
                 {% assign post = page.previous %}
                 {% if post %}
-                <p class="text-uppercase font-weight-bold text-right">
-                <a class="sscroll text-danger"  href="{{ post.url}}">Previous Post &raquo;</a></p>
+
                 {% include loop-card.html %}
+                <p class="text-uppercase font-weight-bold">
+                <a class="sscroll text-danger"  href="{{ post.url}}">&laquo; Previous Post</a></p>
+                {% endif %}
+             </div>
+             <div class="col-md-6">
+                {% assign post = page.next %}
+                {% if post %}
+
+
+                {% include loop-card.html %}
+                <p class="text-uppercase font-weight-bold text-right">
+                <a class="sscroll text-danger" href="{{ post.url}}">Next Post &raquo;</a></p>
                 {% endif %}
              </div>
           </div>
