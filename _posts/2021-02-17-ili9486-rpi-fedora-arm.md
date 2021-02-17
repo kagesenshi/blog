@@ -164,7 +164,7 @@ Setting up LCD framebuffer device
 To setup the LCD device, you will need to install additional device tree overlays
 for the LCD. The [LCD-show github repository from goodtft](https://github.com/goodtft/LCD-show/) provides
 the necessary files, however, the script provided by the repo is designed to work only
-on raspbian based devices. In Fedora ARM, we'll have to do this manually with
+on raspbian based platforms. In Fedora ARM, we'll have to do this manually with
 the following steps.
 
 SSH into the Rpi
