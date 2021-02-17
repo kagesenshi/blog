@@ -1,7 +1,7 @@
 ---
 categories:
 - howto
-date: 2021-02-14 22:00 +0800
+date: 2021-02-17 14:29 +0800
 image: assets/images/2021/ili9486-rpi.jpg
 layout: post
 tags:
