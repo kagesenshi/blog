@@ -199,8 +199,8 @@ the reboot.
 You can then use this framebuffer device either to run a console, or to use 
 with your PyGame application, or to run X server. 
 
-To test the framebuffer device, you can run the following command the screen
-should be showing random black and white dots.
+To test the framebuffer device, you can run the following command, and
+the screen should be showing random black and white dots.
 
 ```bash
 cat /dev/urandom > /dev/fb1
