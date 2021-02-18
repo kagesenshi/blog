@@ -27,7 +27,7 @@ it is configured to open `x-scheme-handler` MimeType.
 To achieve this, you can simply create a `.desktop` in `~/.local/share/applications/`, or
 `/usr/local/share/applications`, and configure it with `MimeType=x-scheme-handler/<your-custom-proto>`.
 
-For example, if you have a script `dnfurl` which takes `dnf://<package-name>` as its,
+For example, if you have a script `dnfurl` which takes `dnf://<package-name>` as its
 first parameter and launch Gnome Software with the package name, you can create a `.desktop`
 file with this content:
 
