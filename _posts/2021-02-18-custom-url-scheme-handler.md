@@ -25,7 +25,8 @@ https://specifications.freedesktop.org/desktop-entry-spec/latest/), of which
 it is configured to open `x-scheme-handler` MimeType. 
 
 To achieve this, you can simply create a `.desktop` in `~/.local/share/applications/`, or
-`/usr/local/share/applications`, and configure it with `MimeType=x-scheme-handler/<your-custom-proto>`.
+`/usr/local/share/applications`, and configure it with `MimeType=x-scheme-handler/<your-custom-proto>`. If nothing went wrong with the setup, you should be able to open links
+with the custom url protocol afterwards.
 
 For example, if you have a script `dnfurl` which takes `dnf://<package-name>` as its
 first parameter and launch Gnome Software with the package name, you can create a `.desktop`
