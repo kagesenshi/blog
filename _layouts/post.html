@@ -24,7 +24,7 @@ layout: default
                            {% endif %}
                            <small class="ml-3"> 
                               {{ author.name }}
-                              <span><a target="_blank" href="{{ author.linkedin }}" class="btn btn-outline-success btn-sm btn-round ml-1">Follow</a></span>
+                              <span><a target="_blank" href="{{ author.follow }}" class="btn btn-outline-success btn-sm btn-round ml-1">Follow</a></span>
                               {% if author.donate %}
                               <a class="btn btn-sm btn-outline-success btn-round" 
                                  href="{{ author.donate }}">Support
@@ -132,8 +132,8 @@ layout: default
                         {% endif %} 
                      </div>
                      <div class="col-md-10">		
-                        <h5 class="font-weight-bold">Written by {{ author.name }} {% if author.linkedin %}<span>
-                              <a target="_blank" href="{{ author.linkedin }}" class="btn btn-outline-success btn-sm btn-round ml-2">Follow</a></span>
+                        <h5 class="font-weight-bold">Written by {{ author.name }} {% if author.follow %}<span>
+                              <a target="_blank" href="{{ author.follow }}" class="btn btn-outline-success btn-sm btn-round ml-2">Follow</a></span>
                            {% if author.donate %}
                            <a class="btn btn-sm btn-outline-success btn-round" 
                               href="{{ author.donate }}">Support
