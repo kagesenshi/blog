@@ -25,7 +25,7 @@ Installing RPMFusion Repository
 -------------------------------
 
 Packages governed in Fedora official repositories are subject to several legal and technical
-guideline. This mean, many software which are not 100% FOSS or not patent-encumbered would
+guideline. This mean, many software which are not 100% FOSS or patent-encumbered would
 not be available in the official repositories because they would open the sponsors of Fedora
 to legal liability under the laws of United States. 
 
