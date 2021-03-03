@@ -2,6 +2,7 @@
 categories:
 - howto
 date: 2021-02-17 14:29 +0800
+last_modified_at: 2021-03-03 12:16 +0800
 image: assets/images/2021/ili9486-rpi.jpg
 layout: post
 tags:
@@ -105,14 +106,15 @@ Information: You may need to update /etc/fstab.
 [root@chihaya ~]#        
 ```
 
-The btrfs partition can now be mounted for adding your SSH key,
-for remote network access, which can be added using the following 
-steps.
+The btrfs partition can now be mounted for resizing the filesystem
+and adding your SSH key for remote network access, which can be added 
+using the following steps.
 
 ```bash
 # mount
 mkdir /tmp/disk
 mount /dev/mmcblk0p2 /tmp/disk/
+btrfs filesystem resize max /tmp/disk/
 
 # add ssh key
 mkdir /tmp/disk/root/root/.ssh/

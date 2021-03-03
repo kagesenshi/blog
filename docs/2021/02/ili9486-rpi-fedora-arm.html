@@ -306,13 +306,14 @@ Information: You may need to update /etc/fstab.
 </span><span class="gp">[root@chihaya ~]#</span><span class="w">        
 </span></code></pre></div></div>
 
-<p>The btrfs partition can now be mounted for adding your SSH key,
-for remote network access, which can be added using the following 
-steps.</p>
+<p>The btrfs partition can now be mounted for resizing the filesystem
+and adding your SSH key for remote network access, which can be added 
+using the following steps.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># mount</span>
 <span class="nb">mkdir</span> /tmp/disk
 mount /dev/mmcblk0p2 /tmp/disk/
+btrfs filesystem resize max /tmp/disk/
 
 <span class="c"># add ssh key</span>
 <span class="nb">mkdir</span> /tmp/disk/root/root/.ssh/
