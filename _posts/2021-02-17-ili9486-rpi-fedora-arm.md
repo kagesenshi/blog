@@ -130,6 +130,7 @@ Static network IP can be configured using
 
 ```bash
 cat > /tmp/disk/root/etc/sysconfig/network-scripts/ifcfg-eth0 << EOF
+DEVICE=eth0
 TYPE=Ethernet
 PROXY_METHOD=none
 BROWSER_ONLY=no
