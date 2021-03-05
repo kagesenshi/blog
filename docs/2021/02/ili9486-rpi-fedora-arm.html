@@ -328,6 +328,7 @@ btrfs filesystem resize max /tmp/disk/
 <p>Static network IP can be configured using</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> <span class="o">&gt;</span> /tmp/disk/root/etc/sysconfig/network-scripts/ifcfg-eth0 <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+DEVICE=eth0
 TYPE=Ethernet
 PROXY_METHOD=none
 BROWSER_ONLY=no
