@@ -63,3 +63,20 @@ paginate: 10
 
 # Exclude metadata and development time dependencies (like Grunt plugins)
 exclude: [README.markdown, package.json, grunt.js, Gruntfile.js, Gruntfile.coffee, node_modules, vendor, scripts, .vscode, img-src]
+
+jekyll_compose:
+  default_front_matter:
+    drafts:
+        categories:
+          - blog
+        tags:
+        image:
+        layout: post
+        title:
+    posts:
+        categories:
+          - blog
+        tags:
+        image:
+        layout: post
+        title:
