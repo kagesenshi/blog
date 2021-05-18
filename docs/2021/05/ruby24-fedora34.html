@@ -23,24 +23,24 @@
 
     <!-- Begin Jekyll SEO tag v2.7.1 -->
 <meta name="generator" content="Jekyll v4.2.0" />
-<meta property="og:title" content="The best practice method to install VirtualBox on Fedora 32/33 (and later) | KageSenshi's Log" />
+<meta property="og:title" content="Switching to use Ruby 2.7 (or older) in Fedora 34 using DNF Modules | KageSenshi's Log" />
 <meta name="author" content="kagesenshi" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="In any linux distribution, there will be multiple methods to achieve a certain goal. You might have encountered many guides out there on how to install VirtualBox on Fedora, however, please take note, many of them uses intrusive methods which can be difficult to maintain in long run, and would likely to break after a kernel update." />
-<meta property="og:description" content="In any linux distribution, there will be multiple methods to achieve a certain goal. You might have encountered many guides out there on how to install VirtualBox on Fedora, however, please take note, many of them uses intrusive methods which can be difficult to maintain in long run, and would likely to break after a kernel update." />
-<link rel="canonical" href="https://blog.kagesenshi.org/2021/02/install-virtualbox-fedora.html" />
-<meta property="og:url" content="https://blog.kagesenshi.org/2021/02/install-virtualbox-fedora.html" />
+<meta name="description" content="Fedora 34 now ships with Ruby 3.0 by default, which might be great news for Ruby developers. However, for those who might still be relying on older version of Ruby to run their stuff (eg: me), and don’t want to spend time updating things to make them work with Ruby 3.0 (like this Jekyll-based blog), the switch may be undesirable." />
+<meta property="og:description" content="Fedora 34 now ships with Ruby 3.0 by default, which might be great news for Ruby developers. However, for those who might still be relying on older version of Ruby to run their stuff (eg: me), and don’t want to spend time updating things to make them work with Ruby 3.0 (like this Jekyll-based blog), the switch may be undesirable." />
+<link rel="canonical" href="https://blog.kagesenshi.org/2021/05/ruby24-fedora34.html" />
+<meta property="og:url" content="https://blog.kagesenshi.org/2021/05/ruby24-fedora34.html" />
 <meta property="og:site_name" content="KageSenshi’s Log" />
 <meta property="og:image" itemprop="image" content="https://blog.kagesenshi.org/assets/images/best-practices.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-02-22T22:55:00+08:00" />
+<meta property="article:published_time" content="2021-05-18T22:01:00+08:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="https://blog.kagesenshi.org/assets/images/best-practices.png" />
-<meta property="twitter:title" content="The best practice method to install VirtualBox on Fedora 32/33 (and later)" />
+<meta property="twitter:title" content="Switching to use Ruby 2.7 (or older) in Fedora 34 using DNF Modules" />
 <!-- End Jekyll SEO tag -->
 
 
-    <title>The best practice method to install VirtualBox on Fedora 32/33 (and later) | KageSenshi's Log</title>
+    <title>Switching to use Ruby 2.7 (or older) in Fedora 34 using DNF Modules | KageSenshi's Log</title>
 
     <link rel="shortcut icon" type="image/x-icon" href="/assets/icons/favicon.ico">
 
@@ -126,11 +126,11 @@
 					<p class="text-uppercase font-weight-bold">
                         <span class="catlist">
 						
-                          <a class="sscroll text-danger" href="/category/howto">howto</a><span class="sep">, </span>
+                          <a class="sscroll text-danger" href="/category/blog">blog</a><span class="sep">, </span>
                         
                         </span>
 					</p>
-					<h1 class="display-4 mb-4 article-headline">The best practice method to install VirtualBox on Fedora 32/33 (and later)</h1>
+					<h1 class="display-4 mb-4 article-headline">Switching to use Ruby 2.7 (or older) in Fedora 34 using DNF Modules</h1>
 					<div class="d-flex align-items-center">
                   
 
@@ -148,10 +148,10 @@
                               </a>
                               
 
-                            <span class="text-muted d-block mt-1">Feb 22, 2021 · <span class="reading-time">
+                            <span class="text-muted d-block mt-1">May 18, 2021 · <span class="reading-time">
   
   
-    2 mins read
+    1 min read
   
 </span>
     </span>
@@ -160,7 +160,7 @@
 				</div>
                 
 				<div class="col-md-6 pr-0 align-self-center">
-					<img class="rounded" src="/assets/images/best-practices.png" alt="The best practice method to install VirtualBox on Fedora 32/33 (and later)">
+					<img class="rounded" src="/assets/images/best-practices.png" alt="Switching to use Ruby 2.7 (or older) in Fedora 34 using DNF Modules">
 				</div>
                 
 			</div>
@@ -223,61 +223,30 @@
 
             <!-- Article -->
 			<article class="article-post mt-5">                
-            <p>In any linux distribution, there will be multiple methods to achieve a certain goal.
-You might have encountered many guides out there on how to install <a href="https://www.virtualbox.org/">VirtualBox</a> on Fedora, however, please take note, many of them uses intrusive methods
-which can be difficult to maintain in long run, and would likely to break after
-a kernel update.</p>
+            <p>Fedora 34 now <a href="https://fedoraproject.org/wiki/Changes/Ruby_3.0">ships with Ruby 3.0 by default</a>, 
+which might be great news for Ruby developers. However, for those who might still be relying on
+older version of Ruby to run their stuff (eg: me), and don’t want to spend time updating things
+to make them work with Ruby 3.0 (like this Jekyll-based blog), the switch may be undesirable.</p>
 
-<p>Everytime I caught a new team member following those guides, I tend to get annoyed, so
-I think I should write up the best practice method of doing this, which I have practiced
-on my Fedora installation for years now.</p>
+<p>Good news, since Fedora 28, there is a lesser known feature of Fedora (and CentOS/RHEL), called
+DNF Modules, which came out of the <a href="https://docs.pagure.org/modularity/">Fedora Modularity</a> initiative.
+DNF Modules allows you to configure your Fedora installation to track a specific version of upstream
+component (eg: Ruby27, PostgreSQL 10, etc) and would only receive updates and packages that are
+compatible with that version.</p>
 
-<h2 id="installing-rpmfusion-repository">Installing RPMFusion Repository</h2>
+<p>To switch to Ruby2.7, you can easily do it through following commands</p>
 
-<p>Packages governed in Fedora official repositories are subject to several legal and technical
-guideline. This mean, many software which are not 100% FOSS or patent-encumbered would
-not be available in the official repositories because they would open the sponsors of Fedora
-to legal liability under the laws of United States.</p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">
+</span><span class="gp">$</span><span class="w"> </span><span class="nb">sudo </span>dnf module reset ruby
+<span class="gp">$</span><span class="w"> </span><span class="nb">sudo </span>dnf module <span class="nb">install </span>ruby:2.7
+<span class="gp">$</span><span class="w"> </span><span class="nb">sudo </span>dnf <span class="nt">--allowerasing</span> distro-sync
+<span class="go">
+</span></code></pre></div></div>
 
-<p>Unfortunately, many free/open source software are patent incumbered, but while they might
-be illegal to distribute in the United States, they are perfectly legal to distribute in other
-countries.</p>
+<p>After the update, you will see that your default ruby installation is now using Ruby 2.7.</p>
 
-<p>Many of such packages are available in <a href="https://rpmfusion.org/">RPMFusion Repositories</a>. 
-Unlike many 3rd party repositories out there, RPMFusion contains the highest quality
-packages as its contributor also consist of people who package official RPMS in Fedora, and
-I generally recommend any new users of Fedora to install RPMFusion, especially if they are
-not US residents.</p>
-
-<p>To install and enable RPMFusion on Fedora, you can install the release package using following
-command which will install both the free and nonfree repositories:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>dnf <span class="nb">install </span>https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-<span class="si">$(</span>rpm <span class="nt">-E</span> %fedora<span class="si">)</span>.noarch.rpm <span class="se">\</span>
-    https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-<span class="si">$(</span>rpm <span class="nt">-E</span> %fedora<span class="si">)</span>.noarch.rpm
-</code></pre></div></div>
-
-<h2 id="installing-virtualbox">Installing VirtualBox</h2>
-
-<p>Once you have RPMFusion installed, you can then install VirtualBox from it. VirtualBox in 
-RPMFusion is very well maintained, would remain functional after kernel updates through
-an automatic kernel module builder (<code class="language-plaintext highlighter-rouge">akmods</code>), and generally carry the latest version of
-VirtualBox.</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>dnf <span class="nb">install </span>VirtualBox
-<span class="nb">sudo </span>akmods
-<span class="nb">sudo </span>modprobe vboxdrv
-</code></pre></div></div>
-
-<p>And you are done and can now launch VirtualBox from the application menu. Please
-take note however, VirtualBox does not go well together with <code class="language-plaintext highlighter-rouge">libvirtd</code>. If you have
-<code class="language-plaintext highlighter-rouge">libvirtd</code> installed, it is suggested for you to disable it using:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>systemctl stop libvirtd
-<span class="nb">sudo </span>systemctl disable libvirtd
-</code></pre></div></div>
-
-<p>Hope this guide will help you in installing VirtualBox in a less intrusive and 
-more maintainable method.</p>
+<p>For more information on DNF Modules, check out <a href="https://docs.fedoraproject.org/en-US/modularity/using-modules-switching-streams/">Switching Module Streams documentation at Fedora 
+Documentation site</a>.</p>
                 
          </article>
 				
@@ -287,14 +256,6 @@ more maintainable method.</p>
 				<span class="taglist">
 				
 				  <a class="sscroll btn btn-light btn-sm font-weight-bold" href="/tag/fedora.html">fedora</a>
-				
-				  <a class="sscroll btn btn-light btn-sm font-weight-bold" href="/tag/centos.html">centos</a>
-				
-				  <a class="sscroll btn btn-light btn-sm font-weight-bold" href="/tag/linux.html">linux</a>
-				
-				  <a class="sscroll btn btn-light btn-sm font-weight-bold" href="/tag/howto.html">howto</a>
-				
-				  <a class="sscroll btn btn-light btn-sm font-weight-bold" href="/tag/best-practices.html">best practices</a>
 				
 				</span>
          </div>
@@ -372,15 +333,15 @@ more maintainable method.</p>
                 
 
                     <div class="card border-0 mb-4 box-shadow">   
-    <a href="/2021/02/custom-url-scheme-handler.html">
-       <div class="cardimage" style="background-image: url( /assets/images/terminal-python.jpg); height: 200px;    background-size: cover;    background-repeat: no-repeat;"></div>     
+    <a href="/2021/02/install-virtualbox-fedora.html">
+       <div class="cardimage" style="background-image: url( /assets/images/best-practices.png); height: 200px;    background-size: cover;    background-repeat: no-repeat;"></div>     
     </a>
     <div class="card-body px-0 pb-0 d-flex flex-column align-items-start">
     <h2 class="h4 font-weight-bold">
-    <a class="text-dark" href="/2021/02/custom-url-scheme-handler.html">Creating XDG custom url scheme handler</a>
+    <a class="text-dark" href="/2021/02/install-virtualbox-fedora.html">The best practice method to install VirtualBox on Fedora 32/33 (and later)</a>
     </h2>
     <p class="excerpt">
-        If you develop system tools or desktop software on Linux that also have an accompanying web application, you might want to have a way...
+        In any linux distribution, there will be multiple methods to achieve a certain goal.You might have encountered many guides out there ...
     </p>
     <div>
        <small class="d-block text-muted">
@@ -393,7 +354,7 @@ more maintainable method.</p>
             
         </small>
         <small class="text-muted">
-            Feb 18, 2021
+            Feb 22, 2021
         </small>
     </div>
     </div>
@@ -401,45 +362,11 @@ more maintainable method.</p>
  
 
                 <p class="text-uppercase font-weight-bold">
-                <a class="sscroll text-danger"  href="/2021/02/custom-url-scheme-handler.html">&laquo; Previous Post</a></p>
+                <a class="sscroll text-danger"  href="/2021/02/install-virtualbox-fedora.html">&laquo; Previous Post</a></p>
                 
              </div>
              <div class="col-md-6">
                 
-                
-
-
-                    <div class="card border-0 mb-4 box-shadow">   
-    <a href="/2021/05/ruby24-fedora34.html">
-       <div class="cardimage" style="background-image: url( /assets/images/best-practices.png); height: 200px;    background-size: cover;    background-repeat: no-repeat;"></div>     
-    </a>
-    <div class="card-body px-0 pb-0 d-flex flex-column align-items-start">
-    <h2 class="h4 font-weight-bold">
-    <a class="text-dark" href="/2021/05/ruby24-fedora34.html">Switching to use Ruby 2.7 (or older) in Fedora 34 using DNF Modules</a>
-    </h2>
-    <p class="excerpt">
-        Fedora 34 now ships with Ruby 3.0 by default, which might be great news for Ruby developers. However, for those who might still be re...
-    </p>
-    <div>
-       <small class="d-block text-muted">
-          
-            In <span class="catlist">
-                
-                <a class="sscroll badge badge-light text-capitalize smoothscroll" href="/category/blog.html">blog</a><span class="sep">, </span>
-                
-             </span>                  
-            
-        </small>
-        <small class="text-muted">
-            May 18, 2021
-        </small>
-    </div>
-    </div>
-    </div>
- 
-
-                <p class="text-uppercase font-weight-bold text-right">
-                <a class="sscroll text-danger" href="/2021/05/ruby24-fedora34.html">Next Post &raquo;</a></p>
                 
              </div>
           </div>
@@ -466,13 +393,9 @@ more maintainable method.</p>
         <div class="row prevnextlinks small font-weight-bold">
           
             <div class="col-md-6 rightborder pl-0">
-                <a class="text-dark" href="/2021/02/custom-url-scheme-handler.html"> <img height="30px" class="mr-1" src="/assets/images/terminal-python.jpg">  Creating XDG custom url scheme handler</a>
+                <a class="text-dark" href="/2021/02/install-virtualbox-fedora.html"> <img height="30px" class="mr-1" src="/assets/images/best-practices.png">  The best practice method to install VirtualBox on Fedora 32/33 (and later)</a>
             </div>
           
-          
-            <div class="col-md-6 text-right pr-0">
-                <a class="text-dark" href="/2021/05/ruby24-fedora34.html"> Switching to use Ruby 2.7 (or older) in Fedora 34 using DNF Modules  <img height="30px" class="ml-1" src="/assets/images/best-practices.png"> </a>
-            </div>
           
         </div>
     </div>
