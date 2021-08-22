@@ -34,7 +34,7 @@ Installing Fedora ARM with downstream Raspbian Kernel
 -------------------------------------------------------
 
 To start, you will need to use [dwrobel's spin of Fedora ARM image](
-https://bintray.com/dwrobel/fda-images/server/aarch64-f33-20201230#files)
+https://rpmfusion.org/Howto/RaspberryPi#Pre-built_images)
 instead of the main official image. This image basically replaced the default Fedora
 kernel which is from upstream Linux.org kernel, to a [kernel provided by Raspberry Pi Foundation](
 https://github.com/raspberrypi/linux). It is important for you to use this kernel to 
