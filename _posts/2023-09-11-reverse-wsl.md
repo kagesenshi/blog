@@ -17,17 +17,23 @@ date: 2023-09-11 00:01 +0800
 
 Linux today have matured to the point where majority of activities commonly done by computer users can be achieved easily, especially considering most people are primarily using the computer to access internet applications. Even when it comes to gaming, thanks to Steam's effort in Proton and Steam Deck, Linux is now a pretty viable platform for those who who are not playing competitive games. 
 
-People I know have experimented with making purely non-technical people to use Linux without them knowing, with good success rate, while I myself have experimented with forcing my department staff to use Linux as their primary operating system with good success, to the point of the staff noticed that Windows is a pretty difficult platform to work with for modern day developers. 
+People I know also have experimented with making purely non-technical people to use Linux without them knowing, with good success rate, while I myself have experimented with forcing my department staff to use Linux as their primary operating system with good success, to the point of the staff noticed that Windows is a pretty difficult platform to work with for modern day developers. 
 
 Libreoffice also is fully capable to do all common office tasks without issues, and with some training to leverage the features available in Libreoffice, the team also discovered how frustrating it can be when working with Microsoft Office especially when trying to structurally automate formatting. A simple tool you know how to use well is a magnitude better than a fancy tool that you only know how to use its basic feature. Libreoffice also opens Microsoft Office documents well with minimal issues, except for the usual missing fonts messing with documents a bit, which easily fixed by installing the fonts.
 
-However, in Malaysia, Microsoft Office dominance can be an annoying problem when working with clients that primarily uses Microsoft's stack and refuses to accept or work with PDF. Microsoft Office also almost always open ODF poorly with regular corruption, while DOCX files saved by Libreoffice seems to almost always opened poorly by Microsoft Office.
+However, Microsoft Office dominance can be an annoying problem when working with clients that primarily uses Microsoft's stack and refuses to accept or work with PDF. Microsoft Office also almost always open ODF poorly with regular corruption, while DOCX files saved by Libreoffice seems to almost always opened poorly by Microsoft Office.
+
+Wine, while becoming a great platform to run games thanks to Proton initiative, is still quite flaky to run Office due to less investment is put on the matter.
 
 ### Windows Subsystem For Linux (WSL)
 
-The frustration regularly faced by developers when working on Windows, and the dominance of Open Source in software development ecosystem to a degree threathened Windows, where developers preferring MacOS for their preferred desktop. In response to that , for a few years now, Windows introduced the ability to run Linux commandline seamlessly on Windows through their WSL feature which essentially runs a Linux VM on top of Windows, with seamless filesystem integration to allow access of files in the host by the guest VM. This to a degree allows developers to have access to their Linux tooling on Windows, alongside access to Microsoft Office. 
+The frustration regularly faced by developers when working on Windows, and the dominance of Open Source in software development ecosystem to a degree threathened Windows, where developers preferring MacOS for their preferred desktop. 
 
-### Reverse WSL With QEMU, Libvirt & VirtIO
+In response to that , for a few years now, Windows introduced the ability to run Linux commandline seamlessly on Windows through their WSL feature which essentially runs a Linux VM on top of Windows, with seamless filesystem integration to allow access of files in the host by the guest VM. This to a degree allows developers to have access to their Linux tooling on Windows, alongside access to Microsoft Office. 
+
+WSL also shows that, with some clever virtualization tricks to integrate the host and guest, the experience of using VM can be pretty seamless to the user if done well.
+
+### Reverse WSL With QEMU, Libvirt, VirtIO & RDP
 
 For those who primarily use Linux as their daily driver and dealing with clients who are locked into Microsoft ecosystem (even rejecting Google Docs), the lack of Microsoft Office on Linux sometimes forces people to switch to Windows in order to get work done, which usually means a troublesome dual computer operation. 
 
@@ -91,7 +97,7 @@ At the customization page, you will need to configure the following:
 
    ![5cb8577f26f7d63169a2988eb556c867.png](/assets/images/reverse-wsl//0a46dcf7d8e14dd99a7d85be5033cd2f.png)
 
-   Disable 3D accelleration for now. You can enable it later after drivers are loaded and RDP is operational.
+   Disable 3D accelleration, as it does not work on Windows guests unless you use GPU passthrough in multi-GPU computer.
 
 4. **(Optional)** If you will only have 1 windows VM, you may want to use TPM passthrough. 
 
@@ -229,7 +235,8 @@ If you are on GNOME and is used to use top right hot corner for window switching
 
 Windows-on-Linux virtualization have improved significantly today that it is possible to run Windows VM with minimal impact on performance. Open Source RDP
 clients also have catched up quite well in bringing smooth integration of audio and clipboard with remote Windows connection that it become pretty seamless to use
-Windows applications through RDP, especially for work related applications such as Microsoft office.
+Windows applications through RDP, especially for work related applications such as Microsoft office. VirtIO FS in the other hand makes disk integration experience
+almost as if you are using Wine.
 
 Using this method, one more barrier of adoption of Linux as primary operating system is solved as it is relatively seamless to work with documents in the VM, that
 it barely feel like Microsoft Office is running in a VM.
