@@ -69,117 +69,117 @@ At the customization page, you will need to configure the following:
 
 1. CPU Pinning
 
-![Screenshot from 2023-09-10 12-09-46.png](/assets/images/reverse-wsl//c9ee0241c59048df8be3c02213795ace.png)
-
-Replace `<vcpu>2<vcpu>` with:
-
-```xml
-  <vcpu placement="static" cpuset="3,5">2</vcpu>
-  <cputune>
-    <vcpupin vcpu="0" cpuset="3"/>
-    <vcpupin vcpu="1" cpuset="5"/>
-  </cputune>
-```
-
-This will pin the 2 CPU to physical core 1 (second core) and core 2 (third core) of the base host, minimizing competition with the main operating system running at core 0 (first core). 
+   ![Screenshot from 2023-09-10 12-09-46.png](/assets/images/reverse-wsl//c9ee0241c59048df8be3c02213795ace.png)
+   
+   Replace `<vcpu>2<vcpu>` with:
+   
+   ```xml
+     <vcpu placement="static" cpuset="3,5">2</vcpu>
+     <cputune>
+       <vcpupin vcpu="0" cpuset="3"/>
+       <vcpupin vcpu="1" cpuset="5"/>
+     </cputune>
+   ```
+   
+   This will pin the 2 CPU to physical core 1 (second core) and core 2 (third core) of the base host, minimizing competition with the main operating system running at core 0 (first core). 
 
 2. Change default disk to VirtIO bus
 
-![f2d14462bca721f419b98ea5723d5bf7.png](/assets/images/reverse-wsl/05a73d0172fb4e71ba6f546c3e7e9f6e.png)
+   ![f2d14462bca721f419b98ea5723d5bf7.png](/assets/images/reverse-wsl/05a73d0172fb4e71ba6f546c3e7e9f6e.png)
 
 3. Set VirtIO Video
 
-![5cb8577f26f7d63169a2988eb556c867.png](/assets/images/reverse-wsl//0a46dcf7d8e14dd99a7d85be5033cd2f.png)
+   ![5cb8577f26f7d63169a2988eb556c867.png](/assets/images/reverse-wsl//0a46dcf7d8e14dd99a7d85be5033cd2f.png)
 
-Disable 3D accelleration for now. You can enable it later after drivers are loaded and RDP is operational.
+   Disable 3D accelleration for now. You can enable it later after drivers are loaded and RDP is operational.
 
 4. **(Optional)** If you will only have 1 windows VM, you may want to use TPM passthrough. 
 
-![9e6f389d39dca4bd249aa6f634033d73.png](/assets/images/reverse-wsl//ccbead4b857a4fd194b1c58471f4b1fc.png)
+   ![9e6f389d39dca4bd249aa6f634033d73.png](/assets/images/reverse-wsl//ccbead4b857a4fd194b1c58471f4b1fc.png)
 
 5. Add VirtIO driver ISO image as another SATA CDROM. You will need it to load VirtIO driver
 
-![3f239e940b4d6d2511a023335243b7f9.png](/assets/images/reverse-wsl//523a6fbd3fec4a37a7cb3c9c90b8b75f.png)
+   ![3f239e940b4d6d2511a023335243b7f9.png](/assets/images/reverse-wsl//523a6fbd3fec4a37a7cb3c9c90b8b75f.png)
 
-You can get VirtIO driver ISO image from Fedora here: https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso 
+   You can get VirtIO driver ISO image from Fedora here: <https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso>
 
 6. Configure HyperV optimization. 
 
-![6ed357ee7d3192bb75be953cc34aea1b.png](/assets/images/reverse-wsl//335895b023734bf9a007b3d75f8b2882.png)
+   ![6ed357ee7d3192bb75be953cc34aea1b.png](/assets/images/reverse-wsl//335895b023734bf9a007b3d75f8b2882.png)
 
-Set the configuration to:
-
-```xml
-    <hyperv mode="custom">
-      <relaxed state="on"/>
-      <vapic state="on"/>
-      <spinlocks state="on" retries="8191"/>
-      <vpindex state="on"/>
-      <synic state="on"/>
-      <stimer state="on"/>
-      <reset state="on"/>
-    </hyperv>
-```
-
+   Set the configuration to:
+   
+   ```xml
+       <hyperv mode="custom">
+         <relaxed state="on"/>
+         <vapic state="on"/>
+         <spinlocks state="on" retries="8191"/>
+         <vpindex state="on"/>
+         <synic state="on"/>
+         <stimer state="on"/>
+         <reset state="on"/>
+       </hyperv>
+   ```
+   
 7. Enable shared memory (this is needed later for filesystem sharing)
 
-![24f3f26420939629495918bfd2e02a92.png](/assets/images/reverse-wsl//e9112188e131422dbf58c5320d558962.png)
+   ![24f3f26420939629495918bfd2e02a92.png](/assets/images/reverse-wsl//e9112188e131422dbf58c5320d558962.png)
 
 8. Add filesystem sharing to your Home directory
 
-![5fd1a365bcbb39fd0b427b3477bf9e82.png](/assets/images/reverse-wsl//1f462201a3614e15939b87bf08166d5d.png)
+   ![5fd1a365bcbb39fd0b427b3477bf9e82.png](/assets/images/reverse-wsl//1f462201a3614e15939b87bf08166d5d.png)
 
 9. Then click **Begin Installation** to start installation. 
 
-Make sure you select Windows 10/11 Pro during installation. 
-
-When at the disk selection you will see that there are no disk to select. This is because Windows does not carry VirtIO disk drivers by default. You will need to load the driver from the secondary CD drive.
-
-![d8e04293c14c805a42661a89dc42d1e0.png](/assets/images/reverse-wsl/972a12781d194a4fa32900674131b0c7.png)
-
-![29d87b13b54d48ad069ac9d4f7224575.png](/assets/images/reverse-wsl/778ee7dee2504b0ea8c99b8733ce9c28.png)
-
-![a8ebffcfeccb3c030fe47a6c9dbb09d1.png](/assets/images/reverse-wsl/af27f55786a54ef6bed89ed79cea936c.png)
-
-Then proceed the installation as you would normally
-
-![c2d6c93cb0d5b566922b9b2fb2ce6113.png](/assets/images/reverse-wsl/9965f2780758427091313570a2d8172d.png)
-
-On first boot , to improve performance, disable all telemetry monitoring 
-
-![1d0399064cb6020ed67cadfe5aa1db4c.png](/assets/images/reverse-wsl/70667860f79d444bb1f17de68d23f28e.png)
-
+   Make sure you select Windows 10/11 Pro during installation. 
+   
+   When at the disk selection you will see that there are no disk to select. This is because Windows does not carry VirtIO disk drivers by default. You will need to load the driver from the secondary CD drive.
+   
+   ![d8e04293c14c805a42661a89dc42d1e0.png](/assets/images/reverse-wsl/972a12781d194a4fa32900674131b0c7.png)
+   
+   ![29d87b13b54d48ad069ac9d4f7224575.png](/assets/images/reverse-wsl/778ee7dee2504b0ea8c99b8733ce9c28.png)
+   
+   ![a8ebffcfeccb3c030fe47a6c9dbb09d1.png](/assets/images/reverse-wsl/af27f55786a54ef6bed89ed79cea936c.png)
+   
+   Then proceed the installation as you would normally
+   
+   ![c2d6c93cb0d5b566922b9b2fb2ce6113.png](/assets/images/reverse-wsl/9965f2780758427091313570a2d8172d.png)
+   
+   On first boot , to improve performance, disable all telemetry monitoring 
+   
+   ![1d0399064cb6020ed67cadfe5aa1db4c.png](/assets/images/reverse-wsl/70667860f79d444bb1f17de68d23f28e.png)
+   
 #### Setting up Windows 
 
 After successful installation, you will need to then install the rest of VirtIO drivers, VirtIO guest tools, and WinFSP to further improve host-guest integration and improve user experience.
 
 1. Install VirtIO drivers
 
-![40f17b3274c9463d29682d0cef383ac8.png](/assets/images/reverse-wsl/81fe122699d04e2f96eb410e8f0a4f91.png)
+   ![40f17b3274c9463d29682d0cef383ac8.png](/assets/images/reverse-wsl/81fe122699d04e2f96eb410e8f0a4f91.png)
 
 2. Install VirtIO guest tools
 
-![420e6f638b94174fcce664b1a27e74ca.png](/assets/images/reverse-wsl/342bc7f6205b4649a86adc160cc6cdc1.png)
+   ![420e6f638b94174fcce664b1a27e74ca.png](/assets/images/reverse-wsl/342bc7f6205b4649a86adc160cc6cdc1.png)
 
 3. Install WinFSP & Enable VirtIO FS
 
-WinFSP (https://github.com/winfsp/winfsp) provide capabilities similar to FUSE on Windows, which allows mounting of userspace filesystems. It is required in order to mount VirtIO shared filesystem as a drive in Windows. Download and install it, then enable VirtIO FS by enabling the following service in the Services app.
+   WinFSP (<https://github.com/winfsp/winfsp>) provide capabilities similar to FUSE on Windows, which allows mounting of userspace filesystems. It is required in order to mount VirtIO shared filesystem as a drive in Windows. Download and install it, then enable VirtIO FS by enabling the following service in the Services app.
 
-![Screenshot from 2023-09-10 21-53-18.png](/assets/images/reverse-wsl/6cfb6d92feac4bacba81fc122e6a3092.png)
-
-![Screenshot from 2023-09-10 21-53-41.png](/assets/images/reverse-wsl/e1b8af902de945788f9fd19f3e6a2792.png)
-
-If enabled correctly, you will see that a new drive Z:\ appeared that links to the Linux host storage
-
-![Screenshot from 2023-09-10 21-54-14.png](/assets/images/reverse-wsl/1f52699c2bda41d1b6af3a3dc8251d56.png)
-
+   ![Screenshot from 2023-09-10 21-53-18.png](/assets/images/reverse-wsl/6cfb6d92feac4bacba81fc122e6a3092.png)
+   
+   ![Screenshot from 2023-09-10 21-53-41.png](/assets/images/reverse-wsl/e1b8af902de945788f9fd19f3e6a2792.png)
+   
+   If enabled correctly, you will see that a new drive Z:\ appeared that links to the Linux host storage
+   
+   ![Screenshot from 2023-09-10 21-54-14.png](/assets/images/reverse-wsl/1f52699c2bda41d1b6af3a3dc8251d56.png)
+   
 4. Then, enable remote desktop
 
-![f4958f01ca425b8326bc7b15b43d36d1.png](/assets/images/reverse-wsl/fc897f17850848ddb523b5b1c8d96ead.png)
+   ![f4958f01ca425b8326bc7b15b43d36d1.png](/assets/images/reverse-wsl/fc897f17850848ddb523b5b1c8d96ead.png)
 
 5. Afterwards, shutdown the VM, as we now need to switch the network to VirtIO. Open the VM properties and ensure that NIC is switch to VirtIO
 
-![11b06bfa96cf2da6ca416feb3e132a88.png](/assets/images/reverse-wsl/be27e13d3d804f3995f7ba8fca0135d0.png)
+   ![11b06bfa96cf2da6ca416feb3e132a88.png](/assets/images/reverse-wsl/be27e13d3d804f3995f7ba8fca0135d0.png)
 
 6. Now you can start the VM back up.
 
@@ -205,11 +205,11 @@ Afterwards, setup the connection with following settings
   - FreeRDP log level: ERROR
   - Audio output mode: Local
  
- ![f6a8f2992a211f8e0ce8a54c788ed975.png](/assets/images/reverse-wsl/19189495d06345519d2f9ae38d8d57ed.png)
+![f6a8f2992a211f8e0ce8a54c788ed975.png](/assets/images/reverse-wsl/19189495d06345519d2f9ae38d8d57ed.png)
+
+Click **Save and connect.**, and you now have connected to the VM and can use it. Switch to full screen view to make things appear as if it is not a VM.
  
- Click **Save and connect.**, and you now have connected to the VM and can use it. Switch to full screen view to make things appear as if it is not a VM.
- 
- The VM is now ready to be used to install Microsoft Office. 
+The VM is now ready to be used to install Microsoft Office. 
 
 ### Optimization & Tuning
 
@@ -236,7 +236,7 @@ it barely feel like Microsoft Office is running in a VM.
 
 #### References
 
-- https://linuxhint.com/install_virtio_drivers_kvm_qemu_windows_vm/
-- https://leduccc.medium.com/improving-the-performance-of-a-windows-10-guest-on-qemu-a5b3f54d9cf5
+- <https://linuxhint.com/install_virtio_drivers_kvm_qemu_windows_vm/>
+- <https://leduccc.medium.com/improving-the-performance-of-a-windows-10-guest-on-qemu-a5b3f54d9cf5>
 
 
