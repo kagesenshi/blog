@@ -52,7 +52,8 @@ You will also need Windows 10 Pro or Windows 11 Pro as RDP would be a key compon
 You will need to install and use QEMU and Libvirt for your virtualization, as VirtIO comes with it.
 
 ```bash
-$ dnf install virt-manager libvirt-daemon-kvm -y
+$ sudo dnf install virt-manager libvirt-daemon-kvm -y
+$ sudo systemctl enable --now libvirtd.service
 ```
 
 For near-native performance, we will be using VritIO to improve both disks, network and graphics I/O, which means, the VM creation process would be slightly different. 
@@ -194,7 +195,7 @@ After successful installation, you will need to then install the rest of VirtIO 
 To connect to RDP, you will need to install Remmina RDP client
 
 ```console
-$ dnf install remmina
+$ sudo dnf install remmina -y
 ```
 
 Afterwards, setup the connection with following settings
