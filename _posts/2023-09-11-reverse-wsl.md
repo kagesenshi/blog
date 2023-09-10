@@ -27,7 +27,7 @@ Wine, while becoming a great platform to run games thanks to Proton initiative, 
 
 ### Windows Subsystem For Linux (WSL)
 
-The frustration regularly faced by developers when working on Windows, and the dominance of Open Source in software development ecosystem to a degree threathened Windows, where developers preferring MacOS for their preferred desktop. 
+The frustration regularly faced by developers when working on Windows, and the dominance of Open Source in software development ecosystem to a degree threathened Windows, where developers preferring MacOS for their preferred desktop because of its Unix heritage and MacPorts.
 
 In response to that , for a few years now, Windows introduced the ability to run Linux commandline seamlessly on Windows through their WSL feature which essentially runs a Linux VM on top of Windows, with seamless filesystem integration to allow access of files in the host by the guest VM. This to a degree allows developers to have access to their Linux tooling on Windows, alongside access to Microsoft Office. 
 
