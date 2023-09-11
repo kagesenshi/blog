@@ -45,7 +45,7 @@ This guide will help you set up your computer with a highly fine tuned VM of Win
 
 This guide assumes that you have at least 4c/8t CPU with 16GB of RAM, and you are using Fedora as the primary operating system. Any other Linux distro should work too, but this guide focuses on Fedora.
 
-For more convenience on display performance, you may want to use Windows 10 Pro or Windows 11 Pro as I found RDP is more tunable compared to SPICE. RDP is only available on the Pro edition of Windows.
+You may want to use Windows 10 Pro or Windows 11 Pro as I found RDP local cursor give a better experience compared to SPICE. RDP is only available on the Pro edition of Windows.
 
 #### Setting Up The VM
 
@@ -182,7 +182,7 @@ After successful installation, you will need to then install the rest of VirtIO 
    
    ![Screenshot from 2023-09-10 21-54-14.png](/assets/images/reverse-wsl/1f52699c2bda41d1b6af3a3dc8251d56.png)
    
-4. **(Optional))** Then, enable RDP
+4. **(Optional)** Then, enable RDP
 
    ![f4958f01ca425b8326bc7b15b43d36d1.png](/assets/images/reverse-wsl/fc897f17850848ddb523b5b1c8d96ead.png)
 
@@ -206,12 +206,16 @@ Launch Remmina, then you may want to disable the fullscreen toolbar in Remmina p
  
 ##### Using SPICE
 
-SPICE is the default remote connection protocol for QEMU and is recommended if you want to have full
-display experience offered by QEMU, as it also perform well with videos. However, it might be a bit
-of an overhead if you are using older device.
+SPICE is the default remote connection protocol for QEMU and is recommended if you don't have RDP available on
+your Windows version. However, it might be a bit of an overhead if you are using older device.
+
+SPICE also uses remote cursor that is rendered on the VM side, which you may experience mouse lag if you 
+have slower CPU.
 
 On Wayland on my F37, SPICE also behave weirdly after Alt+Tab when put in full screen mode, where it 
-behave as if Alt/Ctrl is always pressed until you leave full screen. If you face this issue, then use RDP.
+behave as if Alt/Ctrl is always pressed until you leave full screen. 
+
+If you face above issues, then use RDP.
 
 To connect to SPICE, use following settings
 
