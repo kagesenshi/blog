@@ -200,7 +200,7 @@ To connect to the VM, I recommend to use Remmina
 $ sudo dnf install remmina remmina-plugins-spice -y
 ```
 
-Optionally, you may want to also disable the fullscreen toolbar in Remmina preferences for added seamlessness.
+Launch Remmina, then you may want to disable the fullscreen toolbar in Remmina preferences for added seamlessness
 
 ![617cece718677af769e1b922937d65e0.png](/assets/images/reverse-wsl/617cece718677af769e1b922937d65e0.png)
  
@@ -224,8 +224,7 @@ To connect to SPICE, use following settings
 
 Click **Save and connect.**, and you now have connected to the VM and can use it. 
 
-Switch to full screen view to make things appear as if it is not a VM. You will need to set resolution to match
-your monitor resolution.
+Switch to full screen view for seamless display. You will need to set resolution to match your monitor resolution.
 
 Optionally, for better display performance with this method of connection, launch Performance app and configure
 it for best performance.
@@ -251,7 +250,9 @@ To connect to RDP, use following settings
  
 ![f6a8f2992a211f8e0ce8a54c788ed975.png](/assets/images/reverse-wsl/19189495d06345519d2f9ae38d8d57ed.png)
 
-Click **Save and connect.**, and you now have connected to the VM and can use it. Switch to full screen view to make things appear as if it is not a VM. 
+Click **Save and connect.**, and you now have connected to the VM and can use it.
+
+Switch to full screen view for seamless display.
 
 ### Optimization & Tuning
 
