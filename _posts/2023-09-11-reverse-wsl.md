@@ -214,7 +214,9 @@ Afterwards, setup the connection with following settings
  
 ![f6a8f2992a211f8e0ce8a54c788ed975.png](/assets/images/reverse-wsl/19189495d06345519d2f9ae38d8d57ed.png)
 
-Click **Save and connect.**, and you now have connected to the VM and can use it. Switch to full screen view to make things appear as if it is not a VM.
+Click **Save and connect.**, and you now have connected to the VM and can use it. Switch to full screen view to make things appear as if it is not a VM. Optionally, you may want to also disable the fullscreen toolbar in Remmina preferences for added seamlessness.
+
+![617cece718677af769e1b922937d65e0.png](/assets/images/reverse-wsl/617cece718677af769e1b922937d65e0.png)
  
 The VM is now ready to be used to install Microsoft Office. 
 
