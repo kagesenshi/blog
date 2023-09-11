@@ -269,6 +269,8 @@ For less CPU and RAM usage, you may want to also do the following:
 
 If you are on GNOME and is used to use top right hot corner for window switching, you may also want to install Winxcorners, and set top left corner to open Task View. 
 
+I recommend setting the VM wallpaper to match your main desktop wallpaper.
+
 ### Conclusion
 
 Windows-on-Linux virtualization have improved significantly today that it is possible to run Windows VM with minimal impact on performance. Open Source RDP
