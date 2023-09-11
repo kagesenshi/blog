@@ -88,7 +88,9 @@ At the customization page, you will need to configure the following:
      </cputune>
    ```
    
-   This will pin the 2 CPU to physical core 1 (second core) and core 2 (third core) of the base host, minimizing competition with the main operating system running at core 0 (first core). You can view which core tied to which cpuset by running `cat /proc/cpuinfo |egrep -i 'processor|core id'`. `processor` is the cpuset id, while `core id` is the physical core id.
+   This will pin the 2 CPU to physical core 1 (second core) and core 2 (third core) of the base host, minimizing competition with the main operating system running at core 0 (first core). 
+
+   You can view which core tied to which cpuset by running `cat /proc/cpuinfo |egrep -i 'processor|core id'`. From the output, `processor` is the cpuset id, while `core id` is the physical core id.
 
 
 2. Set SPICE port 
