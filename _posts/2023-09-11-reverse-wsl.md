@@ -23,7 +23,7 @@ Libreoffice also is fully capable to do all common office tasks without issues, 
 
 However, Microsoft Office dominance can be an annoying problem when working with clients that primarily uses Microsoft's stack and refuses to accept or work with PDF. Microsoft Office also almost always open ODF poorly with regular corruption, while DOCX files saved by Libreoffice seems to almost always opened poorly by Microsoft Office.
 
-Wine, while becoming a great platform to run games thanks to Proton initiative, is still quite flaky to run Office due to less investment is put on the matter.
+Wine, while becoming a great platform to run games thanks to Proton initiative, is still quite flaky to run Office due to less community investment is put on the matter. The [Wine AppDB page for Office](https://appdb.winehq.org/objectManager.php?iId=31&sClass=application) generally reported garbage rating for Office 2016 and newer.
 
 ### Windows Subsystem For Linux (WSL)
 
@@ -37,7 +37,7 @@ WSL also shows that, with some clever virtualization tricks to integrate the hos
 
 For those who primarily use Linux as their daily driver and dealing with clients who are locked into Microsoft ecosystem (even rejecting Google Docs), the lack of Microsoft Office on Linux sometimes forces people to switch to Windows in order to get work done, which usually means a troublesome dual computer operation. 
 
-However little is known to the most that Linux virtualization have also improved significantly over the past several years, where it is now possible to create a "Reverse WSL" that allows you access to Microsoft Office on your Linux desktop, complete with clipboard sharing and filesystem sharing, with near-native performance using QEMU KVM virtualization. Effectively allowing you to keep using Linux as your primary operating system, while still getting access to Microsoft Office without having to dual-boot or lugging two computers around. 
+However little is known to most that Linux virtualization have also improved significantly over the past several years, where it is now possible to create a "Reverse WSL" that allows you access to Microsoft Office on your Linux desktop, complete with clipboard sharing and filesystem sharing, with near-native performance using QEMU KVM virtualization. Effectively allowing you to keep using Linux as your primary operating system, while still getting access to Microsoft Office without having to dual-boot or lugging two computers around. 
 
 This guide will help you set up your computer with a highly fine tuned VM of Windows 11, alongside customizations needed to make integration seamless between the two operating systems, so that you can get benefits of both worlds on a single unified dual operating system experience. 
 
