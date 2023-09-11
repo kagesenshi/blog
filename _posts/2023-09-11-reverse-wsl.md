@@ -45,7 +45,7 @@ This guide will help you set up your computer with a highly fine tuned VM of Win
 
 This guide assumes that you have at least 4c/8t CPU with 16GB of RAM, and you are using Fedora as the primary operating system. Any other Linux distro should work too, but this guide focuses on Fedora.
 
-You will also need Windows 10 Pro or Windows 11 Pro as RDP would be a key component for this, which is only available on the Pro edition of Windows.
+For more convenience on display performance, you may want to use Windows 10 Pro or Windows 11 Pro as I found RDP is more tunable compared to SPICE. RDP is only available on the Pro edition of Windows.
 
 #### Setting Up The VM
 
@@ -90,27 +90,31 @@ At the customization page, you will need to configure the following:
    
    This will pin the 2 CPU to physical core 1 (second core) and core 2 (third core) of the base host, minimizing competition with the main operating system running at core 0 (first core). 
 
-2. Change default disk to VirtIO bus
+2. Set SPICE port 
+
+   ![801899947084c122e9a703b84096614a.png](/assets/images/reverse-wsl/801899947084c122e9a703b84096614a.png)
+
+3. Change default disk to VirtIO bus
 
    ![f2d14462bca721f419b98ea5723d5bf7.png](/assets/images/reverse-wsl/05a73d0172fb4e71ba6f546c3e7e9f6e.png)
 
-3. Set VirtIO Video
+4. Set VirtIO Video
 
    ![5cb8577f26f7d63169a2988eb556c867.png](/assets/images/reverse-wsl//0a46dcf7d8e14dd99a7d85be5033cd2f.png)
 
    Disable 3D accelleration, as it does not work on Windows guests unless you use GPU passthrough in multi-GPU computer.
 
-4. **(Optional)** If you will only have 1 windows VM, you may want to use TPM passthrough. 
+5. **(Optional)** If you will only have 1 windows VM, you may want to use TPM passthrough. 
 
    ![9e6f389d39dca4bd249aa6f634033d73.png](/assets/images/reverse-wsl//ccbead4b857a4fd194b1c58471f4b1fc.png)
 
-5. Add VirtIO driver ISO image as another SATA CDROM. You will need it to load VirtIO driver
+6. Add VirtIO driver ISO image as another SATA CDROM. You will need it to load VirtIO driver
 
    ![3f239e940b4d6d2511a023335243b7f9.png](/assets/images/reverse-wsl//523a6fbd3fec4a37a7cb3c9c90b8b75f.png)
 
    You can get VirtIO driver ISO image from Fedora here: <https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso>
 
-6. Configure HyperV optimization. 
+7. Configure HyperV optimization. 
 
    ![6ed357ee7d3192bb75be953cc34aea1b.png](/assets/images/reverse-wsl//335895b023734bf9a007b3d75f8b2882.png)
 
@@ -128,15 +132,15 @@ At the customization page, you will need to configure the following:
        </hyperv>
    ```
    
-7. Enable shared memory (this is needed later for filesystem sharing)
+8. Enable shared memory (this is needed later for filesystem sharing)
 
    ![24f3f26420939629495918bfd2e02a92.png](/assets/images/reverse-wsl//e9112188e131422dbf58c5320d558962.png)
 
-8. Add filesystem sharing to your Home directory
+9. Add filesystem sharing to your Home directory
 
    ![5fd1a365bcbb39fd0b427b3477bf9e82.png](/assets/images/reverse-wsl//1f462201a3614e15939b87bf08166d5d.png)
 
-9. Then click **Begin Installation** to start installation. 
+10. Then click **Begin Installation** to start installation. 
 
    Make sure you select Windows 10/11 Pro during installation. 
    
@@ -180,7 +184,7 @@ After successful installation, you will need to then install the rest of VirtIO 
    
    ![Screenshot from 2023-09-10 21-54-14.png](/assets/images/reverse-wsl/1f52699c2bda41d1b6af3a3dc8251d56.png)
    
-4. Then, enable remote desktop
+4. **(Optional))** Then, enable RDP
 
    ![f4958f01ca425b8326bc7b15b43d36d1.png](/assets/images/reverse-wsl/fc897f17850848ddb523b5b1c8d96ead.png)
 
@@ -190,16 +194,43 @@ After successful installation, you will need to then install the rest of VirtIO 
 
 6. Now you can start the VM back up.
 
-#### Connecting to RDP
+#### Connecting to VM
 
-To connect to RDP, you will need to install Remmina RDP client
+To connect to the VM, I recommend to use Remmina
 
 ```console
-$ sudo dnf install remmina -y
+$ sudo dnf install remmina remmina-plugins-spice -y
 ```
 
-Afterwards, setup the connection with following settings
+Optionally, you may want to also disable the fullscreen toolbar in Remmina preferences for added seamlessness.
 
+![617cece718677af769e1b922937d65e0.png](/assets/images/reverse-wsl/617cece718677af769e1b922937d65e0.png)
+ 
+##### Using SPICE
+
+SPICE is the default remote connection protocol for QEMU and is recommended if you want to have full
+display experience offered by QEMU, as it also perform well with videos. However, it might be a bit
+of an overhead if you are using older device.
+
+To connect to SPICE, use following settings
+
+- Protocol: SPICE 
+- Basic tab:
+  - Server: localhost:5900
+- Advanced tab:
+  - Preferred video codec: VP8
+  - Preferred image compression: LZ4
+  - Enable audio channel
+
+[!ac19822843405d04f683eeff7aa173a9.png](/assets/images/reverse-wsl/ac19822843405d04f683eeff7aa173a9.png)
+
+Click **Save and connect.**, and you now have connected to the VM and can use it. Switch to full screen view to make things appear as if it is not a VM. 
+
+##### Using RDP
+
+To connect to RDP, use following settings
+
+- Protocol: RDP
 - Basic tab:
   - Server: IP Address of the VM
   - Username: Windows login username
@@ -214,11 +245,7 @@ Afterwards, setup the connection with following settings
  
 ![f6a8f2992a211f8e0ce8a54c788ed975.png](/assets/images/reverse-wsl/19189495d06345519d2f9ae38d8d57ed.png)
 
-Click **Save and connect.**, and you now have connected to the VM and can use it. Switch to full screen view to make things appear as if it is not a VM. Optionally, you may want to also disable the fullscreen toolbar in Remmina preferences for added seamlessness.
-
-![617cece718677af769e1b922937d65e0.png](/assets/images/reverse-wsl/617cece718677af769e1b922937d65e0.png)
- 
-The VM is now ready to be used to install Microsoft Office. 
+Click **Save and connect.**, and you now have connected to the VM and can use it. Switch to full screen view to make things appear as if it is not a VM. 
 
 ### Optimization & Tuning
 
