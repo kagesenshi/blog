@@ -224,7 +224,15 @@ To connect to SPICE, use following settings
 
 [!ac19822843405d04f683eeff7aa173a9.png](/assets/images/reverse-wsl/ac19822843405d04f683eeff7aa173a9.png)
 
-Click **Save and connect.**, and you now have connected to the VM and can use it. Switch to full screen view to make things appear as if it is not a VM. 
+Click **Save and connect.**, and you now have connected to the VM and can use it. 
+
+Switch to full screen view to make things appear as if it is not a VM. You will need to set resolution to match
+your monitor resolution.
+
+Optionally, for better display performance with this method of connection, launch Performance app and configure
+it for best performance.
+
+[!e33461d312451dc99354652afe56b1b6.png](/assets/images/reverse-wsl/e33461d312451dc99354652afe56b1b6.png)
 
 ##### Using RDP
 
