@@ -33,7 +33,7 @@ In response to that , for a few years now, Windows introduced the ability to run
 
 WSL also shows that, with some clever virtualization tricks to integrate the host and guest, the experience of using VM can be pretty seamless to the user if done well.
 
-### Reverse WSL With QEMU, Libvirt, VirtIO & RDP
+### Reverse WSL With QEMU, Libvirt, VirtIO & SPICE/RDP
 
 For those who primarily use Linux as their daily driver and dealing with clients who are locked into Microsoft ecosystem (even rejecting Google Docs), the lack of Microsoft Office on Linux sometimes forces people to switch to Windows in order to get work done, which usually means a troublesome dual computer operation. 
 
@@ -142,8 +142,6 @@ At the customization page, you will need to configure the following:
 
 10. Then click **Begin Installation** to start installation. 
 
-   Make sure you select Windows 10/11 Pro during installation. 
-   
    When at the disk selection you will see that there are no disk to select. This is because Windows does not carry VirtIO disk drivers by default. You will need to load the driver from the secondary CD drive.
    
    ![d8e04293c14c805a42661a89dc42d1e0.png](/assets/images/reverse-wsl/972a12781d194a4fa32900674131b0c7.png)
