@@ -210,6 +210,9 @@ SPICE is the default remote connection protocol for QEMU and is recommended if y
 display experience offered by QEMU, as it also perform well with videos. However, it might be a bit
 of an overhead if you are using older device.
 
+On Wayland on my F37, SPICE also behave weirdly after Alt+Tab when put in full screen mode, where it 
+behave as if Alt/Ctrl is always pressed until you leave full screen. If you face this issue, then use RDP.
+
 To connect to SPICE, use following settings
 
 - Protocol: SPICE 
@@ -232,6 +235,9 @@ it for best performance.
 ![e33461d312451dc99354652afe56b1b6.png](/assets/images/reverse-wsl/e33461d312451dc99354652afe56b1b6.png)
 
 ##### Using RDP
+
+I recommend using RDP because it uses local cursor and suffer less mouse lag compared to SPICE. You also have
+better control on display peformance tweaks on the client side, however, it might not perform that well for videos.
 
 To connect to RDP, use following settings
 
