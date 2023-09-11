@@ -81,14 +81,15 @@ At the customization page, you will need to configure the following:
    Replace `<vcpu>2<vcpu>` with:
    
    ```xml
-     <vcpu placement="static" cpuset="3,5">2</vcpu>
+     <vcpu placement="static" cpuset="1,2">2</vcpu>
      <cputune>
-       <vcpupin vcpu="0" cpuset="3"/>
-       <vcpupin vcpu="1" cpuset="5"/>
+       <vcpupin vcpu="0" cpuset="1"/>
+       <vcpupin vcpu="1" cpuset="2"/>
      </cputune>
    ```
    
-   This will pin the 2 CPU to physical core 1 (second core) and core 2 (third core) of the base host, minimizing competition with the main operating system running at core 0 (first core). 
+   This will pin the 2 CPU to physical core 1 (second core) and core 2 (third core) of the base host, minimizing competition with the main operating system running at core 0 (first core). You can view which core tied to which cpuset by running `cat /proc/cpuinfo |egrep -i 'processor|core id'`. `processor` is the cpuset id, while `core id` is the physical core id.
+
 
 2. Set SPICE port 
 
