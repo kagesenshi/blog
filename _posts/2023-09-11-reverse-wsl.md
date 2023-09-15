@@ -203,14 +203,12 @@ Launch Remmina, then you may want to disable the fullscreen toolbar in Remmina p
  
 ##### Using SPICE
 
-SPICE is the default remote connection protocol for QEMU and is recommended if you don't have RDP available on
-your Windows version. However, it might be a bit of an overhead if you are using older device.
+SPICE is the default remote connection protocol for QEMU and is generally recommended if you just need basic capabilities.
 
-SPICE also uses remote cursor that is rendered on the VM side, which you may experience mouse lag if you 
-have slower CPU.
+You make sure you use QXL driver. If you are using SPICE with Virtio video driver, you may experience mouse lag on slower computers.
 
-On Wayland on my F37, SPICE also behave weirdly after Alt+Tab when put in full screen mode, where it 
-behave as if Alt/Ctrl is always pressed until you leave full screen. 
+On Wayland on my F37, SPICE also behave weirdly after Alt+Tab when put in full screen mode, where it behave as if Alt/Ctrl 
+is always pressed until you leave full screen. 
 
 If you face above issues, then use RDP.
 
