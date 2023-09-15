@@ -101,23 +101,17 @@ At the customization page, you will need to configure the following:
 
    ![f2d14462bca721f419b98ea5723d5bf7.png](/assets/images/reverse-wsl/05a73d0172fb4e71ba6f546c3e7e9f6e.png)
 
-4. Set VirtIO Video
-
-   ![5cb8577f26f7d63169a2988eb556c867.png](/assets/images/reverse-wsl//0a46dcf7d8e14dd99a7d85be5033cd2f.png)
-
-   Disable 3D accelleration, as it does not work on Windows guests unless you use GPU passthrough in multi-GPU computer.
-
-5. **(Optional)** If you will only have 1 windows VM, you may want to use TPM passthrough. 
+6. **(Optional)** If you will only have 1 windows VM, you may want to use TPM passthrough. 
 
    ![9e6f389d39dca4bd249aa6f634033d73.png](/assets/images/reverse-wsl//ccbead4b857a4fd194b1c58471f4b1fc.png)
 
-6. Add VirtIO driver ISO image as another SATA CDROM. You will need it to load VirtIO driver
+7. Add VirtIO driver ISO image as another SATA CDROM. You will need it to load VirtIO driver
 
    ![3f239e940b4d6d2511a023335243b7f9.png](/assets/images/reverse-wsl//523a6fbd3fec4a37a7cb3c9c90b8b75f.png)
 
    You can get VirtIO driver ISO image from Fedora here: <https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso>
 
-7. Configure HyperV optimization. 
+8. Configure HyperV optimization. 
 
    ![6ed357ee7d3192bb75be953cc34aea1b.png](/assets/images/reverse-wsl//335895b023734bf9a007b3d75f8b2882.png)
 
@@ -135,15 +129,15 @@ At the customization page, you will need to configure the following:
        </hyperv>
    ```
    
-8. Enable shared memory (this is needed later for filesystem sharing)
+9. Enable shared memory (this is needed later for filesystem sharing)
 
    ![24f3f26420939629495918bfd2e02a92.png](/assets/images/reverse-wsl//e9112188e131422dbf58c5320d558962.png)
 
-9. Add filesystem sharing to your Home directory
+10. Add filesystem sharing to your Home directory
 
    ![5fd1a365bcbb39fd0b427b3477bf9e82.png](/assets/images/reverse-wsl//1f462201a3614e15939b87bf08166d5d.png)
 
-10. Then click **Begin Installation** to start installation. 
+11. Then click **Begin Installation** to start installation. 
 
    When at the disk selection you will see that there are no disk to select. This is because Windows does not carry VirtIO disk drivers by default. You will need to load the driver from the secondary CD drive.
    
