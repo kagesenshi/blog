@@ -1,0 +1,22 @@
+name: Build and Deploy GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Adjust the branch name as needed
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build Jekyll Site
+        run: |
+          docker pull kagesenshi/jekyll:latest
+          docker run -v $(pwd):/data kagesenshi/jekyll:latest build
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v2
