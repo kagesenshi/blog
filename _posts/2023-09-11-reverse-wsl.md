@@ -4,6 +4,7 @@ title: Creating "Reverse WSL" For Running Windows Application On Linux Host
 categories:
 - blog
 tags:
+- featured
 - fedora
 - windows
 - virtualization
