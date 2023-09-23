@@ -81,19 +81,19 @@ At the customization page, you will need to configure the following:
    Replace `<vcpu>2<vcpu>` with:
    
    ```xml
-     <vcpu placement="static" cpuset="1,2">2</vcpu>
+     <vcpu placement="static" cpuset="2,3">2</vcpu>
      <cputune>
-       <vcpupin vcpu="0" cpuset="1"/>
-       <vcpupin vcpu="1" cpuset="2"/>
+       <vcpupin vcpu="0" cpuset="2"/>
+       <vcpupin vcpu="1" cpuset="3"/>
      </cputune>
    ```
    
-   This will pin the 2 CPU to physical core 1 (second core) and core 2 (third core) of the base host, minimizing competition with the main operating system running at core 0 (first core). 
+   This will pin the 2 CPU to physical core 2 (third core) and core 3 (fourth core) of the base host, minimizing competition with the main operating system running at core 0 (first core) and core 1 (second core)
 
    You can view which core tied to which cpuset by running `cat /proc/cpuinfo |egrep -i 'processor|core id'`. From the output, `processor` is the cpuset id, while `core id` is the physical core id.
 
 
-2. Set SPICE port 
+2. Set SPICE port. Note that we keep video to QXL as VirtIO video is only supported on Linux guests.
 
    ![801899947084c122e9a703b84096614a.png](/assets/images/reverse-wsl/801899947084c122e9a703b84096614a.png)
 
@@ -111,7 +111,7 @@ At the customization page, you will need to configure the following:
 
    You can get VirtIO driver ISO image from Fedora here: <https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso>
 
-8. Configure HyperV optimization. 
+8. Configure HyperV enlightenment. 
 
    ![6ed357ee7d3192bb75be953cc34aea1b.png](/assets/images/reverse-wsl//335895b023734bf9a007b3d75f8b2882.png)
 
@@ -137,6 +137,7 @@ At the customization page, you will need to configure the following:
 
    ![5fd1a365bcbb39fd0b427b3477bf9e82.png](/assets/images/reverse-wsl//1f462201a3614e15939b87bf08166d5d.png)
 
+
 11. Then click **Begin Installation** to start installation. 
 
    When at the disk selection you will see that there are no disk to select. This is because Windows does not carry VirtIO disk drivers by default. You will need to load the driver from the secondary CD drive.
@@ -155,6 +156,8 @@ At the customization page, you will need to configure the following:
    
    ![1d0399064cb6020ed67cadfe5aa1db4c.png](/assets/images/reverse-wsl/70667860f79d444bb1f17de68d23f28e.png)
    
+
+
 #### Setting up Windows 
 
 After successful installation, you will need to then install the rest of VirtIO drivers, VirtIO guest tools, and WinFSP to further improve host-guest integration and improve user experience.
