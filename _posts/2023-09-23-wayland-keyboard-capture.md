@@ -14,4 +14,4 @@ One capability seems missing in Wayland compared to X11 is the ability to fully 
 
 Apaprently, this is implemented differently now in Wayland, where the desktop evironment need to allow application to inhibit shortcut keys. To do this in GNOME, go do **Settings > Apps > $application_name** and allow **Inhibit shortcuts**
 
-![Wayland inhibit shortcut](assets/images/2023/09/wayland-inhibit-shortcut.png)
+![Wayland inhibit shortcut](/assets/images/2023/09/wayland-inhibit-shortcut.png)
