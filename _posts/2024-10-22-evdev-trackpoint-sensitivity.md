@@ -58,11 +58,6 @@ for event in device.read_loop():
             ui.write_event(event)
             ui.syn()
             time.sleep(0.0005) # for smoothing out the movement
-    else:
-
-        # Emit the modified event
-        ui.write_event(event)
-        ui.syn()
 ```
 
 Find your device using `sudo libinput list-devices` and `evtest [device]`.
