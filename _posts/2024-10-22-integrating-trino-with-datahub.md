@@ -29,9 +29,12 @@ using DataHub tags.
 
 So what if you want to use DataHub for your access control policies, without having to dabble with the complexity
 of Apache Ranger and Apache Atlas setup?. Trino have a hook you can utilize for this purpose, which is its 
-[Open Policy Authorization](https://trino.io/docs/current/security/opa-access-control.html) plugin, which allows
-you to point to a URL that validates whether user is allowed to access a particular resource or not. The URL simply
-have to return following JSON, which Trino will use to allow or reject access to the resource:
+[Open Policy Agent Plugin](https://trino.io/docs/current/security/opa-access-control.html) plugin, which allows
+you to point to a URL that validates whether user is allowed to access a particular resource or not. 
+
+The plugin is meant to be used with [Open Policy Agent](https://www.openpolicyagent.org/)
+tool, but as the URL simply have to return following JSON for Trino uses to allow or reject 
+access to the resource, it can be implemented by any custom API service. 
 
 ```json
 {
