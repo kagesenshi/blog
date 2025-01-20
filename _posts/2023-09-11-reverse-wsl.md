@@ -193,6 +193,18 @@ After successful installation, you will need to then install the rest of VirtIO 
 
 6. Now you can start the VM back up.
 
+#### (Optional) Enabling 3D Accelleration With Mediated Device 
+
+If you are using Intel GPU that supports mediated device, you may als
+```console
+$ sudo mdevctl types
+```
+
+```console
+$ MDEV_UUID=`uuid`
+$ sudo mdevctl define --uuid $MDEV_UUID --parent 0000:00:02.0 --type i915-GVTg_V5_2 --auto
+```
+
 #### Connecting to VM
 
 To connect to the VM, I recommend to use Remmina
